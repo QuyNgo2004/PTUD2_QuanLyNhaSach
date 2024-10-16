@@ -35,8 +35,7 @@ go
 --Khách hàng
 create table KhachHang(
 maKH varchar(11) primary key ,
-hoKH nvarchar(20) not null,
-tenKH nvarchar(30)not null,
+hoTenKH nvarchar(50) not null,
 sdtKH varchar(12) not null,
 emailKH varchar(50) null,
 gioitinhKH nvarchar(3) not null,
@@ -97,12 +96,12 @@ create table NhanSu (
 	tenNS nvarchar(45) not null,
 	gioiTinh nvarchar(3) not null,
 	cccdNS nvarchar(11) not null,
-	sdtNV int not null,
+	sdtNV varchar(10) not null,
 	emailNV varchar(40) not null,
 	diaChiNha nvarchar(55),
 	maCN varchar(10) foreign key references ChiNhanh(maCN),
 	chucVu nvarchar(25) not null,
-	matKhau varchar(20) not null,
+	matkhau nvarchar(25) not null,
 )
 go
 --Tao bang Hoa Don
