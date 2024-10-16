@@ -7,3 +7,4 @@ C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThong
 C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
