@@ -79,3 +79,30 @@ F:\CDPTUD1\Aasd\1.3\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.exe
 F:\CDPTUD1\Aasd\1.3\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.pdb
 F:\Chuyên đề 01\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.formThanhToan.resources
 F:\Chuyên đề 01\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.frmChiNhanh.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe.config
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.pdb
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\BUS.dll
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\ET.dll
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\BUS.pdb
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\ET.pdb
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.DanhSachHangDon.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.formThanhToan.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.frmChiNhanh.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.KhachHang.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.HangHoa.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.KhuyenMai.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.LichSuNhapHang.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Login.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Menu.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhanSu.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhapHang.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhaPhanPhoi.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.exe
+C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.pdb

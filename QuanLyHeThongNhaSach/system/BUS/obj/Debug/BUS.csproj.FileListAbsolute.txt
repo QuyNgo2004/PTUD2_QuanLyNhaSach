@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\BUS.dll
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\BUS.pdb
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\DAL.dll
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\ET.dll
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\DAL.pdb
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\ET.pdb
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.dll
+C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.pdb
