@@ -58,6 +58,7 @@ giaHH int not null,
 donViTinh nvarchar(15) not null,
 soLuongTon int not null,
 maNPP varchar(11) foreign key references NhaPhanPhoi(maNPP),
+hanSD int null,
 --ngayNhap datetime not null,
 --ngayHetHan datetime not null,
 moTa nvarchar(150) not null,
@@ -101,6 +102,7 @@ create table NhanSu (
 	diaChiNha nvarchar(55),
 	maCN varchar(10) foreign key references ChiNhanh(maCN),
 	chucVu nvarchar(25) not null,
+	matKhau varchar(20) not null,
 )
 go
 --Tao bang Hoa Don
