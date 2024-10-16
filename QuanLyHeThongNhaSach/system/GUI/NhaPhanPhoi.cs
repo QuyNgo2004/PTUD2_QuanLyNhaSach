@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace GUI
 
         private void NhaPhanPhoi_Load(object sender, EventArgs e)
         {
-
+            BUS_NhaPhanPhoi.Instance.hienThiChiNhanh(dgvDSNPP);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
