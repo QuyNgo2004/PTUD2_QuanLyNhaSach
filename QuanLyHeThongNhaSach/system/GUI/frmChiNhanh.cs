@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace GUI
         public frmChiNhanh()
         {
             InitializeComponent();
+        }
+
+        private void frmChiNhanh_Load(object sender, EventArgs e)
+        {
+            BUS_ChiNhanh.Instance.hienThiChiNhanh(dgvChiNhanh);
         }
     }
 }
