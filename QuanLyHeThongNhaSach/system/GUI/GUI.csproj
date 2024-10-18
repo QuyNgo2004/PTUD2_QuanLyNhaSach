@@ -120,6 +120,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNhaSachDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DanhSachHangDon.resx">
       <DependentUpon>DanhSachHangDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +179,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLNhaSachDataSet.xsc">
+      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNhaSachDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNhaSachDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNhaSachDataSet.xss">
+      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

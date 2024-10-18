@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ET_ChiNhanh.cs" />
+    <Compile Include="ET_KhachHang.cs" />
     <Compile Include="ET_NhanSu.cs" />
     <Compile Include="ET_NhaPhanPhoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
