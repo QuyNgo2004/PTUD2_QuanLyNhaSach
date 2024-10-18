@@ -1,4 +1,5 @@
 ﻿using DAL;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,45 @@ namespace BUS
         public void hienThiChiNhanh(DataGridView dgv)
         {
             dgv.DataSource = DAL_ChiNhanh.Instance.layDSChiNhanh();
+        }
+
+        public bool themChiNhanh(ET_ChiNhanh chiNhanh)
+        {
+            try
+            {
+                return DAL_ChiNhanh.Instance.themChiNhanh(chiNhanh);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void xoaChiNhanh(string ma)
+        {
+            try
+            {
+                DAL_ChiNhanh.Instance.xoaChiNhanh(ma);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void suaChiNhanh(ET_ChiNhanh chiNhanh)
+        {
+            try
+            {
+                DAL_ChiNhanh.Instance.suaChiNhanh(chiNhanh);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

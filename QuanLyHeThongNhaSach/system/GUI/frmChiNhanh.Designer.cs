@@ -38,17 +38,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
+            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,6 +81,7 @@
             this.dgvChiNhanh.RowHeadersWidth = 62;
             this.dgvChiNhanh.Size = new System.Drawing.Size(678, 525);
             this.dgvChiNhanh.TabIndex = 0;
+            this.dgvChiNhanh.Click += new System.EventHandler(this.dgvChiNhanh_Click);
             // 
             // groupBox2
             // 
@@ -106,6 +107,7 @@
             this.btnXoa.TabIndex = 23;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -120,6 +122,7 @@
             this.btnThem.TabIndex = 22;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -134,6 +137,7 @@
             this.btnSua.TabIndex = 24;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // groupBox3
             // 
@@ -171,16 +175,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtbSDT);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGhiChu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.txtMa);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtTen);
@@ -192,13 +196,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi Nhánh";
             // 
-            // textBox1
+            // txtGhiChu
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(135, 372);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 26);
-            this.textBox1.TabIndex = 33;
+            this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGhiChu.Location = new System.Drawing.Point(135, 372);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(153, 26);
+            this.txtGhiChu.TabIndex = 33;
             // 
             // label1
             // 
@@ -268,14 +272,6 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Email";
             // 
-            // txtSDT
-            // 
-            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(138, 244);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(150, 26);
-            this.txtSDT.TabIndex = 28;
-            // 
             // txtMa
             // 
             this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,6 +295,14 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(150, 26);
             this.txtTen.TabIndex = 26;
+            // 
+            // mtbSDT
+            // 
+            this.mtbSDT.Location = new System.Drawing.Point(138, 244);
+            this.mtbSDT.Mask = "000000000000";
+            this.mtbSDT.Name = "mtbSDT";
+            this.mtbSDT.Size = new System.Drawing.Size(150, 26);
+            this.mtbSDT.TabIndex = 38;
             // 
             // frmChiNhanh
             // 
@@ -337,16 +341,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.MaskedTextBox mtbSDT;
     }
 }
