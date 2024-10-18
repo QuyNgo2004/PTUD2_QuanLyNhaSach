@@ -38,14 +38,13 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.lblTenKH = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.lblMaKH = new System.Windows.Forms.Label();
+            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).BeginInit();
             this.pnlKhuyenMai.SuspendLayout();
@@ -83,6 +83,7 @@
             this.dgvDSKH.RowTemplate.Height = 28;
             this.dgvDSKH.Size = new System.Drawing.Size(949, 693);
             this.dgvDSKH.TabIndex = 0;
+            this.dgvDSKH.Click += new System.EventHandler(this.dgvDSKH_Click);
             // 
             // pnlKhuyenMai
             // 
@@ -133,6 +134,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnThoat
             // 
@@ -162,6 +164,7 @@
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -176,17 +179,18 @@
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.mtbSDT);
+            this.groupBox1.Controls.Add(this.dtpNgaySinh);
             this.groupBox1.Controls.Add(this.radNu);
             this.groupBox1.Controls.Add(this.radNam);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.lblGioiTinh);
-            this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.lblSDT);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.lblDiaChi);
@@ -204,30 +208,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhà Phân Phối";
             // 
-            // dateTimePicker1
+            // dtpNgaySinh
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(228, 415);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 32);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(228, 172);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(286, 32);
+            this.dtpNgaySinh.TabIndex = 27;
             // 
             // radNu
             // 
             this.radNu.AutoSize = true;
-            this.radNu.Location = new System.Drawing.Point(381, 165);
+            this.radNu.Location = new System.Drawing.Point(381, 231);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(65, 30);
             this.radNu.TabIndex = 26;
-            this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
             this.radNu.UseVisualStyleBackColor = true;
             // 
             // radNam
             // 
             this.radNam.AutoSize = true;
-            this.radNam.Location = new System.Drawing.Point(228, 165);
+            this.radNam.Checked = true;
+            this.radNam.Location = new System.Drawing.Point(228, 231);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(84, 30);
             this.radNam.TabIndex = 25;
@@ -238,7 +242,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(228, 358);
+            this.txtEmail.Location = new System.Drawing.Point(228, 424);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(286, 32);
@@ -247,7 +251,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 420);
+            this.label1.Location = new System.Drawing.Point(26, 177);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 26);
@@ -257,7 +261,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(27, 367);
+            this.lblEmail.Location = new System.Drawing.Point(27, 433);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(68, 26);
@@ -267,27 +271,17 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(27, 169);
+            this.lblGioiTinh.Location = new System.Drawing.Point(27, 235);
             this.lblGioiTinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(92, 26);
             this.lblGioiTinh.TabIndex = 22;
             this.lblGioiTinh.Text = "Giới tính";
-            this.lblGioiTinh.Click += new System.EventHandler(this.lblGioiTinh_Click);
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.Location = new System.Drawing.Point(228, 303);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(286, 32);
-            this.txtSDT.TabIndex = 9;
             // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(27, 307);
+            this.lblSDT.Location = new System.Drawing.Point(27, 373);
             this.lblSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(151, 26);
@@ -297,7 +291,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.Color.White;
-            this.txtDiaChi.Location = new System.Drawing.Point(228, 212);
+            this.txtDiaChi.Location = new System.Drawing.Point(228, 278);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
@@ -307,7 +301,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(26, 215);
+            this.lblDiaChi.Location = new System.Drawing.Point(26, 281);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(91, 26);
@@ -352,6 +346,14 @@
             this.lblMaKH.TabIndex = 0;
             this.lblMaKH.Text = "Mã khách hàng :";
             // 
+            // mtbSDT
+            // 
+            this.mtbSDT.Location = new System.Drawing.Point(228, 367);
+            this.mtbSDT.Mask = "0000000000";
+            this.mtbSDT.Name = "mtbSDT";
+            this.mtbSDT.Size = new System.Drawing.Size(286, 32);
+            this.mtbSDT.TabIndex = 28;
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -367,7 +369,7 @@
             this.Name = "KhachHang";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.KhachHang_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).EndInit();
             this.pnlKhuyenMai.ResumeLayout(false);
@@ -391,7 +393,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label lblDiaChi;
@@ -405,6 +406,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.MaskedTextBox mtbSDT;
     }
 }
