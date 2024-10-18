@@ -82,7 +82,6 @@
     <Compile Include="KhuyenMai.Designer.cs">
       <DependentUpon>KhuyenMai.cs</DependentUpon>
     </Compile>
-    <Compile Include="KiemTraDuLieu.cs" />
     <Compile Include="LichSuNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>

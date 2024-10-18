@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_ChiNhanh
+    public class DAL_ChiNhanh : DAL_Data
     {
         private static DAL_ChiNhanh instance;
-
         public static DAL_ChiNhanh Instance
         {
             get
@@ -22,11 +21,11 @@ namespace DAL
                 return instance;
             }
         }
-        QLNhaSachDataContext db = new QLNhaSachDataContext();
+        //QLNhaSachDataContext db = new QLNhaSachDataContext();
 
         public IQueryable layDSChiNhanh()
         {
-            IQueryable dsChiNhanh = from cn in db.ChiNhanhs
+            IQueryable dsChiNhanh = from cn in DbNhaSach.ChiNhanhs
                                     select new 
                                     { 
                                         MaCN = cn.maCN,
@@ -34,7 +33,7 @@ namespace DAL
                                         DiaChi = cn.diaChi,
                                         SoDienThoai = cn.soDienThoai,
                                         Email = cn.email,
-                                        GhiChu = cn.ghiChu,
+                                        //GhiChu = cn.ghiChu,
                                     };                                   
             return dsChiNhanh;
         }
@@ -50,9 +49,9 @@ namespace DAL
                     diaChi = chiNhanh.DiaChi,
                     soDienThoai = chiNhanh.SoDienThoai,
                     email = chiNhanh.Email,
-                    ghiChu = chiNhanh.GhiChu,
+                    //ghiChu = chiNhanh.GhiChu,
                 };
-                db.ChiNhanhs.InsertOnSubmit(cn);
+                DbNhaSach.ChiNhanhs.InsertOnSubmit(cn);
             }
             catch (Exception ex) 
             {
@@ -60,7 +59,7 @@ namespace DAL
             }
             finally
             {
-                db.SubmitChanges();
+               DbNhaSach.SubmitChanges();
             }
             return true;
         }
@@ -69,13 +68,13 @@ namespace DAL
         {
             try
             {
-                var xoa = from cn in db.ChiNhanhs
+                var xoa = from cn in DbNhaSach.ChiNhanhs
                           where cn.maCN == ma
                           select cn;
                 foreach (var item in xoa)
                 {
-                    db.ChiNhanhs.DeleteOnSubmit(item);
-                    db.SubmitChanges();
+                    DbNhaSach.ChiNhanhs.DeleteOnSubmit(item);
+                    DbNhaSach.SubmitChanges();
                 }
             }
             catch (Exception ex)
@@ -89,13 +88,13 @@ namespace DAL
         {
             try
             {
-                var capnhat = db.ChiNhanhs.Single(cn => cn.maCN == chiNhanh.MaCN);
+                var capnhat = DbNhaSach.ChiNhanhs.Single(cn => cn.maCN == chiNhanh.MaCN);
                 capnhat.maCN = chiNhanh.MaCN;
                 capnhat.tenCN = chiNhanh.TenCN;
                 capnhat.diaChi = chiNhanh.DiaChi;
                 capnhat.soDienThoai = chiNhanh.SoDienThoai;
-                capnhat.ghiChu = chiNhanh.GhiChu;
-                db.SubmitChanges();
+                //capnhat.ghiChu = chiNhanh.GhiChu;
+                DbNhaSach.SubmitChanges();
             }
             catch (Exception ex)
             {
