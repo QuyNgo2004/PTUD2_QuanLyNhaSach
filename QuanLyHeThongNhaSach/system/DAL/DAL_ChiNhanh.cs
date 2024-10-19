@@ -40,6 +40,10 @@ namespace DAL
 
         public bool themChiNhanh(ET_ChiNhanh chiNhanh)
         {
+            if (DbNhaSach.ChiNhanhs.Any(a => a.maCN == chiNhanh.MaCN))
+            {
+                throw new Exception("Đã tồn tại Mã này trong Cơ Sở Dữ Liệu vui lòng nhập mã khác");
+            }
             try
             {
                 ChiNhanh cn = new ChiNhanh

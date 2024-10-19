@@ -28,7 +28,8 @@ namespace DAL
             bool flag = true;
             try
             {
-                string conection = @"Data Source=" + ".adf\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
+                //string conection = @"Data Source=" + ".adf\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
+                string conection = @"Data Source=" + "." + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
                 SqlConnection sqlConnection = new SqlConnection(conection);
                 sqlConnection.Open();
                 DbNhaSach =  Connetion_String(conection);

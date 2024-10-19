@@ -38,6 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.txtMa = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -141,13 +142,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnLamMoi);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(10, 447);
+            this.groupBox3.Location = new System.Drawing.Point(10, 425);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(294, 100);
+            this.groupBox3.Size = new System.Drawing.Size(294, 159);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thanh Công Cụ";
@@ -195,6 +197,14 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi Nhánh";
+            // 
+            // mtbSDT
+            // 
+            this.mtbSDT.Location = new System.Drawing.Point(138, 244);
+            this.mtbSDT.Mask = "000000000000";
+            this.mtbSDT.Name = "mtbSDT";
+            this.mtbSDT.Size = new System.Drawing.Size(150, 26);
+            this.mtbSDT.TabIndex = 38;
             // 
             // txtGhiChu
             // 
@@ -296,13 +306,20 @@
             this.txtTen.Size = new System.Drawing.Size(150, 26);
             this.txtTen.TabIndex = 26;
             // 
-            // mtbSDT
+            // btnLamMoi
             // 
-            this.mtbSDT.Location = new System.Drawing.Point(138, 244);
-            this.mtbSDT.Mask = "000000000000";
-            this.mtbSDT.Name = "mtbSDT";
-            this.mtbSDT.Size = new System.Drawing.Size(150, 26);
-            this.mtbSDT.TabIndex = 38;
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(96, 95);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(102, 35);
+            this.btnLamMoi.TabIndex = 25;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // frmChiNhanh
             // 
@@ -352,5 +369,6 @@
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.MaskedTextBox mtbSDT;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }
