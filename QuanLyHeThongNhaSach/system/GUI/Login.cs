@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GUI
 {
     public partial class Login : Form
     {
+        private BUS_Data data = new BUS_Data();
         public bool IsLoggedIn { get; private set; }
         public Login()
         {
@@ -64,6 +66,19 @@ namespace GUI
             else
             {
                 MessageBox.Show("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (data.Load_Data() == true)
+            {
+                MessageBox.Show("Connection success!");
+            }
+            else
+            {
+                MessageBox.Show("Connection faie!");
+                Close();
             }
         }
     }

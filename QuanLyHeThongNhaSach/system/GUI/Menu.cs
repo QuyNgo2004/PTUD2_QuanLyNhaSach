@@ -1,4 +1,5 @@
-﻿using GUI;
+﻿using BUS;
+using GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace GUI
 {
     public partial class Menu : Form
     {
+        
         public Menu()
         {
             InitializeComponent();
@@ -204,6 +206,11 @@ namespace GUI
             //pnlMenuShow.Tag = thanhToan;
             //thanhToan.Dock = DockStyle.Fill;
             //pnlMenuShow.Controls.Add(thanhToan);
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
