@@ -13,6 +13,11 @@ namespace BUS
     {
         private static BUS_NhanSu instance;
 
+
+        public string AutoMa_NhanSu()
+        {
+            return DAL_NhanSu.Instance.AutoMa_NhanSu();
+        }
         public static BUS_NhanSu Instance
         {
             get
@@ -24,7 +29,10 @@ namespace BUS
                 return instance;
             }
         }
-
+        public bool KT_TTNS(string ma)
+        {
+            return DAL_NhanSu.Instance.KT_TTNS(ma);
+        }
         public void hienThiNhanSu(DataGridView dgv)
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
