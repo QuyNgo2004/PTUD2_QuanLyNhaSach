@@ -9,35 +9,32 @@ using System.Windows.Forms;
 
 namespace BUS
 {
-    public class BUS_ChiNhanh
+    public class BUS_NhanSu
     {
-        private static BUS_ChiNhanh instance;
+        private static BUS_NhanSu instance;
 
-        public static BUS_ChiNhanh Instance
+        public static BUS_NhanSu Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new BUS_ChiNhanh();
+                    instance = new BUS_NhanSu();
                 }
                 return instance;
             }
         }
-        public IQueryable Load_ChiNhanh()
+
+        public void hienThiNhanSu(DataGridView dgv)
         {
-           return DAL_ChiNhanh.Instance.layDSChiNhanh();
-        }
-        public void hienThiChiNhanh(DataGridView dgv)
-        {
-            dgv.DataSource = DAL_ChiNhanh.Instance.layDSChiNhanh();
+            dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
         }
 
-        public bool themChiNhanh(ET_ChiNhanh chiNhanh)
+        public bool themNhanSu(ET_NhanSu NhanSu)
         {
             try
             {
-                return DAL_ChiNhanh.Instance.themChiNhanh(chiNhanh);
+                return DAL_NhanSu.Instance.themNhanSu(NhanSu);
             }
             catch (Exception ex)
             {
@@ -46,11 +43,11 @@ namespace BUS
             }
         }
 
-        public void xoaChiNhanh(string ma)
+        public void xoaNhanSu(string ma)
         {
             try
             {
-                DAL_ChiNhanh.Instance.xoaChiNhanh(ma);
+                DAL_NhanSu.Instance.xoaNhanSu(ma);
             }
             catch (Exception ex)
             {
@@ -59,11 +56,11 @@ namespace BUS
             }
         }
 
-        public void suaChiNhanh(ET_ChiNhanh chiNhanh)
+        public void suaNhanSu(ET_NhanSu NhanSu)
         {
             try
             {
-                DAL_ChiNhanh.Instance.suaChiNhanh(chiNhanh);
+                DAL_NhanSu.Instance.suaNhanSu(NhanSu);
             }
             catch (Exception ex)
             {

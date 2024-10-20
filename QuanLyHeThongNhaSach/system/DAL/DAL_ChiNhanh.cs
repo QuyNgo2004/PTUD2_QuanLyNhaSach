@@ -33,7 +33,7 @@ namespace DAL
                                         DiaChi = cn.diaChi,
                                         SoDienThoai = cn.soDienThoai,
                                         Email = cn.email,
-                                        //GhiChu = cn.ghiChu,
+                                        GhiChu = cn.ghiChu,
                                     };                                   
             return dsChiNhanh;
         }
@@ -49,7 +49,7 @@ namespace DAL
                     diaChi = chiNhanh.DiaChi,
                     soDienThoai = chiNhanh.SoDienThoai,
                     email = chiNhanh.Email,
-                    //ghiChu = chiNhanh.GhiChu,
+                    ghiChu = chiNhanh.GhiChu,
                 };
                 DbNhaSach.ChiNhanhs.InsertOnSubmit(cn);
             }
@@ -93,7 +93,7 @@ namespace DAL
                 capnhat.tenCN = chiNhanh.TenCN;
                 capnhat.diaChi = chiNhanh.DiaChi;
                 capnhat.soDienThoai = chiNhanh.SoDienThoai;
-                //capnhat.ghiChu = chiNhanh.GhiChu;
+                capnhat.ghiChu = chiNhanh.GhiChu;
                 DbNhaSach.SubmitChanges();
             }
             catch (Exception ex)
