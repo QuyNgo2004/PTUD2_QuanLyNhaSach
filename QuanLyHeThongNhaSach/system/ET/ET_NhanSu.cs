@@ -8,10 +8,11 @@ namespace ET
 {
     public class ET_NhanSu
     {
-        private string maNS, tenNS, gioiTinh, cCCD, email, diaChi, maCN, chucVu, matKhau, sDT;
+        private string maNS, tenNS, gioiTinh, cCCD, email, diaChi, maCN, matKhau, sDT;
+        private int chucVu;
 
-       
-        public ET_NhanSu(string maNS, string tenNS, string gioiTinh, string cCCD, string email, string diaChi, string maCN, string chucVu, string matKhau, string sDT)
+
+        public ET_NhanSu(string maNS, string tenNS, string gioiTinh, string cCCD, string email, string diaChi, string maCN, int chucVu, string matKhau, string sDT)
         {
             this.MaNS = maNS;
             this.TenNS = tenNS;
@@ -35,7 +36,7 @@ namespace ET
         public string Email { get => email; set => email = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string MaCN { get => maCN; set => maCN = value; }
-        public string ChucVu { get => chucVu; set => chucVu = value; }
+        public int ChucVu { get => chucVu; set => chucVu = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public string SDT { get => sDT; set => sDT = value; }
 

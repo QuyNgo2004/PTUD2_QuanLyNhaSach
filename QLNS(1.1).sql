@@ -11,7 +11,7 @@ tenCN varchar(50) not null,
 diaChi nvarchar(150) not null,
 soDienThoai varchar(12) not null,
 email varchar(50) not null,
-ghiChi nvarchar(150) null,
+ghiChu nvarchar(150) null,
 primary key(maCN))
 go
 --Tạo bảng loại hàng hóa
@@ -21,7 +21,11 @@ tenLHH nvarchar (45) not null,
 ghiChu nvarchar(150) not null,
 primary key (maLHH)
 )
-
+go
+--Tao bang chuc vu
+create table ChucVu(
+maChucVu INT IDENTITY(1,1) primary key ,
+tenChucVu nvarchar(20) not null)
 go
 --Tạo bảng nhà phân phối
 create table NhaPhanPhoi(
@@ -100,7 +104,7 @@ create table NhanSu (
 	emailNV varchar(40) not null,
 	diaChiNha nvarchar(55),
 	maCN varchar(10) foreign key references ChiNhanh(maCN),
-	chucVu nvarchar(25) not null,
+	chucVu INT  foreign key references ChucVu(maChucVu) ,
 	matkhau nvarchar(25) not null,
 )
 go
