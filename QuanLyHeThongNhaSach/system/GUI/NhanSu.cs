@@ -56,7 +56,15 @@ namespace GUI
         {
             try
             {
-                Load_NS();
+               
+                    if (MessageBox.Show("Bạn chắc chắn làm mới form này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        
+                            MessageBox.Show("Làm mới thành công!   ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Load_NS();
+                        
+                    }
+                
             }
             catch (Exception ex) {
                 MessageBox.Show("Lỗi load form: " + ex.Message,"Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,7 +74,7 @@ namespace GUI
         private void Load_NS()
         {
             ns.hienThiNhanSu(dgvDSNhanSu);
-            txtMaNS.Text = null;
+            txtMaNS.Text = ns.AutoMa_NhanSu();
             txtTenNS.Text = null;
             radNam.Checked = true;
             txtCCCD.Text = null;
@@ -149,14 +157,22 @@ namespace GUI
 
                 if (TextBox_Null() == true)
                 {
-                    if (MessageBox.Show("Bạn chắc chắn thêm nhân sự này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (ns.KT_TTNS(txtMaNS.Text) == true)
                     {
-                        if (ns.themNhanSu(Info()))
+                        if (MessageBox.Show("Bạn chắc chắn thêm nhân sự này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            MessageBox.Show("Thêm nhân sự thành công!   ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Load_NS();
+                            if (ns.themNhanSu(Info()))
+                            {
+                                MessageBox.Show("Thêm nhân sự thành công!   ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Load_NS();
+                            }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Nhân sự thêm vào bị trùng mãNS ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
                 
             }
@@ -189,12 +205,16 @@ namespace GUI
         {
             try
             {
-                if (MessageBox.Show("Bạn có muốn sửa nhân sự đang chọn không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (TextBox_Null() == true)
                 {
-                    ns.suaNhanSu(Info());
-                    MessageBox.Show("Sửa thành công", "Thông báo");
-                    Load_NS();
+                    if (MessageBox.Show("Bạn có muốn sửa nhân sự đang chọn không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ns.suaNhanSu(Info());
+                        MessageBox.Show("Sửa thành công", "Thông báo");
+                        Load_NS();
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -206,12 +226,20 @@ namespace GUI
         {
             try
             {
-                if (MessageBox.Show("Bạn có muốn xóa nhân sự đang chọn không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (ns.KT_TTNS(txtMaNS.Text) == false)
                 {
-                    ns.xoaNhanSu(Info().MaNS);
-                    MessageBox.Show("Xóa thành công", "Thông báo");
-                    Load_NS();
+                    if (MessageBox.Show("Bạn có muốn xóa nhân sự đang chọn không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ns.xoaNhanSu(Info().MaNS);
+                        MessageBox.Show("Xóa thành công", "Thông báo");
+                        Load_NS();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy nhân sự này? ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             catch (Exception ex)
             {

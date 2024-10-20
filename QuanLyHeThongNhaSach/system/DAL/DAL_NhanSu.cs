@@ -43,7 +43,25 @@ namespace DAL
                                     };
             return dsNhanSu;
         }
-
+        //Tạo mã tự động
+        public string AutoMa_NhanSu()
+        {
+            int demNS = dbNhaSach.NhanSus.Count();
+            string newMa;
+            do
+            {
+                demNS++;
+                if(demNS < 10)
+                {
+                    newMa = $"NS0{demNS}";
+                }
+                else
+                {
+                    newMa = $"NS{demNS}";
+                }
+            } while (dbNhaSach.NhanSus.Any(ns => ns.maNS == newMa));
+            return newMa;
+        }
         public bool themNhanSu(ET_NhanSu NhanSu)
         {
             try
@@ -73,7 +91,26 @@ namespace DAL
             }
             return true;
         }
+        public bool KT_TTNS(string ma)
+        {
+            bool flag = false;
+            try
+            {
+                var xoa = from ns in DbNhaSach.NhanSus
+                          where ns.maNS == ma
+                          select ns;
+                if(xoa.Count() == 0)
+                {
+                    flag = true;
+                }
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            return flag;
+        }
         public void xoaNhanSu(string ma)
         {
             try

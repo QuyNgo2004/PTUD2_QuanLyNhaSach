@@ -215,6 +215,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(177, 24);
             this.txtCCCD.TabIndex = 7;
+            // 
             // lblCccdNS
             // 
             this.lblCccdNS.AutoSize = true;
@@ -253,6 +254,7 @@
             // txtMaNS
             // 
             this.txtMaNS.BackColor = System.Drawing.Color.White;
+            this.txtMaNS.Enabled = false;
             this.txtMaNS.Location = new System.Drawing.Point(131, 40);
             this.txtMaNS.Name = "txtMaNS";
             this.txtMaNS.Size = new System.Drawing.Size(177, 24);
