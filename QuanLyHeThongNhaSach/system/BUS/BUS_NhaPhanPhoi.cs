@@ -68,5 +68,23 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public string AutoMa_NhaPhanPhoi()
+        {
+            return DAL_NhaPhanPhoi.Instance.AutoMa_NhaPhanPhoi();
+        }
+
+        public bool KiemTraMaNhaPhanPhoi(string ma)
+        {
+            try
+            {
+                return DAL_NhaPhanPhoi.Instance.KiemTraMaNhaPhanPhoi(ma);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

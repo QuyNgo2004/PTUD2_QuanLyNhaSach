@@ -38,12 +38,48 @@ namespace DAL
             return dsChiNhanh;
         }
 
+        public string AutoMa_ChiNhanh()
+        {
+            int demCN = dbNhaSach.ChiNhanhs.Count();
+            string newMa;
+            do
+            {
+                demCN++;
+                if (demCN < 10)
+                {
+                    newMa = $"CN0{demCN}";
+                }
+                else
+                {
+                    newMa = $"CN{demCN}";
+                }
+            } while (dbNhaSach.ChiNhanhs.Any(cn => cn.maCN == newMa));
+            return newMa;
+        }
+        public bool KiemTraMaChiNhanh(string ma)
+        {
+            bool flag = false;
+            try
+            {
+                var xoa = from cn in DbNhaSach.ChiNhanhs
+                          where cn.maCN == ma
+                          select cn;
+                if (xoa.Count() == 0)
+                {
+                    flag = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return flag;
+        }
+
         public bool themChiNhanh(ET_ChiNhanh chiNhanh)
         {
-            if (DbNhaSach.ChiNhanhs.Any(a => a.maCN == chiNhanh.MaCN))
-            {
-                throw new Exception("Đã tồn tại Mã này trong Cơ Sở Dữ Liệu vui lòng nhập mã khác");
-            }
+            
             try
             {
                 ChiNhanh cn = new ChiNhanh

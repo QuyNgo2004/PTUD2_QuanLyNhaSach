@@ -14,6 +14,10 @@ namespace ET
         private string sdtNPP;
         private string emailNPP;
 
+        public ET_NhaPhanPhoi()
+        {
+        }
+
         public ET_NhaPhanPhoi(string maNPP, string tenNPP, string diaChiNPP, string sdtNPP, string emailNPP)
         {
             this.maNPP = maNPP;

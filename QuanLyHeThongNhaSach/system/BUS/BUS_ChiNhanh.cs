@@ -71,5 +71,22 @@ namespace BUS
                 throw ex;
             }
         }
+        public string AutoMa_ChiNhanh()
+        {
+            return DAL_ChiNhanh.Instance.AutoMa_ChiNhanh();
+        }
+
+        public bool KiemTraMaChiNhanh(string ma)
+        {
+            try
+            {
+                return DAL_ChiNhanh.Instance.KiemTraMaChiNhanh(ma);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
