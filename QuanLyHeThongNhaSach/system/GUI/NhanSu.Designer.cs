@@ -164,6 +164,7 @@
             this.txtDiaChiNha.Name = "txtDiaChiNha";
             this.txtDiaChiNha.Size = new System.Drawing.Size(177, 24);
             this.txtDiaChiNha.TabIndex = 13;
+            this.txtDiaChiNha.Validated += new System.EventHandler(this.txtDiaChiNha_Validated);
             // 
             // lblDiaChiNha
             // 
@@ -181,6 +182,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(177, 24);
             this.txtEmail.TabIndex = 11;
+            this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // lblEmail
             // 
@@ -198,6 +200,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(177, 24);
             this.txtSDT.TabIndex = 9;
+            this.txtSDT.Validated += new System.EventHandler(this.txtSDT_Validated);
             // 
             // lblSDT
             // 
@@ -215,6 +218,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(177, 24);
             this.txtCCCD.TabIndex = 7;
+            this.txtCCCD.Validated += new System.EventHandler(this.txtCCCD_Validated);
             // 
             // lblCccdNS
             // 
@@ -241,6 +245,7 @@
             this.txtTenNS.Name = "txtTenNS";
             this.txtTenNS.Size = new System.Drawing.Size(177, 24);
             this.txtTenNS.TabIndex = 3;
+            this.txtTenNS.Validated += new System.EventHandler(this.txtTenNS_Validated);
             // 
             // lblTenNS
             // 
