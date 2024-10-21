@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ET;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_NhaPhanPhoi
+    public class DAL_NhaPhanPhoi : DAL_Data
     {
         private static DAL_NhaPhanPhoi instance;
 
@@ -22,11 +23,11 @@ namespace DAL
 
             }
         }
-        QLNhaSachDataContext db = new QLNhaSachDataContext();
+        //QLNhaSachDataContext db = new QLNhaSachDataContext();
 
         public IQueryable layDSNhaPhanPhoi()
         {
-            IQueryable dsNhaCungCap = from ncc in db.NhaPhanPhois
+            IQueryable dsNhaPhanPhoi = from ncc in DbNhaSach.NhaPhanPhois
                                       select new 
                                       {
                                           MaNPP = ncc.maNPP,
@@ -35,7 +36,74 @@ namespace DAL
                                           SoDienThoai = ncc.sdtNPP,
                                           Email = ncc.emailNPP,
                                       };
-            return dsNhaCungCap;
+            return dsNhaPhanPhoi;
+        }
+        public bool themNhaPhanPhoi(ET_NhaPhanPhoi nhaPhanPhoi)
+        {
+            if (DbNhaSach.NhaPhanPhois.Any(a => a.maNPP == nhaPhanPhoi.MaNPP))
+            {
+                throw new Exception("Đã tồn tại Mã này trong Cơ Sở Dữ Liệu vui lòng nhập mã khác");
+            }
+            try
+            {
+                NhaPhanPhoi npp = new NhaPhanPhoi
+                {
+                    maNPP = nhaPhanPhoi.MaNPP,
+                    tenNPP = nhaPhanPhoi.TenNPP,
+                    diachiNPP = nhaPhanPhoi.DiaChiNPP,
+                    sdtNPP = nhaPhanPhoi.SdtNPP,
+                    emailNPP = nhaPhanPhoi.EmailNPP,
+                };
+                DbNhaSach.NhaPhanPhois.InsertOnSubmit(npp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DbNhaSach.SubmitChanges();
+            }
+            return true;
+        }
+
+        public void xoaNhaPhanPhoi(string ma)
+        {
+            try
+            {
+                var xoa = from cn in DbNhaSach.ChiNhanhs
+                          where cn.maCN == ma
+                          select cn;
+                foreach (var item in xoa)
+                {
+                    DbNhaSach.ChiNhanhs.DeleteOnSubmit(item);
+                    DbNhaSach.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void suaNhaPhanPhoi(ET_NhaPhanPhoi nhaPhanPhoi)
+        {
+            try
+            {
+                var capnhat = DbNhaSach.NhaPhanPhois.Single(npp => npp.maNPP == nhaPhanPhoi.MaNPP);
+                capnhat.maNPP = nhaPhanPhoi.MaNPP;
+                capnhat.tenNPP = nhaPhanPhoi.TenNPP;
+                capnhat.diachiNPP = nhaPhanPhoi.DiaChiNPP;
+                capnhat.sdtNPP = nhaPhanPhoi.SdtNPP;
+                capnhat.emailNPP = nhaPhanPhoi.EmailNPP;
+                DbNhaSach.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
