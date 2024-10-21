@@ -156,5 +156,19 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtMa.Clear();
+            txtTen.Clear();
+            txtDiaChi.Clear();
+            mtbSDT.Clear();
+            txtEmail.Clear();
+            txtGhiChu.Clear();
+            txtMa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
     }
 }
