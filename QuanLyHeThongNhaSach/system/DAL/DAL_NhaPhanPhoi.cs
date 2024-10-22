@@ -40,10 +40,7 @@ namespace DAL
         }
         public bool themNhaPhanPhoi(ET_NhaPhanPhoi nhaPhanPhoi)
         {
-            if (DbNhaSach.NhaPhanPhois.Any(a => a.maNPP == nhaPhanPhoi.MaNPP))
-            {
-                throw new Exception("Đã tồn tại Mã này trong Cơ Sở Dữ Liệu vui lòng nhập mã khác");
-            }
+            
             try
             {
                 NhaPhanPhoi npp = new NhaPhanPhoi
@@ -71,12 +68,12 @@ namespace DAL
         {
             try
             {
-                var xoa = from cn in DbNhaSach.ChiNhanhs
-                          where cn.maCN == ma
-                          select cn;
+                var xoa = from npp in DbNhaSach.NhaPhanPhois
+                          where npp.maNPP == ma
+                          select npp;
                 foreach (var item in xoa)
                 {
-                    DbNhaSach.ChiNhanhs.DeleteOnSubmit(item);
+                    DbNhaSach.NhaPhanPhois.DeleteOnSubmit(item);
                     DbNhaSach.SubmitChanges();
                 }
             }
@@ -85,6 +82,45 @@ namespace DAL
 
                 throw ex;
             }
+        }
+        public string AutoMa_NhaPhanPhoi()
+        {
+            int demNPP = dbNhaSach.NhaPhanPhois.Count();
+            string newMa;
+            do
+            {
+                demNPP++;
+                if (demNPP < 10)
+                {
+                    newMa = $"NPP0{demNPP}";
+                }
+                else
+                {
+                    newMa = $"NPP{demNPP}";
+                }
+            } while (dbNhaSach.NhaPhanPhois.Any(npp => npp.maNPP == newMa));
+            return newMa;
+        }
+
+        public bool KiemTraMaNhaPhanPhoi(string ma)
+        {
+            bool flag = false;
+            try
+            {
+                var xoa = from npp in DbNhaSach.NhaPhanPhois
+                          where npp.maNPP == ma
+                          select npp;
+                if (xoa.Count() == 0)
+                {
+                    flag = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return flag;
         }
 
         public void suaNhaPhanPhoi(ET_NhaPhanPhoi nhaPhanPhoi)

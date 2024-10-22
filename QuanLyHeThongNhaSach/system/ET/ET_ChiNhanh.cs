@@ -15,6 +15,10 @@ namespace ET
         private string email;
         private string ghiChu;
 
+        public ET_ChiNhanh()
+        {
+        }
+
         public ET_ChiNhanh(string maCN, string tenCN, string diaChi, string soDienThoai, string email, string ghiChu)
         {
             this.maCN = maCN;
@@ -24,6 +28,7 @@ namespace ET
             this.email = email;
             this.ghiChu = ghiChu;
         }
+
 
         public string MaCN { get => maCN; set => maCN = value; }
         public string TenCN { get => tenCN; set => tenCN = value; }

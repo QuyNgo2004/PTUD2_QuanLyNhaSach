@@ -216,7 +216,7 @@
             // mtbSDT
             // 
             this.mtbSDT.Location = new System.Drawing.Point(138, 244);
-            this.mtbSDT.Mask = "000000000000";
+            this.mtbSDT.Mask = "0000000000";
             this.mtbSDT.Name = "mtbSDT";
             this.mtbSDT.Size = new System.Drawing.Size(150, 26);
             this.mtbSDT.TabIndex = 38;

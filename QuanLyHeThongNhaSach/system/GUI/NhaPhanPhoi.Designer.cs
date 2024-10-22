@@ -39,6 +39,7 @@
             this.txtMaNPP = new System.Windows.Forms.TextBox();
             this.lblMaNPP = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -46,9 +47,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
-            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.mstSDT = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNPP)).BeginInit();
             this.pnlKhuyenMai.SuspendLayout();
@@ -82,6 +82,7 @@
             this.dgvDSNPP.RowTemplate.Height = 28;
             this.dgvDSNPP.Size = new System.Drawing.Size(733, 476);
             this.dgvDSNPP.TabIndex = 0;
+            this.dgvDSNPP.Click += new System.EventHandler(this.dgvDSNPP_Click);
             // 
             // pnlKhuyenMai
             // 
@@ -172,6 +173,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thanh Công Cụ";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(22, 143);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(202, 23);
+            this.btnLamMoi.TabIndex = 9;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -186,6 +203,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThoat
             // 
@@ -217,6 +235,7 @@
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -232,12 +251,13 @@
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mstSDT);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.lblEmail);
-            this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.lblSDT);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.lblDiaChi);
@@ -270,14 +290,6 @@
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email :";
             // 
-            // txtSDT
-            // 
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.Location = new System.Drawing.Point(21, 248);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(203, 24);
-            this.txtSDT.TabIndex = 9;
-            // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
@@ -287,21 +299,13 @@
             this.lblSDT.TabIndex = 8;
             this.lblSDT.Text = "Số điện thoại :";
             // 
-            // btnLamMoi
+            // mstSDT
             // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLamMoi.FlatAppearance.BorderSize = 0;
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(22, 143);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(202, 23);
-            this.btnLamMoi.TabIndex = 9;
-            this.btnLamMoi.Text = "Làm Mới";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            this.mstSDT.Location = new System.Drawing.Point(22, 250);
+            this.mstSDT.Mask = "0000000000";
+            this.mstSDT.Name = "mstSDT";
+            this.mstSDT.Size = new System.Drawing.Size(201, 24);
+            this.mstSDT.TabIndex = 12;
             // 
             // NhaPhanPhoi
             // 
@@ -348,10 +352,10 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.MaskedTextBox mstSDT;
     }
 }
