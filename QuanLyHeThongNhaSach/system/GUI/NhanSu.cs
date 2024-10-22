@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
@@ -75,6 +76,7 @@ namespace GUI
         {
             ns.hienThiNhanSu(dgvDSNhanSu);
             txtMaNS.Text = ns.AutoMa_NhanSu();
+            btnThem.Focus();
             txtTenNS.Text = null;
             radNam.Checked = true;
             txtCCCD.Text = null;
@@ -252,12 +254,10 @@ namespace GUI
             if (error.KT_SoKiTuCoTheLuu(txtTenNS.Text, 45) == false )
             {
                 MessageBox.Show("Tên nhân sự vượt quá số kí tự \n(Kí tự giới hạn 45)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenNS.Focus();
             }
             else if( error.KT_ChuoiKiTu(txtTenNS.Text) == false)
             {
                 MessageBox.Show("Tên nhân sự sai format \n(Chỉ có thể nhập kí tự)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenNS.Focus();
             }
         }
 
@@ -266,12 +266,10 @@ namespace GUI
             if (error.KT_SoKiTu(txtCCCD.Text, 11) == false)
             {
                 MessageBox.Show("CCCD nhân sự phải có 11 số kí tự ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtCCCD.Focus();
             }
             else if (error.KT_ChuoiSo(txtCCCD.Text) == false)
             {
                 MessageBox.Show("CCCD nhân sự sai format \n(Chỉ có thể nhập số)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtCCCD.Focus();
             }
         }
 
@@ -280,12 +278,10 @@ namespace GUI
             if (error.KT_SoKiTu(txtSDT.Text, 10) == false)
             {
                 MessageBox.Show("Số điện thoại nhân sự phải có 10 số kí tự ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSDT.Focus();
             }
             else if (error.KT_ChuoiSoDT(txtSDT.Text) == false)
             {
                 MessageBox.Show("Số điện thoại nhân sự sai format \n(Chỉ có thể nhập số bắt đàu là 0)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSDT.Focus();
             }
         }
 
@@ -294,12 +290,10 @@ namespace GUI
             if (error.KT_Email(txtEmail.Text) == false)
             {
                 MessageBox.Show("Vui lòng nhập email nhân sự đúng format!\n (Ex: abc123@gmail.com)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmail.Focus();
             }
             else if (error.KT_SoKiTuCoTheLuu(txtEmail.Text, 40) == false)
             {
                 MessageBox.Show("Email nhân sự vượt quá số kí tự \n(Kí tự giới hạn 40)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmail.Focus();
             }
         }
 
@@ -308,9 +302,14 @@ namespace GUI
             if(error.KT_SoKiTuCoTheLuu(txtDiaChiNha.Text, 55) == false)
             {
                 MessageBox.Show("Email nhân sự vượt quá số kí tự \n(Kí tự giới hạn 55)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDiaChiNha.Focus();
             }
             
+        }
+        // Mở màn hình quản lý ca trực
+        private void btnCaTruc_Click(object sender, EventArgs e)
+        {
+            Menu formMenu = (Menu)this.ParentForm;
+            formMenu.openChildForm(new QuanLyCaTruc());
         }
     }
 }

@@ -58,6 +58,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnCaTruc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhanSu)).BeginInit();
@@ -160,6 +161,7 @@
             // txtDiaChiNha
             // 
             this.txtDiaChiNha.BackColor = System.Drawing.Color.White;
+            this.txtDiaChiNha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChiNha.Location = new System.Drawing.Point(131, 238);
             this.txtDiaChiNha.Name = "txtDiaChiNha";
             this.txtDiaChiNha.Size = new System.Drawing.Size(177, 24);
@@ -178,6 +180,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Location = new System.Drawing.Point(131, 203);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(177, 24);
@@ -196,6 +199,7 @@
             // txtSDT
             // 
             this.txtSDT.BackColor = System.Drawing.Color.White;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSDT.Location = new System.Drawing.Point(131, 170);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(177, 24);
@@ -214,6 +218,7 @@
             // txtCCCD
             // 
             this.txtCCCD.BackColor = System.Drawing.Color.White;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCCCD.Location = new System.Drawing.Point(131, 136);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(177, 24);
@@ -241,6 +246,7 @@
             // txtTenNS
             // 
             this.txtTenNS.BackColor = System.Drawing.Color.White;
+            this.txtTenNS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenNS.Location = new System.Drawing.Point(131, 73);
             this.txtTenNS.Name = "txtTenNS";
             this.txtTenNS.Size = new System.Drawing.Size(177, 24);
@@ -259,6 +265,7 @@
             // txtMaNS
             // 
             this.txtMaNS.BackColor = System.Drawing.Color.White;
+            this.txtMaNS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaNS.Enabled = false;
             this.txtMaNS.Location = new System.Drawing.Point(131, 40);
             this.txtMaNS.Name = "txtMaNS";
@@ -335,10 +342,10 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(46, 117);
+            this.btnSua.Location = new System.Drawing.Point(46, 79);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(242, 23);
+            this.btnSua.Size = new System.Drawing.Size(122, 23);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -354,7 +361,7 @@
             this.btnThem.Location = new System.Drawing.Point(45, 38);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(243, 23);
+            this.btnThem.Size = new System.Drawing.Size(123, 23);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -367,10 +374,10 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(45, 200);
+            this.btnThoat.Location = new System.Drawing.Point(45, 161);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(243, 23);
+            this.btnThoat.Size = new System.Drawing.Size(262, 23);
             this.btnThoat.TabIndex = 2;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -383,10 +390,10 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(45, 77);
+            this.btnXoa.Location = new System.Drawing.Point(185, 38);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(243, 23);
+            this.btnXoa.Size = new System.Drawing.Size(123, 23);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -394,6 +401,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCaTruc);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnThem);
@@ -414,14 +422,30 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(46, 158);
+            this.btnLamMoi.Location = new System.Drawing.Point(185, 79);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(242, 23);
+            this.btnLamMoi.Size = new System.Drawing.Size(122, 23);
             this.btnLamMoi.TabIndex = 1;
             this.btnLamMoi.Text = "Tạo Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnCaTruc
+            // 
+            this.btnCaTruc.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCaTruc.FlatAppearance.BorderSize = 0;
+            this.btnCaTruc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaTruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaTruc.ForeColor = System.Drawing.Color.White;
+            this.btnCaTruc.Location = new System.Drawing.Point(45, 121);
+            this.btnCaTruc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCaTruc.Name = "btnCaTruc";
+            this.btnCaTruc.Size = new System.Drawing.Size(262, 23);
+            this.btnCaTruc.TabIndex = 4;
+            this.btnCaTruc.Text = "Quản lý ca trực";
+            this.btnCaTruc.UseVisualStyleBackColor = false;
+            this.btnCaTruc.Click += new System.EventHandler(this.btnCaTruc_Click);
             // 
             // NhanSu
             // 
@@ -481,5 +505,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnCaTruc;
     }
 }
