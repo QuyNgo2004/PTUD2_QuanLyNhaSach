@@ -112,7 +112,6 @@ go
 create table HoaDon(
 maHD varchar(10) not null,
 maNS varchar (7) foreign key references NhanSu(maNS),
-maCN varchar(10) foreign key references ChiNhanh(maCN),
 maKH varchar(11) foreign key references KhachHang(maKH),
 donGia float,
 ngayIn date not null,
@@ -127,3 +126,15 @@ maHH varchar(13)  foreign key references HangHoa(maHH) ,
 SL int,
 constraint PK_CTHD primary key (maHD,maHH,maCTHD))
 
+--Tao bảng ca trực
+create table CaTruc(
+maCT INT IDENTITY(1,1) primary key ,
+maCN varchar(10) foreign key references ChiNhanh(maCN),
+tenCaTruc nvarchar(30) not null ,
+SL int,
+ghiChu nvarchar(150) null, )
+--Tao bảng chi tiết ca trực
+create table ChiTietCaTruc(
+maCTCT INT IDENTITY(1,1) primary key ,
+maCT INT foreign key references CaTruc(maCT),
+maNS varchar(7) foreign key references NhanSu(maNS), )

@@ -310,6 +310,7 @@ namespace GUI
         {
             Menu formMenu = (Menu)this.ParentForm;
             formMenu.openChildForm(new QuanLyCaTruc());
+            this.Close();
         }
     }
 }

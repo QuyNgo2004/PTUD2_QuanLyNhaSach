@@ -31,5 +31,35 @@ namespace GUI
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDSHangHoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCT_Click(object sender, EventArgs e)
+        {
+            Menu formMenu = (Menu)this.ParentForm;
+            formMenu.openChildForm(new CaTruc());
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Menu formMenu = (Menu)this.ParentForm;
+            formMenu.openChildForm(new NhanSu());
+            this.Close();
+        }
     }
 }

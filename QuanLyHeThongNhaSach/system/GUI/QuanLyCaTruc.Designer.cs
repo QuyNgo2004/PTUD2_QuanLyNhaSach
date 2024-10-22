@@ -31,6 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboCaTruc = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -41,11 +44,10 @@
             this.lblQLCT = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDSHangHoa = new System.Windows.Forms.DataGridView();
-            this.cboCaTruc = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
+            this.btnCT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -64,7 +66,7 @@
             this.groupBox1.Size = new System.Drawing.Size(470, 274);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Lịch Sử Hóa Đơn";
+            this.groupBox1.Text = "Danh Sách Nhân Viên";
             // 
             // dataGridView1
             // 
@@ -82,8 +84,6 @@
             // 
             this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.cboCaTruc);
             this.groupBox4.Controls.Add(this.groupBox2);
             this.groupBox4.Controls.Add(this.lblCaTruc);
@@ -97,14 +97,45 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin Ca Trực";
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(895, 36);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(94, 24);
+            this.textBox2.TabIndex = 20;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(792, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 18);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "SL nhân viên:";
+            // 
+            // cboCaTruc
+            // 
+            this.cboCaTruc.FormattingEnabled = true;
+            this.cboCaTruc.Location = new System.Drawing.Point(629, 33);
+            this.cboCaTruc.Name = "cboCaTruc";
+            this.cboCaTruc.Size = new System.Drawing.Size(148, 26);
+            this.cboCaTruc.TabIndex = 16;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCT);
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnLoc);
+            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(175, 110);
+            this.groupBox2.Location = new System.Drawing.Point(262, 76);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 68);
+            this.groupBox2.Size = new System.Drawing.Size(528, 102);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thanh Công Cụ";
@@ -116,13 +147,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(482, 32);
+            this.button1.Location = new System.Drawing.Point(367, 32);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Thoát";
+            this.button1.Text = "Quay về";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnThem
             // 
@@ -136,7 +168,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(137, 23);
             this.btnThem.TabIndex = 8;
-            this.btnThem.Text = "In";
+            this.btnThem.Text = "Thêm ca trực";
             this.btnThem.UseVisualStyleBackColor = false;
             // 
             // lblCaTruc
@@ -198,7 +230,9 @@
             this.groupBox3.Size = new System.Drawing.Size(522, 274);
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh Sách Sản Phẩm Trong Hóa Đơn";
+            this.groupBox3.Text = "Danh Sách Ca Trực";
+            this.groupBox3.UseCompatibleTextRendering = true;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dgvDSHangHoa
             // 
@@ -212,51 +246,66 @@
             this.dgvDSHangHoa.Size = new System.Drawing.Size(516, 251);
             this.dgvDSHangHoa.TabIndex = 0;
             // 
-            // cboCaTruc
+            // btnXoa
             // 
-            this.cboCaTruc.FormattingEnabled = true;
-            this.cboCaTruc.Location = new System.Drawing.Point(629, 33);
-            this.cboCaTruc.Name = "cboCaTruc";
-            this.cboCaTruc.Size = new System.Drawing.Size(298, 26);
-            this.cboCaTruc.TabIndex = 16;
+            this.btnXoa.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(20, 70);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(137, 23);
+            this.btnXoa.TabIndex = 8;
+            this.btnXoa.Text = "Xóa ca trực";
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // btnSua
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(629, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 24);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(198, 32);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(137, 23);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa ca trực";
+            this.btnSua.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // btnLoc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(536, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 18);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "SL quản lý:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnLoc.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLoc.FlatAppearance.BorderSize = 0;
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoc.ForeColor = System.Drawing.Color.White;
+            this.btnLoc.Location = new System.Drawing.Point(198, 70);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(137, 23);
+            this.btnLoc.TabIndex = 8;
+            this.btnLoc.Text = "Lọc ca trực";
+            this.btnLoc.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // btnCT
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(833, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 24);
-            this.textBox2.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(740, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 18);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "SL nhân viên:";
+            this.btnCT.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCT.FlatAppearance.BorderSize = 0;
+            this.btnCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCT.ForeColor = System.Drawing.Color.White;
+            this.btnCT.Location = new System.Drawing.Point(367, 70);
+            this.btnCT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCT.Name = "btnCT";
+            this.btnCT.Size = new System.Drawing.Size(137, 23);
+            this.btnCT.TabIndex = 9;
+            this.btnCT.Text = "Ca Trực";
+            this.btnCT.UseVisualStyleBackColor = false;
+            this.btnCT.Click += new System.EventHandler(this.btnCT_Click);
             // 
             // QuanLyCaTruc
             // 
@@ -300,12 +349,14 @@
         private System.Windows.Forms.Label lblTenNS;
         private System.Windows.Forms.Panel pnlNhapHang;
         private System.Windows.Forms.Label lblQLCT;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvDSHangHoa;
         private System.Windows.Forms.ComboBox cboCaTruc;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvDSHangHoa;
+        private System.Windows.Forms.Button btnLoc;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnCT;
     }
 }
