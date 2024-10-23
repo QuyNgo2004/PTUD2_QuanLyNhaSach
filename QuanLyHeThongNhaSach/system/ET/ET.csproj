@@ -43,7 +43,11 @@
   <ItemGroup>
     <Compile Include="ET_CaTruc.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
+<<<<<<< HEAD
     <Compile Include="ET_ChucVu.cs" />
+=======
+    <Compile Include="ET_KhachHang.cs" />
+>>>>>>> origin/BuiThuKimNgan
     <Compile Include="ET_NhanSu.cs" />
     <Compile Include="ET_NhaPhanPhoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

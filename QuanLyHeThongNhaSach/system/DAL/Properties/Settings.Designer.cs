@@ -37,8 +37,13 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\SQLEXPRESS;Initial Catalog=QLNhaSach;Integrated Security=True;Enc" +
             "rypt=True;TrustServerCertificate=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4HPV2E5\\LISM;Initial Catalog=QLNhaSach;Integrated Security=Tr" +
+            "ue;TrustServerCertificate=True")]
+>>>>>>> origin/BuiThuKimNgan
         public string QLNhaSachConnectionString1 {
             get {
                 return ((string)(this["QLNhaSachConnectionString1"]));

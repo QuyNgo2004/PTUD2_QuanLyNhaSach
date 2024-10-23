@@ -45,9 +45,13 @@
     <Compile Include="BUS_BatLoi.cs" />
     <Compile Include="BUS_CaTruc.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
+<<<<<<< HEAD
     <Compile Include="BUS_ChucVu.cs" />
     <Compile Include="BUS_Data.cs" />
     <Compile Include="BUS_NhanSu.cs" />
+=======
+    <Compile Include="BUS_KhachHang.cs" />
+>>>>>>> origin/BuiThuKimNgan
     <Compile Include="BUS_NhaPhanPhoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

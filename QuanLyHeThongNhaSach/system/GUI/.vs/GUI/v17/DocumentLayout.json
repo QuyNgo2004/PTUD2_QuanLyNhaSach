@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\",
   "Documents": [
     {
@@ -32,6 +33,17 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\danhsachhangdon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:danhsachhangdon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+  "WorkspaceRootPath": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|f:\\ptri\u1EC3n \u1EE9ng d\u1EE5ng\\system\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> origin/BuiThuKimNgan
     }
   ],
   "DocumentGroupContainers": [
@@ -41,7 +53,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 6,
+=======
+          "SelectedChildIndex": 1,
+>>>>>>> origin/BuiThuKimNgan
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,6 +85,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "DAL_CaTruc.cs",
               "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_CaTruc.cs",
@@ -103,10 +120,22 @@
               "ViewState": "AgIAAK0AAAAAAAAAAAAAwBEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T17:51:17.1Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\KhachHang.cs",
+              "RelativeDocumentMoniker": "KhachHang.cs",
+              "ToolTip": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\KhachHang.cs",
+              "RelativeToolTip": "KhachHang.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAiwPkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T18:42:02.796Z",
+>>>>>>> origin/BuiThuKimNgan
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "CaTruc.cs",
               "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\CaTruc.cs",
@@ -166,6 +195,17 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T17:50:22.88Z",
               "EditorCaption": " [Design]"
+=======
+              "DocumentIndex": 0,
+              "Title": "KhachHang.cs [Design]",
+              "DocumentMoniker": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\KhachHang.cs",
+              "RelativeDocumentMoniker": "KhachHang.cs",
+              "ToolTip": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\KhachHang.cs [Design]",
+              "RelativeToolTip": "KhachHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T18:39:38.494Z",
+              "EditorCaption": " [Design]"
+>>>>>>> origin/BuiThuKimNgan
             }
           ]
         }
