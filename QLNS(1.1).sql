@@ -131,8 +131,9 @@ create table CaTruc(
 maCT INT IDENTITY(1,1) primary key ,
 maCN varchar(10) foreign key references ChiNhanh(maCN),
 tenCaTruc nvarchar(30) not null ,
-SL int,
-ghiChu nvarchar(150) null, )
+gioBD Time ,
+gioKT Time ,
+ghiChu nvarchar(150) null,)
 --Tao bảng chi tiết ca trực
 create table ChiTietCaTruc(
 maCTCT INT IDENTITY(1,1) primary key ,

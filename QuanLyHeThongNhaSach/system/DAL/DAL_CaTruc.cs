@@ -32,12 +32,28 @@ namespace DAL
                                       Mã = ct.maCT,
                                       Tên = ct.tenCaTruc,
                                       Chi_Nhánh = cn.tenCN,
-                                      Số_Lượng = ct.SL,
+                                      Giờ_Bắt_Đầu = ct.gioBD,
+                                      Giờ_Kết_Thúc = ct.gioKT,
                                       Ghi_Chú = ct.ghiChu,
                                   };
             return dsCaTruc;
         }
-
+        public IQueryable layDSCaTruc(string maCN)
+        {
+            IQueryable dsCaTruc = from ct in DbNhaSach.CaTrucs
+                                  join cn in DbNhaSach.ChiNhanhs on ct.maCN equals cn.maCN
+                                  where ct.maCN == maCN
+                                  select new
+                                  {
+                                      Mã = ct.maCT,
+                                      Tên = ct.tenCaTruc,
+                                      Chi_Nhánh = cn.tenCN,
+                                      Giờ_Bắt_Đầu = ct.gioBD,
+                                      Giờ_Kết_Thúc = ct.gioKT,
+                                      Ghi_Chú = ct.ghiChu,
+                                  };
+            return dsCaTruc;
+        }
         public bool themCaTruc(ET_CaTruc CaTruc)
         {
             try
@@ -46,7 +62,8 @@ namespace DAL
                 {
                     tenCaTruc = CaTruc.TenCT,
                     maCN = CaTruc.MaCN,
-                    SL = CaTruc.SL,
+                    gioBD = CaTruc.GioBD,
+                    gioKT = CaTruc.GioKT,
                     ghiChu= CaTruc.GhiChu,
                 };
                 DbNhaSach.CaTrucs.InsertOnSubmit(ct);
@@ -89,7 +106,6 @@ namespace DAL
                 var capnhat = DbNhaSach.CaTrucs.Single(ct => ct.maCT == CaTruc.MaCT);
                 capnhat.tenCaTruc = CaTruc.TenCT;
                 capnhat.maCN = CaTruc.MaCN;
-                capnhat.SL = CaTruc.SL;
                 capnhat.ghiChu = CaTruc.GhiChu;
                 DbNhaSach.SubmitChanges();
             }
