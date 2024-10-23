@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhaSach" Class="QLNhaSachDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-<<<<<<< HEAD
   <Connection Mode="AppSettings" ConnectionString="Data Source=MSI\SQLEXPRESS;Initial Catalog=QLNhaSach;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.KhuyenMai" Member="KhuyenMais">
     <Type Name="KhuyenMai">
@@ -7,19 +6,6 @@
       <Column Name="tenKM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="giamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="KhuyenMai_CTKhuyenMai" Member="CTKhuyenMais" ThisKey="maKM" OtherKey="maKM" Type="CTKhuyenMai" />
-=======
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-4HPV2E5\LISM;Initial Catalog=QLNhaSach;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChiNhanh" Member="ChiNhanhs">
-    <Type Name="ChiNhanh">
-      <Column Name="maCN" Type="System.String" DbType="VarChar(13) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenCN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="diaChi" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="soDienThoai" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Association Name="ChiNhanh_HoaDon" Member="HoaDons" ThisKey="maCN" OtherKey="maCN" Type="HoaDon" />
-      <Association Name="ChiNhanh_NhanSu" Member="NhanSus" ThisKey="maCN" OtherKey="maCN" Type="NhanSu" />
->>>>>>> origin/BuiThuKimNgan
     </Type>
   </Table>
   <Table Name="dbo.NhaPhanPhoi" Member="NhaPhanPhois">
@@ -148,7 +134,6 @@
       <Column Name="ngayIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Association Name="HoaDon_CTHoaDon" Member="CTHoaDons" ThisKey="maHD" OtherKey="maHD" Type="CTHoaDon" />
-<<<<<<< HEAD
       <Association Name="NhanSu_HoaDon" Member="NhanSu" ThisKey="maNS" OtherKey="maNS" Type="NhanSu" IsForeignKey="true" />
       <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="maKH" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />
     </Type>
@@ -163,11 +148,6 @@
       <Column Name="ngaysinhKH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KhachHang_DiaChiKhachHang" Member="DiaChiKhachHangs" ThisKey="maKH" OtherKey="maKH" Type="DiaChiKhachHang" />
       <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="maKH" OtherKey="maKH" Type="HoaDon" />
-=======
-      <Association Name="ChiNhanh_HoaDon" Member="ChiNhanh" ThisKey="maCN" OtherKey="maCN" Type="ChiNhanh" IsForeignKey="true" />
-      <Association Name="NhanSu_HoaDon" Member="NhanSu" ThisKey="maNS" OtherKey="maNS" Type="NhanSu" IsForeignKey="true" />
-      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="maKH" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />
->>>>>>> origin/BuiThuKimNgan
     </Type>
   </Table>
   <Table Name="dbo.KhuyenMai" Member="KhuyenMai1s">
@@ -196,35 +176,4 @@
       <Association Name="HangHoa_NhaCCCT" Member="HangHoa" ThisKey="maHH" OtherKey="maHH" Type="HangHoa" IsForeignKey="true" />
     </Type>
   </Table>
-<<<<<<< HEAD
-=======
-  <Table Name="dbo.NhanSu" Member="NhanSus">
-    <Type Name="NhanSu">
-      <Column Name="maNS" Type="System.String" DbType="VarChar(13) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenNS" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
-      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="cccdNS" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="sdtNV" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="emailNV" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="diaChiNha" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
-      <Column Name="maCN" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
-      <Column Name="chucVu" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
-      <Association Name="NhanSu_HoaDon" Member="HoaDons" ThisKey="maNS" OtherKey="maNS" Type="HoaDon" />
-      <Association Name="ChiNhanh_NhanSu" Member="ChiNhanh" ThisKey="maCN" OtherKey="maCN" Type="ChiNhanh" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.KhachHang" Member="KhachHangs">
-    <Type Name="KhachHang">
-      <Column Name="maKH" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="hoTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ngaysinhKH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="gioitinhKH" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="diachiKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="sdtKH" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="emailKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="KhachHang_DiaChiKhachHang" Member="DiaChiKhachHangs" ThisKey="maKH" OtherKey="maKH" Type="DiaChiKhachHang" />
-      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="maKH" OtherKey="maKH" Type="HoaDon" />
-    </Type>
-  </Table>
->>>>>>> origin/BuiThuKimNgan
 </Database>

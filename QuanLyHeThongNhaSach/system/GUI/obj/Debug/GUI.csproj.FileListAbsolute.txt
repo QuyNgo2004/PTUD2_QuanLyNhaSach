@@ -109,7 +109,6 @@ C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThong
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.pdb
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll.config
-<<<<<<< HEAD
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe.config
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.pdb
@@ -158,34 +157,3 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.CaTruc.resources
-=======
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe.config
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.pdb
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\BUS.dll
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\ET.dll
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\BUS.pdb
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\ET.pdb
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.pdb
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll.config
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.DanhSachHangDon.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.formThanhToan.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.frmChiNhanh.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.KhachHang.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.HangHoa.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.KhuyenMai.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.LichSuNhapHang.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Login.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Menu.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhanSu.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhapHang.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.NhaPhanPhoi.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.Properties.Resources.resources
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.Up2Date
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.exe
-F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.pdb
->>>>>>> origin/BuiThuKimNgan
