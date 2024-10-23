@@ -44,5 +44,16 @@ namespace DAL.Properties {
                 return ((string)(this["QLNhaSachConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4HPV2E5\\LISM;Initial Catalog=QLNhaSach;Integrated Security=Tr" +
+            "ue;TrustServerCertificate=True")]
+        public string QLNhaSachConnectionString2 {
+            get {
+                return ((string)(this["QLNhaSachConnectionString2"]));
+            }
+        }
     }
 }

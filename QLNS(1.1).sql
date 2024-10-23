@@ -40,10 +40,11 @@ go
 create table KhachHang(
 maKH varchar(11) primary key ,
 hoTenKH nvarchar(50) not null,
-sdtKH varchar(12) not null,
-emailKH varchar(50) null,
+ngaysinhKH datetime null,
 gioitinhKH nvarchar(3) not null,
-ngaysinhKH datetime null, )
+diachiKH nvarchar(50) not null,
+sdtKH varchar(12) not null,
+emailKH varchar(50) null, )
 go
 -- Địa chỉ khách hàng
 create table DiaChiKhachHang(

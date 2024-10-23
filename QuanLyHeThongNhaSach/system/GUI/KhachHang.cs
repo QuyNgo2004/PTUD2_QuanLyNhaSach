@@ -17,23 +17,9 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblGioiTinh_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult a = MessageBox.Show("Hãy chắc chắn rằng bạn muốn thoát khỏi màn hình này !", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (a == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
     }
 }
