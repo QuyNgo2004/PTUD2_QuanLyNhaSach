@@ -37,10 +37,7 @@ namespace BUS
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
         }
-        public void hienThiNhanSu(DataGridView dgv,string ma)
-        {
-            dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu(ma);
-        }
+
         public bool themNhanSu(ET_NhanSu NhanSu)
         {
             try
