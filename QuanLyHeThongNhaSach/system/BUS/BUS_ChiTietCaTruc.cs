@@ -52,7 +52,10 @@ namespace BUS
                 throw ex;
             }
         }
-
+        public bool TimKiem(int maCT, string maNS)
+        {
+            return DAL_CTCaTruc.Instance.TimKiem(maCT, maNS);
+        }
         public void xoaCTCaTruc(int ma)
         {
             try
