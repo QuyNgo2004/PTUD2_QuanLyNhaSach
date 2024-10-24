@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|f:\\ptri\u1EC3n \u1EE9ng d\u1EE5ng\\system\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\qlnhasach.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CCB447C8-7922-4725-AB76-0955FE73D962}|..\\ET\\ET.csproj|f:\\ptri\u1EC3n \u1EE9ng d\u1EE5ng\\system\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\et\\et_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|f:\\ptri\u1EC3n \u1EE9ng d\u1EE5ng\\system\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|f:\\ptri\u1EC3n \u1EE9ng d\u1EE5ng\\system\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\qlnhasach.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -28,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QLNhaSach.dbml",
               "DocumentMoniker": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\QLNhaSach.dbml",
               "RelativeDocumentMoniker": "..\\DAL\\QLNhaSach.dbml",
@@ -68,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ET_KhachHang.cs",
               "DocumentMoniker": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhachHang.cs",
               "RelativeDocumentMoniker": "..\\ET\\ET_KhachHang.cs",
               "ToolTip": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhachHang.cs",
               "RelativeToolTip": "..\\ET\\ET_KhachHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwB4AAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T17:29:06.583Z",
               "EditorCaption": ""
@@ -88,8 +88,7 @@
               "ToolTip": "F:\\PTri\u1EC3n \u1EE8ng D\u1EE5ng\\system\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Menu.cs [Design]",
               "RelativeToolTip": "Menu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T01:45:25.019Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-23T01:45:25.019Z"
             },
             {
               "$type": "Document",
@@ -101,8 +100,7 @@
               "RelativeToolTip": "frmChiNhanh.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAUwDgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T01:41:22.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T01:41:22.674Z"
             },
             {
               "$type": "Document",
@@ -114,8 +112,7 @@
               "RelativeToolTip": "NhaPhanPhoi.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAUwDMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T01:41:17.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T01:41:17.527Z"
             }
           ]
         }
