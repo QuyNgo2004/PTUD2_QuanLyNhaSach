@@ -158,8 +158,15 @@ namespace GUI
         {
             try
             {
-                ctct.hienThiCTCaTruc(dgvDSCaTruc, int.Parse(cboCaTruc.SelectedValue.ToString()));
-            }
+                if (cboCaTruc.DataSource != null )
+                {
+                    ctct.hienThiCTCaTruc(dgvDSCaTruc, int.Parse(cboCaTruc.SelectedValue.ToString()));
+                }
+                else
+                {
+                    dgvDSCaTruc.DataSource = null;
+                }
+                }
             catch (Exception ex)
             {
             }
