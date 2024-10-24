@@ -1,7 +1,9 @@
 ﻿using ET;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,6 +49,7 @@ namespace DAL
                                   select new
                                   {
                                       Mã = ctct.maCTCT,
+                                      Mã_Nhân_Sự = ctct.maNS,
                                       Tên_Nhân_Sự = ns.tenNS,
                                       Tên_Ca_Trực = ct.tenCaTruc,
                                       Giờ_Bắt_Đầu = ct.gioBD,
@@ -54,10 +57,25 @@ namespace DAL
                                   };
             return dsCaTruc;
         }
+        public bool TimKiem(int maCT, string maNS)
+        {
+            bool flag = false;
+            IQueryable dsCaTruc = from ctct in DbNhaSach.ChiTietCaTrucs
+                                  where ctct.maCT == maCT && ctct.maNS == maNS
+                                  select ctct;
+            int Dem = 0;
+            foreach( IQueryable ct in dsCaTruc)
+            {
+                Dem++;
+            }
+            if (Dem == 0) { flag = true; }
+            return flag;
+        }
         public bool themCTCaTruc(int maCT,string maNS)
         {
             try
             {
+                
                 ChiTietCaTruc ct = new ChiTietCaTruc
                 {
                     maCT = maCT,

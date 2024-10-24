@@ -93,14 +93,7 @@ namespace GUI
                     MessageBox.Show("Không thể thêm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 }
             }
-            try
-            {
-                ct.themCaTruc(DL_CaTruc());
-                Load_CT();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
+            
 
         }
 
