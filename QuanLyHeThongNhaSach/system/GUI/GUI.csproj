@@ -103,6 +103,12 @@
     <Compile Include="LichSuNhapHang.Designer.cs">
       <DependentUpon>LichSuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaiHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiHangHoa.Designer.cs">
+      <DependentUpon>LoaiHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LichSuNhapHang.resx">
       <DependentUpon>LichSuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiHangHoa.resx">
+      <DependentUpon>LoaiHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
