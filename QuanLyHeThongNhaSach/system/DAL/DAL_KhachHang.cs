@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_KhachHang
+    public class DAL_KhachHang : DAL_Data
     {
         //Khai báo biến tĩnh.
         private static DAL_KhachHang instance;
@@ -24,13 +24,13 @@ namespace DAL
             }
         }
 
-        //Tạo một đối tượng 'db' từ lớp QLNhaSachDataContext.
-        private QLNhaSachDataContext db = new QLNhaSachDataContext();
+        //Tạo một đối tượng 'dbNhaSach' từ lớp QLNhaSachDataContext.
+        //private QLNhaSachDataContext dbNhaSach = new QLNhaSachDataContext();
 
         //Xem danh sách khách hàng.
         public IQueryable XemDSKhachHang()
         {
-            IQueryable khachhang = from kh in db.KhachHangs
+            IQueryable khachhang = from kh in dbNhaSach.KhachHangs
                                    select kh;
             return khachhang;
         }
@@ -43,7 +43,7 @@ namespace DAL
         public bool ThemKhachHang(ET_KhachHang etKhachHang)
         {
             //Kiểm tra xem có trùng mã khách hàng hay không, nếu trùng trả về false.
-            if (db.KhachHangs.Any(kh => kh.maKH == etKhachHang.MaKH))
+            if (dbNhaSach.KhachHangs.Any(kh => kh.maKH == etKhachHang.MaKH))
             {
                 //Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
                 return false;
@@ -64,12 +64,12 @@ namespace DAL
                         emailKH = etKhachHang.EmailKH,
                     };
                     //Thêm khách hàng vào cơ sở dữ liệu
-                    db.KhachHangs.InsertOnSubmit(kh);
+                    dbNhaSach.KhachHangs.InsertOnSubmit(kh);
                 }
                 finally
                 {
                     // Lưu các thay đổi vào cơ sở dữ liệu
-                    db.SubmitChanges();
+                    dbNhaSach.SubmitChanges();
                 }
                 // Trả về true để báo hiệu việc thêm mới thành công
                 return true;
@@ -86,14 +86,14 @@ namespace DAL
             try
             {
                 //Truy vấn lấy tất cả các bản ghi trong KhachHangs có maKH bằng với maKhachHang.
-                var xoa = from kh in db.KhachHangs
+                var xoa = from kh in dbNhaSach.KhachHangs
                           where kh.maKH == maKhachHang
                           select kh;
                 // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
                 foreach (var x in xoa)
                 {
-                    db.KhachHangs.DeleteOnSubmit(x);
-                    db.SubmitChanges();
+                    dbNhaSach.KhachHangs.DeleteOnSubmit(x);
+                    dbNhaSach.SubmitChanges();
                 }
                 // Nếu xóa thành công, trả về true.
                 return true;
@@ -118,7 +118,7 @@ namespace DAL
         {
             // Tìm đối tượng KhachHangs trong cơ sở dữ liệu dựa trên maKH.
 
-            var update = db.KhachHangs.Single(kh => kh.maKH == etKhachHang.MaKH);
+            var update = dbNhaSach.KhachHangs.Single(kh => kh.maKH == etKhachHang.MaKH);
 
             // Cập nhật dựa trên thông tin nhận được.
 
@@ -130,14 +130,14 @@ namespace DAL
             update.emailKH = etKhachHang.EmailKH;
 
             // Lưu các thay đổi vào cơ sở dữ liệu.
-            db.SubmitChanges();
+            dbNhaSach.SubmitChanges();
         }
 
         //Tạo mã khách hàng tự động.
         public string TaoMaKhachHangTuDong()
         {
             //Đếm số lượng khách hàng.
-            int countMaKH = db.KhachHangs.Count() + 1;
+            int countMaKH = dbNhaSach.KhachHangs.Count() + 1;
 
             //Tạo mã mới.
             string newMaKH;
@@ -145,7 +145,7 @@ namespace DAL
             {
                 newMaKH = $"KH{countMaKH}";
                 countMaKH++;
-            } while (db.KhachHangs.Any(kh => kh.maKH == newMaKH));
+            } while (dbNhaSach.KhachHangs.Any(kh => kh.maKH == newMaKH));
             return newMaKH;
         }
     }

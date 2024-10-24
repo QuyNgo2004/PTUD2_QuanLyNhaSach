@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_HangHoa
+    public class DAL_HangHoa : DAL_Data
     {
         //Khai báo biến tĩnh.
         private static DAL_HangHoa instance;
@@ -25,15 +25,15 @@ namespace DAL
             }
         }
 
-        //Tạo một đối tượng 'db' từ lớp QLNhaSachDataContext.
-        private QLNhaSachDataContext db = new QLNhaSachDataContext();
+        //Tạo một đối tượng 'dbNhaSach' từ lớp QLNhaSachDataContext.
+        //private QLNhaSachDataContext dbNhaSach = new QLNhaSachDataContext();
 
         //Xem danh sách loại hàng.
         public IQueryable XemDSHangHoa()
         {
-            IQueryable hanghoa = from hh in db.HangHoas
-                                 join hanghoa1 in db.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
-                                 join hanghoa2 in db.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+            IQueryable hanghoa = from hh in dbNhaSach.HangHoas
+                                 join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                 join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
                                  select new
                                  {
                                      Ma = hh.maHH,
@@ -61,7 +61,7 @@ namespace DAL
         public bool ThemHangHoa(ET_HangHoa etHH)
         {
             //Kiểm tra xem có trùng mã loại hàng hay không, nếu trùng trả về false.
-            if (db.HangHoas.Any(hh => hh.maHH == etHH.MaHH))
+            if (dbNhaSach.HangHoas.Any(hh => hh.maHH == etHH.MaHH))
             {
                 //Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
                 return false;
@@ -86,12 +86,12 @@ namespace DAL
 
                     };
                     //Thêm loại hàng vào cơ sở dữ liệu
-                    db.HangHoas.InsertOnSubmit(hh);
+                    dbNhaSach.HangHoas.InsertOnSubmit(hh);
                 }
                 finally
                 {
                     // Lưu các thay đổi vào cơ sở dữ liệu
-                    db.SubmitChanges();
+                    dbNhaSach.SubmitChanges();
                 }
                 // Trả về true để báo hiệu việc thêm mới thành công
                 return true;
@@ -107,14 +107,14 @@ namespace DAL
             try
             {
                 //Truy vấn lấy tất cả các bản ghi trong HangHoa có maLHH bằng với maHangHoa.
-                var xoa = from hh in db.HangHoas
+                var xoa = from hh in dbNhaSach.HangHoas
                           where hh.maLHH == maHH
                           select hh;
                 // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
                 foreach (var x in xoa)
                 {
-                    db.HangHoas.DeleteOnSubmit(x);
-                    db.SubmitChanges();
+                    dbNhaSach.HangHoas.DeleteOnSubmit(x);
+                    dbNhaSach.SubmitChanges();
                 }
                 // Nếu xóa thành công, trả về true.
                 return true;
@@ -138,7 +138,7 @@ namespace DAL
         {
             // Tìm đối tượng LoaiHangHoas trong cơ sở dữ liệu dựa trên maKH.
 
-            var update = db.HangHoas.Single(hh => hh.maLHH == etHH.MaHH);
+            var update = dbNhaSach.HangHoas.Single(hh => hh.maLHH == etHH.MaHH);
 
             // Cập nhật dựa trên thông tin nhận được.
 
@@ -154,14 +154,14 @@ namespace DAL
             update.tinhTrang = etHH.TinhTrang;
 
             // Lưu các thay đổi vào cơ sở dữ liệu.
-            db.SubmitChanges();
+            dbNhaSach.SubmitChanges();
         }
 
         //Tạo mã hàng hóa tự động.
         public string TaoMaHangHoaTuDong()
         {
             //Đếm số lượng loại hàng.
-            int countMaHH = db.HangHoas.Count() + 1;
+            int countMaHH = dbNhaSach.HangHoas.Count() + 1;
 
             //Tạo mã mới.
             string NewMaHH;
@@ -169,7 +169,7 @@ namespace DAL
             {
                 NewMaHH = $"KH{countMaHH}";
                 countMaHH++;
-            } while (db.HangHoas.Any(kh => kh.maHH == NewMaHH));
+            } while (dbNhaSach.HangHoas.Any(kh => kh.maHH == NewMaHH));
             return NewMaHH;
         }
     }

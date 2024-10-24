@@ -199,3 +199,4 @@ F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debu
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.exe
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.pdb
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.LoaiHangHoa.resources
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.LoaiHangHoa.resources

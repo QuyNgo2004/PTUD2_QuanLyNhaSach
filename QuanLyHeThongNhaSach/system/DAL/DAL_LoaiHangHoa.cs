@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_LoaiHangHoa
+    public class DAL_LoaiHangHoa : DAL_Data
     {
         //Khai báo biến tĩnh.
         private static DAL_LoaiHangHoa instance;
@@ -24,13 +24,12 @@ namespace DAL
             }
         }
 
-        //Tạo một đối tượng 'db' từ lớp QLNhaSachDataContext.
-        private QLNhaSachDataContext db = new QLNhaSachDataContext();
+        //Tạo một đối tượng 'dbNhaSach' từ lớp QLNhaSachDataContext.
 
         //Xem danh sách khách hàng.
         public IQueryable XemDSLoaiHangHoa()
         {
-            IQueryable loaihh = from lhh in db.LoaiHangHoas
+            IQueryable loaihh = from lhh in dbNhaSach.LoaiHangHoas
                                    select lhh;
             return loaihh;
         }
@@ -43,7 +42,7 @@ namespace DAL
         public bool ThemLoaiHangHoa(ET_LoaiHangHoa etLoaiHH)
         {
             //Kiểm tra xem có trùng mã loại hàng hay không, nếu trùng trả về false.
-            if (db.LoaiHangHoas.Any(lhh => lhh.maLHH == etLoaiHH.MaLHH))
+            if (dbNhaSach.LoaiHangHoas.Any(lhh => lhh.maLHH == etLoaiHH.MaLHH))
             {
                 //Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
                 return false;
@@ -60,12 +59,12 @@ namespace DAL
                         ghiChu = etLoaiHH.GhiChu,
                     };
                     //Thêm loại hàng vào cơ sở dữ liệu
-                    db.LoaiHangHoas.InsertOnSubmit(lhh);
+                    dbNhaSach.LoaiHangHoas.InsertOnSubmit(lhh);
                 }
                 finally
                 {
                     // Lưu các thay đổi vào cơ sở dữ liệu
-                    db.SubmitChanges();
+                    dbNhaSach.SubmitChanges();
                 }
                 // Trả về true để báo hiệu việc thêm mới thành công
                 return true;
@@ -81,14 +80,14 @@ namespace DAL
             try
             {
                 //Truy vấn lấy tất cả các bản ghi trong LoaiHangHoa có maLHH bằng với maLoaiHangHoa.
-                var xoa = from lhh in db.LoaiHangHoas
+                var xoa = from lhh in dbNhaSach.LoaiHangHoas
                           where lhh.maLHH == maLHH
                           select lhh;
                 // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
                 foreach (var x in xoa)
                 {
-                    db.LoaiHangHoas.DeleteOnSubmit(x);
-                    db.SubmitChanges();
+                    dbNhaSach.LoaiHangHoas.DeleteOnSubmit(x);
+                    dbNhaSach.SubmitChanges();
                 }
                 // Nếu xóa thành công, trả về true.
                 return true;
@@ -112,7 +111,7 @@ namespace DAL
         {
             // Tìm đối tượng LoaiHangHoas trong cơ sở dữ liệu dựa trên maKH.
 
-            var update = db.LoaiHangHoas.Single(lhh => lhh.maLHH == etLHH.MaLHH);
+            var update = dbNhaSach.LoaiHangHoas.Single(lhh => lhh.maLHH == etLHH.MaLHH);
 
             // Cập nhật dựa trên thông tin nhận được.
 
@@ -120,14 +119,14 @@ namespace DAL
             update.ghiChu = etLHH.GhiChu;
 
             // Lưu các thay đổi vào cơ sở dữ liệu.
-            db.SubmitChanges();
+            dbNhaSach.SubmitChanges();
         }
 
         //Tạo mã khách hàng tự động.
         public string TaoMaLoaiHangTuDong()
         {
             //Đếm số lượng loại hàng.
-            int countMaLH = db.LoaiHangHoas.Count() + 1;
+            int countMaLH = dbNhaSach.LoaiHangHoas.Count() + 1;
 
             //Tạo mã mới.
             string NewMaLH;
@@ -135,7 +134,7 @@ namespace DAL
             {
                 NewMaLH = $"KH{countMaLH}";
                 countMaLH++;
-            } while (db.LoaiHangHoas.Any(lh => lh.maLHH == NewMaLH));
+            } while (dbNhaSach.LoaiHangHoas.Any(lh => lh.maLHH == NewMaLH));
             return NewMaLH;
         }
     }
