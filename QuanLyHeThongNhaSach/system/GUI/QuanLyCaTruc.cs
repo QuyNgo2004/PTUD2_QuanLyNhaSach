@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.Data.Linq.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,10 +72,26 @@ namespace GUI
 
         private void cboCN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboCaTruc.DataSource = ct.Load_CaTruc(cboCN.SelectedValue.ToString());
-            cboCaTruc.DisplayMember = "Tên";
-            cboCaTruc.ValueMember = "Mã";
-            ns.hienThiNhanSu(dgvNV, cboCN.SelectedValue.ToString());
+            
+            try
+            {
+                if (ct.Load_CaTruc(cboCN.SelectedValue.ToString()).Count() > 0)
+                {
+                    cboCaTruc.DataSource = ct.Load_CaTruc(cboCN.SelectedValue.ToString());
+                    cboCaTruc.DisplayMember = "Tên";
+                    cboCaTruc.ValueMember = "Mã";
+                }
+                else
+                {
+                    cboCaTruc.DataSource=null;
+                }
+                txtMaNS.Text = null;
+                txtTenNS.Text = null;
+                ns.hienThiNhanSu(dgvNV, cboCN.SelectedValue.ToString());
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
