@@ -18,3 +18,13 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.pdb
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.dll
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.pdb
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
+F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb

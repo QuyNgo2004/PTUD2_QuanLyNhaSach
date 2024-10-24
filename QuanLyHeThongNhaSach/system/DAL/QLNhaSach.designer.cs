@@ -60,12 +60,18 @@ namespace DAL
     partial void InsertHoaDon(HoaDon instance);
     partial void UpdateHoaDon(HoaDon instance);
     partial void DeleteHoaDon(HoaDon instance);
+<<<<<<< HEAD
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
     partial void InsertKhuyenMai(KhuyenMai instance);
     partial void UpdateKhuyenMai(KhuyenMai instance);
     partial void DeleteKhuyenMai(KhuyenMai instance);
+=======
+    partial void InsertKhuyenMai1(KhuyenMai1 instance);
+    partial void UpdateKhuyenMai1(KhuyenMai1 instance);
+    partial void DeleteKhuyenMai1(KhuyenMai1 instance);
+>>>>>>> origin/BuiThuKimNgan
     partial void InsertLoaiHangHoa(LoaiHangHoa instance);
     partial void UpdateLoaiHangHoa(LoaiHangHoa instance);
     partial void DeleteLoaiHangHoa(LoaiHangHoa instance);
@@ -78,7 +84,7 @@ namespace DAL
     #endregion
 		
 		public QLNhaSachDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -187,6 +193,7 @@ namespace DAL
 			}
 		}
 		
+<<<<<<< HEAD
 		public System.Data.Linq.Table<KhachHang> KhachHangs
 		{
 			get
@@ -196,6 +203,9 @@ namespace DAL
 		}
 		
 		public System.Data.Linq.Table<KhuyenMai> KhuyenMais
+=======
+		public System.Data.Linq.Table<KhuyenMai1> KhuyenMai1s
+>>>>>>> origin/BuiThuKimNgan
 		{
 			get
 			{
@@ -2262,6 +2272,7 @@ namespace DAL
 		private void attach_CTHoaDons(CTHoaDon entity)
 		{
 			this.SendPropertyChanging();
+<<<<<<< HEAD
 			entity.HangHoa = this;
 		}
 		
@@ -2272,6 +2283,106 @@ namespace DAL
 		}
 		
 		private void attach_NhaCCCTs(NhaCCCT entity)
+=======
+			entity.ChucVu1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DiaChiKhachHang")]
+	public partial class DiaChiKhachHang : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _madiachiKH;
+		
+		private string _maKH;
+		
+		private string _diachiKH;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmadiachiKHChanging(string value);
+    partial void OnmadiachiKHChanged();
+    partial void OnmaKHChanging(string value);
+    partial void OnmaKHChanged();
+    partial void OndiachiKHChanging(string value);
+    partial void OndiachiKHChanged();
+    #endregion
+		
+		public DiaChiKhachHang()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_madiachiKH", DbType="VarChar(11) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string madiachiKH
+		{
+			get
+			{
+				return this._madiachiKH;
+			}
+			set
+			{
+				if ((this._madiachiKH != value))
+				{
+					this.OnmadiachiKHChanging(value);
+					this.SendPropertyChanging();
+					this._madiachiKH = value;
+					this.SendPropertyChanged("madiachiKH");
+					this.OnmadiachiKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKH", DbType="VarChar(11)")]
+		public string maKH
+		{
+			get
+			{
+				return this._maKH;
+			}
+			set
+			{
+				if ((this._maKH != value))
+				{
+					this.OnmaKHChanging(value);
+					this.SendPropertyChanging();
+					this._maKH = value;
+					this.SendPropertyChanged("maKH");
+					this.OnmaKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachiKH", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string diachiKH
+		{
+			get
+			{
+				return this._diachiKH;
+			}
+			set
+			{
+				if ((this._diachiKH != value))
+				{
+					this.OndiachiKHChanging(value);
+					this.SendPropertyChanging();
+					this._diachiKH = value;
+					this.SendPropertyChanged("diachiKH");
+					this.OndiachiKHChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+>>>>>>> origin/BuiThuKimNgan
 		{
 			this.SendPropertyChanging();
 			entity.HangHoa = this;
@@ -2594,10 +2705,13 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _ngaysinhKH;
 		
+<<<<<<< HEAD
 		private EntitySet<DiaChiKhachHang> _DiaChiKhachHangs;
 		
 		private EntitySet<HoaDon> _HoaDons;
 		
+=======
+>>>>>>> origin/BuiThuKimNgan
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2618,8 +2732,13 @@ namespace DAL
 		
 		public KhachHang()
 		{
+<<<<<<< HEAD
 			this._DiaChiKhachHangs = new EntitySet<DiaChiKhachHang>(new Action<DiaChiKhachHang>(this.attach_DiaChiKhachHangs), new Action<DiaChiKhachHang>(this.detach_DiaChiKhachHangs));
 			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
+=======
+			this._CTHoaDons = new EntitySet<CTHoaDon>(new Action<CTHoaDon>(this.attach_CTHoaDons), new Action<CTHoaDon>(this.detach_CTHoaDons));
+			this._NhanSu = default(EntityRef<NhanSu>);
+>>>>>>> origin/BuiThuKimNgan
 			OnCreated();
 		}
 		
@@ -2674,7 +2793,11 @@ namespace DAL
 			{
 				if ((this._sdtKH != value))
 				{
+<<<<<<< HEAD
 					this.OnsdtKHChanging(value);
+=======
+					this.OnmaKHChanging(value);
+>>>>>>> origin/BuiThuKimNgan
 					this.SendPropertyChanging();
 					this._sdtKH = value;
 					this.SendPropertyChanged("sdtKH");
@@ -2756,6 +2879,7 @@ namespace DAL
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDon", Storage="_HoaDons", ThisKey="maKH", OtherKey="maKH")]
 		public EntitySet<HoaDon> HoaDons
 		{
@@ -2769,6 +2893,8 @@ namespace DAL
 			}
 		}
 		
+=======
+>>>>>>> origin/BuiThuKimNgan
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2815,6 +2941,7 @@ namespace DAL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhuyenMai")]
+<<<<<<< HEAD
 	public partial class KhuyenMai : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -3092,6 +3219,9 @@ namespace DAL
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhaCCCT")]
 	public partial class NhaCCCT : INotifyPropertyChanging, INotifyPropertyChanged
+=======
+	public partial class KhuyenMai1 : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> origin/BuiThuKimNgan
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
