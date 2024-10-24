@@ -159,17 +159,25 @@ namespace GUI
                 MessageBox.Show("Sửa không thành công! \n" + "Message: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private void lamMoi()
         {
             txtMaNPP.Text = npp.AutoMa_NhaPhanPhoi();
             txtTenNPP.Clear();
             txtDiaChi.Clear();
             mstSDT.Clear();
-            txtEmail.Clear();            
+            txtEmail.Clear();
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn làm mới form này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                lamMoi();
+                MessageBox.Show("Làm mới thành công!   ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+            }
         }
 
         private ET_NhaPhanPhoi ThongTin()

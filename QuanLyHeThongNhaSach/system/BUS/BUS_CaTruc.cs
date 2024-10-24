@@ -12,7 +12,7 @@ namespace BUS
     public class BUS_CaTruc
     {
         private static BUS_CaTruc instance;
-
+        private BUS_ChiTietCaTruc ct = BUS_ChiTietCaTruc.Instance;
         public static BUS_CaTruc Instance
         {
             get
@@ -57,6 +57,7 @@ namespace BUS
         {
             try
             {
+                ct.xoaCTCaTrucCT(ma);
                 DAL_CaTruc.Instance.xoaCaTruc(ma);
             }
             catch (Exception ex)

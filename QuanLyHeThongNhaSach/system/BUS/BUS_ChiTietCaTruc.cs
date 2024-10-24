@@ -52,7 +52,10 @@ namespace BUS
                 throw ex;
             }
         }
-
+        public bool TimKiem(int maCT, string maNS)
+        {
+            return DAL_CTCaTruc.Instance.TimKiem(maCT, maNS);
+        }
         public void xoaCTCaTruc(int ma)
         {
             try
@@ -65,7 +68,30 @@ namespace BUS
                 throw ex;
             }
         }
+        public void xoaCTCaTrucCT(int maCT)
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucCT(maCT);
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
+        public void xoaCTCaTrucNS(string maNS)
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucNS(maNS);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void suaCTCaTruc(int maCTCT,int maCT, string maNS)
         {
             try

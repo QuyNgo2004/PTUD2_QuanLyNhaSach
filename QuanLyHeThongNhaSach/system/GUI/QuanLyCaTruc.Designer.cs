@@ -31,25 +31,24 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNV = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboCN = new System.Windows.Forms.ComboBox();
             this.cboCaTruc = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCT = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblCaTruc = new System.Windows.Forms.Label();
+            this.txtMaNS = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtTenNS = new System.Windows.Forms.TextBox();
             this.lblTenNS = new System.Windows.Forms.Label();
             this.pnlNhapHang = new System.Windows.Forms.Panel();
             this.lblQLCT = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDSCaTruc = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaNS = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboCN = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -103,6 +102,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin Ca Trực";
             // 
+            // cboCN
+            // 
+            this.cboCN.FormattingEnabled = true;
+            this.cboCN.Location = new System.Drawing.Point(104, 31);
+            this.cboCN.Name = "cboCN";
+            this.cboCN.Size = new System.Drawing.Size(127, 26);
+            this.cboCN.TabIndex = 16;
+            this.cboCN.SelectedIndexChanged += new System.EventHandler(this.cboCN_SelectedIndexChanged);
+            // 
             // cboCaTruc
             // 
             this.cboCaTruc.FormattingEnabled = true;
@@ -110,12 +118,12 @@
             this.cboCaTruc.Name = "cboCaTruc";
             this.cboCaTruc.Size = new System.Drawing.Size(148, 26);
             this.cboCaTruc.TabIndex = 16;
+            this.cboCaTruc.SelectedIndexChanged += new System.EventHandler(this.cboCaTruc_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnCT);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.btnLoc);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
@@ -134,7 +142,7 @@
             this.btnCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCT.ForeColor = System.Drawing.Color.White;
-            this.btnCT.Location = new System.Drawing.Point(367, 70);
+            this.btnCT.Location = new System.Drawing.Point(198, 70);
             this.btnCT.Margin = new System.Windows.Forms.Padding(2);
             this.btnCT.Name = "btnCT";
             this.btnCT.Size = new System.Drawing.Size(137, 23);
@@ -159,21 +167,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnLoc
-            // 
-            this.btnLoc.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(198, 70);
-            this.btnLoc.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(137, 23);
-            this.btnLoc.TabIndex = 8;
-            this.btnLoc.Text = "Lọc ca trực";
-            this.btnLoc.UseVisualStyleBackColor = false;
-            // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -188,6 +181,7 @@
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa ca trực";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -203,6 +197,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa ca trực";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -218,6 +213,16 @@
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm ca trực";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Chi Nhánh:";
             // 
             // lblCaTruc
             // 
@@ -227,6 +232,24 @@
             this.lblCaTruc.Size = new System.Drawing.Size(60, 18);
             this.lblCaTruc.TabIndex = 0;
             this.lblCaTruc.Text = "Ca trực:";
+            // 
+            // txtMaNS
+            // 
+            this.txtMaNS.BackColor = System.Drawing.Color.White;
+            this.txtMaNS.Enabled = false;
+            this.txtMaNS.Location = new System.Drawing.Point(339, 30);
+            this.txtMaNS.Name = "txtMaNS";
+            this.txtMaNS.Size = new System.Drawing.Size(102, 24);
+            this.txtMaNS.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(244, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân sự:";
             // 
             // txtTenNS
             // 
@@ -293,42 +316,7 @@
             this.dgvDSCaTruc.RowTemplate.Height = 28;
             this.dgvDSCaTruc.Size = new System.Drawing.Size(516, 231);
             this.dgvDSCaTruc.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(244, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhân sự:";
-            // 
-            // txtMaNS
-            // 
-            this.txtMaNS.BackColor = System.Drawing.Color.White;
-            this.txtMaNS.Enabled = false;
-            this.txtMaNS.Location = new System.Drawing.Point(339, 30);
-            this.txtMaNS.Name = "txtMaNS";
-            this.txtMaNS.Size = new System.Drawing.Size(102, 24);
-            this.txtMaNS.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Chi Nhánh:";
-            // 
-            // cboCN
-            // 
-            this.cboCN.FormattingEnabled = true;
-            this.cboCN.Location = new System.Drawing.Point(104, 31);
-            this.cboCN.Name = "cboCN";
-            this.cboCN.Size = new System.Drawing.Size(127, 26);
-            this.cboCN.TabIndex = 16;
-            this.cboCN.SelectedIndexChanged += new System.EventHandler(this.cboCN_SelectedIndexChanged);
+            this.dgvDSCaTruc.Click += new System.EventHandler(this.dgvDSCaTruc_Click);
             // 
             // QuanLyCaTruc
             // 
@@ -375,7 +363,6 @@
         private System.Windows.Forms.ComboBox cboCaTruc;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvDSCaTruc;
-        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnCT;
