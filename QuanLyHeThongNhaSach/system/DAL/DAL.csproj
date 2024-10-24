@@ -47,6 +47,9 @@
     <Compile Include="DAL_ChucVu.cs" />
     <Compile Include="DAL_CTCaTruc.cs" />
     <Compile Include="DAL_Data.cs" />
+    <Compile Include="DAL_HangHoa.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
+    <Compile Include="DAL_LoaiHangHoa.cs" />
     <Compile Include="DAL_NhanSu.cs" />
     <Compile Include="DAL_NhaPhanPhoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

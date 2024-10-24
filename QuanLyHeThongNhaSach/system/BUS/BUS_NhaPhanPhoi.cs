@@ -30,6 +30,11 @@ namespace BUS
             dgv.DataSource = DAL_NhaPhanPhoi.Instance.layDSNhaPhanPhoi();
         }
 
+        public IQueryable loadnpp()
+        {
+            return DAL_NhaPhanPhoi.Instance.layDSNhaPhanPhoi();
+        }
+
         public bool themNhaPhanPhoi(ET_NhaPhanPhoi nhaPhanPhoi)
         {
             try
