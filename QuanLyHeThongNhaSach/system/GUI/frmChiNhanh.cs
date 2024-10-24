@@ -120,7 +120,14 @@ namespace GUI
                 txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells[2].Value.ToString();
                 mtbSDT.Text = dgvChiNhanh.Rows[dong].Cells[3].Value.ToString();
                 txtEmail.Text = dgvChiNhanh.Rows[dong].Cells[4].Value.ToString();
-                txtGhiChu.Text = dgvChiNhanh.Rows[dong].Cells[5].Value.ToString();
+                if (dgvChiNhanh.Rows[dong].Cells[5].Value != null)
+                {
+                    txtGhiChu.Text = dgvChiNhanh.Rows[dong].Cells[5].Value.ToString();
+                }
+                else
+                {
+                    txtGhiChu.Text = ""; // Hoặc một giá trị mặc định như chuỗi trống
+                }
                 btnThem.Enabled = false;
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;                
@@ -183,6 +190,7 @@ namespace GUI
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            BUS_ChiNhanh.Instance.hienThiChiNhanh(dgvChiNhanh);
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
