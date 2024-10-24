@@ -198,11 +198,11 @@ namespace GUI
             bool flag = false;
             if (batLoi.KT_Null(txtTenNPP.Text) || batLoi.KT_SoKiTuCoTheLuu(txtTenNPP.Text, 50) == false || batLoi.KT_ChuoiKiTu(txtTenNPP.Text) == false)
             {
-                MessageBox.Show("Vui lòng nhập tên nhà phân phối!\n (Ex: An Huy)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên nhà phân phối và giữa mỗi chữ chỉ có 1 dấu cách!\n (Ex: An Huy)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (batLoi.KT_Null(txtDiaChi.Text) || batLoi.KT_SoKiTuCoTheLuu(txtDiaChi.Text, 150) == false)
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập địa chỉ và không quá 150 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (batLoi.KT_SoKiTu(mstSDT.Text, 10) == false || batLoi.KT_ChuoiSoDT(mstSDT.Text) == false)
             {

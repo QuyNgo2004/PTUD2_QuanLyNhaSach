@@ -230,19 +230,23 @@ namespace GUI
             bool flag = false;
             if (batLoi.KT_Null(txtTen.Text) || batLoi.KT_SoKiTuCoTheLuu(txtTen.Text,50) == false || batLoi.KT_ChuoiKiTu(txtTen.Text) == false)
             {
-                MessageBox.Show("Vui lòng nhập tên chi nhánh! \n (Ex: Hoang Long)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên chi nhánh và giữa mỗi chữ chỉ 1 dấu cách! \n (Ex: Hoàng Long)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (batLoi.KT_Null(txtDiaChi.Text) || batLoi.KT_SoKiTuCoTheLuu(txtDiaChi.Text, 150) == false)
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập địa chỉ và không quá 150 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (batLoi.KT_SoKiTu(mtbSDT.Text, 10) == false || batLoi.KT_ChuoiSoDT(mtbSDT.Text) == false)
             {
-                MessageBox.Show("Vui lòng nhập số điện thoại chi nhánh có 10 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập số điện thoại chi nhánh có 10 số bắt đầu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (batLoi.KT_Email(txtEmail.Text) == false || batLoi.KT_SoKiTuCoTheLuu(txtEmail.Text, 50) == false)
             {
                 MessageBox.Show("Vui lòng nhập email chi nhánh đúng format!\n (Ex: abc123@gmail.com)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (batLoi.KT_SoKiTuCoTheLuu(txtGhiChu.Text, 150) == false)
+            {
+                MessageBox.Show("Vui lòng nhập ghi chú không quá 150 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
