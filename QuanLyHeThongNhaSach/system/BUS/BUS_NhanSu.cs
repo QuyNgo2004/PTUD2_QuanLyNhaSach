@@ -12,7 +12,7 @@ namespace BUS
     public class BUS_NhanSu
     {
         private static BUS_NhanSu instance;
-
+        private BUS_ChiTietCaTruc ct = BUS_ChiTietCaTruc.Instance;
 
         public string AutoMa_NhanSu()
         {
@@ -58,6 +58,7 @@ namespace BUS
         {
             try
             {
+                ct.xoaCTCaTrucNS(ma);
                 DAL_NhanSu.Instance.xoaNhanSu(ma);
             }
             catch (Exception ex)
