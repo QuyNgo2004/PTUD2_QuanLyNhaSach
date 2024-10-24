@@ -9,25 +9,29 @@ namespace ET
     public class ET_CaTruc
     {
         private string maCN, tenCT, ghiChu;
-        private int sL,maCT;
+        private int maCT;
+        private TimeSpan gioBD, gioKT;
 
         public ET_CaTruc()
         {
+            
         }
 
-        public ET_CaTruc(string maCN, string tenCT, string ghiChu, int sL, int maCT)
+        public ET_CaTruc(string maCN, string tenCT, string ghiChu, int maCT, TimeSpan gioBD, TimeSpan gioKT)
         {
             this.MaCN = maCN;
             this.TenCT = tenCT;
             this.GhiChu = ghiChu;
-            this.SL = sL;
-            this.maCT = maCT;
+            this.MaCT = maCT;
+            this.GioBD = gioBD;
+            this.GioKT = gioKT;
         }
 
         public string MaCN { get => maCN; set => maCN = value; }
         public string TenCT { get => tenCT; set => tenCT = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
-        public int SL { get => sL; set => sL = value; }
         public int MaCT { get => maCT; set => maCT = value; }
+        public TimeSpan GioBD { get => gioBD; set => gioBD = value; }
+        public TimeSpan GioKT { get => gioKT; set => gioKT = value; }
     }
 }

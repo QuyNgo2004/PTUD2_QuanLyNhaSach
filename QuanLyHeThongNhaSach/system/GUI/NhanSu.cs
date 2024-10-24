@@ -187,20 +187,28 @@ namespace GUI
 
         private void dgvDSNhanSu_Click(object sender, EventArgs e)
         {
-            int dong = dgvDSNhanSu.CurrentCell.RowIndex;
-            txtMaNS.Text = dgvDSNhanSu.Rows[dong].Cells[0].Value.ToString();
-            txtTenNS.Text = dgvDSNhanSu.Rows[dong].Cells[1].Value.ToString();
-            if (dgvDSNhanSu.Rows[dong].Cells[2].Value.ToString() == "Nam")
+            try
             {
-                radNam.Checked = true;
+                int dong = dgvDSNhanSu.CurrentCell.RowIndex;
+                txtMaNS.Text = dgvDSNhanSu.Rows[dong].Cells[0].Value.ToString();
+                txtTenNS.Text = dgvDSNhanSu.Rows[dong].Cells[1].Value.ToString();
+                if (dgvDSNhanSu.Rows[dong].Cells[2].Value.ToString() == "Nam")
+                {
+                    radNam.Checked = true;
+                }
+                else
+                {
+                    radNu.Checked = true;
+                }
+                txtCCCD.Text = dgvDSNhanSu.Rows[dong].Cells[3].Value.ToString();
+                txtSDT.Text = dgvDSNhanSu.Rows[dong].Cells[4].Value.ToString();
+                txtEmail.Text = dgvDSNhanSu.Rows[dong].Cells[5].Value.ToString();
+                txtDiaChiNha.Text = dgvDSNhanSu.Rows[dong].Cells[6].Value.ToString();
             }
-            else {
-                radNu.Checked = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-            txtCCCD.Text = dgvDSNhanSu.Rows[dong].Cells[3].Value.ToString();
-            txtSDT.Text = dgvDSNhanSu.Rows[dong].Cells[4].Value.ToString();
-            txtEmail.Text = dgvDSNhanSu.Rows[dong].Cells[5].Value.ToString();
-            txtDiaChiNha.Text = dgvDSNhanSu.Rows[dong].Cells[6].Value.ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

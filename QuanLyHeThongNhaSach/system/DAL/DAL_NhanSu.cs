@@ -43,6 +43,27 @@ namespace DAL
                                     };
             return dsNhanSu;
         }
+        public IQueryable layDSNhanSu(string macn)
+        {
+            IQueryable dsNhanSu = from ns in DbNhaSach.NhanSus
+                                  join cn in DbNhaSach.ChiNhanhs on ns.maCN equals cn.maCN
+                                  join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                                  where ns.maCN == macn
+                                  select new
+                                  {
+                                      Mã = ns.maNS,
+                                      Họ_Tên = ns.tenNS,
+                                      Giới_Tính = ns.gioiTinh,
+                                      CCCD = ns.cccdNS,
+                                      SoDienThoai = ns.sdtNV,
+                                      Email = ns.emailNV,
+                                      Địa_Chỉ_Nhà = ns.diaChiNha,
+                                      Chi_Nhánh = cn.tenCN,
+                                      Chức_vụ = cv.tenChucVu
+
+                                  };
+            return dsNhanSu;
+        }
         //Tạo mã tự động
         public string AutoMa_NhanSu()
         {
