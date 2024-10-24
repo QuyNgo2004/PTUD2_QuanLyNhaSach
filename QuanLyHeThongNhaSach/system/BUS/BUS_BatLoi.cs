@@ -62,6 +62,16 @@ namespace BUS
             }  
             return text;  
         }
+        public bool KT_ChuoiKiTuBK(string chuoi)
+        {
+            bool flag = false;
+            Regex regex = new Regex(@"^((([A-z0-9]))?(\s{1})?)+([A-z0-9]+)+$");
+            if (regex.IsMatch(RemoveUnicode(chuoi)) == true)
+            {
+                flag = true;
+            }
+            return flag;
+        }
         public bool KT_ChuoiKiTu(string chuoi)
         {
             bool flag = false;
