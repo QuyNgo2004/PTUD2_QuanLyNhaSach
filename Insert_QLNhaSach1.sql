@@ -1,8 +1,9 @@
 ﻿Insert into  ChiNhanh(maCN,tenCN,diaChi,soDienThoai,email,ghiChu)
-values ('01','Nhà sách Sài Gòn','Sài gòn','09102931','quyngo','')
+values ('01','Nhà sách Sài Gòn','Sài gòn','09102931','quyngo',''),
+('02','Nhà sách Hà Nội','Hà Nội','09102931','quyngo','')
 go
 Insert into  ChucVu(tenChucVu)
-values ('Quản lý')
+values ('Quản lý'),('Nhân Viên')
 go
 Insert into  CaTruc(tenCaTruc,SL,maCN,ghiChu)
 values ('T2_Sang',30,'01','')
@@ -108,3 +109,9 @@ values  ('KH00001', N'Hoàng Văn Duy','2005/07/18',N'Nam',N'18 Thành Mỹ Lợ
 		('KH00098', N'Phạm Minh Đức', '1996/10/13', N'Nam', N'321 Đường Phạm Văn Chiêu, Gò Vấp, TP HCM', '0123012345', 'minhduc@gmail.com'),
 		('KH00099', N'Lê Thị Hà', '2001/01/30', N'Nữ', N'654 Đường Bến Thành, Quận 1, TP HCM', '0123123456', 'thihà@gmail.com'),
 		('KH00100', N'Trần Văn Nam', '2003/12/25', N'Nam', N'987 Đường Phú Mỹ Hưng, Quận 7, TP HCM', '0123234567', 'vannam@gmail.com');
+Insert into  CaTruc(tenCaTruc,gioBD,gioKT,maCN,ghiChu)
+values ('T2_Sang','8:00:00','10:00:00','01','')
+go 
+Insert into  NhanSu(maNS,tenNS,gioiTinh,cccdNS,sdtNV,emailNV,diaChiNha,maCN,chucVu,matkhau)
+values ('NS01','Văn A','Nam','09878983762','0928372892','quy@gmail.com','Tiền Giang','01','1','0'),
+('NS02','A Ánh','Nữ','09878983762','0928372832','Sơn@gmail.com','Hậu Giang','01','2','0')

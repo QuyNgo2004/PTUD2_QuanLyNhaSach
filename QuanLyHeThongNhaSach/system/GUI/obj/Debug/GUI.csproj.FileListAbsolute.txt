@@ -109,6 +109,7 @@ C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThong
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.pdb
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll.config
+<<<<<<< HEAD
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe.config
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.pdb
@@ -140,6 +141,10 @@ F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.csproj.Up2Date
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.exe
 F:\PTriển Ứng Dụng\system\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\obj\Debug\GUI.pdb
+=======
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Printing.v22.2.Core.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Utils.v22.2.dll
+>>>>>>> ChucNang_NgoCongQuy_01
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe.config
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.exe
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\GUI.pdb
@@ -147,9 +152,13 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Data.Desktop.v22.2.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Data.v22.2.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Drawing.v22.2.dll
+<<<<<<< HEAD
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Printing.v22.2.Core.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Sparkline.v22.2.Core.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Utils.v22.2.dll
+=======
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.Sparkline.v22.2.Core.dll
+>>>>>>> ChucNang_NgoCongQuy_01
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DevExpress.XtraEditors.v22.2.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\ET.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\GUI\bin\Debug\DAL.dll

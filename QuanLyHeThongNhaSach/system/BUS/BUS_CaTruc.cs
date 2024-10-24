@@ -28,11 +28,18 @@ namespace BUS
         {
             return DAL_CaTruc.Instance.layDSCaTruc();
         }
+        public IQueryable Load_CaTruc(string maCN)
+        {
+            return DAL_CaTruc.Instance.layDSCaTruc(maCN);
+        }
         public void hienThiCaTruc(DataGridView dgv)
         {
             dgv.DataSource = DAL_CaTruc.Instance.layDSCaTruc();
         }
-
+        public void hienThiCaTruc(DataGridView dgv,string maCN)
+        {
+            dgv.DataSource = DAL_CaTruc.Instance.layDSCaTruc(maCN);
+        }
         public bool themCaTruc(ET_CaTruc CaTruc)
         {
             try
