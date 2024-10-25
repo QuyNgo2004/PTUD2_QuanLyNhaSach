@@ -113,6 +113,27 @@ namespace DAL
                 throw ex;
             }
         }
+        public void xoaCTCaTrucCN()
+        {
+            try
+            {
+                var xoa = from ct in DbNhaSach.ChiTietCaTrucs
+                          join c in DbNhaSach.CaTrucs on ct.maCT equals c.maCT
+                          join ns in DbNhaSach.NhanSus on ct.maNS equals ns.maNS
+                          where c.maCN == ns.maCN
+                          select ct;
+                foreach (var item in xoa)
+                {
+                    DbNhaSach.ChiTietCaTrucs.DeleteOnSubmit(item);
+                    DbNhaSach.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void xoaCTCaTrucCT(int maCT)
         {
             try

@@ -68,6 +68,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public void xoaCTCaTrucCN()
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucCN();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void xoaCTCaTrucCT(int maCT)
         {
             try

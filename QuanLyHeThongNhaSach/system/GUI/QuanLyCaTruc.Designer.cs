@@ -64,7 +64,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 300);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(470, 254);
+            this.groupBox1.Size = new System.Drawing.Size(340, 254);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Nhân Viên";
@@ -78,7 +78,7 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 62;
             this.dgvNV.RowTemplate.Height = 28;
-            this.dgvNV.Size = new System.Drawing.Size(464, 231);
+            this.dgvNV.Size = new System.Drawing.Size(334, 231);
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_CellContentClick);
             this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);
@@ -296,9 +296,9 @@
             // 
             this.groupBox3.Controls.Add(this.dgvDSCaTruc);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(487, 300);
+            this.groupBox3.Location = new System.Drawing.Point(348, 300);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(522, 254);
+            this.groupBox3.Size = new System.Drawing.Size(661, 254);
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Ca Trực";
@@ -314,7 +314,7 @@
             this.dgvDSCaTruc.Name = "dgvDSCaTruc";
             this.dgvDSCaTruc.RowHeadersWidth = 62;
             this.dgvDSCaTruc.RowTemplate.Height = 28;
-            this.dgvDSCaTruc.Size = new System.Drawing.Size(516, 231);
+            this.dgvDSCaTruc.Size = new System.Drawing.Size(655, 231);
             this.dgvDSCaTruc.TabIndex = 0;
             this.dgvDSCaTruc.Click += new System.EventHandler(this.dgvDSCaTruc_Click);
             // 
