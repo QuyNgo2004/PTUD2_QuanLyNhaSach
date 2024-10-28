@@ -78,7 +78,7 @@ namespace DAL
     #endregion
 		
 		public QLNhaSachDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString2, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -225,6 +225,13 @@ namespace DAL
 			{
 				return this.GetTable<NhanSu>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimKhachHangTheoSoDienThoai")]
+		public ISingleResult<TimKhachHangTheoSoDienThoaiResult> TimKhachHangTheoSoDienThoai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoDienThoai", DbType="NVarChar(12)")] string soDienThoai)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), soDienThoai);
+			return ((ISingleResult<TimKhachHangTheoSoDienThoaiResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3726,6 +3733,140 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.NhanSu = null;
+		}
+	}
+	
+	public partial class TimKhachHangTheoSoDienThoaiResult
+	{
+		
+		private string _maKH;
+		
+		private string _hoTenKH;
+		
+		private System.Nullable<System.DateTime> _ngaysinhKH;
+		
+		private string _gioitinhKH;
+		
+		private string _diachiKH;
+		
+		private string _sdtKH;
+		
+		private string _emailKH;
+		
+		public TimKhachHangTheoSoDienThoaiResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKH", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string maKH
+		{
+			get
+			{
+				return this._maKH;
+			}
+			set
+			{
+				if ((this._maKH != value))
+				{
+					this._maKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoTenKH", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string hoTenKH
+		{
+			get
+			{
+				return this._hoTenKH;
+			}
+			set
+			{
+				if ((this._hoTenKH != value))
+				{
+					this._hoTenKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaysinhKH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ngaysinhKH
+		{
+			get
+			{
+				return this._ngaysinhKH;
+			}
+			set
+			{
+				if ((this._ngaysinhKH != value))
+				{
+					this._ngaysinhKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioitinhKH", DbType="NVarChar(3) NOT NULL", CanBeNull=false)]
+		public string gioitinhKH
+		{
+			get
+			{
+				return this._gioitinhKH;
+			}
+			set
+			{
+				if ((this._gioitinhKH != value))
+				{
+					this._gioitinhKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachiKH", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string diachiKH
+		{
+			get
+			{
+				return this._diachiKH;
+			}
+			set
+			{
+				if ((this._diachiKH != value))
+				{
+					this._diachiKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdtKH", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string sdtKH
+		{
+			get
+			{
+				return this._sdtKH;
+			}
+			set
+			{
+				if ((this._sdtKH != value))
+				{
+					this._sdtKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emailKH", DbType="VarChar(50)")]
+		public string emailKH
+		{
+			get
+			{
+				return this._emailKH;
+			}
+			set
+			{
+				if ((this._emailKH != value))
+				{
+					this._emailKH = value;
+				}
+			}
 		}
 	}
 }

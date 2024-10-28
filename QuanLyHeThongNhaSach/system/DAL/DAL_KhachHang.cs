@@ -148,5 +148,18 @@ namespace DAL
             } while (dbNhaSach.KhachHangs.Any(kh => kh.maKH == newMaKH));
             return newMaKH;
         }
+
+        public ET_KhachHang TimKhachHangTheoSDT(string soDienThoai)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
