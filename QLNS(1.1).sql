@@ -7,7 +7,7 @@ SET DATEFORMAT dmy;
 --Tạo bảng chi nhánh
 create table ChiNhanh(
 maCN varchar(10) not null,
-tenCN varchar(50) not null,
+tenCN nvarchar(50) not null,
 diaChi nvarchar(150) not null,
 soDienThoai varchar(12) not null,
 email varchar(50) not null,
