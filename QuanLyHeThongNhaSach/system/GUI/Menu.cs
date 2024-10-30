@@ -1,4 +1,5 @@
 ﻿using BUS;
+using ET;
 using GUI;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,10 @@ namespace GUI
     public partial class Menu : Form
     {
         
-        public Menu()
+        public Menu(ET_NhanSu ns)
         {
             InitializeComponent();
+            lbltTenNS.Text = ns.TenNS;
         }
 
         /// <summary>

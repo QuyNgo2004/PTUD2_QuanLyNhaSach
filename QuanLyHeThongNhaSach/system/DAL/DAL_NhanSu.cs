@@ -1,6 +1,7 @@
 ﻿using ET;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,65 @@ namespace DAL
                                       
                                     };
             return dsNhanSu;
+        }
+        public IQueryable<NhanSu> layDSNhanSu_MK()
+        {
+            IQueryable<NhanSu> dsNhanSu = from ns in DbNhaSach.NhanSus
+                                  join cn in DbNhaSach.ChiNhanhs on ns.maCN equals cn.maCN
+                                  join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                                  select new NhanSu
+                                  {
+                                      maNS = ns.maNS,
+                                      tenNS = ns.tenNS,
+                                      gioiTinh = ns.gioiTinh,
+                                      cccdNS = ns.cccdNS,
+                                      sdtNV = ns.sdtNV,
+                                      emailNV = ns.emailNV,
+                                      diaChiNha = ns.diaChiNha,
+                                      maCN = ns.maCN,
+                                      chucVu = ns.chucVu,
+                                      matkhau = ns.maNS,
+                                  };
+            return dsNhanSu;
+        }
+        public ET_NhanSu TimNhanSu(string tenDN,string matKhau)
+        {
+            var listNS = from ns in dbNhaSach.NhanSus
+                                join cn in DbNhaSach.ChiNhanhs on ns.maCN equals cn.maCN
+                                join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                                where ns.maNS == tenDN && ns.matkhau == matKhau
+                                select new 
+                                {
+                                    MaNS = ns.maNS,
+                                    TenNS = ns.tenNS,
+                                    GioiTinh = ns.gioiTinh,
+                                    CccdNS = ns.cccdNS,
+                                    SdtNV = ns.sdtNV,
+                                    EmailNV = ns.emailNV,
+                                    DiaChiNha = ns.diaChiNha,
+                                    MaCN = ns.maCN,
+                                    ChucVu = ns.chucVu,
+                                    Matkhau = ns.matkhau,
+                                };
+            if (listNS.Count() > 0) {
+                var r = listNS.FirstOrDefault();
+                ET_NhanSu nhanSu = new ET_NhanSu
+                {
+                    MaNS = r.MaNS,
+                    TenNS = r.TenNS,
+                    GioiTinh = r.GioiTinh,
+                    CCCD = r.CccdNS,
+                    SDT = r.SdtNV,
+                    Email = r.EmailNV,
+                    DiaChi = r.DiaChiNha,
+                    MaCN = r.MaCN,
+                    ChucVu = int.Parse(r.ChucVu.ToString()),
+                    MatKhau = r.Matkhau,
+                };
+                return nhanSu;
+            }
+            return null;
+           
         }
         public IQueryable layDSNhanSu(string macn)
         {
@@ -173,5 +233,9 @@ namespace DAL
                 throw ex;
             }
         }
+
+      
+        // Cập nhật mật khẩu
+
     }
 }
