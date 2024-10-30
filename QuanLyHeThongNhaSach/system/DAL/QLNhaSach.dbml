@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhaSach" Class="QLNhaSachDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-4HPV2E5\LISM;Initial Catalog=QLNhaSach;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=B202A-PC35\SQLEXPRESS;Initial Catalog=QLNhaSach;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CaTruc" Member="CaTrucs">
     <Type Name="CaTruc">
       <Column Name="maCT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -169,4 +169,40 @@
       <Association Name="ChiNhanh_NhanSu" Member="ChiNhanh" ThisKey="maCN" OtherKey="maCN" Type="ChiNhanh" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.TimKhachHangTheoSoDienThoai" Method="TimKhachHangTheoSoDienThoai">
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(12)" />
+    <ElementType Name="TimKhachHangTheoSoDienThoaiResult">
+      <Column Name="maKH" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="hoTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinhKH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="gioitinhKH" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="diachiKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtKH" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="emailKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TimHangHoaTheoMa" Method="TimHangHoaTheoMa">
+    <Parameter Name="MaHangHoa" Parameter="maHangHoa" Type="System.String" DbType="NVarChar(13)" />
+    <ElementType Name="TimHangHoaTheoMaResult">
+      <Column Name="maHH" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="maLHH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="tenHH" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="giaHH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="donViTinh" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="soLuongTon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maNPP" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="hanSD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="moTa" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="tinhTrang" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="maLHH1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="tenLHH" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu1" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="maNPP1" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNPP" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diachiNPP" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtNPP" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="emailNPP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

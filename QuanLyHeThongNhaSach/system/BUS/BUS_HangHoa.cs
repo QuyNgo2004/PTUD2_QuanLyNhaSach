@@ -84,5 +84,10 @@ namespace BUS
         {
             return dal_hh.TaoMaHangHoaTuDong();
         }
+
+        public ET_HangHoa TimHangHoaTheoMa(string ma)
+        {
+            return DAL_HangHoa.Instance.TimHangHoaTheoMa(ma);
+        }
     }
 }

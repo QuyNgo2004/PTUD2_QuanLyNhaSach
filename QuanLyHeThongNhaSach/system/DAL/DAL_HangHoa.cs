@@ -172,5 +172,36 @@ namespace DAL
             } while (dbNhaSach.HangHoas.Any(kh => kh.maHH == NewMaHH));
             return NewMaHH;
         }
+
+        public ET_HangHoa TimHangHoaTheoMa(string ma)
+        {
+            try
+            {
+                // Sử dụng DbNhaSach để gọi stored procedure
+                var result = DbNhaSach.TimHangHoaTheoMa(ma).FirstOrDefault();
+
+                if (result != null)
+                {
+                    return new ET_HangHoa(
+                        result.maHH,
+                        result.tenHH,
+                        result.tenLHH,
+                        result.giaHH,
+                        result.donViTinh,
+                        result.soLuongTon,
+                        result.tenNPP,
+                        result.moTa,
+                        result.ghiChu,
+                        result.tinhTrang
+                    );
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm hàng hóa theo mã: " + ex.Message);
+            }
+        }
     }
 }
