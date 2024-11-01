@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbbKhuyenMai = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMaHang = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -177,6 +177,7 @@
             this.btnThem.TabIndex = 43;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -343,6 +344,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Hàng Hóa";
             // 
+            // txtMaHang
+            // 
+            this.txtMaHang.Location = new System.Drawing.Point(190, 45);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.Size = new System.Drawing.Size(144, 26);
+            this.txtMaHang.TabIndex = 2;
+            this.txtMaHang.Validated += new System.EventHandler(this.txtMaHang_Validated);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -375,6 +384,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(144, 26);
             this.txtSoLuong.TabIndex = 5;
+            this.txtSoLuong.Validated += new System.EventHandler(this.txtSoLuong_Validated);
             // 
             // label9
             // 
@@ -403,6 +413,7 @@
             // 
             // txtTenHang
             // 
+            this.txtTenHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTenHang.Location = new System.Drawing.Point(190, 94);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(144, 26);
@@ -427,14 +438,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã Hàng";
             // 
-            // txtMaHang
-            // 
-            this.txtMaHang.Location = new System.Drawing.Point(190, 45);
-            this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(144, 26);
-            this.txtMaHang.TabIndex = 2;
-            this.txtMaHang.Validated += new System.EventHandler(this.txtMaHang_Validated);
-            // 
             // formThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +453,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formThanhToan";
             this.Text = "formThanhToan";
+            this.Load += new System.EventHandler(this.formThanhToan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();

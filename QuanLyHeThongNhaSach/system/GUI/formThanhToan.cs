@@ -16,6 +16,7 @@ namespace GUI
     {
         BUS_KhachHang kh = BUS_KhachHang.Instance;
         BUS_HangHoa hh = BUS_HangHoa.Instance;
+        private List<ET_SanPhamThanhToan> listSanPhamThanhToan = new List<ET_SanPhamThanhToan>();
         public formThanhToan()
         {
             InitializeComponent();
@@ -49,7 +50,34 @@ namespace GUI
             if (et != null)
             {
                 txtTenHang.Text = et.TenHH;
+                txtDonGia.Text = et.GiaHH.ToString();
             }
+        }
+
+        private void formThanhToan_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSoLuong_Validated(object sender, EventArgs e)
+        {
+            try
+            {
+                double a = int.Parse(txtDonGia.Text) * int.Parse(txtSoLuong.Text);
+                txtThanhTien.Text = a.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Lỗi khi tính thành tiền vui lòng xem lại"+ ex.Message);
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            ET_SanPhamThanhToan eT_SanPhamThanhToan = new ET_SanPhamThanhToan(txtMaHang.Text,txtTenHang.Text,int.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text),cbbKhuyenMai.Text, double.Parse(txtThanhTien.Text));
+            listSanPhamThanhToan.Add(eT_SanPhamThanhToan);
+            dgvHangHoa.DataSource = listSanPhamThanhToan;
         }
     }
 }

@@ -89,5 +89,10 @@ namespace BUS
         {
             return DAL_HangHoa.Instance.TimHangHoaTheoMa(ma);
         }
+
+        public IQueryable XemDSHangHoaAutoCompleted()
+        {
+            return DAL_HangHoa.Instance.XemDSHangHoaAutoCompleted();
+        }
     }
 }

@@ -8,6 +8,7 @@ BEGIN
     FROM KhachHang
     WHERE sdtKH = @SoDienThoai;
 END;
+go
 
 CREATE PROCEDURE TimHangHoaTheoMa
     @MaHangHoa nvarchar(13)
@@ -21,3 +22,4 @@ BEGIN
 	join NhaPhanPhoi npp on npp.maNPP = hh.maNPP
     WHERE maHH = @MaHangHoa;
 END;
+go

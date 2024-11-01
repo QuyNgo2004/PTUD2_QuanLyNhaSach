@@ -10,7 +10,7 @@ VALUES
 ('CN08', N'Chi Nhánh Nha Trang', N'222 Đường Trần Phú, TP Nha Trang, Khánh Hòa', '0908901234', 'nhatrang@company.com', NULL),
 ('CN09', N'Chi Nhánh Bình Dương', N'333 Đường Cách Mạng Tháng 8, Thủ Dầu Một, Bình Dương', '0909012345', 'binhduong@company.com', NULL),
 ('CN10', N'Chi Nhánh Biên Hòa', N'444 Đường Phạm Văn Thuận, Biên Hòa, Đồng Nai', '0910123456', 'bienhoa@company.com', NULL);
-
+go
 
 INSERT INTO NhaPhanPhoi (maNPP, tenNPP, diachiNPP, sdtNPP, emailNPP)
 VALUES
@@ -28,9 +28,7 @@ go
 Insert into  ChucVu(tenChucVu)
 values ('Quản lý'),('Nhân Viên')
 go
-Insert into  CaTruc(tenCaTruc,SL,maCN,ghiChu)
-values ('T2_Sang',30,'CN01','')
-go
+
 insert into KhachHang(maKH, hoTenKH, ngaysinhKH, gioitinhKH, diachiKH, sdtKH, emailKH)
 values  ('KH00001', N'Hoàng Văn Duy','2005/07/18',N'Nam',N'18 Thành Mỹ Lợi, Thủ Đức, TP HCM','0123467868','hoangduy@gmail.com'),
 		('KH00002', N'Nguyễn Hoàng Nam', '2002/03/12', N'Nam', N'123 Nguyễn Văn Bứa, Bình Chánh, TP HCM', '0123456789', 'namnguyen@gmail.com'),
@@ -132,9 +130,10 @@ values  ('KH00001', N'Hoàng Văn Duy','2005/07/18',N'Nam',N'18 Thành Mỹ Lợ
 		('KH00098', N'Phạm Minh Đức', '1996/10/13', N'Nam', N'321 Đường Phạm Văn Chiêu, Gò Vấp, TP HCM', '0123012345', 'minhduc@gmail.com'),
 		('KH00099', N'Lê Thị Hà', '2001/01/30', N'Nữ', N'654 Đường Bến Thành, Quận 1, TP HCM', '0123123456', 'thihà@gmail.com'),
 		('KH00100', N'Trần Văn Nam', '2003/12/25', N'Nam', N'987 Đường Phú Mỹ Hưng, Quận 7, TP HCM', '0123234567', 'vannam@gmail.com');
+go
 Insert into  CaTruc(tenCaTruc,gioBD,gioKT,maCN,ghiChu)
-values ('T2_Sang','8:00:00','10:00:00','01','')
+values ('T2_Sang','8:00:00','10:00:00','CN01','')
 go 
 Insert into  NhanSu(maNS,tenNS,gioiTinh,cccdNS,sdtNV,emailNV,diaChiNha,maCN,chucVu,matkhau)
-values ('NS01','Văn A','Nam','09878983762','0928372892','quy@gmail.com','Tiền Giang','01','1','0'),
-('NS02','A Ánh','Nữ','09878983762','0928372832','Sơn@gmail.com','Hậu Giang','01','2','0')
+values ('NS01','Văn A','Nam','09878983762','0928372892','quy@gmail.com','Tiền Giang','CN01','1','0'),
+('NS02','A Ánh','Nữ','09878983762','0928372832','Sơn@gmail.com','Hậu Giang','CN01','2','0')

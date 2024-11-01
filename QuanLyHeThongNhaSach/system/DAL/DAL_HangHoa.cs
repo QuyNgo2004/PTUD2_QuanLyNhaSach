@@ -203,5 +203,18 @@ namespace DAL
                 throw new Exception("Lỗi khi tìm hàng hóa theo mã: " + ex.Message);
             }
         }
+
+        public IQueryable XemDSHangHoaAutoCompleted()
+        {
+            IQueryable hanghoa = (from hh in dbNhaSach.HangHoas
+                                 join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                 join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                 select new
+                                 {                                     
+                                     Ten = hh.tenHH,
+                                 });
+
+            return hanghoa;
+        }
     }
 }
