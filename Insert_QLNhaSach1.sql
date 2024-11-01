@@ -137,3 +137,15 @@ go
 Insert into  NhanSu(maNS,tenNS,gioiTinh,cccdNS,sdtNV,emailNV,diaChiNha,maCN,chucVu,matkhau)
 values ('NS01','Văn A','Nam','09878983762','0928372892','quy@gmail.com','Tiền Giang','CN01','1','0'),
 ('NS02','A Ánh','Nữ','09878983762','0928372832','Sơn@gmail.com','Hậu Giang','CN01','2','0')
+
+go
+Insert into LoaiHangHoa(maLHH,tenLHH,ghiChu)
+values ('LHH01',N'Sách',''),
+		('LHH02',N'Bút','')
+
+go
+insert into HangHoa(maHH,maLHH,tenHH,giaHH,donViTinh,soLuongTon,maNPP,hanSD,moTa,ghiChu,tinhTrang)
+values ('HH0001','LHH01',N'Sách Cơ Sở Dữ Liệu',30000,N'Cuốn',30,'NPP01','','','','Còn hàng'),
+		('HH0002','LHH01',N'Sách Cơ Sở Dữ Liệu',50000,N'Cuốn',0,'NPP02','','','','Hết hàng'),
+		('HH0003','LHH01',N'Sách Cơ Sở Dữ Liệu',30000,N'Cuốn',50,'NPP01','','','','Còn hàng')
+
