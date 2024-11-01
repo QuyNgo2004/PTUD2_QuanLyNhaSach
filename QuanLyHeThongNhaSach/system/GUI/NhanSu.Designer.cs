@@ -81,6 +81,7 @@
             // 
             // cboChiNhanh
             // 
+            this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChiNhanh.FormattingEnabled = true;
             this.cboChiNhanh.Location = new System.Drawing.Point(131, 272);
             this.cboChiNhanh.Margin = new System.Windows.Forms.Padding(2);
