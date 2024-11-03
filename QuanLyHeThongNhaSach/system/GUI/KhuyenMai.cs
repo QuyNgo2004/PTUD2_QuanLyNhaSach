@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GUI
 {
     public partial class KhuyenMai : Form
     {
+        BUS_BatLoi error = new BUS_BatLoi();
         public KhuyenMai()
         {
             InitializeComponent();
@@ -33,7 +35,10 @@ namespace GUI
             rbtGiamGia.Checked = true;
             rbtGiamGia_Click(sender, e);
         }
-
+        public void TaoMaKhuyenMai()
+        {
+            txtMaKM.Text = "KM_"+txtMaGiamGia.Text+"_"+dtpNgayBD.Text+"_"+dtpNgayKT.Text;
+        }
        
 
         private void rbtGiamGia_Click(object sender, EventArgs e)
@@ -60,6 +65,17 @@ namespace GUI
                 txtTenSP.BackColor = Color.White;
                 txtMaGiamGia.BackColor = Color.LightGray;
             }
+        }
+
+        private void txtMaGiamGia_TextChanged(object sender, EventArgs e)
+        {
+            if(rbtGiamGia.Checked == true)
+            {
+                if (error.KT_Null(txtMaGiamGia.Text) == true) {
+                    MessageBox.Show("Vui lòng nhập mã giảm giá!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            TaoMaKhuyenMai();
         }
     }
 }
