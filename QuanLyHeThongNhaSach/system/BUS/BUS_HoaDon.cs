@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -38,6 +39,11 @@ namespace BUS
         public string AutoMa_HoaDon()
         {
             return DAL_HoaDon.Instance.AutoMa_HoaDon();
+        }
+
+        public void xemDanhSachHoaDon(DataGridView dgv)
+        {
+            dgv.DataSource = DAL_HoaDon.Instance.xemDanhSachHoaDon();
         }
     }
 }

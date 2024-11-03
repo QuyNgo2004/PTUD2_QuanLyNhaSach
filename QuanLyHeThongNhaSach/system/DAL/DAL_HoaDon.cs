@@ -65,6 +65,18 @@ namespace DAL
             } while (dbNhaSach.HoaDons.Any(hd => hd.maHD == newMa));
             return newMa;
         }
-
+        public IQueryable xemDanhSachHoaDon()
+        {
+            IQueryable dsHoaDon = from hd in dbNhaSach.HoaDons
+                                  select new
+                                  {
+                                      MaHD = hd.maHD,
+                                      MaNS = hd.maNS,
+                                      MaKH = hd.maKH,
+                                      DonGia = hd.donGia,
+                                      NgayIn = hd.ngayIn,
+                                  };
+            return dsHoaDon;
+        }
     }
 }

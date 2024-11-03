@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -35,6 +36,11 @@ namespace BUS
 
                 throw ex;
             }
+        }
+
+        public void xemChiTietHoaDon(DataGridView dgv,string ma)
+        {
+            dgv.DataSource = DAL_CTHoaDon.Instance.xemChiTietHoaDon(ma);
         }
     }
 }

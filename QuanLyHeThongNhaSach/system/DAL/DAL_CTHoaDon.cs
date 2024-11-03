@@ -45,5 +45,22 @@ namespace DAL
             return true; // Trả về true nếu thành công
         }
 
+        public IQueryable xemChiTietHoaDon(string mahd)
+        {
+            IQueryable hangHoa = from cthd in dbNhaSach.CTHoaDons
+                                 join hh in dbNhaSach.HangHoas on cthd.maHH equals hh.maHH
+                                 join hd in dbNhaSach.HoaDons on cthd.maHD equals hd.maHD
+                                 where cthd.maHD == mahd
+                                 select new
+                                 {
+                                     MaHH = cthd.maHH,
+                                     TenHH = hh.tenHH,
+                                     DonGia = hd.donGia,
+                                     SoLuong = cthd.SL,
+
+                                 };
+            return hangHoa;
+                                 
+        }
     }
 }
