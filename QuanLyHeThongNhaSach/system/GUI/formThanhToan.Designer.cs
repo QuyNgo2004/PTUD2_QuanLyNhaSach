@@ -85,6 +85,7 @@
             this.btnThanhToan.TabIndex = 46;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // label12
             // 
@@ -123,6 +124,7 @@
             this.dgvHangHoa.RowHeadersWidth = 62;
             this.dgvHangHoa.Size = new System.Drawing.Size(584, 654);
             this.dgvHangHoa.TabIndex = 0;
+            this.dgvHangHoa.Click += new System.EventHandler(this.dgvHangHoa_Click);
             // 
             // groupBox3
             // 
@@ -163,6 +165,7 @@
             this.btnXoa.TabIndex = 44;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -192,6 +195,7 @@
             this.btnSua.TabIndex = 45;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // groupBox4
             // 
