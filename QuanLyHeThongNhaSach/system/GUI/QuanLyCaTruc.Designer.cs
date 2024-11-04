@@ -317,6 +317,7 @@
             this.dgvDSCaTruc.RowTemplate.Height = 28;
             this.dgvDSCaTruc.Size = new System.Drawing.Size(991, 203);
             this.dgvDSCaTruc.TabIndex = 0;
+            this.dgvDSCaTruc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSCaTruc_CellContentClick);
             this.dgvDSCaTruc.Click += new System.EventHandler(this.dgvDSCaTruc_Click);
             // 
             // QuanLyCaTruc

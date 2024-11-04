@@ -126,12 +126,12 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private KhuyenMai khuyenmai;
+        private ChiTietKhuyenMai khuyenmai;
         private void btnCTKhuyenMai_Click(object sender, EventArgs e)
         {
             if (khuyenmai == null || khuyenmai.IsDisposed)
             {
-                openChildForm(new KhuyenMai());
+                openChildForm(new ChiTietKhuyenMai());
             }
             else
             {

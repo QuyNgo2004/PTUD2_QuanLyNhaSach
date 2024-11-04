@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ChiTietKhuyenMai.cs" />
     <Compile Include="DAL_CaTruc.cs" />
     <Compile Include="DAL_ChiNhanh.cs" />
     <Compile Include="DAL_ChucVu.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="DAL_Data.cs" />
     <Compile Include="DAL_HangHoa.cs" />
     <Compile Include="DAL_KhachHang.cs" />
+    <Compile Include="DAL_KhuyenMai.cs" />
     <Compile Include="DAL_LoaiHangHoa.cs" />
     <Compile Include="DAL_NhanSu.cs" />
     <Compile Include="DAL_NhaPhanPhoi.cs" />

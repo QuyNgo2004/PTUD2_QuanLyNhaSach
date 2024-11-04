@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbXemKM = new System.Windows.Forms.CheckBox();
             this.dgvDSCTKM = new System.Windows.Forms.DataGridView();
             this.pnlKhuyenMai = new System.Windows.Forms.Panel();
             this.lblKhuyenMai = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@
             this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +54,8 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTKM)).BeginInit();
             this.pnlKhuyenMai.SuspendLayout();
@@ -62,6 +65,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbXemKM);
             this.groupBox3.Controls.Add(this.dgvDSCTKM);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(317, 95);
@@ -71,17 +75,29 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Các Chương Trình Khuyến Mãi";
             // 
+            // cbXemKM
+            // 
+            this.cbXemKM.AutoSize = true;
+            this.cbXemKM.Location = new System.Drawing.Point(45, 33);
+            this.cbXemKM.Name = "cbXemKM";
+            this.cbXemKM.Size = new System.Drawing.Size(177, 22);
+            this.cbXemKM.TabIndex = 1;
+            this.cbXemKM.Text = "Xem tất cả khuyến mãi";
+            this.cbXemKM.UseVisualStyleBackColor = true;
+            this.cbXemKM.Click += new System.EventHandler(this.cbXemKM_Click);
+            // 
             // dgvDSCTKM
             // 
             this.dgvDSCTKM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSCTKM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDSCTKM.Location = new System.Drawing.Point(3, 20);
+            this.dgvDSCTKM.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDSCTKM.Location = new System.Drawing.Point(3, 64);
             this.dgvDSCTKM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSCTKM.Name = "dgvDSCTKM";
             this.dgvDSCTKM.RowHeadersWidth = 62;
             this.dgvDSCTKM.RowTemplate.Height = 28;
-            this.dgvDSCTKM.Size = new System.Drawing.Size(681, 488);
+            this.dgvDSCTKM.Size = new System.Drawing.Size(681, 444);
             this.dgvDSCTKM.TabIndex = 0;
+            this.dgvDSCTKM.Click += new System.EventHandler(this.dgvDSCTKM_Click);
             // 
             // pnlKhuyenMai
             // 
@@ -109,6 +125,7 @@
             // 
             this.txtMaKM.BackColor = System.Drawing.Color.White;
             this.txtMaKM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaKM.Enabled = false;
             this.txtMaKM.Location = new System.Drawing.Point(29, 55);
             this.txtMaKM.Name = "txtMaKM";
             this.txtMaKM.Size = new System.Drawing.Size(209, 24);
@@ -130,9 +147,11 @@
             this.groupBox1.Controls.Add(this.dtpNgayBD);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGhiChu);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTenSP);
+            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtMaKM);
             this.groupBox1.Controls.Add(this.lblMaKM);
             this.groupBox1.Controls.Add(this.label1);
@@ -151,15 +170,16 @@
             // dtpNgayKT
             // 
             this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKT.Location = new System.Drawing.Point(128, 141);
+            this.dtpNgayKT.Location = new System.Drawing.Point(128, 180);
             this.dtpNgayKT.Name = "dtpNgayKT";
             this.dtpNgayKT.Size = new System.Drawing.Size(110, 24);
             this.dtpNgayKT.TabIndex = 21;
+            this.dtpNgayKT.Validated += new System.EventHandler(this.dtpNgayBD_Validated);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 147);
+            this.label4.Location = new System.Drawing.Point(25, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 20;
@@ -168,15 +188,16 @@
             // dtpNgayBD
             // 
             this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(128, 99);
+            this.dtpNgayBD.Location = new System.Drawing.Point(128, 138);
             this.dtpNgayBD.Name = "dtpNgayBD";
             this.dtpNgayBD.Size = new System.Drawing.Size(110, 24);
             this.dtpNgayBD.TabIndex = 21;
+            this.dtpNgayBD.Validated += new System.EventHandler(this.dtpNgayBD_Validated);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 105);
+            this.label3.Location = new System.Drawing.Point(25, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 18);
             this.label3.TabIndex = 20;
@@ -185,28 +206,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 298);
+            this.label2.Location = new System.Drawing.Point(25, 337);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 20;
             this.label2.Text = "Tên :";
             // 
-            // textBox1
+            // txtGhiChu
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(29, 354);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox1.Size = new System.Drawing.Size(209, 87);
-            this.textBox1.TabIndex = 3;
+            this.txtGhiChu.BackColor = System.Drawing.Color.White;
+            this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGhiChu.Location = new System.Drawing.Point(29, 385);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtGhiChu.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtGhiChu.Size = new System.Drawing.Size(209, 56);
+            this.txtGhiChu.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 336);
+            this.label5.Location = new System.Drawing.Point(26, 364);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 18);
             this.label5.TabIndex = 2;
@@ -216,7 +237,7 @@
             // 
             this.txtTenSP.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTenSP.Location = new System.Drawing.Point(68, 294);
+            this.txtTenSP.Location = new System.Drawing.Point(68, 333);
             this.txtTenSP.Multiline = true;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(169, 22);
@@ -225,7 +246,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 270);
+            this.label1.Location = new System.Drawing.Point(26, 309);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 18);
             this.label1.TabIndex = 18;
@@ -235,29 +256,30 @@
             // 
             this.txtMaGiamGia.BackColor = System.Drawing.SystemColors.Window;
             this.txtMaGiamGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaGiamGia.Location = new System.Drawing.Point(29, 211);
+            this.txtMaGiamGia.Location = new System.Drawing.Point(29, 250);
             this.txtMaGiamGia.Multiline = true;
             this.txtMaGiamGia.Name = "txtMaGiamGia";
             this.txtMaGiamGia.Size = new System.Drawing.Size(209, 22);
             this.txtMaGiamGia.TabIndex = 14;
-            this.txtMaGiamGia.Validated += new System.EventHandler(this.txtMaGiamGia_TextChanged);
+            this.txtMaGiamGia.Text = "1";
+            this.txtMaGiamGia.Validated += new System.EventHandler(this.txtMaGiamGia_Validated);
             // 
             // rbtGiamGia
             // 
             this.rbtGiamGia.AutoSize = true;
-            this.rbtGiamGia.Location = new System.Drawing.Point(29, 183);
+            this.rbtGiamGia.Location = new System.Drawing.Point(29, 222);
             this.rbtGiamGia.Name = "rbtGiamGia";
-            this.rbtGiamGia.Size = new System.Drawing.Size(93, 22);
+            this.rbtGiamGia.Size = new System.Drawing.Size(116, 22);
             this.rbtGiamGia.TabIndex = 15;
             this.rbtGiamGia.TabStop = true;
-            this.rbtGiamGia.Text = "Giảm giá :";
+            this.rbtGiamGia.Text = "Giảm giá (%):";
             this.rbtGiamGia.UseVisualStyleBackColor = true;
             this.rbtGiamGia.Click += new System.EventHandler(this.rbtGiamGia_Click);
             // 
             // rbtSP
             // 
             this.rbtSP.AutoSize = true;
-            this.rbtSP.Location = new System.Drawing.Point(29, 243);
+            this.rbtSP.Location = new System.Drawing.Point(29, 282);
             this.rbtSP.Name = "rbtSP";
             this.rbtSP.Size = new System.Drawing.Size(176, 22);
             this.rbtSP.TabIndex = 17;
@@ -270,11 +292,12 @@
             // 
             this.txtMaSP.BackColor = System.Drawing.Color.LightGray;
             this.txtMaSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaSP.Location = new System.Drawing.Point(69, 266);
+            this.txtMaSP.Location = new System.Drawing.Point(69, 305);
             this.txtMaSP.Multiline = true;
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(169, 22);
             this.txtMaSP.TabIndex = 16;
+            this.txtMaSP.Validated += new System.EventHandler(this.txtMaSP_Validated);
             // 
             // groupBox2
             // 
@@ -304,6 +327,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThoat
             // 
@@ -335,6 +359,7 @@
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -350,6 +375,25 @@
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tên khuyến mãi :";
+            // 
+            // txtTen
+            // 
+            this.txtTen.BackColor = System.Drawing.Color.White;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTen.Location = new System.Drawing.Point(28, 109);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(209, 24);
+            this.txtTen.TabIndex = 1;
             // 
             // KhuyenMai
             // 
@@ -368,6 +412,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KhuyenMai_Load);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTKM)).EndInit();
             this.pnlKhuyenMai.ResumeLayout(false);
             this.pnlKhuyenMai.PerformLayout();
@@ -403,7 +448,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbXemKM;
+        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.Label label6;
     }
 }

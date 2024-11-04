@@ -82,18 +82,21 @@ constraint PK_CTNCC primary key(maCTNCC,maHH))
 go
 --Tạo bảng Khuyến Mãi
 create table KhuyenMai(
-maKM varchar(20) primary key,
-tenKM nvarchar(50),
+maKM varchar(25) primary key,
+tenKM nvarchar(50) not null,
 giamGia int null,
+maHH varchar(13) foreign key references HangHoa(maHH) null,
+ngayBD dateTime not null,
+ngayKT dateTime not null,
+ghiChu nvarchar(100)  null ,
 --maHH varchar(13)  --Qua tang kem )
 )
+go
 --Tao bang chi tiet khuyen mai
 create table CTKhuyenMai(
 maCTKM INT IDENTITY(1,1),
 maHH varchar(13) foreign key references HangHoa(maHH) ,
 maKM varchar(20) foreign key references KhuyenMai(maKM),
-ngayBD dateTime,
-ngayKT dateTime,
 constraint PK_CTKM primary key(maHH,maKM,maCTKM))
 --Tao bang nhan vien
 create table NhanSu (
