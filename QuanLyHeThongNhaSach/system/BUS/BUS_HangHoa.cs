@@ -37,7 +37,7 @@ namespace BUS
         {
             // Gán DataSource cho DataGridView
             comboBox.DataSource = dal_hh.XemDSHangHoa();
-            comboBox.DisplayMember = "Ten";
+            comboBox.DisplayMember = "Ma";
             comboBox.ValueMember = "Ma";
         }
 

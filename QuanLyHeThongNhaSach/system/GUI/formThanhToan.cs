@@ -56,36 +56,25 @@ namespace GUI
             bindingSourceSanPham.DataSource = danhSachSanPham;
             dgvHangHoa.DataSource = bindingSourceSanPham;
             dgvHangHoa.AutoGenerateColumns = true;
-            hh.XemDSHH(cbbTenHang);
-            cbbMaHang.DataSource = cbbTenHang.DataSource;
-            cbbMaHang.ValueMember = "Ma";
-            cbbMaHang.DisplayMember = "Ma";
-            ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
-            if (et != null)
-            {
-                txtDonGia.Text = et.GiaHH.ToString();
-            }
-            cbbMaHang.Text = cbbTenHang.SelectedValue.ToString();
+            hh.XemDSHH(cbbMaHang);
         }
 
         private void txtSoLuong_Validated(object sender, EventArgs e)
         {
-            try
+            if (txtSoLuong.Text != "")
             {
-                double a = int.Parse(txtDonGia.Text) * int.Parse(txtSoLuong.Text);
-                txtThanhTien.Text = a.ToString();
+                int donGia = int.Parse(txtDonGia.Text);
+                int soLuong = int.Parse(txtSoLuong.Text);
+                double thanhTien = donGia * soLuong;
+                txtThanhTien.Text = thanhTien.ToString();
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Lỗi khi tính thành tiền vui lòng xem lại"+ ex.Message);
-            }
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             string maHH = cbbMaHang.Text;
-            string tenHH = cbbTenHang.Text;
+            string tenHH = txtTenHang.Text;
             int donGia = int.Parse(txtDonGia.Text);
             int soLuong = int.Parse(txtSoLuong.Text);
             string khuyenMai = cbbKhuyenMai.Text;
@@ -109,7 +98,7 @@ namespace GUI
 
             ShowTongTien();
             cbbMaHang.SelectedIndex = 0;
-            cbbTenHang.SelectedIndex = 0;
+            txtTenHang.Clear();
             txtDonGia.Clear();
             txtSoLuong.Clear();
             cbbKhuyenMai.Text = "";
@@ -122,7 +111,7 @@ namespace GUI
             {
                 int dong = dgvHangHoa.CurrentCell.RowIndex;
                 cbbMaHang.Text = dgvHangHoa.Rows[dong].Cells[0].Value.ToString();
-                cbbTenHang.Text = dgvHangHoa.Rows[dong].Cells[1].Value.ToString();
+                txtTenHang.Text = dgvHangHoa.Rows[dong].Cells[1].Value.ToString();
                 txtDonGia.Text = dgvHangHoa.Rows[dong].Cells[2].Value.ToString();
                 txtSoLuong.Text = dgvHangHoa.Rows[dong].Cells[3].Value.ToString();
                 cbbKhuyenMai.Text = dgvHangHoa.Rows[dong].Cells[4].Value.ToString();
@@ -160,7 +149,7 @@ namespace GUI
 
                         // Xóa các ô nhập liệu để cho biết sản phẩm đã bị xóa
                         cbbMaHang.SelectedIndex = 0;
-                        cbbTenHang.SelectedIndex = 0;
+                        txtTenHang.Clear();
                         txtDonGia.Clear();
                         txtSoLuong.Clear();
                         cbbKhuyenMai.Text = "";
@@ -196,7 +185,7 @@ namespace GUI
                     if (sanPhamSua != null)
                     {
                         // Cập nhật thông tin sản phẩm dựa trên dữ liệu từ các TextBox
-                        sanPhamSua.TenHH = cbbTenHang.Text;
+                        sanPhamSua.TenHH = txtTenHang.Text;
                         sanPhamSua.DonGia = int.Parse(txtDonGia.Text);
                         sanPhamSua.SoLuong = int.Parse(txtSoLuong.Text);
                         sanPhamSua.KhuyenMai = cbbKhuyenMai.Text;
@@ -209,7 +198,7 @@ namespace GUI
 
                         ShowTongTien();
                         cbbMaHang.SelectedIndex = 0;
-                        cbbTenHang.SelectedIndex = 0;
+                        txtTenHang.Clear();
                         txtDonGia.Clear();
                         txtSoLuong.Clear();
                         cbbKhuyenMai.Text = "";
@@ -310,7 +299,7 @@ namespace GUI
                 txtTenKH.Clear();
                 txtDiaChi.Clear();
                 cbbMaHang.SelectedIndex = 0;
-                cbbTenHang.SelectedIndex = 0;
+                txtTenHang.Clear();
                 txtDonGia.Clear();
                 txtSoLuong.Clear();
                 cbbKhuyenMai.Text = "";
@@ -322,22 +311,23 @@ namespace GUI
 
         private void cbbTenHang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            
+        }
+
+        private void cbbMaHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
+            if (et != null)
             {
-                // Lấy giá trị mã hàng hóa từ cbbTenHang dựa trên lựa chọn hiện tại
-                cbbMaHang.Text = cbbTenHang.SelectedValue.ToString();
-                ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
-                if (et != null)
-                {                    
-                    txtDonGia.Text = et.GiaHH.ToString();
-                }
-                // Hiển thị mã hàng hóa trong cbbMaHang                 
+                txtTenHang.Text = et.TenHH;
+                txtDonGia.Text = et.GiaHH.ToString();
             }
-            catch (Exception ex)
-            {
-                // Xử lý ngoại lệ nếu có lỗi
-                MessageBox.Show("Lỗi khi chọn hàng hóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+        }
+
+        private void cbbMaHang_Enter(object sender, EventArgs e)
+        {
+            cbbMaHang_SelectedIndexChanged (sender, e);            
         }
     }
 }

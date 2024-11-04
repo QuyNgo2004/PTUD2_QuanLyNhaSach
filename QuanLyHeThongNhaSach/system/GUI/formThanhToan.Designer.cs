@@ -39,6 +39,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTenHang = new System.Windows.Forms.TextBox();
+            this.cbbMaHang = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbbKhuyenMai = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,9 +64,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnLamMoi = new System.Windows.Forms.Button();
-            this.cbbMaHang = new System.Windows.Forms.ComboBox();
-            this.cbbTenHang = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -164,7 +164,7 @@
             this.btnXoa.Location = new System.Drawing.Point(137, 28);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(76, 35);
-            this.btnXoa.TabIndex = 44;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -179,7 +179,7 @@
             this.btnThem.Location = new System.Drawing.Point(17, 28);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(76, 35);
-            this.btnThem.TabIndex = 43;
+            this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -194,7 +194,7 @@
             this.btnSua.Location = new System.Drawing.Point(258, 28);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(76, 35);
-            this.btnSua.TabIndex = 45;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -214,8 +214,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thanh Công Cụ";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(124, 78);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(101, 35);
+            this.btnLamMoi.TabIndex = 47;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // txtThanhTien
             // 
+            this.txtThanhTien.Enabled = false;
             this.txtThanhTien.Location = new System.Drawing.Point(190, 280);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(144, 26);
@@ -330,7 +346,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbbTenHang);
+            this.groupBox2.Controls.Add(this.txtTenHang);
             this.groupBox2.Controls.Add(this.cbbMaHang);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.txtThanhTien);
@@ -350,6 +366,26 @@
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Hàng Hóa";
+            // 
+            // txtTenHang
+            // 
+            this.txtTenHang.Enabled = false;
+            this.txtTenHang.Location = new System.Drawing.Point(190, 94);
+            this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.Size = new System.Drawing.Size(144, 26);
+            this.txtTenHang.TabIndex = 9;
+            // 
+            // cbbMaHang
+            // 
+            this.cbbMaHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbMaHang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbbMaHang.FormattingEnabled = true;
+            this.cbbMaHang.Location = new System.Drawing.Point(190, 45);
+            this.cbbMaHang.Name = "cbbMaHang";
+            this.cbbMaHang.Size = new System.Drawing.Size(144, 28);
+            this.cbbMaHang.TabIndex = 8;
+            this.cbbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbbMaHang_SelectedIndexChanged);
+            this.cbbMaHang.Enter += new System.EventHandler(this.cbbMaHang_Enter);
             // 
             // label11
             // 
@@ -430,40 +466,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã Hàng";
             // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLamMoi.FlatAppearance.BorderSize = 0;
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(124, 78);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(101, 35);
-            this.btnLamMoi.TabIndex = 47;
-            this.btnLamMoi.Text = "Làm Mới";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // cbbMaHang
-            // 
-            this.cbbMaHang.FormattingEnabled = true;
-            this.cbbMaHang.Location = new System.Drawing.Point(190, 45);
-            this.cbbMaHang.Name = "cbbMaHang";
-            this.cbbMaHang.Size = new System.Drawing.Size(144, 28);
-            this.cbbMaHang.TabIndex = 8;
-            // 
-            // cbbTenHang
-            // 
-            this.cbbTenHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbbTenHang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbbTenHang.FormattingEnabled = true;
-            this.cbbTenHang.Location = new System.Drawing.Point(190, 94);
-            this.cbbTenHang.Name = "cbbTenHang";
-            this.cbbTenHang.Size = new System.Drawing.Size(144, 28);
-            this.cbbTenHang.TabIndex = 9;
-            this.cbbTenHang.SelectedIndexChanged += new System.EventHandler(this.cbbTenHang_SelectedIndexChanged);
-            // 
             // formThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,7 +533,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.ComboBox cbbTenHang;
         private System.Windows.Forms.ComboBox cbbMaHang;
+        private System.Windows.Forms.TextBox txtTenHang;
     }
 }
