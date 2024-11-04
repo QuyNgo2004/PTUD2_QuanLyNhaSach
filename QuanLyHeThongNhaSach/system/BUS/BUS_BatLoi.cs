@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -62,6 +63,16 @@ namespace BUS
             }  
             return text;  
         }
+        public bool KT_ChuoiKiTuBK(string chuoi)
+        {
+            bool flag = false;
+            Regex regex = new Regex(@"^((([A-z0-9]))?(\s{1})?)+([A-z0-9]+)+$");
+            if (regex.IsMatch(RemoveUnicode(chuoi)) == true)
+            {
+                flag = true;
+            }
+            return flag;
+        }
         public bool KT_ChuoiKiTu(string chuoi)
         {
             bool flag = false;
@@ -110,6 +121,22 @@ namespace BUS
                 flag = true;
             }
             return flag;
+        }
+        // Kiểm tra ngày
+        public bool KT_Ngay(DateTime ngayBD, DateTime ngayKT, DateTime ngayHT) {
+            if (ngayBD >= ngayKT)
+            {
+                return false;
+            }
+            else if (ngayBD < ngayHT)
+            {
+                return false;
+            }
+            else if (ngayKT < ngayHT)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

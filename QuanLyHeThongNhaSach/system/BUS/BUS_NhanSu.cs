@@ -12,7 +12,7 @@ namespace BUS
     public class BUS_NhanSu
     {
         private static BUS_NhanSu instance;
-
+        private BUS_ChiTietCaTruc ct = BUS_ChiTietCaTruc.Instance;
 
         public string AutoMa_NhanSu()
         {
@@ -37,6 +37,23 @@ namespace BUS
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
         }
+       
+        //public bool KT_DangNhap(string tenDN,string matKhau)
+        //{
+        //    List<NhanSu> list = hienThiNhanSu_List();
+        //    foreach (NhanSu ns in list)
+        //    {
+        //        if(ns.tenNS == tenDN && ns.matkhau == matKhau)
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+        public ET_NhanSu KT_MatKhau(string tenDN,string matKhau)
+        {
+            return DAL_NhanSu.Instance.TimNhanSu(tenDN, matKhau);
+        }
         public void hienThiNhanSu(DataGridView dgv,string ma)
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu(ma);
@@ -58,6 +75,7 @@ namespace BUS
         {
             try
             {
+                ct.xoaCTCaTrucNS(ma);
                 DAL_NhanSu.Instance.xoaNhanSu(ma);
             }
             catch (Exception ex)

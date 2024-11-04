@@ -18,6 +18,7 @@ namespace GUI
         private BUS_ChiNhanh cn = BUS_ChiNhanh.Instance;
         private BUS_ChucVu cv = BUS_ChucVu.Instance;
         private BUS_NhanSu ns = BUS_NhanSu.Instance;
+        private BUS_ChiTietCaTruc ctCaTruc = BUS_ChiTietCaTruc.Instance;
         private BUS_BatLoi error = new BUS_BatLoi();
         public NhanSu()
         {
@@ -220,6 +221,7 @@ namespace GUI
                     if (MessageBox.Show("Bạn có muốn sửa nhân sự đang chọn không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         ns.suaNhanSu(Info());
+                        ctCaTruc.xoaCTCaTrucCN();
                         MessageBox.Show("Sửa thành công", "Thông báo");
                         Load_NS();
                     }
@@ -309,7 +311,11 @@ namespace GUI
         {
             if(error.KT_SoKiTuCoTheLuu(txtDiaChiNha.Text, 55) == false)
             {
-                MessageBox.Show("Email nhân sự vượt quá số kí tự \n(Kí tự giới hạn 55)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Địa chỉ nhân sự vượt quá số kí tự \n(Kí tự giới hạn 55)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (error.KT_ChuoiKiTuBK(txtDiaChiNha.Text) == false)
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ nhà nhân sự đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }

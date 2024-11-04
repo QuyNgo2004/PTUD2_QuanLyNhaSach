@@ -38,7 +38,7 @@ namespace BUS
         }
         public void hienThiCTCaTruc(DataGridView dgv, int maCT)
         {
-            dgv.DataSource = DAL_CTCaTruc.Instance.layDSCTCaTruc( maCT);
+            dgv.DataSource = DAL_CTCaTruc.Instance.layDSCTCaTruc( maCT) ;
         }
         public bool themCTCaTruc(int maCT,string maNS)
         {
@@ -68,7 +68,42 @@ namespace BUS
                 throw ex;
             }
         }
+        public void xoaCTCaTrucCN()
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucCN();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
+        public void xoaCTCaTrucCT(int maCT)
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucCT(maCT);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void xoaCTCaTrucNS(string maNS)
+        {
+            try
+            {
+                DAL_CTCaTruc.Instance.xoaCTCaTrucNS(maNS);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void suaCTCaTruc(int maCTCT,int maCT, string maNS)
         {
             try

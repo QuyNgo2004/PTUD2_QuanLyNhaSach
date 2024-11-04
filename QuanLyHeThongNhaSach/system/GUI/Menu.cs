@@ -1,4 +1,5 @@
 ﻿using BUS;
+using ET;
 using GUI;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,10 @@ namespace GUI
     public partial class Menu : Form
     {
         
-        public Menu()
+        public Menu(ET_NhanSu ns)
         {
             InitializeComponent();
+            lbltTenNS.Text = ns.TenNS;
         }
 
         /// <summary>
@@ -124,12 +126,12 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private KhuyenMai khuyenmai;
+        private ChiTietKhuyenMai khuyenmai;
         private void btnCTKhuyenMai_Click(object sender, EventArgs e)
         {
             if (khuyenmai == null || khuyenmai.IsDisposed)
             {
-                openChildForm(new KhuyenMai());
+                openChildForm(new ChiTietKhuyenMai());
             }
             else
             {

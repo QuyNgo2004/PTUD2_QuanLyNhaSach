@@ -160,7 +160,10 @@ namespace GUI
             {
                 MessageBox.Show("Tên ca trực vượt quá số kí tự \n(Kí tự giới hạn 45)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            else if (error.KT_ChuoiKiTuBK(txtTenCT.Text) == false)
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ nhà nhân sự đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtGhiChu_Validated(object sender, EventArgs e)
