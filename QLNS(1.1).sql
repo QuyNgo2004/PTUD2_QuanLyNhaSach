@@ -114,7 +114,7 @@ create table HoaDon(
 maHD varchar(10) not null,
 maNS varchar (7) foreign key references NhanSu(maNS),
 maKH varchar(11) foreign key references KhachHang(maKH),
-donGia float,
+tongTien float,
 ngayIn date not null,
 ghiChu nvarchar(150) null,
 primary key (maHD))

@@ -48,12 +48,7 @@ namespace GUI
 
         private void txtMaHang_Validated(object sender, EventArgs e)
         {
-            ET_HangHoa et = hh.TimHangHoaTheoMa(txtMaHang.Text);
-            if (et != null)
-            {
-                txtTenHang.Text = et.TenHH;
-                txtDonGia.Text = et.GiaHH.ToString();
-            }
+            
         }
 
         private void formThanhToan_Load(object sender, EventArgs e)
@@ -61,6 +56,16 @@ namespace GUI
             bindingSourceSanPham.DataSource = danhSachSanPham;
             dgvHangHoa.DataSource = bindingSourceSanPham;
             dgvHangHoa.AutoGenerateColumns = true;
+            hh.XemDSHH(cbbTenHang);
+            cbbMaHang.DataSource = cbbTenHang.DataSource;
+            cbbMaHang.ValueMember = "Ma";
+            cbbMaHang.DisplayMember = "Ma";
+            ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
+            if (et != null)
+            {
+                txtDonGia.Text = et.GiaHH.ToString();
+            }
+            cbbMaHang.Text = cbbTenHang.SelectedValue.ToString();
         }
 
         private void txtSoLuong_Validated(object sender, EventArgs e)
@@ -79,8 +84,8 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string maHH = txtMaHang.Text;
-            string tenHH = txtTenHang.Text;
+            string maHH = cbbMaHang.Text;
+            string tenHH = cbbTenHang.Text;
             int donGia = int.Parse(txtDonGia.Text);
             int soLuong = int.Parse(txtSoLuong.Text);
             string khuyenMai = cbbKhuyenMai.Text;
@@ -103,9 +108,9 @@ namespace GUI
             bindingSourceSanPham.ResetBindings(false);
 
             ShowTongTien();
-            txtMaHang.Clear();
-            txtTenHang.Clear();
-            //txtDonGia.Clear();
+            cbbMaHang.SelectedIndex = 0;
+            cbbTenHang.SelectedIndex = 0;
+            txtDonGia.Clear();
             txtSoLuong.Clear();
             cbbKhuyenMai.Text = "";
             txtThanhTien.Clear();
@@ -116,8 +121,8 @@ namespace GUI
             try
             {
                 int dong = dgvHangHoa.CurrentCell.RowIndex;
-                txtMaHang.Text = dgvHangHoa.Rows[dong].Cells[0].Value.ToString();
-                txtTenHang.Text = dgvHangHoa.Rows[dong].Cells[1].Value.ToString();
+                cbbMaHang.Text = dgvHangHoa.Rows[dong].Cells[0].Value.ToString();
+                cbbTenHang.Text = dgvHangHoa.Rows[dong].Cells[1].Value.ToString();
                 txtDonGia.Text = dgvHangHoa.Rows[dong].Cells[2].Value.ToString();
                 txtSoLuong.Text = dgvHangHoa.Rows[dong].Cells[3].Value.ToString();
                 cbbKhuyenMai.Text = dgvHangHoa.Rows[dong].Cells[4].Value.ToString();
@@ -138,7 +143,7 @@ namespace GUI
                 try
                 {
                     // Kiểm tra xem mã hàng hóa có tồn tại hay không
-                    string maHangXoa = txtMaHang.Text;
+                    string maHangXoa = cbbMaHang.Text;
 
                     // Tìm sản phẩm có mã hàng hóa khớp trong danh sách
                     var sanPhamXoa = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHangXoa);
@@ -154,9 +159,9 @@ namespace GUI
                         ShowTongTien();
 
                         // Xóa các ô nhập liệu để cho biết sản phẩm đã bị xóa
-                        txtMaHang.Clear();
-                        txtTenHang.Clear();
-                        //txtDonGia.Clear();
+                        cbbMaHang.SelectedIndex = 0;
+                        cbbTenHang.SelectedIndex = 0;
+                        txtDonGia.Clear();
                         txtSoLuong.Clear();
                         cbbKhuyenMai.Text = "";
                         txtThanhTien.Clear();
@@ -183,7 +188,7 @@ namespace GUI
                 try
                 {
                     // Lấy mã hàng hóa của sản phẩm cần sửa
-                    string maHH = txtMaHang.Text;
+                    string maHH = cbbMaHang.Text;
 
                     // Tìm sản phẩm trong danh sách dựa trên mã hàng hóa
                     var sanPhamSua = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
@@ -191,7 +196,7 @@ namespace GUI
                     if (sanPhamSua != null)
                     {
                         // Cập nhật thông tin sản phẩm dựa trên dữ liệu từ các TextBox
-                        sanPhamSua.TenHH = txtTenHang.Text;
+                        sanPhamSua.TenHH = cbbTenHang.Text;
                         sanPhamSua.DonGia = int.Parse(txtDonGia.Text);
                         sanPhamSua.SoLuong = int.Parse(txtSoLuong.Text);
                         sanPhamSua.KhuyenMai = cbbKhuyenMai.Text;
@@ -203,9 +208,9 @@ namespace GUI
                         bindingSourceSanPham.ResetBindings(false);
 
                         ShowTongTien();
-                        txtMaHang.Clear();
-                        txtTenHang.Clear();
-                        //txtDonGia.Clear();
+                        cbbMaHang.SelectedIndex = 0;
+                        cbbTenHang.SelectedIndex = 0;
+                        txtDonGia.Clear();
                         txtSoLuong.Clear();
                         cbbKhuyenMai.Text = "";
                         txtThanhTien.Clear();
@@ -241,52 +246,97 @@ namespace GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            ET_HoaDon hoaDon = null;
+            DialogResult dar = MessageBox.Show("Bạn có muốn thanh toán?","Thông báo",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
+            {
+                ET_HoaDon hoaDon = null;
+                try
+                {
+                    // Bước 1: Tạo đối tượng ET_HoaDon từ thông tin trên form
+                    hoaDon = new ET_HoaDon(
+                        hd.AutoMa_HoaDon(),                   // Mã hóa đơn duy nhất
+                        "NS01",         //txtMaNhanVien.Text  // Lấy mã nhân viên từ textbox
+                        txtMaKH.Text,                         // Lấy mã khách hàng từ textbox
+                        TinhTongTien(),                       // Tổng tiền từ hàm TinhTongTien
+                        DateTime.Now,                         // Ngày hiện tại
+                        " "                                   // Ghi chú từ textbox
+                    );
+                    //MessageBox.Show(hoaDon.MaHD);
+                    // Bước 2: Thêm hóa đơn thông qua lớp BUS
+                    bool hoaDonAdded = BUS_HoaDon.Instance.themHoaDon(hoaDon);
+
+                    if (hoaDonAdded)
+                    {
+                        // Bước 3: Nếu hóa đơn được thêm thành công, thêm các chi tiết hóa đơn
+                        foreach (DataGridViewRow row in dgvHangHoa.Rows)
+                        {
+                            if (row.Cells["maHH"].Value != null && row.Cells["SoLuong"].Value != null)
+                            {
+                                ET_CTHoaDon ctHoaDon = new ET_CTHoaDon(
+                                    hoaDon.MaHD,                              // Mã hóa đơn
+                                    row.Cells["maHH"].Value.ToString(),       // Mã hàng hóa từ DataGridView
+                                    Convert.ToInt32(row.Cells["SoLuong"].Value)    // Số lượng từ DataGridView
+                                );
+
+                                // Thêm chi tiết hóa đơn thông qua lớp BUS
+                                BUS_CTHoaDon.Instance.themCTHoaDon(ctHoaDon);
+                            }
+                        }
+                        dgvHangHoa.DataSource = null;
+                        // Bước 4: Hiển thị thông báo thành công
+                        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi thêm hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            DialogResult dar = MessageBox.Show("Bạn có muốn làm mới?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
+            {
+                txtSDT.Clear();
+                txtMaKH.Clear();
+                txtTenKH.Clear();
+                txtDiaChi.Clear();
+                cbbMaHang.SelectedIndex = 0;
+                cbbTenHang.SelectedIndex = 0;
+                txtDonGia.Clear();
+                txtSoLuong.Clear();
+                cbbKhuyenMai.Text = "";
+                txtThanhTien.Clear();
+                dgvHangHoa.DataSource = null;
+                txtTongTien.Clear();
+            }
+        }
+
+        private void cbbTenHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
-                // Bước 1: Tạo đối tượng ET_HoaDon từ thông tin trên form
-                hoaDon = new ET_HoaDon(
-                    hd.AutoMa_HoaDon(),                   // Mã hóa đơn duy nhất
-                    "NS01",         //txtMaNhanVien.Text  // Lấy mã nhân viên từ textbox
-                    txtMaKH.Text,                         // Lấy mã khách hàng từ textbox
-                    TinhTongTien(),                       // Tổng tiền từ hàm TinhTongTien
-                    DateTime.Now,                         // Ngày hiện tại
-                    " "                                   // Ghi chú từ textbox
-                );
-                //MessageBox.Show(hoaDon.MaHD);
-                // Bước 2: Thêm hóa đơn thông qua lớp BUS
-                bool hoaDonAdded = BUS_HoaDon.Instance.themHoaDon(hoaDon);
-
-                if (hoaDonAdded)
-                {
-                    // Bước 3: Nếu hóa đơn được thêm thành công, thêm các chi tiết hóa đơn
-                    foreach (DataGridViewRow row in dgvHangHoa.Rows)
-                    {
-                        if (row.Cells["maHH"].Value != null && row.Cells["SoLuong"].Value != null)
-                        {
-                            ET_CTHoaDon ctHoaDon = new ET_CTHoaDon(
-                                hoaDon.MaHD,                              // Mã hóa đơn
-                                row.Cells["maHH"].Value.ToString(),       // Mã hàng hóa từ DataGridView
-                                Convert.ToInt32(row.Cells["SoLuong"].Value)    // Số lượng từ DataGridView
-                            );
-
-                            // Thêm chi tiết hóa đơn thông qua lớp BUS
-                            BUS_CTHoaDon.Instance.themCTHoaDon(ctHoaDon);
-                        }
-                    }
-
-                    // Bước 4: Hiển thị thông báo thành công
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Lấy giá trị mã hàng hóa từ cbbTenHang dựa trên lựa chọn hiện tại
+                cbbMaHang.Text = cbbTenHang.SelectedValue.ToString();
+                ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
+                if (et != null)
+                {                    
+                    txtDonGia.Text = et.GiaHH.ToString();
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi khi thêm hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                // Hiển thị mã hàng hóa trong cbbMaHang                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                // Xử lý ngoại lệ nếu có lỗi
+                MessageBox.Show("Lỗi khi chọn hàng hóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

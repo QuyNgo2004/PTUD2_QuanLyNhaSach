@@ -31,7 +31,7 @@ namespace DAL
                     maHD = hoaDon.MaHD,
                     maNS = hoaDon.MaNS,
                     maKH = hoaDon.MaKH,
-                    donGia = hoaDon.DonGia,
+                    tongTien = hoaDon.TongTien,
                     ngayIn = hoaDon.NgayIn,
                     ghiChu = hoaDon.GhiChu,
                 };
@@ -73,7 +73,7 @@ namespace DAL
                                       MaHD = hd.maHD,
                                       MaNS = hd.maNS,
                                       MaKH = hd.maKH,
-                                      DonGia = hd.donGia,
+                                      TongTien = hd.tongTien,
                                       NgayIn = hd.ngayIn,
                                   };
             return dsHoaDon;

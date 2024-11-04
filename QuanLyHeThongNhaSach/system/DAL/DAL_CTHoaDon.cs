@@ -55,7 +55,7 @@ namespace DAL
                                  {
                                      MaHH = cthd.maHH,
                                      TenHH = hh.tenHH,
-                                     DonGia = hd.donGia,
+                                     TongTien = hd.tongTien,
                                      SoLuong = cthd.SL,
 
                                  };

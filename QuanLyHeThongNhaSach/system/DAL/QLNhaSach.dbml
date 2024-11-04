@@ -25,7 +25,7 @@
   <Table Name="dbo.ChiNhanh" Member="ChiNhanhs">
     <Type Name="ChiNhanh">
       <Column Name="maCN" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenCN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tenCN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="diaChi" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="soDienThoai" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -104,7 +104,7 @@
       <Column Name="maHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maNS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="maKH" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Column Name="donGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ngayIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Association Name="HoaDon_CTHoaDon" Member="CTHoaDons" ThisKey="maHD" OtherKey="maHD" Type="CTHoaDon" />
@@ -169,18 +169,6 @@
       <Association Name="ChiNhanh_NhanSu" Member="ChiNhanh" ThisKey="maCN" OtherKey="maCN" Type="ChiNhanh" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.TimKhachHangTheoSoDienThoai" Method="TimKhachHangTheoSoDienThoai">
-    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(12)" />
-    <ElementType Name="TimKhachHangTheoSoDienThoaiResult">
-      <Column Name="maKH" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="hoTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ngaysinhKH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="gioitinhKH" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="diachiKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="sdtKH" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="emailKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.TimHangHoaTheoMa" Method="TimHangHoaTheoMa">
     <Parameter Name="MaHangHoa" Parameter="maHangHoa" Type="System.String" DbType="NVarChar(13)" />
     <ElementType Name="TimHangHoaTheoMaResult">
@@ -203,6 +191,18 @@
       <Column Name="diachiNPP" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="sdtNPP" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="emailNPP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TimKhachHangTheoSoDienThoai" Method="TimKhachHangTheoSoDienThoai">
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(12)" />
+    <ElementType Name="TimKhachHangTheoSoDienThoaiResult">
+      <Column Name="maKH" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="hoTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinhKH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="gioitinhKH" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="diachiKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtKH" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="emailKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
