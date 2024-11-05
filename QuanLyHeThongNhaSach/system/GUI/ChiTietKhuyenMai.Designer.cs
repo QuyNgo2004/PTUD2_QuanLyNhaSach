@@ -33,7 +33,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnKM = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,8 +45,9 @@
             this.pnlNhapHang = new System.Windows.Forms.Panel();
             this.lblQLCT = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvDSKhuyenMai = new System.Windows.Forms.DataGridView();
             this.cbXemKM = new System.Windows.Forms.CheckBox();
+            this.dgvDSKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnlNhapHang.SuspendLayout();
@@ -86,8 +86,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnKM);
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,22 +128,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Quay về";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(188, 36);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(137, 23);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa ca trực";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnXoa
             // 
@@ -152,13 +137,14 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(27, 85);
+            this.btnXoa.Location = new System.Drawing.Point(188, 36);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(137, 23);
             this.btnXoa.TabIndex = 8;
-            this.btnXoa.Text = "Xóa ca trực";
+            this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -172,7 +158,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(137, 23);
             this.btnThem.TabIndex = 8;
-            this.btnThem.Text = "Thêm ca trực";
+            this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -203,6 +189,7 @@
             this.txtMaHH.Name = "txtMaHH";
             this.txtMaHH.Size = new System.Drawing.Size(231, 24);
             this.txtMaHH.TabIndex = 1;
+            this.txtMaHH.Validated += new System.EventHandler(this.txtMaHH_Validated);
             // 
             // label1
             // 
@@ -277,18 +264,6 @@
             this.groupBox3.Text = "Danh Sách Sản Phẩm Khuyến Mãi";
             this.groupBox3.UseCompatibleTextRendering = true;
             // 
-            // dgvDSKhuyenMai
-            // 
-            this.dgvDSKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSKhuyenMai.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDSKhuyenMai.Location = new System.Drawing.Point(3, 59);
-            this.dgvDSKhuyenMai.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvDSKhuyenMai.Name = "dgvDSKhuyenMai";
-            this.dgvDSKhuyenMai.RowHeadersWidth = 62;
-            this.dgvDSKhuyenMai.RowTemplate.Height = 28;
-            this.dgvDSKhuyenMai.Size = new System.Drawing.Size(527, 429);
-            this.dgvDSKhuyenMai.TabIndex = 0;
-            // 
             // cbXemKM
             // 
             this.cbXemKM.AutoSize = true;
@@ -298,6 +273,37 @@
             this.cbXemKM.TabIndex = 2;
             this.cbXemKM.Text = "Xem tất cả khuyến mãi";
             this.cbXemKM.UseVisualStyleBackColor = true;
+            this.cbXemKM.Click += new System.EventHandler(this.cbXemKM_Click);
+            // 
+            // dgvDSKhuyenMai
+            // 
+            this.dgvDSKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDSKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSKhuyenMai.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDSKhuyenMai.Location = new System.Drawing.Point(3, 59);
+            this.dgvDSKhuyenMai.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDSKhuyenMai.Name = "dgvDSKhuyenMai";
+            this.dgvDSKhuyenMai.RowHeadersWidth = 62;
+            this.dgvDSKhuyenMai.RowTemplate.Height = 28;
+            this.dgvDSKhuyenMai.Size = new System.Drawing.Size(527, 429);
+            this.dgvDSKhuyenMai.TabIndex = 0;
+            this.dgvDSKhuyenMai.Click += new System.EventHandler(this.dgvDSKhuyenMai_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(27, 85);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(137, 23);
+            this.btnLamMoi.TabIndex = 9;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // ChiTietKhuyenMai
             // 
@@ -331,7 +337,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnKM;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label lblCaTruc;
@@ -346,5 +351,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.CheckBox cbXemKM;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }

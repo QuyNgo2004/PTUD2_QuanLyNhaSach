@@ -94,24 +94,30 @@ namespace GUI
 
         private void txtMaGiamGia_Validated(object sender, EventArgs e)
         {
-            if (rbtGiamGia.Checked == true)
+            try
             {
-                if (error.KT_Null(txtMaGiamGia.Text) == true)
+                if (rbtGiamGia.Checked == true)
                 {
-                    MessageBox.Show("Vui lòng nhập mã giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (error.KT_Null(txtMaGiamGia.Text) == true)
+                    {
+                        MessageBox.Show("Vui lòng nhập mã giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }
-            if (txtMaGiamGia.Text == "0" || int.Parse(txtMaGiamGia.Text) >= 100 )
+                if (txtMaGiamGia.Text == "0" || int.Parse(txtMaGiamGia.Text) >= 100)
+                {
+                    MessageBox.Show("Vui lòng nhập mã giảm giá lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaGiamGia.Text = "1";
+                }
+                else if (error.KT_ChuoiSo(txtMaGiamGia.Text) == false)
+                {
+                    MessageBox.Show("Vui lòng nhập mã giảm giá bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaGiamGia.Text = "1";
+                }
+                //TaoMaKhuyenMai();
+            }catch(Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập mã giảm giá lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaGiamGia.Text = "1";
+                MessageBox.Show("Vui lòng nhập đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (error.KT_ChuoiSo(txtMaGiamGia.Text) == false)
-            {
-                MessageBox.Show("Vui lòng nhập mã giảm giá bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaGiamGia.Text = "1";
-            }
-            //TaoMaKhuyenMai();
         }
 
         private void dtpNgayBD_Validated(object sender, EventArgs e)

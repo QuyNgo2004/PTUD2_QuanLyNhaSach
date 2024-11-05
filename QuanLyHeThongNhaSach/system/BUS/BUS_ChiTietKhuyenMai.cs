@@ -1,5 +1,6 @@
 ﻿using DAL;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,37 @@ namespace BUS
         {
             return chiTietKhuyenMai.CTKM_Load_All();
         }
-        //Them
+        public IQueryable CTKM_Load_Now(DateTime ngayHT)
+        {
+            return chiTietKhuyenMai.CTKM_Load_Now(ngayHT);
+        }
+        // Them 
+        public bool Them_CTKM(string maHH, string maKM)
+        {
+           bool flag = false;
+           IQueryable list = chiTietKhuyenMai.TimTrung_CTKM(maHH, maKM);
+            int dem = 0;
+            foreach(var l in list)
+            {
+                dem++;
+            }
+            if (dem  == 0)
+            {
+                flag = chiTietKhuyenMai.Them_CTKM(maHH, maKM);
+            }
+            return flag;
+        }
+
         //Xoa
+        public bool xoa_CTKM(int maCTKM)
+        {
+            return chiTietKhuyenMai.xoa_CTKM(maCTKM);
+        }
         //Sua
-        //Tim Kiem
+        public bool sua_CTKM(int CTKM, string maKM)
+        {
+            return chiTietKhuyenMai.sua_CTKM(CTKM, maKM);
+        }
+       
     }
 }
