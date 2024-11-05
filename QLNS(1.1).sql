@@ -7,7 +7,7 @@ SET DATEFORMAT dmy;
 --Tạo bảng chi nhánh
 create table ChiNhanh(
 maCN varchar(10) not null,
-tenCN varchar(50) not null,
+tenCN nvarchar(50) not null,
 diaChi nvarchar(150) not null,
 soDienThoai varchar(12) not null,
 email varchar(50) not null,
@@ -117,7 +117,7 @@ create table HoaDon(
 maHD varchar(10) not null,
 maNS varchar (7) foreign key references NhanSu(maNS),
 maKH varchar(11) foreign key references KhachHang(maKH),
-donGia float,
+tongTien float,
 ngayIn date not null,
 ghiChu nvarchar(150) null,
 primary key (maHD))

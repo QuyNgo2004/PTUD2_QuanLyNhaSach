@@ -62,12 +62,15 @@
     <Compile Include="ET_CaTruc.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
     <Compile Include="ET_ChucVu.cs" />
+    <Compile Include="ET_CTHoaDon.cs" />
     <Compile Include="ET_HangHoa.cs" />
+    <Compile Include="ET_HoaDon.cs" />
     <Compile Include="ET_KhachHang.cs" />
     <Compile Include="ET_KhuyenMai.cs" />
     <Compile Include="ET_LoaiHangHoa.cs" />
     <Compile Include="ET_NhanSu.cs" />
     <Compile Include="ET_NhaPhanPhoi.cs" />
+    <Compile Include="ET_SanPhamThanhToan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
