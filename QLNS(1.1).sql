@@ -96,7 +96,7 @@ go
 create table CTKhuyenMai(
 maCTKM INT IDENTITY(1,1),
 maHH varchar(13) foreign key references HangHoa(maHH) ,
-maKM varchar(20) foreign key references KhuyenMai(maKM),
+maKM varchar(25) foreign key references KhuyenMai(maKM),
 constraint PK_CTKM primary key(maHH,maKM,maCTKM))
 --Tao bang nhan vien
 create table NhanSu (
