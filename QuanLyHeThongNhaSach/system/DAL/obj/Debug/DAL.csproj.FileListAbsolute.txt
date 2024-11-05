@@ -8,16 +8,6 @@ C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThong
 C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 C:\Users\Administrator\source\repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
 C:\Users\Administrator\Source\Repos\QuyNgo2004\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.pdb
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.dll
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.pdb
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.pdb
@@ -32,6 +22,10 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll.config
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\DAL.pdb
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -40,6 +34,7 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\Microsoft.SqlServer.Types.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\EnvDTE.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\stdole.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ET.pdb
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
@@ -80,3 +75,8 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb

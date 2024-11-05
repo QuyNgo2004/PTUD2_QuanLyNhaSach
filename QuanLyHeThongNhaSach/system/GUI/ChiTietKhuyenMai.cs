@@ -63,6 +63,7 @@ namespace GUI
         private void ChiTietKhuyenMai_Load(object sender, EventArgs e)
         {
             Load_Frm();
+           
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@ namespace GUI
         {
             TaoMaKhuyenMai();
             txtTen.Text = string.Empty;
-            cbXemKM.Checked = true;
+            cbXemKM.Checked = false;
             dgvDSCTKM.Refresh(); // Làm mới DataGridView nếu cần
             bus_km.LoadKM_Now(ngayHT, dgvDSCTKM);
             dgvDSCTKM.Columns["MaHH"].Visible = false;
@@ -155,13 +155,13 @@ namespace GUI
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (error.KT_SoKiTuCoTheLuu(txtMaKM.Text,25))
+                if (error.KT_SoKiTuCoTheLuu(txtMaKM.Text,25) == false)
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin nhỏ hơn 20 kí tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin mã khuyến mãi nhỏ hơn 25 kí tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (error.KT_SoKiTuCoTheLuu(txtTen.Text, 50))
+                if (error.KT_SoKiTuCoTheLuu(txtTen.Text, 50) == false)
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin nhỏ hơn 50 kí tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin tên khuyến mãi nhỏ hơn 50 kí tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 txtMaGiamGia_Validated(sender, e);
                 rbtGiamGia_Click(sender, e);
