@@ -101,5 +101,15 @@ namespace BUS
         {
             return DAL_HangHoa.Instance.XemDSHangHoaAutoCompleted();
         }
+
+        public bool UpdateSoLuongTon(string maHH, int soLuongMoi)
+        {
+            return DAL_HangHoa.Instance.UpdateSoLuongTon(maHH, soLuongMoi);
+        }
+
+        public int GetSoLuongTon(string maHH)
+        {
+            return DAL_HangHoa.Instance.GetSoLuongTon(maHH);
+        }
     }
 }

@@ -15,7 +15,6 @@ namespace GUI
 {
     public partial class Menu : Form
     {
-        
         public Menu(ET_NhanSu ns)
         {
             InitializeComponent();

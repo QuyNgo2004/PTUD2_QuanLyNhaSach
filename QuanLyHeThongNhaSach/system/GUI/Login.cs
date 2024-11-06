@@ -58,12 +58,13 @@ namespace GUI
             // Thực hiện kiểm tra đơn giản, bạn cần thay đổi thành kiểm tra thực tế
             if (nhanSu != null)
             {
-
                 // Đăng nhập thành công
                 IsLoggedIn = true;
                 // Ẩn form đăng nhập và hiển thị form chính
                 this.Hide();
+                
                 Menu mainForm = new Menu(nhanSu);
+                Program.maNS = nhanSu.MaNS;
                 mainForm.Closed += (s, args) => this.Close(); // Đóng ứng dụng khi đóng form chính
                 mainForm.Show();
             }
