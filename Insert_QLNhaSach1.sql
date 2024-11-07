@@ -255,8 +255,10 @@ values  ('KH001', N'Hoàng Văn Duy','2005/07/18',N'Nam',N'18 Thành Mỹ Lợi,
 		('KH099', N'Lê Thị Hà', '2001/01/30', N'Nữ', N'654 Đường Bến Thành, Quận 1, TP HCM', '0123123456', 'thihà@gmail.com'),
 		('KH100', N'Trần Văn Nam', '2003/12/25', N'Nam', N'987 Đường Phú Mỹ Hưng, Quận 7, TP HCM', '0123234567', 'vannam@gmail.com');
 go
-Insert into  KhuyenMai(maKM,giamGia,maHH,ngayBD,ngayKT,ghiChu)
-values ('KM01',20,null,'04/11/2024','08/11/2024','Thang 11'),('KM02',30,null,'04/10/2024','08/10/2024','Thang 10')
+Insert into  KhuyenMai(maKM,tenKM,giamGia,maHH,ngayBD,ngayKT,ghiChu)
+values ('KM01',N'Khuyến Mãi 20%',20,null,'07/11/2024','08/11/2024','Thang 11'),
+		('KM02',N'Khuyến Mãi 30%',30,null,'04/10/2024','08/10/2024','Thang 10'),
+		('KM03',N'Tặng sách giáo khoa',0,'1907110311401','04/10/2024','08/10/2024','Thang 10')
 go
 
 values ('NS01','Văn A','Nam','09878983762','0928372892','quy@gmail.com','Tiền Giang','CN01','1','0'),

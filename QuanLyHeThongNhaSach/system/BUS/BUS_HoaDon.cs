@@ -45,5 +45,18 @@ namespace BUS
         {
             dgv.DataSource = DAL_HoaDon.Instance.xemDanhSachHoaDon();
         }
+
+        public IQueryable<HoaDon> TimHoaDonTheoSoDienThoai(string soDienThoai)
+        {
+            try
+            {
+                return DAL_HoaDon.Instance.TimHoaDonTheoSoDienThoai(soDienThoai);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

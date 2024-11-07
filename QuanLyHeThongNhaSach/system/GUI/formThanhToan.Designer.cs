@@ -386,6 +386,7 @@
             this.cbbMaHang.TabIndex = 8;
             this.cbbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbbMaHang_SelectedIndexChanged);
             this.cbbMaHang.Enter += new System.EventHandler(this.cbbMaHang_Enter);
+            this.cbbMaHang.Validated += new System.EventHandler(this.cbbMaHang_Validated);
             // 
             // label11
             // 
@@ -398,11 +399,13 @@
             // 
             // cbbKhuyenMai
             // 
+            this.cbbKhuyenMai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKhuyenMai.FormattingEnabled = true;
             this.cbbKhuyenMai.Location = new System.Drawing.Point(190, 231);
             this.cbbKhuyenMai.Name = "cbbKhuyenMai";
             this.cbbKhuyenMai.Size = new System.Drawing.Size(144, 28);
             this.cbbKhuyenMai.TabIndex = 6;
+            this.cbbKhuyenMai.SelectedIndexChanged += new System.EventHandler(this.cbbKhuyenMai_SelectedIndexChanged);
             // 
             // label10
             // 

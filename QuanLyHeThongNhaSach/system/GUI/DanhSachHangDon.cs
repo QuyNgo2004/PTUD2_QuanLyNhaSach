@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class DanhSachHangDon : Form
     {
+        BUS_BatLoi batLoi = new BUS_BatLoi();
         public DanhSachHangDon()
         {
             InitializeComponent();
@@ -34,9 +35,51 @@ namespace GUI
 
         private void dgvLichSuHoaDon_Click(object sender, EventArgs e)
         {
-            int dong = dgvLichSuHoaDon.CurrentCell.RowIndex;
-            string mahh = dgvLichSuHoaDon.Rows[dong].Cells[0].Value.ToString();            
-            BUS_CTHoaDon.Instance.xemChiTietHoaDon(dgvDSHangHoa, mahh);
+            try
+            {
+                int dong = dgvLichSuHoaDon.CurrentCell.RowIndex;
+                string mahh = dgvLichSuHoaDon.Rows[dong].Cells[0].Value.ToString();
+                BUS_CTHoaDon.Instance.xemChiTietHoaDon(dgvDSHangHoa, mahh);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTenNV.Text == "")
+                {
+                    if (CheckThongTin() == true)
+                    {                        
+                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSoDienThoai(txtSDT.Text);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CheckThongTin()
+        {
+            bool flag = false;
+            if (batLoi.KT_SoKiTu(txtSDT.Text, 10) == false || batLoi.KT_ChuoiSoDT(txtSDT.Text) == false)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại có 10 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSDT.Clear();               
+            }
+            else
+            {
+                flag = true;
+            }
+            return flag;
         }
     }
 }

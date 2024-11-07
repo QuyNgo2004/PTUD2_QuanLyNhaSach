@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhaSach" Class="QLNhaSachDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI\SQLEXPRESS;Initial Catalog=QLNhaSach;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString1" Provider="System.Data.SqlClient" />
-
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QLNhaSach;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLNhaSachConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CaTruc" Member="CaTrucs">
     <Type Name="CaTruc">
       <Column Name="maCT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -209,6 +207,50 @@
       <Column Name="diachiKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="sdtKH" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="emailKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TimHoaDonTheoKhoangThoiGian" Method="TimHoaDonTheoKhoangThoiGian">
+    <Parameter Name="NgayBD" Parameter="ngayBD" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NgayKT" Parameter="ngayKT" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="TimHoaDonTheoKhoangThoiGianResult">
+      <Column Name="maHD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maNS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="maKH" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="tongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ngayIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TimHoaDonTheoTenNhanVien" Method="TimHoaDonTheoTenNhanVien">
+    <Parameter Name="TenNS" Parameter="tenNS" Type="System.String" DbType="NVarChar(45)" />
+    <ElementType Name="TimHoaDonTheoTenNhanVienResult">
+      <Column Name="maHD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maNS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="maKH" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="tongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ngayIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="maNS1" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNS" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="cccdNS" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="emailNV" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="diaChiNha" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="maCN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="chucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="matkhau" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TimHoaDonTheoSoDienThoai" Method="TimHoaDonTheoSoDienThoai">
+    <Parameter Name="SdtKH" Parameter="sdtKH" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="TimHoaDonTheoSoDienThoaiResult">
+      <Column Name="maHD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maNS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="maKH" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="tongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ngayIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

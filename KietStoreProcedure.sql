@@ -1,4 +1,4 @@
-CREATE PROCEDURE TimKhachHangTheoSoDienThoai
+﻿CREATE PROCEDURE TimKhachHangTheoSoDienThoai
     @SoDienThoai NVARCHAR(12)
 AS
 BEGIN
@@ -23,3 +23,48 @@ BEGIN
     WHERE maHH = @MaHangHoa;
 END;
 go
+
+Create Procedure TimHoaDonTheoSoDienThoai
+	@SdtKH varchar(12)
+as
+begin
+	Select hd.maHD,hd.maNS,hd.maKH,hd.tongTien,hd.ngayIn,hd.ghiChu
+	from HoaDon hd
+	join KhachHang kh on kh.maKH = hd.maKH
+	where kh.sdtKH = @SdtKH;
+end;
+go
+
+
+Create procedure TimHoaDonTheoTenNhanVien
+	@TenNS nvarchar(45)
+as
+begin
+	select hd.maHD,hd.maNS,hd.maKH,hd.tongTien,hd.ngayIn,hd.ghiChu
+	from HoaDon hd
+	join NhanSu ns on ns.maNS = hd.maNS
+	where ns.tenNS = @TenNS;
+end;
+go
+
+create procedure TimHoaDonTheoKhoangThoiGian
+	@NgayBD date,
+	@NgayKT date
+as
+begin
+	select *
+	from HoaDon hd
+	where hd.ngayIn >= @NgayBD AND hd.ngayIn <= @NgayKT
+end;
+go
+
+create procedure TimHoaDonTheoNgay
+    @NgayBD date -- Ngày bắt đầu
+as
+begin
+    select *
+    from HoaDon hd
+    where hd.ngayIn >= @NgayBD AND hd.ngayIn <= GETDATE();
+end;
+go
+
