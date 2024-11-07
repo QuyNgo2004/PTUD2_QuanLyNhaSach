@@ -59,8 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ET_BangLuong.cs" />
     <Compile Include="ET_CaTruc.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
+    <Compile Include="ET_ChiTietLuong.cs" />
     <Compile Include="ET_ChucVu.cs" />
     <Compile Include="ET_CTHoaDon.cs" />
     <Compile Include="ET_HangHoa.cs" />

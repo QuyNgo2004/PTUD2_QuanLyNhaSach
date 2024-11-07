@@ -30,8 +30,8 @@ namespace DAL
                               select new
                               {
                                   MaHH = km.maHH,
-                                  TenKM = km.tenKM,
                                   Mã = km.maKM,
+                                  TenKM = km.tenKM,
                                   HH_TặngKèm = hh  != null ? hh.tenHH : "null",
                                   GiảmGiá = km.giamGia,
                                   NgayBD = km.ngayBD,

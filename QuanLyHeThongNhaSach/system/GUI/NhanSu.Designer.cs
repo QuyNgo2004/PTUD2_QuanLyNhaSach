@@ -59,6 +59,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCaTruc = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnLuong = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhanSu)).BeginInit();
@@ -376,7 +377,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(45, 161);
+            this.btnThoat.Location = new System.Drawing.Point(45, 198);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(262, 23);
@@ -403,6 +404,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLuong);
             this.groupBox2.Controls.Add(this.btnCaTruc);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThoat);
@@ -448,6 +450,22 @@
             this.btnLamMoi.Text = "Tạo Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnLuong
+            // 
+            this.btnLuong.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLuong.FlatAppearance.BorderSize = 0;
+            this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuong.ForeColor = System.Drawing.Color.White;
+            this.btnLuong.Location = new System.Drawing.Point(45, 158);
+            this.btnLuong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuong.Name = "btnLuong";
+            this.btnLuong.Size = new System.Drawing.Size(262, 23);
+            this.btnLuong.TabIndex = 4;
+            this.btnLuong.Text = "Quản lý lương";
+            this.btnLuong.UseVisualStyleBackColor = false;
+            this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // NhanSu
             // 
@@ -508,5 +526,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnCaTruc;
+        private System.Windows.Forms.Button btnLuong;
     }
 }

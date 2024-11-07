@@ -20,6 +20,12 @@ namespace GUI
         private BUS_NhanSu ns = BUS_NhanSu.Instance;
         private BUS_ChiTietCaTruc ctCaTruc = BUS_ChiTietCaTruc.Instance;
         private BUS_BatLoi error = new BUS_BatLoi();
+        private ET_NhanSu quanLy = null;
+        public NhanSu( ET_NhanSu ns)
+        {
+            InitializeComponent();
+            this.quanLy = ns;
+        }
         public NhanSu()
         {
             InitializeComponent();
@@ -324,6 +330,13 @@ namespace GUI
         {
             Menu formMenu = (Menu)this.ParentForm;
             formMenu.openChildForm(new QuanLyCaTruc());
+            this.Close();
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            Menu formMenu = (Menu)this.ParentForm;
+            formMenu.openChildForm(new ChiTietBangLuong(quanLy));
             this.Close();
         }
     }

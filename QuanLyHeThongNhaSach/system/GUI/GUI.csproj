@@ -79,6 +79,12 @@
     <Compile Include="CaTruc.Designer.cs">
       <DependentUpon>CaTruc.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietBangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietBangLuong.Designer.cs">
+      <DependentUpon>ChiTietBangLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CaTruc.resx">
       <DependentUpon>CaTruc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietBangLuong.resx">
+      <DependentUpon>ChiTietBangLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietKhuyenMai.resx">
       <DependentUpon>ChiTietKhuyenMai.cs</DependentUpon>

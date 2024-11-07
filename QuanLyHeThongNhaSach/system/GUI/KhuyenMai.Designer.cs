@@ -44,6 +44,8 @@
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaGiamGia = new System.Windows.Forms.TextBox();
             this.rbtGiamGia = new System.Windows.Forms.RadioButton();
@@ -54,8 +56,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCTKM)).BeginInit();
             this.pnlKhuyenMai.SuspendLayout();
@@ -70,7 +71,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(317, 95);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(687, 511);
+            this.groupBox3.Size = new System.Drawing.Size(687, 541);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Các Chương Trình Khuyến Mãi";
@@ -90,12 +91,12 @@
             // 
             this.dgvDSCTKM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSCTKM.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDSCTKM.Location = new System.Drawing.Point(3, 64);
+            this.dgvDSCTKM.Location = new System.Drawing.Point(3, 68);
             this.dgvDSCTKM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSCTKM.Name = "dgvDSCTKM";
             this.dgvDSCTKM.RowHeadersWidth = 62;
             this.dgvDSCTKM.RowTemplate.Height = 28;
-            this.dgvDSCTKM.Size = new System.Drawing.Size(681, 444);
+            this.dgvDSCTKM.Size = new System.Drawing.Size(681, 470);
             this.dgvDSCTKM.TabIndex = 0;
             this.dgvDSCTKM.Click += new System.EventHandler(this.dgvDSCTKM_Click);
             // 
@@ -243,6 +244,24 @@
             this.txtTenSP.Size = new System.Drawing.Size(169, 22);
             this.txtTenSP.TabIndex = 19;
             // 
+            // txtTen
+            // 
+            this.txtTen.BackColor = System.Drawing.Color.White;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTen.Location = new System.Drawing.Point(28, 109);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(209, 24);
+            this.txtTen.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tên khuyến mãi :";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,6 +320,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnThem);
@@ -308,7 +328,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(32, 493);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(266, 110);
+            this.groupBox2.Size = new System.Drawing.Size(266, 143);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thanh Công Cụ";
@@ -336,7 +356,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(139, 67);
+            this.btnThoat.Location = new System.Drawing.Point(20, 107);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(113, 23);
@@ -377,23 +397,21 @@
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // label6
+            // btnLamMoi
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tên khuyến mãi :";
-            // 
-            // txtTen
-            // 
-            this.txtTen.BackColor = System.Drawing.Color.White;
-            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTen.Location = new System.Drawing.Point(28, 109);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(209, 24);
-            this.txtTen.TabIndex = 1;
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(139, 67);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(113, 23);
+            this.btnLamMoi.TabIndex = 8;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // KhuyenMai
             // 
@@ -453,5 +471,6 @@
         private System.Windows.Forms.CheckBox cbXemKM;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }

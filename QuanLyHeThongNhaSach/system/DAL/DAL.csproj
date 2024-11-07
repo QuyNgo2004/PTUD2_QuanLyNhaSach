@@ -60,9 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_BangLuong.cs" />
     <Compile Include="DAL_ChiTietKhuyenMai.cs" />
     <Compile Include="DAL_CaTruc.cs" />
     <Compile Include="DAL_ChiNhanh.cs" />
+    <Compile Include="DAL_ChiTietLuong.cs" />
     <Compile Include="DAL_ChucVu.cs" />
     <Compile Include="DAL_CTCaTruc.cs" />
     <Compile Include="DAL_CTHoaDon.cs" />

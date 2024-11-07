@@ -45,6 +45,15 @@ namespace GUI
             Load_XemKM();
             rbtGiamGia_Click(sender, e);
         }
+        private void Load_khuyenMai()
+        {
+            txtTen.Text = string.Empty;
+            txtGhiChu.Text = string.Empty;
+            txtMaGiamGia.Text = string.Empty;
+            txtMaSP.Text = string.Empty;
+            txtTenSP.Text = string.Empty;
+            TaoMaKhuyenMai();
+        }
         private void Load_XemKM()
         {
             TaoMaKhuyenMai();
@@ -70,7 +79,7 @@ namespace GUI
                 txtMaSP.Text = string.Empty;
                 txtTenSP.Text = string.Empty;
                 txtMaSP.Enabled = false;
-                txtTenSP.Enabled = false;
+                //txtTenSP.Enabled = false;
                 txtMaGiamGia.Enabled = true;
                 txtMaSP.BackColor = Color.LightGray;
                 txtTenSP.BackColor = Color.LightGray;
@@ -81,13 +90,12 @@ namespace GUI
                 txtMaGiamGia.Text = "0";
                 txtMaGiamGia.Enabled = false;
                 txtMaSP.Enabled = true;
-                txtTenSP.Enabled = true;
+                //txtTenSP.Enabled = true;
                 txtMaSP.BackColor = Color.White;
                 txtTenSP.BackColor = Color.White;
                 txtMaGiamGia.BackColor = Color.LightGray;
-                
-                
             }
+            txtTenSP.Enabled = false;
         }
 
         
@@ -142,16 +150,33 @@ namespace GUI
             {
                 // Nếu checkbox được chọn, tải tất cả khuyến mại
                 bus_km.LoadKM_All(dgvDSCTKM);
+                txtTen.Enabled = false;
+                dtpNgayBD.Enabled = false;
+                dtpNgayKT.Enabled = false;
+                txtMaGiamGia.Enabled = false;
+                txtMaSP.Enabled = false;
+                rbtGiamGia.Enabled=false;
+                rbtSP.Enabled = false;
+                txtGhiChu.Enabled = false;
             }
             else
             {
                 // Nếu không được chọn, tải khuyến mại hiện tại
                 dgvDSCTKM.Refresh(); // Làm mới DataGridView nếu cần
                 bus_km.LoadKM_Now(ngayHT, dgvDSCTKM);
+                txtTen.Enabled = true;
+                dtpNgayBD.Enabled = true;
+                dtpNgayKT.Enabled = true;
+                txtMaGiamGia.Enabled = true;
+                txtMaSP.Enabled = true;
+                rbtGiamGia.Enabled = true;
+                rbtSP.Enabled = true;
+                txtGhiChu.Enabled = true;
             }
 
             // Ẩn cột "MaHH"
-            dgvDSCTKM.Columns["MaHH"].Visible = false;
+            dgvDSCTKM.Columns["MaHH"].Visible = true;
+            Load_khuyenMai();
         }
         private ET_KhuyenMai KhuyenMai_Value(object sender, EventArgs e)
         {
@@ -265,6 +290,13 @@ namespace GUI
             {
                 MessageBox.Show("Sửa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            Load_XemKM();
+            Load_khuyenMai();
+            cbXemKM_Click(sender, e);
         }
     }
 }

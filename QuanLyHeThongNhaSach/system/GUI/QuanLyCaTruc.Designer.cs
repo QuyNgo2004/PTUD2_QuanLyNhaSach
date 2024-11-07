@@ -105,6 +105,7 @@
             // 
             // cboCN
             // 
+            this.cboCN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCN.FormattingEnabled = true;
             this.cboCN.Location = new System.Drawing.Point(104, 28);
             this.cboCN.Name = "cboCN";
@@ -114,6 +115,7 @@
             // 
             // cboCaTruc
             // 
+            this.cboCaTruc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCaTruc.FormattingEnabled = true;
             this.cboCaTruc.Location = new System.Drawing.Point(659, 76);
             this.cboCaTruc.Name = "cboCaTruc";

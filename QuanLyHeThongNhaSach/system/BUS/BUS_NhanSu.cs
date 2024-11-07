@@ -58,6 +58,10 @@ namespace BUS
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu(ma);
         }
+        public IQueryable hienThiNhanSu( string ma)
+        {
+            return DAL_NhanSu.Instance.layDSNhanSu(ma);
+        }
         public bool themNhanSu(ET_NhanSu NhanSu)
         {
             try

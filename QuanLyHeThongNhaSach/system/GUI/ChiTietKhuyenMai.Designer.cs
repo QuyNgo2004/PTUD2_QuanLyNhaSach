@@ -32,6 +32,7 @@
             this.cboKhuyenMai = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnKM = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbXemKM = new System.Windows.Forms.CheckBox();
             this.dgvDSKhuyenMai = new System.Windows.Forms.DataGridView();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnlNhapHang.SuspendLayout();
@@ -76,6 +76,7 @@
             // 
             // cboKhuyenMai
             // 
+            this.cboKhuyenMai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhuyenMai.FormattingEnabled = true;
             this.cboKhuyenMai.Location = new System.Drawing.Point(144, 137);
             this.cboKhuyenMai.Name = "cboKhuyenMai";
@@ -113,6 +114,22 @@
             this.btnKM.Text = "Khuyến mãi";
             this.btnKM.UseVisualStyleBackColor = false;
             this.btnKM.Click += new System.EventHandler(this.btnCT_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(27, 85);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(137, 23);
+            this.btnLamMoi.TabIndex = 9;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // button1
             // 
@@ -288,22 +305,6 @@
             this.dgvDSKhuyenMai.Size = new System.Drawing.Size(527, 429);
             this.dgvDSKhuyenMai.TabIndex = 0;
             this.dgvDSKhuyenMai.Click += new System.EventHandler(this.dgvDSKhuyenMai_Click);
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLamMoi.FlatAppearance.BorderSize = 0;
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(27, 85);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(137, 23);
-            this.btnLamMoi.TabIndex = 9;
-            this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // ChiTietKhuyenMai
             // 

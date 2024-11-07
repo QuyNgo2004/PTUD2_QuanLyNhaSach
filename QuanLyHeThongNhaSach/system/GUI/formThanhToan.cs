@@ -19,9 +19,11 @@ namespace GUI
         BUS_HoaDon hd = BUS_HoaDon.Instance;
         private List<ET_SanPhamThanhToan> danhSachSanPham = new List<ET_SanPhamThanhToan>();
         private BindingSource bindingSourceSanPham = new BindingSource();
-        public formThanhToan()
+        private string maNS = string.Empty;
+        public formThanhToan(string maNS)
         {
             InitializeComponent();
+            this.maNS = maNS;
         }
 
         private void btnLSHoaDon_Click(object sender, EventArgs e)
