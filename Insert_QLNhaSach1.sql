@@ -40,7 +40,7 @@ values ('Quản lý'),('Nhân Viên')
 go
 
 insert into KhachHang(maKH, hoTenKH, ngaysinhKH, gioitinhKH, diachiKH, sdtKH, emailKH)
-values  ('KH00001', N'Hoàng Văn Duy','2005/07/18',N'Nam',N'18 Thành Mỹ Lợi, Thủ Đức, TP HCM','0123467868','hoangduy@gmail.com'),
+values  ('KH00001', N'Hoàng Văn Duy','2005/05/04',N'Nam',N'18 Thành Mỹ Lợi, Thủ Đức, TP HCM','0123467868','hoangduy@gmail.com'),
 		('KH00002', N'Nguyễn Hoàng Nam', '2002/03/12', N'Nam', N'123 Nguyễn Văn Bứa, Bình Chánh, TP HCM', '0123456789', 'namnguyen@gmail.com'),
 		('KH00003', N'Phạm Minh Khôi', '1998/11/25', N'Nam', N'456 Phú Mỹ Hưng, Quận 7, TP HCM', '0123567890', 'minhkhoi@gmail.com'),
 		('KH00004', N'Nguyễn Thị Hoa', '2001/06/05', N'Nữ', N'789 Lê Quý Đôn, Quận 3, TP HCM', '0123678901', 'hoanguyen@gmail.com'),

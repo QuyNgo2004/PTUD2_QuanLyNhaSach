@@ -52,7 +52,7 @@ create procedure TimHoaDonTheoKhoangThoiGian
 	@NgayKT date
 as
 begin
-	select *
+	select hd.maHD,hd.maNS,hd.maKH,hd.tongTien,hd.ngayIn,hd.ghiChu
 	from HoaDon hd
 	where hd.ngayIn >= @NgayBD AND hd.ngayIn <= @NgayKT
 end;
@@ -62,7 +62,7 @@ create procedure TimHoaDonTheoNgay
     @NgayBD date -- Ngày bắt đầu
 as
 begin
-    select *
+    select hd.maHD,hd.maNS,hd.maKH,hd.tongTien,hd.ngayIn,hd.ghiChu
     from HoaDon hd
     where hd.ngayIn >= @NgayBD AND hd.ngayIn <= GETDATE();
 end;
