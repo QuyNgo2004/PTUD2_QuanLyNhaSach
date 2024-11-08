@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuanLyHeThongNhaSach",
+    "\\QuanLyHeThongNhaSach\\system",
+    "\\QuanLyHeThongNhaSach\\system\\GUI"
   ],
+  "SelectedNode": "\\QuanLyHeThongNhaSach",
   "PreviewInSolutionExplorer": false
 }

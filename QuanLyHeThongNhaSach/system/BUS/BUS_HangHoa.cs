@@ -33,6 +33,13 @@ namespace BUS
             // Gán DataSource cho DataGridView
             dgvDSHH.DataSource = dal_hh.XemDSHangHoa();
         }
+        public void XemDSHH(ComboBox comboBox)
+        {
+            // Gán DataSource cho DataGridView
+            comboBox.DataSource = dal_hh.XemDSHangHoa();
+            comboBox.DisplayMember = "Ma";
+            comboBox.ValueMember = "Ma";
+        }
 
         public IQueryable Load_HangHoa()
         {
@@ -90,6 +97,7 @@ namespace BUS
             return dal_hh.TaoMaHangHoaTuDong();
         }
 
+
         public ET_HangHoa TimHH(string maHH)
         {
             return dal_hh.TimHangHoa(maHH);
@@ -98,6 +106,16 @@ namespace BUS
         public ET_HangHoa TimNPP(string maNPP, string maHH)
         {
             return dal_hh.TimNPP(maNPP, maHH);
+
+        public ET_HangHoa TimHangHoaTheoMa(string ma)
+        {
+            return DAL_HangHoa.Instance.TimHangHoaTheoMa(ma);
+        }
+
+        public IQueryable XemDSHangHoaAutoCompleted()
+        {
+            return DAL_HangHoa.Instance.XemDSHangHoaAutoCompleted();
+
         }
     }
 }

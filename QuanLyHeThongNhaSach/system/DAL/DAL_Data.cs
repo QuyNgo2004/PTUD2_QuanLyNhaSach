@@ -30,7 +30,8 @@ namespace DAL
             {
                 //string conection = @"Data Source=" + "DESKTOP-4HPV2E5\\LISM" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
                 string conection = @"Data Source=" + "MSI\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
-
+                //string conection = @"Data Source=" + "B202A-PC35\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
+                //string conection = @"Data Source=" + "." + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
                 SqlConnection sqlConnection = new SqlConnection(conection);
                 sqlConnection.Open();
                 DbNhaSach =  Connetion_String(conection);
