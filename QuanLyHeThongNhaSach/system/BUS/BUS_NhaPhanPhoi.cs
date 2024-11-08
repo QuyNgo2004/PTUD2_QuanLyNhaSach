@@ -91,5 +91,9 @@ namespace BUS
                 throw ex;
             }
         }
+        public ET_NhaPhanPhoi TimNPP(string maNPP)
+        {
+            return DAL_NhaPhanPhoi.Instance.TimNhaPhanPhoi(maNPP);
+        }
     }
 }

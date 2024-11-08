@@ -41,6 +41,11 @@ namespace BUS
             comboBox.ValueMember = "Ma";
         }
 
+        public IQueryable Load_HangHoa()
+        {
+            return DAL_HangHoa.Instance.XemDSHangHoa();
+        }
+
         /// <summary>
         /// Thêm hàng hóa.
         /// </summary>
@@ -110,6 +115,14 @@ namespace BUS
         public int GetSoLuongTon(string maHH)
         {
             return DAL_HangHoa.Instance.GetSoLuongTon(maHH);
+        public ET_HangHoa TimHH(string maHH)
+        {
+            return dal_hh.TimHangHoa(maHH);
+        }
+
+        public ET_HangHoa TimNPP(string maNPP, string maHH)
+        {
+            return dal_hh.TimNPP(maNPP, maHH);
         }
     }
 }

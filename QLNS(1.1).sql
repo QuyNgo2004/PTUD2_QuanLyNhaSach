@@ -58,7 +58,7 @@ create table HangHoa (
 maHH varchar(13) not null,
 maLHH varchar(5) foreign key references LoaiHangHoa(maLHH) ,
 tenHH nvarchar(45) not null,
-giaHH int not null,
+giaHH float not null,
 donViTinh nvarchar(15) not null,
 soLuongTon int not null,
 maNPP varchar(11) foreign key references NhaPhanPhoi(maNPP),

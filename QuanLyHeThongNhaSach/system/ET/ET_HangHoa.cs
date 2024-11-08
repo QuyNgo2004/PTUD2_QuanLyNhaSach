@@ -8,16 +8,21 @@ namespace ET
 {
     public class ET_HangHoa
     {
-        private string maHH, tenHH, loaiHH, donviTinh, nhaPP, moTa, ghiChu, tinhTrang;
+        private string maHH, tenHH, loaiHH, donviTinh, nhaPP, moTa, ghiChu, tinhTrang, tacGia;
         private int giaHH, slTon;
 
-        public ET_HangHoa(string maHH, string tenHH, string loaiHH, int giaHH, string donviTinh, int slTon, string nhaPP, string moTa, string ghiChu, string tinhTrang)
+        public ET_HangHoa()
+        {
+        }
+
+        public ET_HangHoa(string maHH, string tenHH, string loaiHH, int giaHH, string donviTinh, int slTon, string nhaPP, string tacGia, string moTa, string ghiChu, string tinhTrang)
         {
             this.maHH = maHH;
             this.tenHH = tenHH;
             this.loaiHH = loaiHH;
             this.donviTinh = donviTinh;
             this.nhaPP = nhaPP;
+            this.tacGia = tacGia;
             this.moTa = moTa;
             this.ghiChu = ghiChu;
             this.tinhTrang = tinhTrang;
@@ -35,5 +40,6 @@ namespace ET
         public string TinhTrang { get => tinhTrang; set => tinhTrang = value; }
         public int GiaHH { get => giaHH; set => giaHH = value; }
         public int SlTon { get => slTon; set => slTon = value; }
+        public string TacGia { get => tacGia; set => tacGia = value; }
     }
 }

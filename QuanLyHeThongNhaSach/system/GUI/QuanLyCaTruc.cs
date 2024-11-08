@@ -63,11 +63,6 @@ namespace GUI
 
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCT_Click(object sender, EventArgs e)
         {
             Menu formMenu = (Menu)this.ParentForm;

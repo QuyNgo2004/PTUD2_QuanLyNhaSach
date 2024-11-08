@@ -63,6 +63,7 @@
     <Compile Include="ET_CaTruc.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
     <Compile Include="ET_ChiTietLuong.cs" />
+    <Compile Include="ET_ChiTietNhapHang.cs" />
     <Compile Include="ET_ChucVu.cs" />
     <Compile Include="ET_CTHoaDon.cs" />
     <Compile Include="ET_HangHoa.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="ET_NhanSu.cs" />
     <Compile Include="ET_NhaPhanPhoi.cs" />
     <Compile Include="ET_SanPhamThanhToan.cs" />
+    <Compile Include="ET_NhapHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
