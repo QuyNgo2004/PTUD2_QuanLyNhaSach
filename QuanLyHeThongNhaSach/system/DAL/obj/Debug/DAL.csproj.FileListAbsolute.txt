@@ -18,7 +18,7 @@ F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debu
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 F:\PhatTrienUngDung\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
-<<<<<<< HEAD
+
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
