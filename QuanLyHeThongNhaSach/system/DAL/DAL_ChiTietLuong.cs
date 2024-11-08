@@ -33,7 +33,7 @@ namespace DAL
                                   TenNS = ns.tenNS,
                                   LuongTheoNgay = luong.luongTheoNgay,
                                   NgayLam = luong.soNgayLam,
-                                  NgayNghi = luong.ngayNghi,
+                                  NgayNghi = (int)luong.ngayNghi,
                                   TienLuong = luong.tienLuong,
 
                               };

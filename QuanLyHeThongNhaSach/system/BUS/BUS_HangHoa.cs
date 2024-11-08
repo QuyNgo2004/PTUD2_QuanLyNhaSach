@@ -115,14 +115,16 @@ namespace BUS
         public int GetSoLuongTon(string maHH)
         {
             return DAL_HangHoa.Instance.GetSoLuongTon(maHH);
-        public ET_HangHoa TimHH(string maHH)
-        {
-            return dal_hh.TimHangHoa(maHH);
         }
+            public ET_HangHoa TimHH(string maHH)
+            {
+                return dal_hh.TimHangHoa(maHH);
+            }
 
-        public ET_HangHoa TimNPP(string maNPP, string maHH)
-        {
-            return dal_hh.TimNPP(maNPP, maHH);
+            public ET_HangHoa TimNPP(string maNPP, string maHH)
+            {
+                return dal_hh.TimNPP(maNPP, maHH);
+            }
         }
     }
-}
+

@@ -198,6 +198,7 @@ namespace DAL
                         result.donViTinh,
                         result.soLuongTon,
                         result.tenNPP,
+                        result.tacGia,
                         result.moTa,
                         result.ghiChu,
                         result.tinhTrang
@@ -215,12 +216,12 @@ namespace DAL
         public IQueryable XemDSHangHoaAutoCompleted()
         {
             IQueryable hanghoa = (from hh in dbNhaSach.HangHoas
-                                 join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
-                                 join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
-                                 select new
-                                 {                                     
-                                     Ten = hh.tenHH,
-                                 });
+                                  join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                  join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                  select new
+                                  {
+                                      Ten = hh.tenHH,
+                                  });
 
             return hanghoa;
         }
@@ -228,12 +229,12 @@ namespace DAL
         public int GetSoLuongTon(string maHH)
         {
             int soLuong = (from hh in dbNhaSach.HangHoas
-                          where hh.maHH == maHH
-                          select hh.soLuongTon).FirstOrDefault();
+                           where hh.maHH == maHH
+                           select hh.soLuongTon).FirstOrDefault();
             return soLuong;
         }
 
-        public bool UpdateSoLuongTon(string maHH,int soLuongMoi)
+        public bool UpdateSoLuongTon(string maHH, int soLuongMoi)
         {
             try
             {
@@ -259,54 +260,56 @@ namespace DAL
             {
                 throw new Exception("Lỗi khi cập nhật số lượng tồn: " + ex.Message);
             }
-        //Tìm hàng hóa.
-
-        public ET_HangHoa TimHangHoa(string maHangHoa)
-        {
-            IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
-                                 //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
-                                 //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
-                                 where hh.maHH == maHangHoa 
-                                 select new ET_HangHoa
-                                 {
-                                     MaHH = hh.maHH,
-                                     TenHH = hh.tenHH,
-                                     LoaiHH = hh.maLHH,
-                                     GiaHH = hh.giaHH,
-                                     DonviTinh = hh.donViTinh,
-                                     SlTon = hh.soLuongTon,
-                                     NhaPP = hh.maNPP,
-                                     TacGia = hh.tacGia,
-                                     MoTa = hh.moTa,
-                                     GhiChu = hh.ghiChu,
-                                     TinhTrang = hh.tinhTrang
-                                 };
-            ET_HangHoa hhoa = hanghoa.FirstOrDefault();
-            return hhoa;
         }
+            //Tìm hàng hóa.
 
-        public ET_HangHoa TimNPP(string maNPP, string maHH)
-        {
-            IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
-                                                   //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
-                                                   //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
-                                             where hh.maNPP == maNPP && hh.maHH == maHH
-                                             select new ET_HangHoa
-                                             {
-                                                 MaHH = hh.maHH,
-                                                 TenHH = hh.tenHH,
-                                                 LoaiHH = hh.maLHH,
-                                                 GiaHH = hh.giaHH,
-                                                 DonviTinh = hh.donViTinh,
-                                                 SlTon = hh.soLuongTon,
-                                                 NhaPP = hh.maNPP,
-                                                 TacGia = hh.tacGia,
-                                                 MoTa = hh.moTa,
-                                                 GhiChu = hh.ghiChu,
-                                                 TinhTrang = hh.tinhTrang
-                                             };
-            ET_HangHoa hhoa = hanghoa.FirstOrDefault();
-            return hhoa;
+            public ET_HangHoa TimHangHoa(string maHangHoa)
+            {
+                IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
+                                                     //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                                     //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                                 where hh.maHH == maHangHoa
+                                                 select new ET_HangHoa
+                                                 {
+                                                     MaHH = hh.maHH,
+                                                     TenHH = hh.tenHH,
+                                                     LoaiHH = hh.maLHH,
+                                                     GiaHH = hh.giaHH,
+                                                     DonviTinh = hh.donViTinh,
+                                                     SlTon = hh.soLuongTon,
+                                                     NhaPP = hh.maNPP,
+                                                     TacGia = hh.tacGia,
+                                                     MoTa = hh.moTa,
+                                                     GhiChu = hh.ghiChu,
+                                                     TinhTrang = hh.tinhTrang
+                                                 };
+                ET_HangHoa hhoa = hanghoa.FirstOrDefault();
+                return hhoa;
+            }
+
+            public ET_HangHoa TimNPP(string maNPP, string maHH)
+            {
+                IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
+                                                     //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                                     //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                                 where hh.maNPP == maNPP && hh.maHH == maHH
+                                                 select new ET_HangHoa
+                                                 {
+                                                     MaHH = hh.maHH,
+                                                     TenHH = hh.tenHH,
+                                                     LoaiHH = hh.maLHH,
+                                                     GiaHH = hh.giaHH,
+                                                     DonviTinh = hh.donViTinh,
+                                                     SlTon = hh.soLuongTon,
+                                                     NhaPP = hh.maNPP,
+                                                     TacGia = hh.tacGia,
+                                                     MoTa = hh.moTa,
+                                                     GhiChu = hh.ghiChu,
+                                                     TinhTrang = hh.tinhTrang
+                                                 };
+                ET_HangHoa hhoa = hanghoa.FirstOrDefault();
+                return hhoa;
+            }
         }
     }
-}
+

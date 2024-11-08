@@ -306,7 +306,7 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Ca Trực";
             this.groupBox3.UseCompatibleTextRendering = true;
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            
             // 
             // dgvDSCaTruc
             // 
