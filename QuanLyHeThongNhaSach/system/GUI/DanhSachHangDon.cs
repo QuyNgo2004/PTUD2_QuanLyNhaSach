@@ -50,22 +50,48 @@ namespace GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
+            if (txtTenNV.Text == "" && txtSDT.Text != "")
             {
-                if (txtTenNV.Text == "")
+                if (CheckThongTin() == true)
                 {
-                    if (CheckThongTin() == true)
-                    {                        
-                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSoDienThoai(txtSDT.Text);
-                    }
-
+                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSDT(txtSDT.Text, dateTimePicker1.Value.Date);
+                    txtSDT.Clear();
+                    dateTimePicker1.Value = DateTime.Now;
+                }
+                else
+                {
+                    Exception ex = new Exception("Không tìm thấy hóa đơn từ số điện thoại này");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else if(txtSDT.Text == "" && txtTenNV.Text != "")
             {
-
-                MessageBox.Show(ex.Message);
+                if (CheckThongTin1() == true)
+                {
+                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoTenNV(txtTenNV.Text, dateTimePicker1.Value.Date);
+                    txtTenNV.Clear();
+                    dateTimePicker1.Value = DateTime.Now;
+                }
+                else
+                {
+                    Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên này này");
+                    MessageBox.Show(ex.Message);
+                }
             }
+            else if(txtSDT.Text == "" && txtTenNV.Text == "")
+            {
+                dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoNgayThanhToan(dateTimePicker1.Value.Date);
+                dateTimePicker1.Value = DateTime.Now;
+            }
+            else
+            {
+                dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
+                txtSDT.Clear();
+                txtTenNV.Clear();
+                dateTimePicker1.Value = DateTime.Now;
+            }
+
+
         }
         private bool CheckThongTin()
         {
@@ -80,6 +106,29 @@ namespace GUI
                 flag = true;
             }
             return flag;
+        }
+
+        private bool CheckThongTin1()
+        {
+            bool flag = false;
+            if (batLoi.KT_Null(txtTenNV.Text) || batLoi.KT_SoKiTuCoTheLuu(txtTenNV.Text, 45) == false || batLoi.KT_ChuoiKiTu(txtTenNV.Text) == false)
+            {
+                MessageBox.Show("Vui lòng nhập tên nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenNV.Clear();
+            }
+            else
+            {
+                flag = true;
+            }
+            return flag;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            BUS_HoaDon.Instance.xemDanhSachHoaDon(dgvLichSuHoaDon);
+            txtSDT.Clear();
+            txtTenNV.Clear();
+
         }
     }
 }

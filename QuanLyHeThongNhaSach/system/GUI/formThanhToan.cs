@@ -121,7 +121,7 @@ namespace GUI
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -400,6 +400,7 @@ namespace GUI
                             }
                         }
                         dgvHangHoa.DataSource = null;
+                        txtTongTien.Clear();
                         // Bước 4: Hiển thị thông báo thành công
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

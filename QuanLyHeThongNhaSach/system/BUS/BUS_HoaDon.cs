@@ -46,11 +46,49 @@ namespace BUS
             dgv.DataSource = DAL_HoaDon.Instance.xemDanhSachHoaDon();
         }
 
-        public IQueryable<HoaDon> TimHoaDonTheoSoDienThoai(string soDienThoai)
+        public IQueryable TimHoaDonTheoSDT(string soDienThoai, DateTime dateTime)
         {
             try
             {
-                return DAL_HoaDon.Instance.TimHoaDonTheoSoDienThoai(soDienThoai);
+                return DAL_HoaDon.Instance.TimHoaDonTheoSDT(soDienThoai,dateTime);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public IQueryable TimHoaDonTheoTenNV(string tenNV, DateTime dateTime)
+        {
+            try
+            {
+                return DAL_HoaDon.Instance.TimHoaDonTheoTenNV(tenNV,dateTime);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public IQueryable TimHoaDonTheoNgayThanhToan(DateTime dateTime)
+        {
+            try
+            {
+                return DAL_HoaDon.Instance.TimHoaDonTheoNgayThanhToan(dateTime);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public IQueryable TimHoaDonTongHop(string soDienThoai, string tenNV, DateTime dateTime)
+        {
+            try
+            {
+                return DAL_HoaDon.Instance.TimHoaDonTongHop(soDienThoai, tenNV, dateTime);
             }
             catch (Exception ex)
             {
