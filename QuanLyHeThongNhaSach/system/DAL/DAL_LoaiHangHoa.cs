@@ -41,36 +41,38 @@ namespace DAL
         /// <returns></returns>
         public bool ThemLoaiHangHoa(ET_LoaiHangHoa etLoaiHH)
         {
-            //Kiểm tra xem có trùng mã loại hàng hay không, nếu trùng trả về false.
-            if (dbNhaSach.LoaiHangHoas.Any(lhh => lhh.maLHH == etLoaiHH.MaLHH))
+            // Kiểm tra xem có trùng mã hoặc tên loại hàng hay không, nếu trùng trả về false.
+            if (dbNhaSach.LoaiHangHoas.Any(lhh => lhh.maLHH == etLoaiHH.MaLHH || lhh.tenLHH == etLoaiHH.TenHH))
             {
-                //Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
+                // Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
                 return false;
             }
             else
             {
                 try
                 {
-                    //Tạo một đối tượng mới của loại hàng hóa.
+                    // Tạo một đối tượng mới của loại hàng hóa.
                     LoaiHangHoa lhh = new LoaiHangHoa
                     {
                         maLHH = etLoaiHH.MaLHH,
                         tenLHH = etLoaiHH.TenHH,
                         ghiChu = etLoaiHH.GhiChu,
                     };
-                    //Thêm loại hàng vào cơ sở dữ liệu
+                    // Thêm loại hàng vào cơ sở dữ liệu
                     dbNhaSach.LoaiHangHoas.InsertOnSubmit(lhh);
-                }
-                finally
-                {
                     // Lưu các thay đổi vào cơ sở dữ liệu
                     dbNhaSach.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ nếu có (tùy chọn)
+                    Console.WriteLine("Lỗi: " + ex.Message);
+                    return false;
                 }
                 // Trả về true để báo hiệu việc thêm mới thành công
                 return true;
             }
         }
-
         /// <summary>
         /// Xóa loại hàng hoa
         /// </summary>
@@ -132,7 +134,7 @@ namespace DAL
             string NewMaLH;
             do
             {
-                NewMaLH = $"KH{countMaLH}";
+                NewMaLH = $"LHH{countMaLH}";
                 countMaLH++;
             } while (dbNhaSach.LoaiHangHoas.Any(lh => lh.maLHH == NewMaLH));
             return NewMaLH;

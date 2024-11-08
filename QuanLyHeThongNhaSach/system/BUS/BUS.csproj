@@ -46,12 +46,14 @@
     <Compile Include="BUS_CaTruc.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiTietCaTruc.cs" />
+    <Compile Include="BUS_ChiTietNhapHang.cs" />
     <Compile Include="BUS_ChucVu.cs" />
     <Compile Include="BUS_Data.cs" />
     <Compile Include="BUS_HangHoa.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_LoaiHangHoa.cs" />
     <Compile Include="BUS_NhanSu.cs" />
+    <Compile Include="BUS_NhapHang.cs" />
     <Compile Include="BUS_NhaPhanPhoi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,6 +47,15 @@ namespace GUI
         public bool KTraMa(string maLHH)
         {
             if (maLHH.Equals(dgvLoaiHangHoa.CurrentRow.Cells[0].Value.ToString()) == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool KTraTen(string tenLHH)
+        {
+            if (tenLHH.Equals(dgvLoaiHangHoa.CurrentRow.Cells[1].Value.ToString()) == true)
             {
                 return true;
             }
@@ -147,6 +157,58 @@ namespace GUI
             txtMaLH.Text = BUS_LoaiHangHoa.Instance.TaoMaLoaiHangTuDong();
             txtTenLHH.Clear();
             txtGhiChu.Clear();
+        }
+
+        private void txtTenLHH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+                MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (e.KeyChar != '\b' && txtTenLHH.Text.Trim().Length == 0 && !char.IsLetter(e.KeyChar))
+            {
+                // Nếu chưa có ký tự chữ nào
+                e.Handled = true;
+                MessageBox.Show("Tên loại hàng phải chứa ít nhất một ký tự chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtTenLHH.Text.Length > 44 && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+                MessageBox.Show("Không thể nhập tên loại hàng quá 45 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtTenLHH_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTenLHH.Text))
+            {
+                MessageBox.Show("Tên loại hàng hóa không được để trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenLHH.Focus();
+            }
+        }
+
+        private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '-' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+                MessageBox.Show("Không thể nhập kí tự đặc biệt.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtGhiChu.Text.Length > 149 && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+                MessageBox.Show("Không thể nhập địa chỉ quá 150 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtGhiChu_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTenLHH.Text))
+            {
+                MessageBox.Show("Tên loại hàng hóa không được để trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenLHH.Focus();
+            }
         }
     }
 }

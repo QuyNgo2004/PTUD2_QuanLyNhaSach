@@ -28,7 +28,7 @@ namespace DAL
         public IQueryable layDSNhaPhanPhoi()
         {
             IQueryable dsNhaPhanPhoi = from ncc in DbNhaSach.NhaPhanPhois
-                                      select new 
+                                      select new
                                       {
                                           MaNPP = ncc.maNPP,
                                           TenNPP = ncc.tenNPP,
@@ -140,6 +140,24 @@ namespace DAL
 
                 throw ex;
             }
+        }
+
+        public ET_NhaPhanPhoi TimNhaPhanPhoi(string maNCC)
+        {
+            IQueryable<ET_NhaPhanPhoi> npp = from ncc in dbNhaSach.NhaPhanPhois
+                                                 //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                                 //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                             where ncc.maNPP == maNCC
+                                                 select new ET_NhaPhanPhoi
+                                             {
+                                                 MaNPP = ncc.maNPP,
+                                                 TenNPP = ncc.tenNPP,
+                                                 DiaChiNPP = ncc.diachiNPP,
+                                                 SdtNPP = ncc.sdtNPP,
+                                                 EmailNPP = ncc.emailNPP,
+                                             };
+            ET_NhaPhanPhoi cn = npp.FirstOrDefault();
+            return cn;
         }
     }
 }
