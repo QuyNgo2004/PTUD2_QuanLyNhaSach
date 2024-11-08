@@ -163,7 +163,7 @@ maCTLuong int IDENTITY(1,1) primary key,
 maBangLuong varchar(30) foreign key references BangTinhLuong(maBangLuong),
 maNS varchar (7) foreign key references NhanSu(maNS),
 luongTheoNgay int not null,
-ngayNghi int null,
+ngayNghi int ,
 soNgayLam int not null,
 tienLuong int not null,
 )
