@@ -50,22 +50,22 @@ namespace GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtTenNV.Text == "")
-                {
-                    if (CheckThongTin() == true)
-                    {                        
-                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSoDienThoai(txtSDT.Text);
-                    }
+        //    try
+        //    {
+        //        if (txtTenNV.Text == "")
+        //        {
+        //            if (CheckThongTin() == true)
+        //            {                        
+        //                dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSoDienThoai(txtSDT.Text);
+        //            }
 
-                }
-            }
-            catch (Exception ex)
-            {
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                MessageBox.Show(ex.Message);
-            }
+        //        MessageBox.Show(ex.Message);
+        //    }
         }
         private bool CheckThongTin()
         {

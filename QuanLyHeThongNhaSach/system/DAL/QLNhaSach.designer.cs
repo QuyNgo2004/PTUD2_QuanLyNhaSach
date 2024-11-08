@@ -87,11 +87,9 @@ namespace DAL
     #endregion
 		
 		public QLNhaSachDataContext() : 
-<<<<<<< HEAD
+
 				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString1, mappingSource)
-=======
-				base(global::DAL.Properties.Settings.Default.QLNhaSachConnectionString3, mappingSource)
->>>>>>> origin/NguyenAnhKiet1
+
 		{
 			OnCreated();
 		}
