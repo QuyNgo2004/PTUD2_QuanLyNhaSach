@@ -7,7 +7,7 @@ SET DATEFORMAT dmy;
 --Tạo bảng chi nhánh
 create table ChiNhanh(
 maCN varchar(10) not null,
-tenCN nvarchar(50) not null,
+tenCN varchar(50) not null,
 diaChi nvarchar(150) not null,
 soDienThoai varchar(12) not null,
 email varchar(50) not null,
@@ -62,6 +62,7 @@ giaHH int not null,
 donViTinh nvarchar(15) not null,
 soLuongTon int not null,
 maNPP varchar(11) foreign key references NhaPhanPhoi(maNPP),
+tacGia nvarchar(45) null,
 hanSD int null,
 --ngayNhap datetime not null,
 --ngayHetHan datetime not null,
@@ -71,7 +72,6 @@ tinhTrang nvarchar(15) not null,
 primary key (maHH)
 )
 go
-
 --Tao bang chi tiet nhập hàng
 create table NhapHang(
 maNH varchar(11) primary key,
@@ -87,23 +87,23 @@ soLuong int ,
 ghiChu nvarchar(200),
 constraint PK_CTNCC primary key(maCTNCC,maHH))
 go
+
+---drop table NhaCCCT
+go
 --Tạo bảng Khuyến Mãi
 create table KhuyenMai(
-maKM varchar(25) primary key,
-tenKM nvarchar(50) not null,
+maKM varchar(20) primary key,
+tenKM nvarchar(50),
 giamGia int null,
-maHH varchar(13) foreign key references HangHoa(maHH) null,
-ngayBD dateTime not null,
-ngayKT dateTime not null,
-ghiChu nvarchar(100)  null ,
 --maHH varchar(13)  --Qua tang kem )
 )
-go
 --Tao bang chi tiet khuyen mai
 create table CTKhuyenMai(
 maCTKM INT IDENTITY(1,1),
 maHH varchar(13) foreign key references HangHoa(maHH) ,
-maKM varchar(25) foreign key references KhuyenMai(maKM),
+maKM varchar(20) foreign key references KhuyenMai(maKM),
+ngayBD dateTime,
+ngayKT dateTime,
 constraint PK_CTKM primary key(maHH,maKM,maCTKM))
 --Tao bang nhan vien
 create table NhanSu (
@@ -124,7 +124,7 @@ create table HoaDon(
 maHD varchar(10) not null,
 maNS varchar (7) foreign key references NhanSu(maNS),
 maKH varchar(11) foreign key references KhachHang(maKH),
-tongTien float,
+donGia float,
 ngayIn date not null,
 ghiChu nvarchar(150) null,
 primary key (maHD))
@@ -150,22 +150,3 @@ create table ChiTietCaTruc(
 maCTCT INT IDENTITY(1,1) primary key ,
 maCT INT foreign key references CaTruc(maCT),
 maNS varchar(7) foreign key references NhanSu(maNS), )
-go
---Tinh luong
-create table BangTinhLuong(
-maBangLuong varchar(30) primary key,
-maNS varchar (7) foreign key references NhanSu(maNS),
-ngayBD dateTime not null,
-ngayKT dateTime not null,)
-go
-create table ChiTietLuong(
-maCTLuong int IDENTITY(1,1) primary key,
-maBangLuong varchar(30) foreign key references BangTinhLuong(maBangLuong),
-maNS varchar (7) foreign key references NhanSu(maNS),
-luongTheoNgay int not null,
-ngayNghi int ,
-soNgayLam int not null,
-tienLuong int not null,
-)
-go
-

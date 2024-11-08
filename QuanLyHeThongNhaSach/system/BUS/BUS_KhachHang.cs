@@ -87,10 +87,5 @@ namespace BUS
         {
             return dal_kh.TaoMaKhachHangTuDong();
         }
-
-        public ET_KhachHang TimKhachHangTheoSDT(string soDienThoai)
-        {
-            return DAL_KhachHang.Instance.TimKhachHangTheoSDT(soDienThoai);
-        }
     }
 }

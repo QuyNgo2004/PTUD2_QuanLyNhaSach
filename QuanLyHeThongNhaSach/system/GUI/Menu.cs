@@ -1,5 +1,4 @@
 ﻿using BUS;
-using ET;
 using GUI;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,14 +14,10 @@ namespace GUI
 {
     public partial class Menu : Form
     {
-        private string maNS = string.Empty;
-        private ET_NhanSu ns_ET = null;
-        public Menu(ET_NhanSu ns)
+        
+        public Menu()
         {
             InitializeComponent();
-            lbltTenNS.Text = ns.TenNS;
-            maNS = ns.MaNS;
-            this.ns_ET = ns;
         }
 
         /// <summary>
@@ -116,7 +110,7 @@ namespace GUI
         {
             if (nhansu == null || nhansu.IsDisposed)
             {
-                openChildForm(new NhanSu(ns_ET));
+                openChildForm(new NhanSu());
             }
             else
             {
@@ -130,12 +124,12 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private ChiTietKhuyenMai khuyenmai;
+        private KhuyenMai khuyenmai;
         private void btnCTKhuyenMai_Click(object sender, EventArgs e)
         {
             if (khuyenmai == null || khuyenmai.IsDisposed)
             {
-                openChildForm(new ChiTietKhuyenMai());
+                openChildForm(new KhuyenMai());
             }
             else
             {
@@ -201,7 +195,7 @@ namespace GUI
         {
             if (thanhToan == null || thanhToan.IsDisposed)
             {
-                openChildForm(new formThanhToan(maNS));
+                openChildForm(new formThanhToan());
             }
             else
             {

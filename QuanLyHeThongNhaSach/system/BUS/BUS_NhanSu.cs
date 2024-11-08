@@ -37,30 +37,9 @@ namespace BUS
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
         }
-       
-        //public bool KT_DangNhap(string tenDN,string matKhau)
-        //{
-        //    List<NhanSu> list = hienThiNhanSu_List();
-        //    foreach (NhanSu ns in list)
-        //    {
-        //        if(ns.tenNS == tenDN && ns.matkhau == matKhau)
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-        public ET_NhanSu KT_MatKhau(string tenDN,string matKhau)
-        {
-            return DAL_NhanSu.Instance.TimNhanSu(tenDN, matKhau);
-        }
         public void hienThiNhanSu(DataGridView dgv,string ma)
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu(ma);
-        }
-        public IQueryable hienThiNhanSu( string ma)
-        {
-            return DAL_NhanSu.Instance.layDSNhanSu(ma);
         }
         public bool themNhanSu(ET_NhanSu NhanSu)
         {

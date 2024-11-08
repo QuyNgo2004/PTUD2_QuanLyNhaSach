@@ -46,7 +46,7 @@
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbltTenNS = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.pnlNavbar.Controls.Add(this.btnThoat);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNavbar.Location = new System.Drawing.Point(0, 0);
-            this.pnlNavbar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlNavbar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(1293, 40);
             this.pnlNavbar.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             this.btnLogout.Image = global::GUI.Properties.Resources.images;
             this.btnLogout.Location = new System.Drawing.Point(1206, 7);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(24, 24);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +97,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Location = new System.Drawing.Point(1240, 7);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(27, 24);
             this.btnThoat.TabIndex = 1;
@@ -118,7 +118,7 @@
             this.pnlMenu.Controls.Add(this.panel1);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 40);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(241, 594);
             this.pnlMenu.TabIndex = 5;
@@ -130,7 +130,7 @@
             this.pnlKhachHang.Controls.Add(this.btnDanhSachKhachHang);
             this.pnlKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlKhachHang.Location = new System.Drawing.Point(0, 446);
-            this.pnlKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlKhachHang.Name = "pnlKhachHang";
             this.pnlKhachHang.Size = new System.Drawing.Size(241, 67);
             this.pnlKhachHang.TabIndex = 8;
@@ -144,7 +144,7 @@
             this.btnDanhSachNhaPhanPhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachNhaPhanPhoi.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachNhaPhanPhoi.Location = new System.Drawing.Point(0, 36);
-            this.btnDanhSachNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDanhSachNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDanhSachNhaPhanPhoi.Name = "btnDanhSachNhaPhanPhoi";
             this.btnDanhSachNhaPhanPhoi.Size = new System.Drawing.Size(241, 31);
             this.btnDanhSachNhaPhanPhoi.TabIndex = 1;
@@ -162,7 +162,7 @@
             this.btnDanhSachKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachKhachHang.Location = new System.Drawing.Point(0, 0);
-            this.btnDanhSachKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDanhSachKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDanhSachKhachHang.Name = "btnDanhSachKhachHang";
             this.btnDanhSachKhachHang.Size = new System.Drawing.Size(241, 36);
             this.btnDanhSachKhachHang.TabIndex = 0;
@@ -180,7 +180,7 @@
             this.btnKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.Transparent;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 412);
-            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(241, 34);
             this.btnKhachHang.TabIndex = 7;
@@ -194,7 +194,7 @@
             this.pnlNhanSu.Controls.Add(this.btnDanhSachNhanSu);
             this.pnlNhanSu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNhanSu.Location = new System.Drawing.Point(0, 340);
-            this.pnlNhanSu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlNhanSu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNhanSu.Name = "pnlNhanSu";
             this.pnlNhanSu.Size = new System.Drawing.Size(241, 72);
             this.pnlNhanSu.TabIndex = 6;
@@ -208,7 +208,7 @@
             this.btnDanhSachChiNhanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachChiNhanh.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachChiNhanh.Location = new System.Drawing.Point(0, 36);
-            this.btnDanhSachChiNhanh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDanhSachChiNhanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDanhSachChiNhanh.Name = "btnDanhSachChiNhanh";
             this.btnDanhSachChiNhanh.Size = new System.Drawing.Size(241, 36);
             this.btnDanhSachChiNhanh.TabIndex = 4;
@@ -226,7 +226,7 @@
             this.btnDanhSachNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhSachNhanSu.ForeColor = System.Drawing.Color.White;
             this.btnDanhSachNhanSu.Location = new System.Drawing.Point(0, 0);
-            this.btnDanhSachNhanSu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDanhSachNhanSu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDanhSachNhanSu.Name = "btnDanhSachNhanSu";
             this.btnDanhSachNhanSu.Size = new System.Drawing.Size(241, 36);
             this.btnDanhSachNhanSu.TabIndex = 3;
@@ -244,7 +244,7 @@
             this.btnNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanSu.ForeColor = System.Drawing.Color.Transparent;
             this.btnNhanSu.Location = new System.Drawing.Point(0, 306);
-            this.btnNhanSu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhanSu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.Size = new System.Drawing.Size(241, 34);
             this.btnNhanSu.TabIndex = 5;
@@ -259,7 +259,7 @@
             this.pnlHangHoa.Controls.Add(this.btnNhapHang);
             this.pnlHangHoa.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHangHoa.Location = new System.Drawing.Point(0, 201);
-            this.pnlHangHoa.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlHangHoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlHangHoa.Name = "pnlHangHoa";
             this.pnlHangHoa.Size = new System.Drawing.Size(241, 105);
             this.pnlHangHoa.TabIndex = 4;
@@ -273,7 +273,7 @@
             this.btnCTKhuyenMai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCTKhuyenMai.ForeColor = System.Drawing.Color.White;
             this.btnCTKhuyenMai.Location = new System.Drawing.Point(0, 72);
-            this.btnCTKhuyenMai.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCTKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCTKhuyenMai.Name = "btnCTKhuyenMai";
             this.btnCTKhuyenMai.Size = new System.Drawing.Size(241, 36);
             this.btnCTKhuyenMai.TabIndex = 2;
@@ -291,7 +291,7 @@
             this.btnThanhToanHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToanHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnThanhToanHoaDon.Location = new System.Drawing.Point(0, 36);
-            this.btnThanhToanHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThanhToanHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThanhToanHoaDon.Name = "btnThanhToanHoaDon";
             this.btnThanhToanHoaDon.Size = new System.Drawing.Size(241, 36);
             this.btnThanhToanHoaDon.TabIndex = 4;
@@ -309,7 +309,7 @@
             this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
             this.btnNhapHang.Location = new System.Drawing.Point(0, 0);
-            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(241, 36);
             this.btnNhapHang.TabIndex = 0;
@@ -327,7 +327,7 @@
             this.btnHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHangHoa.ForeColor = System.Drawing.Color.Transparent;
             this.btnHangHoa.Location = new System.Drawing.Point(0, 167);
-            this.btnHangHoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHangHoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHangHoa.Name = "btnHangHoa";
             this.btnHangHoa.Size = new System.Drawing.Size(241, 34);
             this.btnHangHoa.TabIndex = 1;
@@ -337,26 +337,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MintCream;
-            this.panel2.Controls.Add(this.lbltTenNS);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 104);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(241, 63);
             this.panel2.TabIndex = 1;
             // 
-            // lbltTenNS
+            // label3
             // 
-            this.lbltTenNS.AutoSize = true;
-            this.lbltTenNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltTenNS.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbltTenNS.Location = new System.Drawing.Point(23, 21);
-            this.lbltTenNS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbltTenNS.Name = "lbltTenNS";
-            this.lbltTenNS.Size = new System.Drawing.Size(200, 31);
-            this.lbltTenNS.TabIndex = 2;
-            this.lbltTenNS.Text = "Nguyễn Văn A";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label3.Location = new System.Drawing.Point(23, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nguyễn Văn A";
             // 
             // label4
             // 
@@ -378,7 +378,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(241, 104);
             this.panel1.TabIndex = 0;
@@ -411,7 +411,7 @@
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(2, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -422,7 +422,7 @@
             // 
             this.pnlMenuShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMenuShow.Location = new System.Drawing.Point(241, 40);
-            this.pnlMenuShow.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMenuShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMenuShow.Name = "pnlMenuShow";
             this.pnlMenuShow.Size = new System.Drawing.Size(1052, 594);
             this.pnlMenuShow.TabIndex = 6;
@@ -437,7 +437,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlNavbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -475,7 +475,7 @@
         private System.Windows.Forms.Button btnThanhToanHoaDon;
         private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.Button btnHangHoa;
-        private System.Windows.Forms.Label lbltTenNS;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;

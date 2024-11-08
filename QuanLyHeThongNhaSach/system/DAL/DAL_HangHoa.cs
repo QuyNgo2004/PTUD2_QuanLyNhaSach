@@ -43,6 +43,7 @@ namespace DAL
                                      DonViTinh = hh.donViTinh,
                                      SoLuongTon = hh.soLuongTon,
                                      NhaPhanPhoi = hanghoa2.tenNPP,
+                                     TacGia = hh.tacGia,
                                      MoTa = hh.moTa,
                                      GhiChu = hh.ghiChu,
                                      TinhTrang = hh.tinhTrang
@@ -180,7 +181,6 @@ namespace DAL
             return NewMaHH;
         }
 
-
         //Tìm hàng hóa.
 
         public ET_HangHoa TimHangHoa(string maHangHoa)
@@ -229,48 +229,6 @@ namespace DAL
                                              };
             ET_HangHoa hhoa = hanghoa.FirstOrDefault();
             return hhoa;
-        public ET_HangHoa TimHangHoaTheoMa(string ma)
-        {
-            try
-            {
-                // Sử dụng DbNhaSach để gọi stored procedure
-                var result = DbNhaSach.TimHangHoaTheoMa(ma).FirstOrDefault();
-
-                if (result != null)
-                {
-                    return new ET_HangHoa(
-                        result.maHH,
-                        result.tenHH,
-                        result.tenLHH,
-                        result.giaHH,
-                        result.donViTinh,
-                        result.soLuongTon,
-                        result.tenNPP,
-                        result.moTa,
-                        result.ghiChu,
-                        result.tinhTrang
-                    );
-                }
-
-                return null;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi tìm hàng hóa theo mã: " + ex.Message);
-            }
-        }
-
-        public IQueryable XemDSHangHoaAutoCompleted()
-        {
-            IQueryable hanghoa = (from hh in dbNhaSach.HangHoas
-                                 join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
-                                 join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
-                                 select new
-                                 {                                     
-                                     Ten = hh.tenHH,
-                                 });
-
-            return hanghoa;
         }
     }
 }

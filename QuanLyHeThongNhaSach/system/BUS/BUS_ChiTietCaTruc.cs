@@ -38,7 +38,7 @@ namespace BUS
         }
         public void hienThiCTCaTruc(DataGridView dgv, int maCT)
         {
-            dgv.DataSource = DAL_CTCaTruc.Instance.layDSCTCaTruc( maCT) ;
+            dgv.DataSource = DAL_CTCaTruc.Instance.layDSCTCaTruc( maCT);
         }
         public bool themCTCaTruc(int maCT,string maNS)
         {

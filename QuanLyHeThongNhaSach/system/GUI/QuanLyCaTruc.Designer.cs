@@ -62,17 +62,11 @@
             // 
             this.groupBox1.Controls.Add(this.dgvNV);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.groupBox1.Location = new System.Drawing.Point(3, 462);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Size = new System.Drawing.Size(510, 391);
-=======
-            this.groupBox1.Location = new System.Drawing.Point(6, 76);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 197);
->>>>>>> sprin_2_KhuyenMai_01
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Nhân Viên";
@@ -85,18 +79,13 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 62;
             this.dgvNV.RowTemplate.Height = 28;
-<<<<<<< HEAD
             this.dgvNV.Size = new System.Drawing.Size(502, 356);
-=======
-            this.dgvNV.Size = new System.Drawing.Size(387, 174);
->>>>>>> sprin_2_KhuyenMai_01
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_CellContentClick);
             this.dgvNV.Click += new System.EventHandler(this.dgvNV_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.groupBox1);
             this.groupBox4.Controls.Add(this.cboCN);
             this.groupBox4.Controls.Add(this.cboCaTruc);
             this.groupBox4.Controls.Add(this.groupBox2);
@@ -110,47 +99,29 @@
             this.groupBox4.Location = new System.Drawing.Point(14, 138);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-<<<<<<< HEAD
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Size = new System.Drawing.Size(1492, 314);
-=======
-            this.groupBox4.Size = new System.Drawing.Size(995, 279);
->>>>>>> sprin_2_KhuyenMai_01
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông Tin Ca Trực";
             // 
             // cboCN
             // 
-            this.cboCN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCN.FormattingEnabled = true;
-<<<<<<< HEAD
             this.cboCN.Location = new System.Drawing.Point(156, 48);
             this.cboCN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCN.Name = "cboCN";
             this.cboCN.Size = new System.Drawing.Size(188, 34);
-=======
-            this.cboCN.Location = new System.Drawing.Point(104, 28);
-            this.cboCN.Name = "cboCN";
-            this.cboCN.Size = new System.Drawing.Size(292, 26);
->>>>>>> sprin_2_KhuyenMai_01
             this.cboCN.TabIndex = 16;
             this.cboCN.SelectedIndexChanged += new System.EventHandler(this.cboCN_SelectedIndexChanged);
             // 
             // cboCaTruc
             // 
-            this.cboCaTruc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCaTruc.FormattingEnabled = true;
-<<<<<<< HEAD
             this.cboCaTruc.Location = new System.Drawing.Point(1215, 43);
             this.cboCaTruc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCaTruc.Name = "cboCaTruc";
             this.cboCaTruc.Size = new System.Drawing.Size(220, 34);
-=======
-            this.cboCaTruc.Location = new System.Drawing.Point(659, 76);
-            this.cboCaTruc.Name = "cboCaTruc";
-            this.cboCaTruc.Size = new System.Drawing.Size(181, 26);
->>>>>>> sprin_2_KhuyenMai_01
             this.cboCaTruc.TabIndex = 16;
             this.cboCaTruc.SelectedIndexChanged += new System.EventHandler(this.cboCaTruc_SelectedIndexChanged);
             // 
@@ -162,17 +133,11 @@
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.groupBox2.Location = new System.Drawing.Point(396, 125);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Size = new System.Drawing.Size(792, 180);
-=======
-            this.groupBox2.Location = new System.Drawing.Point(450, 124);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(508, 109);
->>>>>>> sprin_2_KhuyenMai_01
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thanh Công Cụ";
@@ -184,12 +149,7 @@
             this.btnCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCT.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.btnCT.Location = new System.Drawing.Point(297, 108);
-=======
-            this.btnCT.Location = new System.Drawing.Point(273, 70);
-            this.btnCT.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> sprin_2_KhuyenMai_01
             this.btnCT.Name = "btnCT";
             this.btnCT.Size = new System.Drawing.Size(206, 35);
             this.btnCT.TabIndex = 9;
@@ -204,12 +164,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(550, 49);
-=======
-            this.button1.Location = new System.Drawing.Point(344, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> sprin_2_KhuyenMai_01
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(206, 35);
             this.button1.TabIndex = 9;
@@ -224,12 +179,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.btnSua.Location = new System.Drawing.Point(297, 49);
-=======
-            this.btnSua.Location = new System.Drawing.Point(181, 32);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> sprin_2_KhuyenMai_01
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(206, 35);
             this.btnSua.TabIndex = 8;
@@ -244,12 +194,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.btnXoa.Location = new System.Drawing.Point(30, 108);
-=======
-            this.btnXoa.Location = new System.Drawing.Point(108, 70);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> sprin_2_KhuyenMai_01
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(206, 35);
             this.btnXoa.TabIndex = 8;
@@ -275,12 +220,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(26, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.label2.Location = new System.Drawing.Point(17, 36);
->>>>>>> sprin_2_KhuyenMai_01
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 26);
             this.label2.TabIndex = 0;
@@ -289,12 +230,8 @@
             // lblCaTruc
             // 
             this.lblCaTruc.AutoSize = true;
-<<<<<<< HEAD
             this.lblCaTruc.Location = new System.Drawing.Point(1116, 52);
             this.lblCaTruc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.lblCaTruc.Location = new System.Drawing.Point(593, 82);
->>>>>>> sprin_2_KhuyenMai_01
             this.lblCaTruc.Name = "lblCaTruc";
             this.lblCaTruc.Size = new System.Drawing.Size(88, 26);
             this.lblCaTruc.TabIndex = 0;
@@ -304,27 +241,17 @@
             // 
             this.txtMaNS.BackColor = System.Drawing.Color.White;
             this.txtMaNS.Enabled = false;
-<<<<<<< HEAD
             this.txtMaNS.Location = new System.Drawing.Point(508, 46);
             this.txtMaNS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaNS.Name = "txtMaNS";
             this.txtMaNS.Size = new System.Drawing.Size(151, 32);
-=======
-            this.txtMaNS.Location = new System.Drawing.Point(546, 30);
-            this.txtMaNS.Name = "txtMaNS";
-            this.txtMaNS.Size = new System.Drawing.Size(149, 24);
->>>>>>> sprin_2_KhuyenMai_01
             this.txtMaNS.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(366, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.label1.Location = new System.Drawing.Point(447, 36);
->>>>>>> sprin_2_KhuyenMai_01
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 26);
             this.label1.TabIndex = 0;
@@ -334,27 +261,17 @@
             // 
             this.txtTenNS.BackColor = System.Drawing.Color.White;
             this.txtTenNS.Enabled = false;
-<<<<<<< HEAD
             this.txtTenNS.Location = new System.Drawing.Point(819, 46);
             this.txtTenNS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenNS.Name = "txtTenNS";
             this.txtTenNS.Size = new System.Drawing.Size(271, 32);
-=======
-            this.txtTenNS.Location = new System.Drawing.Point(807, 33);
-            this.txtTenNS.Name = "txtTenNS";
-            this.txtTenNS.Size = new System.Drawing.Size(151, 24);
->>>>>>> sprin_2_KhuyenMai_01
             this.txtTenNS.TabIndex = 1;
             // 
             // lblTenNS
             // 
             this.lblTenNS.AutoSize = true;
-<<<<<<< HEAD
             this.lblTenNS.Location = new System.Drawing.Point(670, 54);
             this.lblTenNS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
-            this.lblTenNS.Location = new System.Drawing.Point(708, 38);
->>>>>>> sprin_2_KhuyenMai_01
             this.lblTenNS.Name = "lblTenNS";
             this.lblTenNS.Size = new System.Drawing.Size(137, 26);
             this.lblTenNS.TabIndex = 0;
@@ -385,17 +302,11 @@
             // 
             this.groupBox3.Controls.Add(this.dgvDSCaTruc);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.groupBox3.Location = new System.Drawing.Point(522, 462);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Size = new System.Drawing.Size(992, 391);
-=======
-            this.groupBox3.Location = new System.Drawing.Point(12, 375);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(997, 226);
->>>>>>> sprin_2_KhuyenMai_01
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Ca Trực";
@@ -409,13 +320,8 @@
             this.dgvDSCaTruc.Name = "dgvDSCaTruc";
             this.dgvDSCaTruc.RowHeadersWidth = 62;
             this.dgvDSCaTruc.RowTemplate.Height = 28;
-<<<<<<< HEAD
             this.dgvDSCaTruc.Size = new System.Drawing.Size(984, 356);
-=======
-            this.dgvDSCaTruc.Size = new System.Drawing.Size(991, 203);
->>>>>>> sprin_2_KhuyenMai_01
             this.dgvDSCaTruc.TabIndex = 0;
-            this.dgvDSCaTruc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSCaTruc_CellContentClick);
             this.dgvDSCaTruc.Click += new System.EventHandler(this.dgvDSCaTruc_Click);
             // 
             // QuanLyCaTruc
@@ -423,12 +329,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1540, 880);
-=======
-            this.ClientSize = new System.Drawing.Size(1027, 625);
->>>>>>> sprin_2_KhuyenMai_01
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.pnlNhapHang);
             this.Controls.Add(this.groupBox3);

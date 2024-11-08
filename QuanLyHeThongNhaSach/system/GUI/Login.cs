@@ -1,5 +1,4 @@
 ﻿using BUS;
-using ET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,6 @@ namespace GUI
     public partial class Login : Form
     {
         private BUS_Data data = new BUS_Data();
-        private BUS_NhanSu ns = BUS_NhanSu.Instance;
         public bool IsLoggedIn { get; private set; }
         public Login()
         {
@@ -50,20 +48,18 @@ namespace GUI
 
         private void LoginProcess()
         {
-           
             // Kiểm tra thông tin đăng nhập
             string username = textBox1.Text;
             string password = textBox2.Text;
-            ET_NhanSu nhanSu = ns.KT_MatKhau(username, password);
-            // Thực hiện kiểm tra đơn giản, bạn cần thay đổi thành kiểm tra thực tế
-            if (nhanSu != null)
-            {
 
+            // Thực hiện kiểm tra đơn giản, bạn cần thay đổi thành kiểm tra thực tế
+            if (username == "admin" && password == "admin")
+            {
                 // Đăng nhập thành công
                 IsLoggedIn = true;
                 // Ẩn form đăng nhập và hiển thị form chính
                 this.Hide();
-                Menu mainForm = new Menu(nhanSu);
+                Menu mainForm = new Menu();
                 mainForm.Closed += (s, args) => this.Close(); // Đóng ứng dụng khi đóng form chính
                 mainForm.Show();
             }

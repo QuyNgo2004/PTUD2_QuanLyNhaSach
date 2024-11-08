@@ -119,7 +119,6 @@ namespace GUI
                 txtMaNS.Text = dgvNV.Rows[dong].Cells[0].Value.ToString();
                 txtTenNS.Text = dgvNV.Rows[dong].Cells[1].Value.ToString();
                 MaCTCT = string.Empty;
-                cboCaTruc.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -154,7 +153,7 @@ namespace GUI
         {
             try
             {
-                if (cboCaTruc.DataSource != null)
+                if (cboCaTruc.DataSource != null )
                 {
                     ctct.hienThiCTCaTruc(dgvDSCaTruc, int.Parse(cboCaTruc.SelectedValue.ToString()));
                 }
@@ -162,7 +161,7 @@ namespace GUI
                 {
                     dgvDSCaTruc.DataSource = null;
                 }
-            }
+                }
             catch (Exception ex)
             {
             }
@@ -223,11 +222,6 @@ namespace GUI
                     MessageBox.Show("Không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void dgvDSCaTruc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

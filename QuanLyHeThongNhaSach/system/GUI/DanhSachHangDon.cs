@@ -1,5 +1,4 @@
-﻿using BUS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,18 +24,6 @@ namespace GUI
             {
                 this.Close();
             }
-        }
-
-        private void DanhSachHangDon_Load(object sender, EventArgs e)
-        {
-            BUS_HoaDon.Instance.xemDanhSachHoaDon(dgvLichSuHoaDon);
-        }
-
-        private void dgvLichSuHoaDon_Click(object sender, EventArgs e)
-        {
-            int dong = dgvLichSuHoaDon.CurrentCell.RowIndex;
-            string mahh = dgvLichSuHoaDon.Rows[dong].Cells[0].Value.ToString();            
-            BUS_CTHoaDon.Instance.xemChiTietHoaDon(dgvDSHangHoa, mahh);
         }
     }
 }

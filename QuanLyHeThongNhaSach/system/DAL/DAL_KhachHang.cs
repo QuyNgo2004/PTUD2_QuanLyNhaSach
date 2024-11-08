@@ -148,33 +148,5 @@ namespace DAL
             } while (dbNhaSach.KhachHangs.Any(kh => kh.maKH == newMaKH));
             return newMaKH;
         }
-
-        public ET_KhachHang TimKhachHangTheoSDT(string soDienThoai)
-        {
-            try
-            {
-                // Sử dụng DbNhaSach để gọi stored procedure
-                var result = DbNhaSach.TimKhachHangTheoSoDienThoai(soDienThoai).FirstOrDefault();
-               
-                    if (result != null)
-                    {
-                        return new ET_KhachHang(
-                            result.maKH,
-                            result.hoTenKH,
-                            (DateTime)result.ngaysinhKH,
-                            result.gioitinhKH,
-                            result.diachiKH,
-                            result.sdtKH,
-                            result.emailKH
-                        );
-                    }                
-
-                return null;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi tìm khách hàng theo số điện thoại: " + ex.Message);
-            }
-        }
     }
 }
