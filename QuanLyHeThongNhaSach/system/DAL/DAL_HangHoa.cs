@@ -216,5 +216,41 @@ namespace DAL
 
             return hanghoa;
         }
+
+        public int GetSoLuongTon(string maHH)
+        {
+            int soLuong = (from hh in dbNhaSach.HangHoas
+                          where hh.maHH == maHH
+                          select hh.soLuongTon).FirstOrDefault();
+            return soLuong;
+        }
+
+        public bool UpdateSoLuongTon(string maHH,int soLuongMoi)
+        {
+            try
+            {
+                // Tìm sản phẩm với mã hàng hóa tương ứng
+                var hangHoa = dbNhaSach.HangHoas.SingleOrDefault(hh => hh.maHH == maHH);
+
+                // Kiểm tra xem sản phẩm có tồn tại không
+                if (hangHoa != null)
+                {
+                    // Cập nhật số lượng tồn mới
+                    hangHoa.soLuongTon = soLuongMoi;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    dbNhaSach.SubmitChanges();
+                    return true; // Cập nhật thành công
+                }
+                else
+                {
+                    return false; // Không tìm thấy sản phẩm
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật số lượng tồn: " + ex.Message);
+            }
+        }
     }
 }

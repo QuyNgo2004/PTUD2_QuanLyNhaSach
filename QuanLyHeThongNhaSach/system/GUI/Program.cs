@@ -6,8 +6,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    internal static class Program
+    public static class Program
     {
+        public static string maNS;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

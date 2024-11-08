@@ -17,13 +17,15 @@ namespace GUI
         BUS_KhachHang kh = BUS_KhachHang.Instance;
         BUS_HangHoa hh = BUS_HangHoa.Instance;
         BUS_HoaDon hd = BUS_HoaDon.Instance;
+        BUS_BatLoi batLoi = new BUS_BatLoi();
+        BUS_KhuyenMai km = BUS_KhuyenMai.Instance;
         private List<ET_SanPhamThanhToan> danhSachSanPham = new List<ET_SanPhamThanhToan>();
         private BindingSource bindingSourceSanPham = new BindingSource();
         private string maNS = string.Empty;
         public formThanhToan(string maNS)
         {
             InitializeComponent();
-            this.maNS = maNS;
+
         }
 
         private void btnLSHoaDon_Click(object sender, EventArgs e)
@@ -39,18 +41,27 @@ namespace GUI
 
         private void txtSDT_Validated(object sender, EventArgs e)
         {
-            ET_KhachHang et = kh.TimKhachHangTheoSDT(txtSDT.Text);
-            if (et != null)
+            if (CheckThongTin() == true)
             {
-                txtMaKH.Text = et.MaKH;
-                txtTenKH.Text = et.HotenKH;
-                txtDiaChi.Text = et.DiachiKH;
+                ET_KhachHang et = kh.TimKhachHangTheoSDT(txtSDT.Text);
+                if (et != null)
+                {
+                    txtMaKH.Text = et.MaKH;
+                    txtTenKH.Text = et.HotenKH;
+                    txtDiaChi.Text = et.DiachiKH;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng có SDT này", "Thông báo");
+                    txtSDT.Focus();
+                }
             }
+
         }
 
         private void txtMaHang_Validated(object sender, EventArgs e)
         {
-            
+
         }
 
         private void formThanhToan_Load(object sender, EventArgs e)
@@ -59,52 +70,133 @@ namespace GUI
             dgvHangHoa.DataSource = bindingSourceSanPham;
             dgvHangHoa.AutoGenerateColumns = true;
             hh.XemDSHH(cbbMaHang);
+            cbbKhuyenMai.DataSource = km.LoadKM_All();
+            cbbKhuyenMai.DisplayMember = "TenKM";
+            cbbKhuyenMai.ValueMember = "GiảmGiá";
+            cbbKhuyenMai.SelectedIndex = 0;
         }
 
         private void txtSoLuong_Validated(object sender, EventArgs e)
         {
-            if (txtSoLuong.Text != "")
+            // Kiểm tra xem người dùng đã nhập số hay không
+            try
             {
-                int donGia = int.Parse(txtDonGia.Text);
-                int soLuong = int.Parse(txtSoLuong.Text);
-                double thanhTien = donGia * soLuong;
-                txtThanhTien.Text = thanhTien.ToString();
+                if (batLoi.KT_ChuoiSo(txtSoLuong.Text) == false)
+                {
+                    MessageBox.Show("Vui lòng nhập ký tự số", "Thông báo");
+                    txtSoLuong.Clear();  // Nếu nhập không phải số thì làm sạch ô
+                    return;
+                }
+                else
+                {
+                    // Lấy giá trị đơn giá và số lượng từ TextBox
+                    int donGia = int.Parse(txtDonGia.Text);
+                    int soLuong = int.Parse(txtSoLuong.Text);
+
+                    // Lấy giá trị giảm giá từ ComboBox (Giả sử giá trị giảm giá là %)
+                    int giamGia = Convert.ToInt32(cbbKhuyenMai.SelectedValue); // Giá trị giảm giá từ ComboBox
+
+                    // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
+                    int soLuongTinhTien = soLuong;
+
+                    // Kiểm tra loại khuyến mãi
+                    if (giamGia == 0)
+                    {
+                        // Tặng sản phẩm: tăng gấp đôi số lượng để hiển thị trong giỏ hàng
+                        soLuong *= 2; // Số lượng trong giỏ hàng sẽ gấp đôi (bao gồm tặng kèm)
+                    }
+
+                    // Tính thành tiền
+                    double thanhTien = donGia * soLuongTinhTien; // Tính theo số lượng mua thực tế
+
+                    // Nếu giảm giá, tính lại giá trị thanh toán
+                    if (giamGia > 0)
+                    {
+                        thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                    }
+
+                    // Cập nhật lại giá trị thành tiền vào TextBox
+                    txtThanhTien.Text = thanhTien.ToString();  // Hiển thị thành tiền đã tính toán
+                }
             }
-            
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string maHH = cbbMaHang.Text;
-            string tenHH = txtTenHang.Text;
-            int donGia = int.Parse(txtDonGia.Text);
-            int soLuong = int.Parse(txtSoLuong.Text);
-            string khuyenMai = cbbKhuyenMai.Text;
-            double thanhTien = double.Parse(txtThanhTien.Text);
-
-            var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
-
-            if (sanPhamTonTai != null)
+            try
             {
-                // Nếu sản phẩm đã tồn tại, tăng số lượng và cập nhật thành tiền
-                sanPhamTonTai.SoLuong += soLuong;
-                sanPhamTonTai.ThanhTien = sanPhamTonTai.DonGia * sanPhamTonTai.SoLuong;
-            }
-            else
-            {
-                // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới vào danh sách
-                ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
-                danhSachSanPham.Add(sanPhamMoi);
-            }
-            bindingSourceSanPham.ResetBindings(false);
+                if (txtSoLuong != null && int.Parse(txtSoLuong.Text ) != 0)
+                {
+                    // Lấy thông tin từ các trường trên form
+                    string maHH = cbbMaHang.Text;
+                    string tenHH = txtTenHang.Text;
+                    int donGia = int.Parse(txtDonGia.Text);
+                    int giamGia = Convert.ToInt32(cbbKhuyenMai.SelectedValue); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
+                    int soLuong = int.Parse(txtSoLuong.Text);
 
-            ShowTongTien();
-            cbbMaHang.SelectedIndex = 0;
-            txtTenHang.Clear();
-            txtDonGia.Clear();
-            txtSoLuong.Clear();
-            cbbKhuyenMai.Text = "";
-            txtThanhTien.Clear();
+                    // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
+                    int soLuongTinhTien = soLuong;
+
+                    // Kiểm tra loại khuyến mãi
+                    if (giamGia == 0)
+                    {
+                        // Tặng sản phẩm: tăng gấp đôi số lượng để hiển thị trong giỏ hàng
+                        soLuong *= 2; // Số lượng trong giỏ hàng sẽ gấp đôi (bao gồm tặng kèm)
+                    }
+
+                    // Tính thành tiền
+                    double thanhTien = donGia * soLuongTinhTien; // Tính theo số lượng mua thực tế
+
+                    // Nếu giảm giá, tính lại giá trị thanh toán
+                    if (giamGia > 0)
+                    {
+                        thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                    }
+
+                    string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
+
+                    // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
+                    var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
+
+                    if (sanPhamTonTai != null)
+                    {
+                        // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
+                        sanPhamTonTai.SoLuong += soLuong;
+                        sanPhamTonTai.ThanhTien += thanhTien; // Cộng dồn thành tiền
+                    }
+                    else
+                    {
+                        // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
+                        ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
+                        danhSachSanPham.Add(sanPhamMoi);
+                    }
+
+                    // Cập nhật lại DataGridView với danh sách sản phẩm                    
+
+                    bindingSourceSanPham.ResetBindings(false);
+
+                    ShowTongTien();
+                    cbbMaHang.SelectedIndex = 0;
+                    txtTenHang.Clear();
+                    txtDonGia.Clear();
+                    txtSoLuong.Clear();
+                    cbbKhuyenMai.SelectedIndex = 0;
+                    txtThanhTien.Clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Bạn chưa nhập số lượng mua!", "Thông báo");
+                txtSoLuong.Focus();
+            }
         }
 
         private void dgvHangHoa_Click(object sender, EventArgs e)
@@ -122,13 +214,13 @@ namespace GUI
             catch (Exception ex)
             {
 
-                MessageBox.Show("Lỗi khi chọn dòng dữ liệu"+ex.Message);
+                MessageBox.Show("Lỗi khi chọn dòng dữ liệu" + ex.Message);
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dar = MessageBox.Show("Bạn có muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult dar = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dar == DialogResult.Yes)
             {
                 try
@@ -154,7 +246,7 @@ namespace GUI
                         txtTenHang.Clear();
                         txtDonGia.Clear();
                         txtSoLuong.Clear();
-                        cbbKhuyenMai.Text = "";
+                        cbbKhuyenMai.SelectedIndex = 0;
                         txtThanhTien.Clear();
 
                         MessageBox.Show("Đã xóa sản phẩm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -178,23 +270,42 @@ namespace GUI
             {
                 try
                 {
-                    // Lấy mã hàng hóa của sản phẩm cần sửa
                     string maHH = cbbMaHang.Text;
+                    string tenHH = txtTenHang.Text;
+                    int donGia = int.Parse(txtDonGia.Text);
+                    int giamGia = Convert.ToInt32(cbbKhuyenMai.SelectedValue); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
+                    int soLuong = int.Parse(txtSoLuong.Text);
 
-                    // Tìm sản phẩm trong danh sách dựa trên mã hàng hóa
-                    var sanPhamSua = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
+                    // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
+                    int soLuongTinhTien = soLuong;
 
-                    if (sanPhamSua != null)
+                    // Kiểm tra loại khuyến mãi
+                    if (giamGia == 0)
                     {
-                        // Cập nhật thông tin sản phẩm dựa trên dữ liệu từ các TextBox
-                        sanPhamSua.TenHH = txtTenHang.Text;
-                        sanPhamSua.DonGia = int.Parse(txtDonGia.Text);
-                        sanPhamSua.SoLuong = int.Parse(txtSoLuong.Text);
-                        sanPhamSua.KhuyenMai = cbbKhuyenMai.Text;
+                        // Tặng sản phẩm: tăng gấp đôi số lượng để hiển thị trong giỏ hàng
+                        soLuong *= 2; // Số lượng trong giỏ hàng sẽ gấp đôi (bao gồm tặng kèm)
+                    }
 
-                        // Cập nhật lại thành tiền dựa trên số lượng và đơn giá mới
-                        sanPhamSua.ThanhTien = sanPhamSua.DonGia * sanPhamSua.SoLuong;
+                    // Tính thành tiền
+                    double thanhTien = donGia * soLuongTinhTien; // Tính theo số lượng mua thực tế
 
+                    // Nếu giảm giá, tính lại giá trị thanh toán
+                    if (giamGia > 0)
+                    {
+                        thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                    }
+
+                    string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
+
+                    // Tìm sản phẩm trong danh sách sản phẩm
+                    var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
+
+                    if (sanPhamTonTai != null)
+                    {
+                        // Nếu sản phẩm đã tồn tại, cập nhật số lượng và thành tiền
+                        sanPhamTonTai.SoLuong = soLuong;
+                        sanPhamTonTai.ThanhTien = thanhTien; // Cập nhật lại thành tiền cho sản phẩm
+                        sanPhamTonTai.KhuyenMai = khuyenMai; // Cập nhật khuyến mãi
                         // Cập nhật lại DataGridView
                         bindingSourceSanPham.ResetBindings(false);
 
@@ -203,7 +314,7 @@ namespace GUI
                         txtTenHang.Clear();
                         txtDonGia.Clear();
                         txtSoLuong.Clear();
-                        cbbKhuyenMai.Text = "";
+                        cbbKhuyenMai.SelectedIndex = 0;
                         txtThanhTien.Clear();
 
                         MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -237,7 +348,7 @@ namespace GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            DialogResult dar = MessageBox.Show("Bạn có muốn thanh toán?","Thông báo",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dar = MessageBox.Show("Bạn có muốn thanh toán?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dar == DialogResult.Yes)
             {
                 ET_HoaDon hoaDon = null;
@@ -246,11 +357,11 @@ namespace GUI
                     // Bước 1: Tạo đối tượng ET_HoaDon từ thông tin trên form
                     hoaDon = new ET_HoaDon(
                         hd.AutoMa_HoaDon(),                   // Mã hóa đơn duy nhất
-                        "NS01",         //txtMaNhanVien.Text  // Lấy mã nhân viên từ textbox
+                        Program.maNS,
                         txtMaKH.Text,                         // Lấy mã khách hàng từ textbox
                         TinhTongTien(),                       // Tổng tiền từ hàm TinhTongTien
                         DateTime.Now,                         // Ngày hiện tại
-                        " "                                   // Ghi chú từ textbox
+                        ""                                    // Ghi chú từ textbox
                     );
                     //MessageBox.Show(hoaDon.MaHD);
                     // Bước 2: Thêm hóa đơn thông qua lớp BUS
@@ -263,21 +374,37 @@ namespace GUI
                         {
                             if (row.Cells["maHH"].Value != null && row.Cells["SoLuong"].Value != null)
                             {
+                                string maHH = row.Cells["maHH"].Value.ToString();
+                                int soLuongMua = Convert.ToInt32(row.Cells["SoLuong"].Value);
+
+                                // Kiểm tra số lượng tồn trong kho
+                                int soLuongTon = BUS_HangHoa.Instance.GetSoLuongTon(maHH);
+                                if (soLuongTon < soLuongMua)
+                                {
+                                    MessageBox.Show($"Sản phẩm {maHH} không đủ số lượng trong kho (còn lại: {soLuongTon}).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return; // Kết thúc giao dịch nếu không đủ số lượng tồn
+                                }
+
+                                // Tạo chi tiết hóa đơn nếu đủ tồn kho
                                 ET_CTHoaDon ctHoaDon = new ET_CTHoaDon(
-                                    hoaDon.MaHD,                              // Mã hóa đơn
-                                    row.Cells["maHH"].Value.ToString(),       // Mã hàng hóa từ DataGridView
-                                    Convert.ToInt32(row.Cells["SoLuong"].Value)    // Số lượng từ DataGridView
+                                    hoaDon.MaHD,                  // Mã hóa đơn
+                                    maHH,                         // Mã hàng hóa
+                                    soLuongMua                    // Số lượng mua
                                 );
 
                                 // Thêm chi tiết hóa đơn thông qua lớp BUS
                                 BUS_CTHoaDon.Instance.themCTHoaDon(ctHoaDon);
+
+                                // Cập nhật số lượng tồn mới trong CSDL
+                                int soLuongMoi = soLuongTon - soLuongMua;
+                                BUS_HangHoa.Instance.UpdateSoLuongTon(maHH, soLuongMoi);
                             }
                         }
                         dgvHangHoa.DataSource = null;
                         // Bước 4: Hiển thị thông báo thành công
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
+
                     else
                     {
                         MessageBox.Show("Lỗi khi thêm hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -304,7 +431,7 @@ namespace GUI
                 txtTenHang.Clear();
                 txtDonGia.Clear();
                 txtSoLuong.Clear();
-                cbbKhuyenMai.Text = "";
+                cbbKhuyenMai.SelectedIndex = 0;
                 txtThanhTien.Clear();
                 dgvHangHoa.DataSource = null;
                 txtTongTien.Clear();
@@ -313,23 +440,129 @@ namespace GUI
 
         private void cbbTenHang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbbMaHang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
-            if (et != null)
+            try
             {
-                txtTenHang.Text = et.TenHH;
-                txtDonGia.Text = et.GiaHH.ToString();
+                if (cbbMaHang.Text != "")
+                {
+                    ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
+                    if (et != null)
+                    {
+                        txtTenHang.Text = et.TenHH;
+                        txtDonGia.Text = et.GiaHH.ToString();
+                    }
+                }
             }
-            
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void cbbMaHang_Enter(object sender, EventArgs e)
         {
-            cbbMaHang_SelectedIndexChanged (sender, e);            
+            cbbMaHang_SelectedIndexChanged(sender, e);
+        }
+
+        private bool CheckThongTin()
+        {
+            bool flag = false;
+            if (batLoi.KT_SoKiTu(txtSDT.Text, 10) == false || batLoi.KT_ChuoiSoDT(txtSDT.Text) == false)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại có 10 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSDT.Clear();
+                txtMaKH.Clear();
+                txtTenKH.Clear();
+                txtDiaChi.Clear();
+            }
+            else
+            {
+                flag = true;
+            }
+            return flag;
+        }
+
+        private bool CheckThongTin1()
+        {
+            bool flag = false;
+            if (batLoi.KT_ChuoiSo(cbbMaHang.Text) == false || batLoi.KT_SoKiTu(cbbMaHang.Text,13) == false)
+            {
+                MessageBox.Show("Nhập mã hàng là số và đúng 13 ký tự", "Thông báo");
+                cbbMaHang.SelectedIndex = 0;
+                txtTenHang.Clear();
+                txtDonGia.Clear();
+            }
+            else
+            {
+                flag = true;
+            }
+            return flag;
+        }
+        private void cbbKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbbKhuyenMai.SelectedIndex != -1) // Kiểm tra nếu có lựa chọn hợp lệ
+                {
+                    if (txtSoLuong.Text != "")
+                    {
+                        // Lấy giá trị giảm giá từ ComboBox (GiảmGiá được thiết lập là ValueMember)
+                        int giamGia = Convert.ToInt32(cbbKhuyenMai.SelectedValue);
+
+                        // Lấy giá trị từ các TextBox
+                        int donGia = int.Parse(txtDonGia.Text);
+                        int soLuong = int.Parse(txtSoLuong.Text);
+
+                        double thanhTien = donGia * soLuong;  // Tính thành tiền ban đầu (không có giảm giá)
+
+                        // Nếu có giảm giá, tính lại thành tiền
+                        if (giamGia > 0)
+                        {
+                            thanhTien = donGia * soLuong * (1 - (giamGia / 100.0));  // Áp dụng giảm giá theo phần trăm
+                        }
+                        else if (giamGia == 0)  // Nếu giảm giá bằng 0, tính theo số lượng tặng
+                        {
+                            int soLuongTinhTien = soLuong;
+                            soLuong *= 2;  // Tăng gấp đôi số lượng nếu là khuyến mãi tặng sản phẩm
+                            thanhTien = donGia * soLuongTinhTien;  // Tính lại thành tiền với số lượng mới
+                        }
+
+                        // Cập nhật lại thành tiền vào TextBox
+                        txtThanhTien.Text = thanhTien.ToString();  // Hiển thị thành tiền với định dạng số
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbbMaHang_Validated(object sender, EventArgs e)
+        {
+            if (CheckThongTin1() == true)
+            {
+                ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
+                if (et != null)
+                {
+                    txtTenHang.Text = et.TenHH;
+                    txtDonGia.Text = et.GiaHH.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy mã này", "Thông báo");
+                    cbbMaHang.SelectedIndex = 0;
+                    txtTenHang.Clear();
+                    txtDonGia.Clear();
+                }
+            }
         }
     }
 }
