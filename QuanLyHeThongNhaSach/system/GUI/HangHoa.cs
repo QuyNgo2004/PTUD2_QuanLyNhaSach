@@ -44,13 +44,14 @@ namespace GUI
                 cboLoaiHH.ValueMember = "maLHH";
                 cboNhaPP.ValueMember = "maNPP";
                 cboNhaPP.DisplayMember = "tenNPP";
+                cboTinhTrang.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi load form: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void dgvDSHangHoa_Click(object sender, EventArgs e)
         {
             int a = dgvDSHangHoa.CurrentCell.RowIndex;
@@ -357,31 +358,31 @@ namespace GUI
 
         private void txtTacGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Kiểm tra ký tự nhập vào
-            if (char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
-                MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtTacGia.Text.Length >= 44 && e.KeyChar != '\b')
+            else if (e.KeyChar != '\b' && txtTacGia.Text.Trim().Length == 0 && !char.IsLetter(e.KeyChar))
             {
+                // Nếu chưa có ký tự chữ nào
                 e.Handled = true;
-                MessageBox.Show("Không thể nhập tác giả quá 45 ký tự!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên khách hàng phải chứa ít nhất một ký tự chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtTacGia.Text.Trim().Length == 0 && e.KeyChar == ' ')
+            else if (txtTacGia.Text.Length > 49 && e.KeyChar != '\b')
             {
-                // Ngăn không cho nhập khoảng trắng đầu tiên
                 e.Handled = true;
-                MessageBox.Show("Tác giả không được chỉ là khoảng trắng!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể nhập tên khách hàng quá 50 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+   
 
         private void txtTacGia_Validated(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenHH.Text))
+            if (string.IsNullOrWhiteSpace(txtTacGia.Text))
             {
                 MessageBox.Show("Tác giả không được để trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenHH.Focus();
+                txtTacGia.Focus();
             }
         }
 
