@@ -193,7 +193,7 @@ namespace GUI
             catch (Exception ex)
             {
 
-                MessageBox.Show("Bạn chưa nhập số lượng mua!", "Thông báo");
+                MessageBox.Show("Có lỗi khi thêm sản phẩm: " + ex.Message, "Thông báo");
                 txtSoLuong.Focus();
             }
         }
@@ -342,7 +342,7 @@ namespace GUI
             double tongTien = danhSachSanPham.Sum(sp => sp.ThanhTien);
 
             // Hiển thị tổng tiền vào TextBox txtTongTien
-            txtTongTien.Text = tongTien.ToString("N2"); // Định dạng hiển thị số có 2 chữ số thập phân
+            txtTongTien.Text = tongTien.ToString(); // Định dạng hiển thị số có 2 chữ số thập phân
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
