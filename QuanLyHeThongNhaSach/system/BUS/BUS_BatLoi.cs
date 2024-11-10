@@ -138,5 +138,13 @@ namespace BUS
             }
             return true;
         }
+        public bool KT_Ngay(DateTime ngayBD, DateTime ngayKT)
+        {
+            if (ngayBD >= ngayKT)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

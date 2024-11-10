@@ -39,6 +39,25 @@ namespace DAL
                               };
             return list;
         }
+        public IQueryable XemBangLuong(string ma)
+        {
+            IQueryable list = from luong in DbNhaSach.ChiTietLuongs
+                              join ns in DbNhaSach.NhanSus on luong.maNS equals ns.maNS
+                              where luong.maBangLuong == ma
+                              select new ET_ChiTietLuong
+                              {
+                                  MaCTLuong = luong.maCTLuong,
+                                  MaBangLuong = luong.maBangLuong,
+                                  MaNS = luong.maNS,
+                                  TenNS = ns.tenNS,
+                                  LuongTheoNgay = luong.luongTheoNgay,
+                                  NgayLam = luong.soNgayLam,
+                                  NgayNghi = (int)luong.ngayNghi,
+                                  TienLuong = luong.tienLuong,
+
+                              };
+            return list;
+        }
 
         public bool ThemCTBangLuong(ET_ChiTietLuong ct_Luong)
         {

@@ -26,6 +26,10 @@ namespace BUS
         {
             return DAL_ChiTietLuong.Instance.XemBangLuong();
         }
+        public IQueryable XemBangLuong(string ma)
+        {
+            return DAL_ChiTietLuong.Instance.XemBangLuong(ma);
+        }
         public bool ThemBangLuong(ET_ChiTietLuong bl)
         {
             return DAL_ChiTietLuong.Instance.ThemCTBangLuong(bl);

@@ -56,14 +56,17 @@ namespace GUI
         {
             try
             {
-
-                if (KT_DieuKien() == true)
+                if (MessageBox.Show("Bạn có muốn sửa khuyến mãi cho sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (ctKhuyenMai.sua_CTKM(maCTHD, cboKhuyenMai.SelectedValue.ToString()))
+                    if (KT_DieuKien() == true)
                     {
-                        MessageBox.Show("Sửa khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (ctKhuyenMai.sua_CTKM(maCTHD, cboKhuyenMai.SelectedValue.ToString()))
+                        {
+                            MessageBox.Show("Sửa khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+                    
             }
             catch (Exception ex)
             {
@@ -98,18 +101,21 @@ namespace GUI
         {
             try
             {
-                
-                if (KT_DieuKien() == true )
+                if (MessageBox.Show("Bạn có muốn thêm khuyến mãi cho sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if(ctKhuyenMai.Them_CTKM(txtMaHH.Text, cboKhuyenMai.SelectedValue.ToString()))
+                    if (KT_DieuKien() == true)
                     {
-                        MessageBox.Show("Thêm khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm khuyến mãi cho sản phẩm này không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (ctKhuyenMai.Them_CTKM(txtMaHH.Text, cboKhuyenMai.SelectedValue.ToString()))
+                        {
+                            MessageBox.Show("Thêm khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm khuyến mãi cho sản phẩm này không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+                   
             }
             catch (Exception ex)
             {
@@ -189,14 +195,18 @@ namespace GUI
         {
             try
             {
-
-                if (KT_DieuKien() == true)
+                if (MessageBox.Show("Bạn có muốn xóa khuyến mãi cho sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (ctKhuyenMai.xoa_CTKM(maCTHD))
+                    if (KT_DieuKien() == true)
                     {
-                        MessageBox.Show("Xóa khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (ctKhuyenMai.xoa_CTKM(maCTHD))
+                        {
+                            MessageBox.Show("Xóa khuyến mãi cho sản phẩm này thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+
+                    
             }
             catch (Exception ex)
             {

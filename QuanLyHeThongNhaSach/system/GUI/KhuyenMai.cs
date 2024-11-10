@@ -218,33 +218,50 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ET_KhuyenMai km = KhuyenMai_Value(sender, e);
-            if (BUS_KhuyenMai.Instance.KM_Them(km) == true)
+            try
             {
-                MessageBox.Show("Thêm khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (MessageBox.Show("Bạn có muốn thêm khuyến mãi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ET_KhuyenMai km = KhuyenMai_Value(sender, e);
+                    if (BUS_KhuyenMai.Instance.KM_Them(km) == true)
+                    {
+                        MessageBox.Show("Thêm khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Load_XemKM();
+                        Load_XemKM();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                   
             }
-            else
-            {
+            catch(Exception ex) {
                 MessageBox.Show("Thêm khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn xóa khuyến mãi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                if (BUS_KhuyenMai.Instance.KM_Xoa(txtMaKM.Text))
+                if (MessageBox.Show("Bạn có muốn xóa khuyến mãi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Load_XemKM();
+                    if (BUS_KhuyenMai.Instance.KM_Xoa(txtMaKM.Text))
+                    {
+                        MessageBox.Show("Xóa khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Load_XemKM();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Xóa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Xóa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void dgvDSCTKM_Click(object sender, EventArgs e)
@@ -279,17 +296,28 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            ET_KhuyenMai km = KhuyenMai_Value(sender, e);
-            if (BUS_KhuyenMai.Instance.KM_Sua(km) == true)
+            try
             {
-                MessageBox.Show("Sửa khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Load_XemKM();
+                if (MessageBox.Show("Bạn có muốn sửa khuyến mãi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ET_KhuyenMai km = KhuyenMai_Value(sender, e);
+                    if (BUS_KhuyenMai.Instance.KM_Sua(km) == true)
+                    {
+                        MessageBox.Show("Sửa khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Load_XemKM();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            else
+            catch(Exception ex)
             {
                 MessageBox.Show("Sửa khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
