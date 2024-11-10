@@ -110,10 +110,13 @@ namespace GUI
             {
                 try
                 {
-                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
-                    txtSDT.Clear();
-                    txtTenNV.Clear();
-                    dateTimePicker1.Value = DateTime.Now;
+                    if (CheckThongTin() == true && CheckThongTin1() == true)
+                    {
+                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
+                        txtSDT.Clear();
+                        txtTenNV.Clear();
+                        dateTimePicker1.Value = DateTime.Now;
+                    }
                 }
                 catch (Exception ex)
                 {
