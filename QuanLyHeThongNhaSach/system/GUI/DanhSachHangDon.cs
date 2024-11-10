@@ -21,7 +21,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult a = MessageBox.Show("Hãy chắc chắn rằng bạn muốn thoát khỏi màn hình này !", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult a = MessageBox.Show("Hãy chắc chắn rằng bạn muốn thoát khỏi màn hình này !", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (a == DialogResult.Yes)
             {
                 this.Close();
@@ -52,43 +52,74 @@ namespace GUI
         {
             if (txtTenNV.Text == "" && txtSDT.Text != "")
             {
-                if (CheckThongTin() == true)
+                try
                 {
-                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSDT(txtSDT.Text, dateTimePicker1.Value.Date);
-                    txtSDT.Clear();
-                    dateTimePicker1.Value = DateTime.Now;
+                    if (CheckThongTin() == true)
+                    {
+                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSDT(txtSDT.Text, dateTimePicker1.Value.Date);
+                        txtSDT.Clear();
+                        dateTimePicker1.Value = DateTime.Now;
+                    }
+                    else
+                    {
+                        Exception ex = new Exception("Không tìm thấy hóa đơn từ số điện thoại này");
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Exception ex = new Exception("Không tìm thấy hóa đơn từ số điện thoại này");
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Có lỗi khi tìm kiếm theo số điện thoại" + ex.Message);
                 }
             }
             else if(txtSDT.Text == "" && txtTenNV.Text != "")
             {
-                if (CheckThongTin1() == true)
+                try
                 {
-                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoTenNV(txtTenNV.Text, dateTimePicker1.Value.Date);
-                    txtTenNV.Clear();
-                    dateTimePicker1.Value = DateTime.Now;
+                    if (CheckThongTin1() == true)
+                    {
+                        dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoTenNV(txtTenNV.Text, dateTimePicker1.Value.Date);
+                        txtTenNV.Clear();
+                        dateTimePicker1.Value = DateTime.Now;
+                    }
+                    else
+                    {
+                        Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên này này");
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên này này");
-                    MessageBox.Show(ex.Message);
+
+                    MessageBox.Show("Có lỗi khi tìm kiếm theo tên nhân viên" + ex.Message);
                 }
             }
             else if(txtSDT.Text == "" && txtTenNV.Text == "")
             {
-                dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoNgayThanhToan(dateTimePicker1.Value.Date);
-                dateTimePicker1.Value = DateTime.Now;
+                try
+                {
+                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoNgayThanhToan(dateTimePicker1.Value.Date);
+                    dateTimePicker1.Value = DateTime.Now;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Có lỗi khi tìm kiếm theo ngày in"+ ex.Message);
+                }
             }
             else
             {
-                dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
-                txtSDT.Clear();
-                txtTenNV.Clear();
-                dateTimePicker1.Value = DateTime.Now;
+                try
+                {
+                    dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
+                    txtSDT.Clear();
+                    txtTenNV.Clear();
+                    dateTimePicker1.Value = DateTime.Now;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Có lỗi khi tìm kiếm tổng hợp" + ex.Message);
+                }
             }
 
 
@@ -128,6 +159,7 @@ namespace GUI
             BUS_HoaDon.Instance.xemDanhSachHoaDon(dgvLichSuHoaDon);
             txtSDT.Clear();
             txtTenNV.Clear();
+            dgvDSHangHoa = null;
 
         }
     }
