@@ -270,11 +270,11 @@ namespace GUI
             {
                 int dong = dgvDSCTKM.CurrentCell.RowIndex;
                 txtMaKM.Text = dgvDSCTKM.Rows[dong].Cells[1].Value.ToString();
-                if (dgvDSCTKM.Rows[dong].Cells[3].Value.ToString() == "0") {
+                if (dgvDSCTKM.Rows[dong].Cells[3].Value.ToString() != "null") {
                     rbtSP.Checked = true;
                     rbtGiamGia_Click(sender,e);
                     txtMaSP.Text = dgvDSCTKM.Rows[dong].Cells[0].Value.ToString() != null ? dgvDSCTKM.Rows[dong].Cells[0].Value.ToString() : null;
-                    txtTenSP.Text = dgvDSCTKM.Rows[dong].Cells[3].Value.ToString() != null ? dgvDSCTKM.Rows[dong].Cells[0].Value.ToString() : null;
+                    txtTenSP.Text = dgvDSCTKM.Rows[dong].Cells[3].Value.ToString() != null ? dgvDSCTKM.Rows[dong].Cells[3].Value.ToString() : null;
                 }
                 else
                 {

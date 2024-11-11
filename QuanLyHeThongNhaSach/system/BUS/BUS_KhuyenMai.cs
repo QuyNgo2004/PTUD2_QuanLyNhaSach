@@ -41,6 +41,10 @@ namespace BUS
         {
             return DAL_km.LoadKM_Now(ngayHT);
         }
+        public ET_KhuyenMai LoadKM_Now(DateTime ngayHT,string ma)
+        {
+            return DAL_km.LoadKM_Now(ngayHT,ma);
+        }
         // Them 
         public bool KM_Them(ET_KhuyenMai km)
         {

@@ -28,9 +28,14 @@ namespace BUS
         {
             return chiTietKhuyenMai.CTKM_Load_All();
         }
+
         public IQueryable CTKM_Load_Now(DateTime ngayHT)
         {
             return chiTietKhuyenMai.CTKM_Load_Now(ngayHT);
+        }
+        public List<string> CTKM_Load_Now(DateTime ngayHT,string ma)
+        {
+            return chiTietKhuyenMai.CTKM_Load_Now(ngayHT,ma);
         }
         // Them 
         public bool Them_CTKM(string maHH, string maKM)

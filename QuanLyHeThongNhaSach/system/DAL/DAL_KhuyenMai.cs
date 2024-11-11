@@ -60,6 +60,26 @@ namespace DAL
                               };
             return list;
         }
+        public ET_KhuyenMai LoadKM_Now(DateTime ngayHT,string ma)
+        {
+            IQueryable<ET_KhuyenMai> list = from km in dbNhaSach.KhuyenMais
+                              join hh in dbNhaSach.HangHoas on km.maHH equals hh.maHH into joined
+                              from hh in joined.DefaultIfEmpty() // Sử dụng DefaultIfEmpty để cho phép giá trị null
+                              where km.ngayKT >= ngayHT && km.maKM == ma
+                              select new ET_KhuyenMai
+                              {
+                                  MaKM = km.maKM,
+                                  TenKM = km.tenKM,
+                                  MaHH = hh != null ? hh.tenHH : "null",
+                                  MaGiamGia = int.Parse(km.giamGia.ToString()),
+                                  NgayBD = km.ngayBD,
+                                  NgayKT = km.ngayKT,
+                                  GhiChu = km.ghiChu,
+                              };
+
+            return list.FirstOrDefault();
+             
+        }
         // Them
         public bool ThemKM(ET_KhuyenMai khuyenMai) {
             bool flag = true;

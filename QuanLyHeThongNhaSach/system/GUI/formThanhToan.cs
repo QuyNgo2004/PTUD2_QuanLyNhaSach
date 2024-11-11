@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.Data.Linq.Helpers;
 using ET;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace GUI
         BUS_HoaDon hd = BUS_HoaDon.Instance;
         BUS_BatLoi batLoi = new BUS_BatLoi();
         BUS_KhuyenMai km = BUS_KhuyenMai.Instance;
+        BUS_ChiTietKhuyenMai ctkm = BUS_ChiTietKhuyenMai.Instance;
         private List<ET_SanPhamThanhToan> danhSachSanPham = new List<ET_SanPhamThanhToan>();
         private BindingSource bindingSourceSanPham = new BindingSource();
         private string maNS = string.Empty;
@@ -70,10 +72,11 @@ namespace GUI
             dgvHangHoa.DataSource = bindingSourceSanPham;
             dgvHangHoa.AutoGenerateColumns = true;
             hh.XemDSHH(cbbMaHang);
-            cbbKhuyenMai.DataSource = km.LoadKM_All();
-            cbbKhuyenMai.DisplayMember = "TenKM";
-            cbbKhuyenMai.ValueMember = "GiảmGiá";
-            cbbKhuyenMai.SelectedIndex = 0;
+            cbbMaHang_Validated(sender, e);
+            //cbbKhuyenMai.DataSource = km.LoadKM_All();
+            //cbbKhuyenMai.DisplayMember = "TenKM";
+            //cbbKhuyenMai.ValueMember = "GiảmGiá";
+            //cbbKhuyenMai.SelectedIndex = 0;
         }
 
         private void txtSoLuong_Validated(object sender, EventArgs e)
@@ -555,6 +558,21 @@ namespace GUI
                 {
                     txtTenHang.Text = et.TenHH;
                     txtDonGia.Text = et.GiaHH.ToString();
+                    cbbKhuyenMai.DataSource = km.LoadKM_All();
+                    cbbKhuyenMai.DataSource = null;
+                    if (ctkm.CTKM_Load_Now(DateTime.Now, cbbMaHang.Text).Count() > 0)
+                    {
+                        List<ET_KhuyenMai> listKM = new List<ET_KhuyenMai>();
+                        foreach (string ctkm_km in ctkm.CTKM_Load_Now(DateTime.Now, cbbMaHang.Text)) {
+                            string ctkm_makm = ctkm_km.ToString();
+                            ET_KhuyenMai km_ctkm = km.LoadKM_Now(DateTime.Now, ctkm_makm);
+                            listKM.Add(km_ctkm);
+                        }
+
+                        cbbKhuyenMai.DataSource = listKM;
+                        cbbKhuyenMai.DisplayMember = "TenKM";
+                        cbbKhuyenMai.ValueMember = "MaGiamGia";
+                    }
                 }
                 else
                 {

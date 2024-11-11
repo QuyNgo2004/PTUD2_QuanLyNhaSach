@@ -38,6 +38,7 @@ namespace DAL
                               };
             return list;
         }
+       
         public IQueryable CTKM_Load_Now(DateTime ngayHT)
         {
             IQueryable list = from ctkm in dbNhaSach.CTKhuyenMais
@@ -53,6 +54,16 @@ namespace DAL
                                   TenKM = km.tenKM,
                               };
             return list;
+        }
+        public List<string> CTKM_Load_Now(DateTime ngayHT,string ma)
+        {
+            IQueryable<string> list = from ctkm in dbNhaSach.CTKhuyenMais
+                                join hh in dbNhaSach.HangHoas on ctkm.maHH equals hh.maHH
+                                join km in dbNhaSach.KhuyenMais on ctkm.maKM equals km.maKM
+                                where km.ngayKT >= ngayHT && ctkm.maHH == ma
+                                select ctkm.maKM;
+            List<string> listMaKM = list.ToList();
+            return listMaKM;
         }
         // Them 
         public bool Them_CTKM(string maHH, string maKM)
