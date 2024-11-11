@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.lblMaHH = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.lblNhapHang = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.btnIn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuHoaDon)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -93,7 +94,7 @@
             this.groupBox4.Size = new System.Drawing.Size(995, 145);
             this.groupBox4.TabIndex = 38;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông Tin NhậpHàng Hóa";
+            this.groupBox4.Text = "Thông Tin Tìm Kiếm";
             // 
             // dateTimePicker1
             // 
@@ -114,8 +115,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnIn);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(174, 71);
@@ -132,7 +134,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(467, 32);
+            this.button1.Location = new System.Drawing.Point(485, 32);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 23);
@@ -141,20 +143,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnXoa
+            // btnLamMoi
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(252, 32);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(137, 23);
-            this.btnXoa.TabIndex = 8;
-            this.btnXoa.Text = "In";
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnLamMoi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(175, 32);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(137, 23);
+            this.btnLamMoi.TabIndex = 8;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTimKiem
             // 
@@ -163,7 +166,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(37, 32);
+            this.btnTimKiem.Location = new System.Drawing.Point(17, 32);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(137, 23);
@@ -252,6 +255,21 @@
             this.dgvDSHangHoa.Size = new System.Drawing.Size(516, 289);
             this.dgvDSHangHoa.TabIndex = 0;
             // 
+            // btnIn
+            // 
+            this.btnIn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnIn.FlatAppearance.BorderSize = 0;
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Location = new System.Drawing.Point(330, 32);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(137, 23);
+            this.btnIn.TabIndex = 10;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = false;
+            // 
             // DanhSachHangDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +306,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.Label lblMaHH;
@@ -299,5 +317,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvDSHangHoa;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIn;
     }
 }
