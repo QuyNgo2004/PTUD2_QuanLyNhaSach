@@ -33,10 +33,26 @@ namespace BUS
             dgvDSCTNH.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHang();
         }
 
-        public void XemDSCTNHTM(DataGridView dgvDSCTNH, string maNH)
+        public void XemDSCTNHTM(DataGridView dgvDSHangHoa, string maNH)
         {
-            // Gán DataSource cho DataGridView
-            dgvDSCTNH.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa(maNH);
+            try
+            {
+                // Execute the stored procedure to get the details of the import using the maNH
+                var data = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa(maNH);
+
+                // Bind the result to the DataGridView
+                dgvDSHangHoa.DataSource = data;
+            }
+            catch (Exception ex)
+            {
+                // Display error message if something goes wrong
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        public void XemChiTietNhapHang(DataGridView dgv, string ma)
+        {
+            dgv.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa(ma);
         }
 
         public void ThemChiTiet(ET_ChiTietNhapHang etCT)
@@ -68,5 +84,11 @@ namespace BUS
                 MessageBox.Show("Dữ liệu đang được đối chiếu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void XemDSCTNH(DataGridView dgvDSHangHoa, string mahh)
+        {
+            dgvDSHangHoa.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa(mahh);
+        }
+
     }
 }

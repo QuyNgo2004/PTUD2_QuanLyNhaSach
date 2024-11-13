@@ -211,13 +211,15 @@ namespace GUI
             {
                 // Nếu chưa có ký tự chữ nào
                 e.Handled = true;
-                MessageBox.Show("Tên khách hàng phải chứa ít nhất một ký tự chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên loại hàng phải chứa ít nhất một ký tự chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtTenHH.Text.Length > 44 && e.KeyChar != '\b')
             {
                 e.Handled = true;
-                MessageBox.Show("Không thể nhập tên khách hàng quá 45 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể nhập tên loại hàng quá 45 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
         private void txtGiaHH_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -284,11 +286,10 @@ namespace GUI
                 {
                     // Đặt ComboBox mặc định là "Hết hàng"
                     cboTinhTrang.SelectedItem = "Hết hàng";
-                    MessageBox.Show("Vì số lượng hàng bạn nhập là 0, trạng thái hàng hóa đã được tự động mặc định thành 'Hết hàng'.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (soLuong < 1 || soLuong > 50)
+                else if (soLuong < 1 || soLuong > 500)
                 {
-                    MessageBox.Show("Số lượng hàng hóa phải lớn hơn 1 và nhỏ hơn 59.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số lượng hàng hóa phải lớn hơn 1 và nhỏ hơn 500.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtSoLuongTon.Focus();
                 }
                 else
@@ -302,6 +303,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập một giá trị hợp lệ.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSoLuongTon.Focus();
             }
+
         }
 
         private void txtMoTa_KeyPress(object sender, KeyPressEventArgs e)
@@ -391,7 +393,11 @@ namespace GUI
             if (cboTinhTrang.SelectedItem != null && cboTinhTrang.SelectedItem.ToString() == "Hết hàng")
             {
                 txtSoLuongTon.Text = "0";
-                MessageBox.Show("Vì trạng thái hàng hóa của bạn là hết hàng, số lượng tồn được tự động mặc định trở về 0.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                txtSoLuongTon.Text = "1";
+
             }
         }
     }

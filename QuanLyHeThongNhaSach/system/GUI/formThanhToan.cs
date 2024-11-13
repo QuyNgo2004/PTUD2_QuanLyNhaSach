@@ -553,6 +553,7 @@ namespace GUI
         {
             if (CheckThongTin1() == true)
             {
+                txtSoLuong.Clear();
                 ET_HangHoa et = hh.TimHangHoaTheoMa(cbbMaHang.Text);
                 if (et != null)
                 {

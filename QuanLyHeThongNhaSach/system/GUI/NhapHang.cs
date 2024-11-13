@@ -57,7 +57,6 @@ namespace GUI
             //HienThiDanhSachNhapHang();
 
             txtMaNH.Text = BUS_NhapHang.Instance.TaoMaHangTuDong();
-            //txtMaHH.Text = BUS_HangHoa.Instance.TaoMaHangTuDong();
             try
             {
 
@@ -75,6 +74,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi load form: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void HienThiDanhSachNhapHang()
@@ -142,6 +142,7 @@ namespace GUI
                     MessageBox.Show("Không thể bỏ trống bất kì trường nào !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
 
 
@@ -171,42 +172,115 @@ namespace GUI
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
-            DialogResult d = MessageBox.Show("Xác nhận thêm dữ liệu đã nhập ?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (d == DialogResult.Yes)
+            DialogResult dar = MessageBox.Show("Xác nhận nhập hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
             {
-                //if (KtraBoTrong() == true)
-                //{
-                BUS_NhapHang.Instance.ThemNhapHang(new ET_NhapHang(txtMaNH.Text, txtMaNPP.Text, dtpNgayNH.Value));
-                for (int i = 0; i < dgvDSNhapHang.Rows.Count; i++)
+                ET_NhapHang nhapHang = null;
+                try
                 {
-                    //int dong = dgvDSNhapHang.CurrentCell.RowIndex;
-                    // Lấy mã nhập hàng từ cột tương ứng trong dòng đang chọn
-                    string soLuong = dgvDSNhapHang.Rows[i].Cells[3].Value.ToString();
-                    string ghiChu = dgvDSNhapHang.Rows[i].Cells[4].Value.ToString();
+                    // Step 1: Initialize ET_NhapHang with necessary details
+                    nhapHang = new ET_NhapHang(
+                        BUS_NhapHang.Instance.TaoMaHangTuDong(), // Generate unique import ID
+                        txtMaNPP.Text,                           // Get distributor ID from textbox
+                        DateTime.Now                             // Set current date
+                    );
 
-                    // Gọi phương thức HienThiDanhSachChiTiet với maNH
-                    HienThiDanhSachNhapHang();
+                    // Step 2: Add the import entry through the BUS layer
+                    bool nhapHangAdded = BUS_NhapHang.Instance.ThemNhapHang(nhapHang);
 
-                    ET_NhapHang nh = new ET_NhapHang();
+                    if (nhapHangAdded)
+                    {
+                        // Step 3: If import entry is successfully added, add each product detail
+                        foreach (DataGridViewRow row in dgvDSNhapHang.Rows)
+                        {
+                            if (row.Cells["maHH"].Value != null && row.Cells["SoLuong"].Value != null)
+                            {
+                                string maHH = row.Cells["maHH"].Value.ToString();            // Get product ID
+                                int soLuongNhap = Convert.ToInt32(row.Cells["SoLuong"].Value); // Get import quantity
 
+                                // Create import detail entry
+                                ET_ChiTietNhapHang ctNhapHang = new ET_ChiTietNhapHang(
+                                    nhapHang.MaNH,                // Import ID
+                                    maHH,                         // Product ID
+                                    "",                           // Notes (optional)
+                                    "",                           // Product name if needed
+                                    0,                            // Assuming a maCTNCC if necessary
+                                    soLuongNhap                   // Quantity to import
+                                );
+
+                                // Add import detail through the BUS layer
+                                BUS_ChiTietNhapHang.Instance.ThemChiTiet(ctNhapHang);
+
+                                // Optionally update inventory after import, or handle as needed
+                            }
+                        }
+
+                        // Step 4: Clear the data grid after import is complete
+                        dgvDSNhapHang.DataSource = null;
+                        MessageBox.Show("Hoàn tất nhập phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi nhập hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Không thể bỏ trống bất kì trường nào trừ email !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
         }
+    
 
 
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult dar = MessageBox.Show("Hãy chắc chắn rằng bạn muốn xóa dữ liệu vừa nhập !", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
+            {
+                try
+                {
+                    // Kiểm tra xem mã hàng hóa có tồn tại hay không
+                    string maHangHoa = txtMaHH.Text;
 
+                    // Tìm sản phẩm có mã hàng hóa khớp trong danh sách
+                    var sanPhamXoa = danhSachSanPham.FirstOrDefault(hh => hh.MaHH == maHangHoa);
+
+                    if (sanPhamXoa != null)
+                    {
+                        // Xóa sản phẩm khỏi danh sách
+                        danhSachSanPham.Remove(sanPhamXoa);
+
+                        // Cập nhật lại DataGridView
+                        bindingSourceSanPham.ResetBindings(false);
+
+                        // Xóa các ô nhập liệu để cho biết sản phẩm đã bị xóa
+                        cboTenNPP.DataSource = npp.loadnpp();
+                        cboTenNPP.DisplayMember = "TenNPP";
+                        cboTenNPP.ValueMember = "MaNPP";
+                        txtMaHH.Clear();
+                        txtTenHangHoa.Clear();
+                        txtSLNhap.Clear();
+                        txtGhiChu.Clear();
+
+                        MessageBox.Show("Hoàn tất xóa dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa hàng hóa" +
+                        ": " + ex.Message);
+                }
+            }
         }
 
-        private void txtMaHH_KeyPress(object sender, KeyPressEventArgs e)
+            private void txtMaHH_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
@@ -259,5 +333,77 @@ namespace GUI
                 txtSLNhap.Focus();
             }
         }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            DialogResult dar = MessageBox.Show("Bạn có chắc muốn sửa sản phẩm này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
+            {
+                try
+                {
+                    string maNPP = txtMaNPP.Text;
+                    string tenNPP = cboTenNPP.Text;
+                    string maHH = txtMaHH.Text;
+                    string tenHH = txtTenHangHoa.Text;
+                    int soLuong = int.Parse(txtSLNhap.Text);
+                    string ghiChu = txtGhiChu.Text;
+
+                    // Tìm sản phẩm trong danh sách sản phẩm
+                    var sanPhamTonTai = danhSachSanPham.FirstOrDefault(hh => hh.MaHH == maHH);
+
+                    if (sanPhamTonTai != null)
+                    {
+                        // Cập nhật các thuộc tính của sản phẩm
+                        sanPhamTonTai.TenHangHoa = tenHH;
+                        sanPhamTonTai.SoLuong = soLuong;
+                        sanPhamTonTai.GhiChu = ghiChu;
+
+                        // Refresh DataGridView
+                        bindingSourceSanPham.ResetBindings(false);
+
+                        // Clear input fields
+                        cboTenNPP.DataSource = npp.loadnpp();
+                        cboTenNPP.DisplayMember = "TenNPP";
+                        cboTenNPP.ValueMember = "MaNPP";
+                        txtMaHH.Clear();
+                        txtTenHangHoa.Clear();
+                        txtSLNhap.Clear();
+                        txtGhiChu.Clear();
+
+                        MessageBox.Show("Hoàn tất sửa dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy dữ liệu đã chọn !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật sản phẩm: " + ex.Message);
+                }
+            }
+        }
+
+        private void dgvDSNhapHang_Click(object sender, EventArgs e)
+        {
+            int a = dgvDSNhapHang.CurrentCell.RowIndex;
+
+            txtMaHH.Text = dgvDSNhapHang.Rows[a].Cells[1].Value?.ToString() ?? "";
+            txtTenHangHoa.Text = dgvDSNhapHang.Rows[a].Cells[2].Value?.ToString() ?? "";
+            txtSLNhap.Text = dgvDSNhapHang.Rows[a].Cells[3].Value?.ToString() ?? "";
+            txtGhiChu.Text = dgvDSNhapHang.Rows[a].Cells[4].Value?.ToString() ?? "";
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            cboTenNPP.DataSource = npp.loadnpp();
+            cboTenNPP.DisplayMember = "TenNPP";
+            cboTenNPP.ValueMember = "MaNPP";
+            txtMaHH.Clear();
+            txtTenHangHoa.Clear();
+            txtSLNhap.Clear();
+            txtGhiChu.Clear();
+        }
     }
 }
+
+

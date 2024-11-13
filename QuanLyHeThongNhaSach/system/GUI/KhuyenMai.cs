@@ -20,6 +20,7 @@ namespace GUI
     {
         BUS_BatLoi error = new BUS_BatLoi();
         BUS_KhuyenMai bus_km = new BUS_KhuyenMai();
+        BUS_HangHoa hh = BUS_HangHoa.Instance;
         private DateTime ngayHT = DateTime.Now;
         public KhuyenMai()
         {
@@ -110,17 +111,18 @@ namespace GUI
                     {
                         MessageBox.Show("Vui lòng nhập mã giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if (txtMaGiamGia.Text == "0" || int.Parse(txtMaGiamGia.Text) >= 100)
+                    {
+                        MessageBox.Show("Vui lòng nhập mã giảm giá lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtMaGiamGia.Text = "1";
+                    }
+                    else if (error.KT_ChuoiSo(txtMaGiamGia.Text) == false)
+                    {
+                        MessageBox.Show("Vui lòng nhập mã giảm giá bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtMaGiamGia.Text = "1";
+                    }
                 }
-                if (txtMaGiamGia.Text == "0" || int.Parse(txtMaGiamGia.Text) >= 100)
-                {
-                    MessageBox.Show("Vui lòng nhập mã giảm giá lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtMaGiamGia.Text = "1";
-                }
-                else if (error.KT_ChuoiSo(txtMaGiamGia.Text) == false)
-                {
-                    MessageBox.Show("Vui lòng nhập mã giảm giá bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtMaGiamGia.Text = "1";
-                }
+                
                 //TaoMaKhuyenMai();
             }catch(Exception ex)
             {
@@ -138,7 +140,18 @@ namespace GUI
 
         private void txtMaSP_Validated(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (txtMaSP.Text != "")
+                {
+                    ET_HangHoa et = hh.TimHangHoaTheoMa(txtMaSP.Text);
+                    if (et != null)
+                    {
+                        txtTenSP.Text = et.TenHH;
+                    }
+                }
+            }
+            catch (Exception ex) { }
         }
 
         

@@ -89,7 +89,7 @@ namespace GUI
                 DialogResult d = MessageBox.Show("Hãy chắc chắn rằng bạn muốn xóa dữ liệu vừa nhập !", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (d == DialogResult.Yes)
                 {
-                    BUS_NhapHang.Instance.XoaNhapHang(dgvLSNH);
+                   // BUS_NhapHang.Instance.XoaNhapHang(dgvLSNH);
                     BUS_NhapHang.Instance.XemDSNH(dgvLSNH);
                 }
             }
@@ -103,20 +103,15 @@ namespace GUI
         {
             try
             {
-                if (dgvLSNH.CurrentRow != null)
-                {
-                    int dong = dgvLSNH.CurrentCell.RowIndex;
-                    // Lấy mã nhập hàng từ cột tương ứng trong dòng đang chọn
-                    string maNH = dgvLSNH.Rows[dong].Cells[0].Value.ToString();
-
-                    // Gọi phương thức HienThiDanhSachChiTiet với maNH
-                    HienThiDanhSachChiTiet(maNH);
-                }
+                string mahh = dgvLSNH.CurrentRow.Cells[0].Value.ToString();
+                BUS_ChiTietNhapHang.Instance.XemDSCTNH(dgvDSHangHoa, mahh);
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void txtMaHH_KeyPress(object sender, KeyPressEventArgs e)

@@ -28,21 +28,6 @@ namespace DAL
         public IQueryable XemDSChiTietNhapHang()
         {
             IQueryable chitiet = from ctnh in dbNhaSach.ChTietNhapHangs
-                                  join hh in dbNhaSach.HangHoas on ctnh.maHH equals hh.maHH
-                                  select new
-                                  {
-                                      MaChiTietNhapHang = ctnh.maCTNCC,
-                                      MaNhapHang = ctnh.maNH,
-                                      MaHangHoa = ctnh.maHH,
-                                      SoLuong = ctnh.soLuong,
-                                      GhiChu = ctnh.ghiChu,
-                                  };
-            return chitiet;
-        }
-
-        public IQueryable XemDSChiTietNhapHangTheoMa(string maNH)
-        {
-            IQueryable chitiet = from ctnh in dbNhaSach.ChTietNhapHangs
                                  join hh in dbNhaSach.HangHoas on ctnh.maHH equals hh.maHH
                                  select new
                                  {
@@ -51,6 +36,24 @@ namespace DAL
                                      MaHangHoa = ctnh.maHH,
                                      SoLuong = ctnh.soLuong,
                                      GhiChu = ctnh.ghiChu,
+                                 };
+            return chitiet;
+        }
+
+        public IQueryable XemDSChiTietNhapHangTheoMa(string maNH)
+        {
+            IQueryable chitiet = from nh in dbNhaSach.NhapHangs
+                                 join chithh in dbNhaSach.ChTietNhapHangs
+                                 on nh.maNH equals chithh.maNH
+                                 join hh in dbNhaSach.HangHoas on chithh.maHH equals hh.maHH
+                                 where nh.maNH == maNH
+                                 select new
+                                 {
+                                     MaChiTietNhapHang = chithh.maCTNCC,
+                                     MaNhapHang = chithh.maNH,
+                                     MaHangHoa = hh.maHH,
+                                     SoLuong = chithh.soLuong,
+                                     GhiChu = chithh.ghiChu,
                                  };
             return chitiet;
         }
@@ -83,9 +86,9 @@ namespace DAL
         {
             try
             {
-                //Truy vấn lấy tất cả các bản ghi trong HangHoa có maLHH bằng với maHangHoa.
                 var xoa = from ct in dbNhaSach.ChTietNhapHangs
                           where ct.maHH == maCT
+
                           select ct;
                 // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
                 foreach (var x in xoa)
@@ -107,5 +110,6 @@ namespace DAL
                 return false;
             }
         }
+
     }
 }

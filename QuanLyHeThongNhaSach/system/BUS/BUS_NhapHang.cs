@@ -33,39 +33,38 @@ namespace BUS
             dgvDSHH.DataSource = dalNhapHang.XemDSNhapHang();
         }
 
-        public void ThemNhapHang(ET_NhapHang etNH)
+        public bool ThemNhapHang(ET_NhapHang etNH)
         {
-            //Kiểm tra mã trùng không không trùng thì trả về true và thực hiện thêm
-            if (dalNhapHang.ThemNhapHang(etNH) == true)
+            try
             {
-                //Khi thêm thành công sẽ hiển thị thông báo này
-                MessageBox.Show("Hoàn tất thêm dữ liệu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return DAL_NhapHang.Instance.ThemNhapHang(etNH);
             }
-            else
+            catch (Exception ex)
             {
-                //Khi thêm không thành công sẽ hiển thị thông báo này
-                MessageBox.Show("Dữ liệu đã có trong hệ thống !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw ex;
             }
         }
 
-        public void XoaNhapHang(DataGridView dgvDSNH)
+        public void XoaNhapHang(string maNH, string maHH, DataGridView dgvDSNH)
         {
-            // Xóa là lấy dữ liệu ô đầu tiên của dòng đang được chọn trong DataGridView để xóa dữ liệu
-            if (dalNhapHang.XoaNhapHang(dgvDSNH.CurrentRow.Cells[0].Value.ToString()) == true)
-            {
-                // Hiện lên thông báo khi xóa thành công
-                MessageBox.Show("Hoàn tất xóa dữ liệu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // Hiện lên thông báo khi xóa không thành công
-                MessageBox.Show("Dữ liệu đang được đối chiếu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //// Gọi phương thức XoaNhapHang trong DAL
+            //bool success = dalNhapHang.XoaNhapHang(maNH, maHH);
+
+            //if (success)
+            //{
+            //    MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không thể xóa dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         public string TaoMaHangTuDong()
         {
             return dalNhapHang.TaoMaHangHoaTuDong();
         }
+
     }
 }

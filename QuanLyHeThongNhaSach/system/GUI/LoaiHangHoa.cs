@@ -177,6 +177,7 @@ namespace GUI
                 e.Handled = true;
                 MessageBox.Show("Không thể nhập tên loại hàng quá 45 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void txtTenLHH_Validated(object sender, EventArgs e)
