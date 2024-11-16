@@ -39,8 +39,8 @@ namespace DAL
                                       Email = ns.emailNV,
                                       Địa_Chỉ_Nhà  = ns.diaChiNha,
                                       Chi_Nhánh = cn.tenCN,
-                                      Chức_vụ = cv.tenChucVu
-                                      
+                                      Chức_vụ = cv.tenChucVu,
+                                      Lương_Căn_Bản = ns.luongcanban,
                                     };
             return dsNhanSu;
         }
@@ -61,6 +61,7 @@ namespace DAL
                                       maCN = ns.maCN,
                                       chucVu = ns.chucVu,
                                       matkhau = ns.maNS,
+                                      luongcanban = ns.luongcanban,
                                   };
             return dsNhanSu;
         }
@@ -82,6 +83,7 @@ namespace DAL
                                     MaCN = ns.maCN,
                                     ChucVu = ns.chucVu,
                                     Matkhau = ns.matkhau,
+                                    LuongCanBan = ns.luongcanban
                                 };
             if (listNS.Count() > 0) {
                 var r = listNS.FirstOrDefault();
@@ -97,12 +99,14 @@ namespace DAL
                     MaCN = r.MaCN,
                     ChucVu = int.Parse(r.ChucVu.ToString()),
                     MatKhau = r.Matkhau,
+                    LuongCanBan = int.Parse(r.LuongCanBan.ToString()) ,
                 };
                 return nhanSu;
             }
             return null;
            
         }
+        // Loc nhan su theo chi nhanh
         public IQueryable layDSNhanSu(string macn)
         {
             IQueryable dsNhanSu = from ns in DbNhaSach.NhanSus
@@ -119,8 +123,27 @@ namespace DAL
                                       Email = ns.emailNV,
                                       Địa_Chỉ_Nhà = ns.diaChiNha,
                                       Chi_Nhánh = cn.tenCN,
-                                      Chức_vụ = cv.tenChucVu
-
+                                      Chức_vụ = cv.tenChucVu,
+                                      Lương_Căn_Bản = ns.luongcanban,
+                                  };
+            return dsNhanSu;
+        }
+        public IQueryable<ET_ChiTietLuong> layDSNhanSu_luong(string macn)
+        {
+            IQueryable<ET_ChiTietLuong> dsNhanSu = from ns in DbNhaSach.NhanSus
+                                  join cn in DbNhaSach.ChiNhanhs on ns.maCN equals cn.maCN
+                                  join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                                  where ns.maCN == macn
+                                  select new ET_ChiTietLuong
+                                  {
+                                      MaNS = ns.maNS,
+                                      TenNS = ns.tenNS,
+                                      ChucVu = cv.tenChucVu,
+                                      LuongCB = int.Parse(ns.luongcanban),
+                                      TienLuong = int.Parse(ns.luongcanban),
+                                      NgayLam = 26,
+                                      NgayNghi= 0,
+                                      NgayTC = 0,
                                   };
             return dsNhanSu;
         }
@@ -158,6 +181,7 @@ namespace DAL
                     diaChiNha = NhanSu.DiaChi,
                     maCN = NhanSu.MaCN,
                     chucVu = NhanSu.ChucVu,
+                    luongcanban = NhanSu.LuongCanBan.ToString(),
                     matkhau = "0",
                 };
                 DbNhaSach.NhanSus.InsertOnSubmit(ns);
@@ -224,6 +248,7 @@ namespace DAL
                 capnhat.emailNV = NhanSu.Email;
                 capnhat.diaChiNha = NhanSu.DiaChi;
                 capnhat.maCN = NhanSu.MaCN;
+                capnhat.luongcanban = NhanSu.LuongCanBan.ToString();
                 capnhat.chucVu = NhanSu.ChucVu;
                 DbNhaSach.SubmitChanges();
             }
@@ -234,6 +259,7 @@ namespace DAL
             }
         }
 
+        
       
         // Cập nhật mật khẩu
 

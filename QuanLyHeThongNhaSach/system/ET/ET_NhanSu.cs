@@ -9,7 +9,7 @@ namespace ET
     public class ET_NhanSu
     {
         private string maNS, tenNS, gioiTinh, cCCD, email, diaChi, maCN, matKhau, sDT;
-        private int chucVu;
+        private int chucVu,luongCanBan;
 
 
         public ET_NhanSu(string maNS, string tenNS, string gioiTinh, string cCCD, string email, string diaChi, string maCN, int chucVu, string matKhau, string sDT)
@@ -29,6 +29,22 @@ namespace ET
         public ET_NhanSu()
         {
         }
+
+        public ET_NhanSu(string maNS, string tenNS, string gioiTinh, string cCCD, string email, string diaChi, string maCN, string matKhau, string sDT, int chucVu, int luongCanBan)
+        {
+            this.maNS = maNS;
+            this.tenNS = tenNS;
+            this.gioiTinh = gioiTinh;
+            this.cCCD = cCCD;
+            this.email = email;
+            this.diaChi = diaChi;
+            this.maCN = maCN;
+            this.matKhau = matKhau;
+            this.sDT = sDT;
+            this.chucVu = chucVu;
+            this.luongCanBan = luongCanBan;
+        }
+
         public string MaNS { get => maNS; set => maNS = value; }
         public string TenNS { get => tenNS; set => tenNS = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
@@ -39,6 +55,6 @@ namespace ET
         public int ChucVu { get => chucVu; set => chucVu = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public string SDT { get => sDT; set => sDT = value; }
-
+        public int LuongCanBan { get => luongCanBan; set => luongCanBan = value; }
     }
 }

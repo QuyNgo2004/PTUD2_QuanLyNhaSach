@@ -89,6 +89,7 @@ namespace GUI
             txtCCCD.Text = null;
             txtSDT.Text = null;
             txtEmail.Text = null;
+            txtLuong.Text = null;
             txtDiaChiNha.Text = null;
         }
         // Tao đối tượng nhân sự
@@ -118,6 +119,7 @@ namespace GUI
                     Email = txtEmail.Text,
                     DiaChi = txtDiaChiNha.Text,
                     MaCN = cboChiNhanh.SelectedValue.ToString(),
+                    LuongCanBan  = int.Parse(txtLuong.Text),
                     ChucVu = int.Parse(cboChucVu.SelectedValue.ToString()),
                 };
                 
@@ -150,7 +152,10 @@ namespace GUI
             {
                 MessageBox.Show("Vui lòng nhập địa chỉ nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            else if (error.KT_ChuoiSo(txtLuong.Text) == false || int.Parse(txtLuong.Text) == 0)
+            {
+                MessageBox.Show("Vui lòng nhập lương bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 flag = true;
@@ -211,6 +216,7 @@ namespace GUI
                 txtSDT.Text = dgvDSNhanSu.Rows[dong].Cells[4].Value.ToString();
                 txtEmail.Text = dgvDSNhanSu.Rows[dong].Cells[5].Value.ToString();
                 txtDiaChiNha.Text = dgvDSNhanSu.Rows[dong].Cells[6].Value.ToString();
+                txtLuong.Text = dgvDSNhanSu.Rows[dong].Cells[9].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -338,6 +344,14 @@ namespace GUI
             Menu formMenu = (Menu)this.ParentForm;
             formMenu.openChildForm(new ChiTietBangLuong(quanLy));
             this.Close();
+        }
+
+        private void txtLuong_Validated(object sender, EventArgs e)
+        {
+              if (error.KT_ChuoiSo(txtLuong.Text) == false || int.Parse(txtLuong.Text) == 0)
+            {
+                MessageBox.Show("Vui lòng nhập lương bằng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

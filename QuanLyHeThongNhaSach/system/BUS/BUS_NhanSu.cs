@@ -62,6 +62,12 @@ namespace BUS
         {
             return DAL_NhanSu.Instance.layDSNhanSu(ma);
         }
+        public List<ET_ChiTietLuong> hienThiNhanSu_Luong(string ma)
+        {
+            List<ET_ChiTietLuong> list = DAL_NhanSu.Instance.layDSNhanSu_luong(ma).ToList(); 
+           
+            return list;
+        }
         public bool themNhanSu(ET_NhanSu NhanSu)
         {
             try

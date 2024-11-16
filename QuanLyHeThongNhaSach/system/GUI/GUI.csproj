@@ -183,6 +183,12 @@
     <Compile Include="QuanLyCaTruc.Designer.cs">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptKhuyenMaiView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptKhuyenMaiView.Designer.cs">
+      <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CaTruc.resx">
       <DependentUpon>CaTruc.cs</DependentUpon>
@@ -246,6 +252,10 @@
     </Compile>
     <EmbeddedResource Include="QuanLyCaTruc.resx">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptKhuyenMai.rdlc" />
+    <EmbeddedResource Include="rptKhuyenMaiView.resx">
+      <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

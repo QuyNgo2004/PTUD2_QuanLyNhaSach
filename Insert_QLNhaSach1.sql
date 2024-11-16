@@ -208,13 +208,13 @@ go
 Insert into  CaTruc(tenCaTruc,gioBD,gioKT,maCN,ghiChu)
 values ('T2_Sang','8:00:00','10:00:00','CN01','')
 go 
-Insert into  NhanSu(maNS,tenNS,gioiTinh,cccdNS,sdtNV,emailNV,diaChiNha,maCN,chucVu,matkhau)
+Insert into  NhanSu(maNS,tenNS,gioiTinh,cccdNS,sdtNV,emailNV,diaChiNha,maCN,chucVu,matkhau,luongcanban)
 
-values ('NS01',N'Văn A',N'Nam','09878983762','0928372892','quy@gmail.com',N'Tiền Giang','CN01','1','0'),
-('NS02',N'A Ánh',N'Nữ','09878983762','0928372832','Son@gmail.com',N'Hậu Giang','CN01','2','0'),
-('NS03',N'Văn Thơ',N'Nữ','09878983762','0928372832','Tho@gmail.com',N'Kiên Giang','CN01','2','0'),
-('NS04',N'Tuấn Tú',N'Nam','09878983762','0928372832','Tu123@gmail.com',N'Hậu Giang','CN01','2','0'),
-('NS05',N'Tuấn Anh',N'Nam','09878983762','0928372832','Anh321@gmail.com',N'Kiên Giang','CN01','2','0')
+values ('NS01',N'Văn A',N'Nam','09878983762','0928372892','quy@gmail.com',N'Tiền Giang','CN01','1','0',2000000),
+('NS02',N'A Ánh',N'Nữ','09878983762','0928372832','Son@gmail.com',N'Hậu Giang','CN01','2','0',2000000),
+('NS03',N'Văn Thơ',N'Nữ','09878983762','0928372832','Tho@gmail.com',N'Kiên Giang','CN01','2','0',2000000),
+('NS04',N'Tuấn Tú',N'Nam','09878983762','0928372832','Tu123@gmail.com',N'Hậu Giang','CN01','2','0',2000000),
+('NS05',N'Tuấn Anh',N'Nam','09878983762','0928372832','Anh321@gmail.com',N'Kiên Giang','CN01','2','0',2000000)
 go
 
 Insert into  KhuyenMai(maKM,tenKM,giamGia,maHH,ngayBD,ngayKT,ghiChu)

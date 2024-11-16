@@ -136,11 +136,14 @@ namespace GUI
             {
                 if (txtSoLuong != null && int.Parse(txtSoLuong.Text ) != 0)
                 {
+                    //Tim ma khuyến mãi
+                    ET_KhuyenMai eT_KhuyenMai = new ET_KhuyenMai();
+                    eT_KhuyenMai = km.KM_TimMa(cbbKhuyenMai.SelectedValue.ToString());
                     // Lấy thông tin từ các trường trên form
                     string maHH = cbbMaHang.Text;
                     string tenHH = txtTenHang.Text;
                     int donGia = int.Parse(txtDonGia.Text);
-                    int giamGia = Convert.ToInt32(cbbKhuyenMai.SelectedValue); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
+                    int giamGia = Convert.ToInt32(eT_KhuyenMai.MaGiamGia); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
                     int soLuong = int.Parse(txtSoLuong.Text);
 
                     // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
@@ -150,7 +153,24 @@ namespace GUI
                     if (giamGia == 0)
                     {
                         // Tặng sản phẩm: tăng gấp đôi số lượng để hiển thị trong giỏ hàng
-                        soLuong *= 2; // Số lượng trong giỏ hàng sẽ gấp đôi (bao gồm tặng kèm)
+                        //soLuong *= 2; // Số lượng trong giỏ hàng sẽ gấp đôi (bao gồm tặng kèm)
+                        ET_HangHoa hhKM = new ET_HangHoa();
+                        hhKM = hh.TimHH(eT_KhuyenMai.MaHH);
+                        // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
+                        var sanPhamTonTai_KM = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == eT_KhuyenMai.MaHH);
+
+                        if (sanPhamTonTai_KM != null)
+                        {
+                            // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
+                            sanPhamTonTai_KM.SoLuong += soLuong;
+                            sanPhamTonTai_KM.ThanhTien += 0; // Cộng dồn thành tiền
+                        }
+                        else
+                        {
+                            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
+                            ET_SanPhamThanhToan sanPhamKM = new ET_SanPhamThanhToan(hhKM.MaHH, hhKM.TenHH, 0, soLuong, null, 0);
+                            danhSachSanPham.Add(sanPhamKM);
+                        }
                     }
 
                     // Tính thành tiền
@@ -572,7 +592,7 @@ namespace GUI
 
                         cbbKhuyenMai.DataSource = listKM;
                         cbbKhuyenMai.DisplayMember = "TenKM";
-                        cbbKhuyenMai.ValueMember = "MaGiamGia";
+                        cbbKhuyenMai.ValueMember = "MaKM";
                     }
                 }
                 else

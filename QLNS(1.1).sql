@@ -117,6 +117,7 @@ create table NhanSu (
 	diaChiNha nvarchar(55),
 	maCN varchar(10) foreign key references ChiNhanh(maCN),
 	chucVu INT  foreign key references ChucVu(maChucVu) ,
+	luongcanban varchar(30),
 	matkhau nvarchar(25) not null,
 )
 go
@@ -163,7 +164,7 @@ create table ChiTietLuong(
 maCTLuong int IDENTITY(1,1) primary key,
 maBangLuong varchar(30) foreign key references BangTinhLuong(maBangLuong),
 maNS varchar (7) foreign key references NhanSu(maNS),
-luongTheoNgay int not null,
+ngayTC int ,	
 ngayNghi int ,
 soNgayLam int not null,
 tienLuong int not null,
