@@ -59,13 +59,17 @@ namespace GUI
                     if (CheckThongTin() == true)
                     {
                         dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoSDT(txtSDT.Text, dateTimePicker1.Value.Date);
+                        if (dgvLichSuHoaDon.Rows.Count  == 0)
+                        {
+                            Exception ex = new Exception("Không tìm thấy hóa đơn từ số điện thoại này");
+                            MessageBox.Show(ex.Message);
+                        }
                         txtSDT.Clear();
                         dateTimePicker1.Value = DateTime.Now;
                     }
                     else
-                    {
-                        Exception ex = new Exception("Không tìm thấy hóa đơn từ số điện thoại này");
-                        MessageBox.Show(ex.Message);
+                    {                        
+                        return;                        
                     }
                 }
                 catch (Exception ex)
@@ -80,13 +84,17 @@ namespace GUI
                     if (CheckThongTin1() == true)
                     {
                         dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTheoTenNV(txtTenNV.Text, dateTimePicker1.Value.Date);
+                        if (dgvLichSuHoaDon.Rows.Count == 0)
+                        {
+                            Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên này");
+                            MessageBox.Show(ex.Message);
+                        }
                         txtTenNV.Clear();
                         dateTimePicker1.Value = DateTime.Now;
                     }
                     else
                     {
-                        Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên này này");
-                        MessageBox.Show(ex.Message);
+                        return;
                     }
                 }
                 catch (Exception ex)
@@ -115,6 +123,11 @@ namespace GUI
                     if (CheckThongTin() == true && CheckThongTin1() == true)
                     {
                         dgvLichSuHoaDon.DataSource = BUS_HoaDon.Instance.TimHoaDonTongHop(txtSDT.Text, txtTenNV.Text, dateTimePicker1.Value.Date);
+                        if (dgvLichSuHoaDon.Rows.Count == 0)
+                        {
+                            Exception ex = new Exception("Không tìm thấy hóa đơn từ tên nhân viên và số điện thoại này");
+                            MessageBox.Show(ex.Message);
+                        }
                         txtSDT.Clear();
                         txtTenNV.Clear();
                         dateTimePicker1.Value = DateTime.Now;
@@ -135,7 +148,8 @@ namespace GUI
             if (batLoi.KT_SoKiTu(txtSDT.Text, 10) == false || batLoi.KT_ChuoiSoDT(txtSDT.Text) == false)
             {
                 MessageBox.Show("Vui lòng nhập số điện thoại có 10 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSDT.Clear();               
+                txtSDT.Clear();
+                return flag;
             }
             else
             {
@@ -161,10 +175,14 @@ namespace GUI
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            BUS_HoaDon.Instance.xemDanhSachHoaDon(dgvLichSuHoaDon);
-            txtSDT.Clear();
-            txtTenNV.Clear();
-            dgvDSHangHoa = null;
+            DialogResult dar = MessageBox.Show("Bạn có muốn làm mới?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
+            {
+                BUS_HoaDon.Instance.xemDanhSachHoaDon(dgvLichSuHoaDon);
+                txtSDT.Clear();
+                txtTenNV.Clear();
+                dgvDSHangHoa = null;
+            }
 
         }
 
@@ -177,6 +195,11 @@ namespace GUI
                 Menu form = (Menu)this.ParentForm;
                 InHoaDon inHoaDonForm = new InHoaDon(maHD_Selected);
                 form.openChildForm(inHoaDonForm);
+            }
+            else
+            {
+                Exception ex = new Exception("Vui lòng chọn 1 dòng trong Danh sách lịch sử hóa đơn");
+                MessageBox.Show(ex.Message);
             }
         }
     }

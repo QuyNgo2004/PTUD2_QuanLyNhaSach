@@ -132,126 +132,130 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult dar = MessageBox.Show("Bạn có muốn thêm?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dar == DialogResult.Yes)
             {
-                if (txtSoLuong != null && int.Parse(txtSoLuong.Text ) != 0)
+                try
                 {
-                    //Tim ma khuyến mãi
-                    ET_KhuyenMai eT_KhuyenMai = new ET_KhuyenMai();
-                    if (cbbKhuyenMai.SelectedValue == null)
+                    if (txtSoLuong != null && int.Parse(txtSoLuong.Text) != 0)
                     {
-                        eT_KhuyenMai.MaGiamGia = 0;
-                        eT_KhuyenMai.MaHH = null;
-                    }
-                    else
-                    {
-                        eT_KhuyenMai = km.KM_TimMa(cbbKhuyenMai.SelectedValue.ToString());
-                    }
-                    // Lấy thông tin từ các trường trên form
-                    string maHH = cbbMaHang.Text;
-                    string tenHH = txtTenHang.Text;
-                    int donGia = int.Parse(txtDonGia.Text);
-                    int giamGia = Convert.ToInt32(eT_KhuyenMai.MaGiamGia); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
-                    int soLuong = int.Parse(txtSoLuong.Text);
-
-                    // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
-                    int soLuongTinhTien = soLuong;
-
-                    // Kiểm tra loại khuyến mãi
-                    if (eT_KhuyenMai.MaHH == null)
-                    {
-                        // Tính thành tiền
-                        double thanhTien = donGia * soLuong; // Tính theo số lượng mua thực tế
-
-                        // Nếu giảm giá, tính lại giá trị thanh toán
-                        if (giamGia > 0)
+                        //Tim ma khuyến mãi
+                        ET_KhuyenMai eT_KhuyenMai = new ET_KhuyenMai();
+                        if (cbbKhuyenMai.SelectedValue == null)
                         {
-                            thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
-                        }
-
-                        string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
-
-                        // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
-                        var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
-
-                        if (sanPhamTonTai != null)
-                        {
-                            // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
-                            sanPhamTonTai.SoLuong += soLuong;
-                            sanPhamTonTai.ThanhTien += thanhTien; // Cộng dồn thành tiền
+                            eT_KhuyenMai.MaGiamGia = 0;
+                            eT_KhuyenMai.MaHH = null;
                         }
                         else
                         {
-                            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
-                            ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
-                            danhSachSanPham.Add(sanPhamMoi);
+                            eT_KhuyenMai = km.KM_TimMa(cbbKhuyenMai.SelectedValue.ToString());
                         }
-                    }
-                    else
-                    {
-                        ET_HangHoa hhKM = new ET_HangHoa();
-                        hhKM = hh.TimHH(eT_KhuyenMai.MaHH);
-                        // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
-                        var sanPhamTonTai_KM = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == eT_KhuyenMai.MaHH);
+                        // Lấy thông tin từ các trường trên form
+                        string maHH = cbbMaHang.Text;
+                        string tenHH = txtTenHang.Text;
+                        int donGia = int.Parse(txtDonGia.Text);
+                        int giamGia = Convert.ToInt32(eT_KhuyenMai.MaGiamGia); // Lấy giá trị giảm giá từ comboBox (0: tặng sản phẩm)
+                        int soLuong = int.Parse(txtSoLuong.Text);
 
-                        if (sanPhamTonTai_KM != null)
+                        // Tính số lượng thực tế tính tiền (số lượng mua thực tế)
+                        int soLuongTinhTien = soLuong;
+
+                        // Kiểm tra loại khuyến mãi
+                        if (eT_KhuyenMai.MaHH == null)
                         {
-                            // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
-                            sanPhamTonTai_KM.SoLuong += soLuong;
-                            sanPhamTonTai_KM.ThanhTien += 0; // Cộng dồn thành tiền
+                            // Tính thành tiền
+                            double thanhTien = donGia * soLuong; // Tính theo số lượng mua thực tế
+
+                            // Nếu giảm giá, tính lại giá trị thanh toán
+                            if (giamGia > 0)
+                            {
+                                thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                            }
+
+                            string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
+
+                            // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
+                            var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
+
+                            if (sanPhamTonTai != null)
+                            {
+                                // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
+                                sanPhamTonTai.SoLuong += soLuong;
+                                sanPhamTonTai.ThanhTien += thanhTien; // Cộng dồn thành tiền
+                            }
+                            else
+                            {
+                                // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
+                                ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
+                                danhSachSanPham.Add(sanPhamMoi);
+                            }
                         }
                         else
                         {
-                            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
-                            ET_SanPhamThanhToan sanPhamKM = new ET_SanPhamThanhToan(hhKM.MaHH, hhKM.TenHH, 0, soLuong, null, 0);
-                            danhSachSanPham.Add(sanPhamKM);
-                        }
-                        // Tính thành tiền
-                        double thanhTien = donGia * soLuong; // Tính theo số lượng mua thực tế
+                            ET_HangHoa hhKM = new ET_HangHoa();
+                            hhKM = hh.TimHH(eT_KhuyenMai.MaHH);
+                            // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
+                            var sanPhamTonTai_KM = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == eT_KhuyenMai.MaHH);
 
-                        // Nếu giảm giá, tính lại giá trị thanh toán
-                        if (giamGia > 0)
-                        {
-                            thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                            if (sanPhamTonTai_KM != null)
+                            {
+                                // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
+                                sanPhamTonTai_KM.SoLuong += soLuong;
+                                sanPhamTonTai_KM.ThanhTien += 0; // Cộng dồn thành tiền
+                            }
+                            else
+                            {
+                                // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
+                                ET_SanPhamThanhToan sanPhamKM = new ET_SanPhamThanhToan(hhKM.MaHH, hhKM.TenHH, 0, soLuong, null, 0);
+                                danhSachSanPham.Add(sanPhamKM);
+                            }
+                            // Tính thành tiền
+                            double thanhTien = donGia * soLuong; // Tính theo số lượng mua thực tế
+
+                            // Nếu giảm giá, tính lại giá trị thanh toán
+                            if (giamGia > 0)
+                            {
+                                thanhTien = donGia * soLuongTinhTien * (1 - (giamGia / 100.0)); // Áp dụng giảm giá
+                            }
+
+                            string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
+
+                            // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
+                            var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
+
+                            if (sanPhamTonTai != null)
+                            {
+                                // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
+                                sanPhamTonTai.SoLuong += soLuong;
+                                sanPhamTonTai.ThanhTien += thanhTien; // Cộng dồn thành tiền
+                            }
+                            else
+                            {
+                                // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
+                                ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
+                                danhSachSanPham.Add(sanPhamMoi);
+                            }
                         }
 
-                        string khuyenMai = cbbKhuyenMai.Text; // Lấy tên khuyến mãi từ combobox
+                        // Cập nhật lại DataGridView với danh sách sản phẩm                    
+                        bindingSourceSanPham.ResetBindings(false);
 
-                        // Kiểm tra nếu sản phẩm đã có trong danh sách (dgvHangHoa)
-                        var sanPhamTonTai = danhSachSanPham.FirstOrDefault(sp => sp.MaHH == maHH);
-
-                        if (sanPhamTonTai != null)
-                        {
-                            // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng và thành tiền
-                            sanPhamTonTai.SoLuong += soLuong;
-                            sanPhamTonTai.ThanhTien += thanhTien; // Cộng dồn thành tiền
-                        }
-                        else
-                        {
-                            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào danh sách
-                            ET_SanPhamThanhToan sanPhamMoi = new ET_SanPhamThanhToan(maHH, tenHH, donGia, soLuong, khuyenMai, thanhTien);
-                            danhSachSanPham.Add(sanPhamMoi);
-                        }
+                        ShowTongTien();
+                        cbbMaHang.SelectedIndex = 0;
+                        txtTenHang.Clear();
+                        txtDonGia.Clear();
+                        txtSoLuong.Clear();
+                        cbbKhuyenMai.SelectedIndex = -1;
+                        txtThanhTien.Clear();
                     }
 
-                    // Cập nhật lại DataGridView với danh sách sản phẩm                    
-                    bindingSourceSanPham.ResetBindings(false);
-
-                    ShowTongTien();
-                    cbbMaHang.SelectedIndex = 0;
-                    txtTenHang.Clear();
-                    txtDonGia.Clear();
-                    txtSoLuong.Clear();
-                    cbbKhuyenMai.SelectedIndex = -1;
-                    txtThanhTien.Clear();
                 }
+                catch (Exception ex)
+                {
 
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Có lỗi khi thêm sản phẩm: " + ex.Message, "Thông báo");
-                txtSoLuong.Focus();
+                    MessageBox.Show("Có lỗi khi thêm sản phẩm: " + ex.Message, "Thông báo");
+                    txtSoLuong.Focus();
+                }
             }
         }
 
@@ -267,7 +271,7 @@ namespace GUI
                 int dong = dgvHangHoa.CurrentCell.RowIndex;
                 if (dgvHangHoa.Rows[dong].Cells[4].Value == null)
                 {
-                    MessageBox.Show("Không thể chọn dòng sản phẩm khuyến mãi", "Thông báo");
+                    MessageBox.Show("Không thể sửa hoặc xóa sản phẩm khuyến mãi", "Thông báo");
                     return;
                 }
                 else
