@@ -136,6 +136,7 @@ maCTHD INT IDENTITY(1,1) ,
 maHD varchar(10) foreign key references HoaDon(maHD),
 maHH varchar(13)  foreign key references HangHoa(maHH) ,
 SL int,
+DonGia int,
 constraint PK_CTHD primary key (maHD,maHH,maCTHD))
 
 --Tao bảng ca trực

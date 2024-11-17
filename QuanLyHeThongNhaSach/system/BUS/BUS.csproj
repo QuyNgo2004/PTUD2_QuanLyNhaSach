@@ -79,6 +79,7 @@
     <Compile Include="BUS_NhanSu.cs" />
     <Compile Include="BUS_NhapHang.cs" />
     <Compile Include="BUS_NhaPhanPhoi.cs" />
+    <Compile Include="BUS_Report.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>

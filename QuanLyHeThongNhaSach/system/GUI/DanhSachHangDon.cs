@@ -14,6 +14,7 @@ namespace GUI
     public partial class DanhSachHangDon : Form
     {
         BUS_BatLoi batLoi = new BUS_BatLoi();
+        private string maHD_Selected = "";
         public DanhSachHangDon()
         {
             InitializeComponent();
@@ -34,18 +35,19 @@ namespace GUI
         }
 
         private void dgvLichSuHoaDon_Click(object sender, EventArgs e)
-        {
+        {            
             try
             {
                 int dong = dgvLichSuHoaDon.CurrentCell.RowIndex;
-                string mahh = dgvLichSuHoaDon.Rows[dong].Cells[0].Value.ToString();
-                BUS_CTHoaDon.Instance.xemChiTietHoaDon(dgvDSHangHoa, mahh);
+                string maHD = dgvLichSuHoaDon.Rows[dong].Cells["MaHD"].Value.ToString();
+                maHD_Selected = maHD;
+                BUS_CTHoaDon.Instance.xemChiTietHoaDon(dgvDSHangHoa, maHD);                
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
+                        
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -164,6 +166,18 @@ namespace GUI
             txtTenNV.Clear();
             dgvDSHangHoa = null;
 
+        }
+
+        
+
+        private void btnIn_Click_1(object sender, EventArgs e)
+        {
+            if (maHD_Selected != "")
+            {
+                Menu form = (Menu)this.ParentForm;
+                InHoaDon inHoaDonForm = new InHoaDon(maHD_Selected);
+                form.openChildForm(inHoaDonForm);
+            }
         }
     }
 }
