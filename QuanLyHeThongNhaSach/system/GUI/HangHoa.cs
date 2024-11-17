@@ -140,7 +140,7 @@ namespace GUI
             {
                 if (KtraBoTrong() == true)
                 {
-                    BUS_HangHoa.Instance.ThemHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(), int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
+                    BUS_HangHoa.Instance.ThemHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(), txtDonViTinh.Text, cboNhaPP.SelectedValue.ToString(), txtMoTa.Text, txtGhiChu.Text, cboTinhTrang.Text, txtTacGia.Text, int.Parse(txtGiaHH.Text), int.Parse(txtSoLuongTon.Text)));
                     BUS_HangHoa.Instance.XemDSHH(dgvDSHangHoa);
                 }
                 else
@@ -178,7 +178,7 @@ namespace GUI
                     {
                         if (KTraMa(txtMaHH.Text) == true)
                         {
-                            BUS_HangHoa.Instance.SuaHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(), int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
+                            BUS_HangHoa.Instance.SuaHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(),txtDonViTinh.Text,  cboNhaPP.SelectedValue.ToString(),txtMoTa.Text, txtGhiChu.Text,  cboTinhTrang.Text, txtTacGia.Text, int.Parse(txtGiaHH.Text) ,int.Parse(txtSoLuongTon.Text) ) );
                             BUS_HangHoa.Instance.XemDSHH(dgvDSHangHoa);
                         }
                         else

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using ET;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +15,25 @@ namespace GUI.Report
 {
     public partial class rptKhuyenMaiView : Form
     {
-        public rptKhuyenMaiView()
+        private ET_NhanSu ns_r = new ET_NhanSu();
+        public rptKhuyenMaiView(ET_NhanSu ns)
         {
             InitializeComponent();
+            this.ns_r = ns;
         }
 
         private void rptKhuyenMaiView_Load(object sender, EventArgs e)
         {
-
+            DateTime now = DateTime.Now;
+            List<ET_KhuyenMaiReport> list = BUS_ChiTietKhuyenMai.Instance.CTKM_Load_Now_Report(now);
+            List<ET_NhanSu> list_ns = new List<ET_NhanSu>();
+            list_ns.Add(ns_r);
+            rptBCKhuyenMai.LocalReport.ReportPath = "Report/rptKhuyenMai.rdlc";
+            var source = new ReportDataSource("KhuyenMaiReport", list);
+            var source_ns = new ReportDataSource("NhanSuReport", list_ns);
+            rptBCKhuyenMai.LocalReport.DataSources.Clear();
+            rptBCKhuyenMai.LocalReport.DataSources.Add(source);
+            rptBCKhuyenMai.LocalReport.DataSources.Add(source_ns);
             this.rptBCKhuyenMai.RefreshReport();
         }
     }

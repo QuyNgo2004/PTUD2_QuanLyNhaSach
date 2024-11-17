@@ -1,4 +1,5 @@
 ﻿using DAL;
+using ET;
 using System;
 
 using System.Collections.Generic;
@@ -32,6 +33,10 @@ namespace BUS
         public IQueryable CTKM_Load_Now(DateTime ngayHT)
         {
             return chiTietKhuyenMai.CTKM_Load_Now(ngayHT);
+        }
+        public List<ET_KhuyenMaiReport> CTKM_Load_Now_Report(DateTime ngayHT)
+        {
+            return chiTietKhuyenMai.CTKM_Load_Now_Report(ngayHT);
         }
         public List<string> CTKM_Load_Now(DateTime ngayHT,string ma)
         {

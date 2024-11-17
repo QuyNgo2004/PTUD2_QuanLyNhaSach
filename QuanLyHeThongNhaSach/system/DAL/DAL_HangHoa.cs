@@ -183,34 +183,34 @@ namespace DAL
 
         public ET_HangHoa TimHangHoaTheoMa(string ma)
         {
-            //try
-            //{
-            //    // Sử dụng DbNhaSach để gọi stored procedure
-            //    var result = DbNhaSach.TimHangHoaTheoMa(ma).FirstOrDefault();
+            try
+            {
+                // Sử dụng DbNhaSach để gọi stored procedure
+                var result = DbNhaSach.TimHangHoaTheoMa(ma).FirstOrDefault();
 
-            //    if (result != null)
-            //    {
-            //        return new ET_HangHoa(
-            //            result.maHH,
-            //            result.tenHH,
-            //            result.tenLHH,
-            //            result.giaHH,
-            //            result.donViTinh,
-            //            result.soLuongTon,
-            //            result.tenNPP,
-            //            result.tacGia,
-            //            result.moTa,
-            //            result.ghiChu,
-            //            result.tinhTrang
-            //        );
-            //    }
+                if (result != null)
+                {
+                    return new ET_HangHoa {
+                        MaHH = result.maHH,
+                        TenHH = result.tenHH,
+                        LoaiHH= result.tenLHH,
+                        DonviTinh = result.donViTinh,
+                        NhaPP = result.tenNPP,
+                         MoTa = result.moTa,
+                        GhiChu =  result.ghiChu,
+                        TinhTrang =result.tinhTrang,
+                        //TacGia = result.tacGia,
+                        GiaHH = result.giaHH,
+                        SlTon = result.soLuongTon
+                    };
+                }
 
                 return null;
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception("Lỗi khi tìm hàng hóa theo mã: " + ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm hàng hóa theo mã: " + ex.Message);
+            }
         }
 
         public IQueryable XemDSHangHoaAutoCompleted()

@@ -135,7 +135,7 @@ namespace GUI
         {
             if (khuyenmai == null || khuyenmai.IsDisposed)
             {
-                openChildForm(new ChiTietKhuyenMai());
+                openChildForm(new ChiTietKhuyenMai(ns_ET));
             }
             else
             {

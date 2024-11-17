@@ -127,6 +127,11 @@
     <Compile Include="KhuyenMai.Designer.cs">
       <DependentUpon>KhuyenMai.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhuyenMai_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LichSuNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,11 +258,26 @@
     <EmbeddedResource Include="QuanLyCaTruc.resx">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\rptKhuyenMai.rdlc" />
+    <EmbeddedResource Include="Report\rptKhuyenMai.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptKhuyenMaiView.resx">
       <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="KhuyenMai_DataSet.xsc">
+      <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KhuyenMai_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KhuyenMai_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="KhuyenMai_DataSet.xss">
+      <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ET.ET_KhuyenMaiReport.datasource" />
+    <None Include="Properties\DataSources\ET.ET_NhanSu.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -296,5 +316,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

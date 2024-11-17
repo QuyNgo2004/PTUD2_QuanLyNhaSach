@@ -40,7 +40,7 @@ namespace DAL
                               };
             return list;
         }
-
+        
         public IQueryable LoadKM_Now(DateTime ngayHT)
         {
             IQueryable list = from km in dbNhaSach.KhuyenMais
@@ -152,17 +152,20 @@ namespace DAL
         public ET_KhuyenMai KM_TimMa(string ma)
         {
             IQueryable<ET_KhuyenMai> khuyenMai = from km in dbNhaSach.KhuyenMais
-                                     where km.maKM.Equals(ma)
-                                     select new ET_KhuyenMai
-                                     {
-                                         MaKM = km.maKM,
-                                         TenKM = km.tenKM,
-                                         MaGiamGia = int.Parse(km.giamGia.ToString()),
-                                         MaHH = km.maHH,
-                                         NgayBD = km.ngayBD,
-                                         NgayKT = km.ngayKT,
-                                         GhiChu = km.ghiChu,
-                                     };
+                                                 join hh in dbNhaSach.HangHoas on km.maHH equals hh.maHH into joined
+                                                 from hh in joined.DefaultIfEmpty() // Sử dụng DefaultIfEmpty để cho phép giá trị null
+                                                 where km.maKM.Equals(ma)
+                                                 select new ET_KhuyenMai
+                                                 {
+                                                     MaKM = km.maKM,
+                                                     TenKM = km.tenKM,
+                                                     MaGiamGia = int.Parse(km.giamGia.ToString()),
+                                                     MaHH = km.maHH,
+                                                     TenHH =  hh != null ? hh.tenHH : "null",
+                                                     NgayBD = km.ngayBD,
+                                                     NgayKT = km.ngayKT,
+                                                     GhiChu = km.ghiChu,
+                                                 };
             ET_KhuyenMai kmai =  khuyenMai.FirstOrDefault();
             return kmai;
         }

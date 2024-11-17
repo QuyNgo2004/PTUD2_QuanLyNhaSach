@@ -70,6 +70,7 @@
     <Compile Include="ET_HoaDon.cs" />
     <Compile Include="ET_KhachHang.cs" />
     <Compile Include="ET_KhuyenMai.cs" />
+    <Compile Include="ET_KhuyenMaiReport.cs" />
     <Compile Include="ET_LoaiHangHoa.cs" />
     <Compile Include="ET_NhanSu.cs" />
     <Compile Include="ET_NhaPhanPhoi.cs" />

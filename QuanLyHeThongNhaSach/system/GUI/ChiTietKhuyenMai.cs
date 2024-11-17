@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DevExpress.Data.Linq.Helpers;
 using ET;
+using GUI.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,11 @@ namespace GUI
         BUS_BatLoi error = new BUS_BatLoi();
         private DateTime ngayHT = DateTime.Now;
         private int maCTHD;
-        public ChiTietKhuyenMai()
+        private ET_NhanSu ns_r = new ET_NhanSu();
+        public ChiTietKhuyenMai(ET_NhanSu ns_)
         {
             InitializeComponent();
+            this.ns_r = ns_;
         }
         // Load form
         private void Load_Frm()
@@ -217,6 +220,12 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rptKhuyenMaiView rpt = new rptKhuyenMaiView(ns_r);
+            rpt.ShowDialog();
         }
     }
 }

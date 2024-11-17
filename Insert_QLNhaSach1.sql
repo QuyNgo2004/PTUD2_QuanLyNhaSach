@@ -7,7 +7,7 @@ use QLNhaSach
 set dateformat dmy
 
 Insert into  ChucVu(tenChucVu)
-values ('Quản lý'),('Nhân Viên')
+values (N'Quản lý'),(N'Nhân Viên')
 go
 
 

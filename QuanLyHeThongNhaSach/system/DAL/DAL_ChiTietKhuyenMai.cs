@@ -10,6 +10,7 @@ namespace DAL
     public class DAL_ChiTietKhuyenMai :DAL_Data
     {
         private static DAL_ChiTietKhuyenMai instance;
+        private static DAL_KhuyenMai km = DAL_KhuyenMai.Instance;
         public static DAL_ChiTietKhuyenMai Instance
         {
             get
@@ -54,6 +55,30 @@ namespace DAL
                                   TenKM = km.tenKM,
                               };
             return list;
+        }
+        public List<ET_KhuyenMaiReport> CTKM_Load_Now_Report(DateTime ngayHT)
+        {
+            IEnumerable<ET_KhuyenMaiReport> list = from ctkm in dbNhaSach.CTKhuyenMais
+                              join hh in dbNhaSach.HangHoas on ctkm.maHH equals hh.maHH
+                              join km in dbNhaSach.KhuyenMais on ctkm.maKM equals km.maKM
+                              where km.ngayKT >= ngayHT
+                              select new ET_KhuyenMaiReport 
+                              {
+                                  MaKM = ctkm.maKM,
+                                  TenKM = km.tenKM,
+                                  TenHH = hh.tenHH,
+                                  NgayBD = km.ngayBD,
+                                  NgayKT = km.ngayKT,
+                              };
+            List<ET_KhuyenMaiReport> list_report = new List<ET_KhuyenMaiReport>();
+            foreach (ET_KhuyenMaiReport r in list)
+            {
+                ET_KhuyenMai km_r = km.KM_TimMa(r.MaKM);
+                r.TenHH = km_r.TenHH;
+                r.MaGiamGia = km_r.MaGiamGia;
+                list_report.Add(r);
+            }
+            return list_report;
         }
         public List<string> CTKM_Load_Now(DateTime ngayHT,string ma)
         {

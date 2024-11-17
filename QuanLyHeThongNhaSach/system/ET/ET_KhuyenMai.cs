@@ -8,7 +8,7 @@ namespace ET
 {
     public class ET_KhuyenMai
     {
-        private string maKM, maHH, ghiChu,tenKM;
+        private string tenHH,maKM, maHH, ghiChu,tenKM;
         private int maGiamGia;
         private DateTime ngayBD, ngayKT;
 
@@ -19,6 +19,7 @@ namespace ET
         public int MaGiamGia { get => maGiamGia; set => maGiamGia = value; }
         public DateTime NgayBD { get => ngayBD; set => ngayBD = value; }
         public DateTime NgayKT { get => ngayKT; set => ngayKT = value; }
+        public string TenHH { get => tenHH; set => tenHH = value; }
 
         public ET_KhuyenMai(string maKM, string maHH, string ghiChu, string tenKM, int maGiamGia, DateTime ngayBD, DateTime ngayKT)
         {
