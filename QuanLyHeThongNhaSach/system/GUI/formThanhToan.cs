@@ -665,7 +665,7 @@ namespace GUI
                         int donGia = int.Parse(txtDonGia.Text);
                         int soLuong = int.Parse(txtSoLuong.Text);
 
-
+                        eT_KhuyenMai = km.KM_TimMa(cbbKhuyenMai.SelectedValue.ToString());
                         double thanhTien = donGia * soLuong;
                         // Nếu có giảm giá, tính lại thành tiền
                         if (eT_KhuyenMai.MaGiamGia > 0)
