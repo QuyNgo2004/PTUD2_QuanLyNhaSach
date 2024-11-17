@@ -234,10 +234,7 @@ namespace GUI
                         }
                     }
 
-                    
-
                     // Cập nhật lại DataGridView với danh sách sản phẩm                    
-
                     bindingSourceSanPham.ResetBindings(false);
 
                     ShowTongTien();
@@ -530,7 +527,7 @@ namespace GUI
                                 BUS_HangHoa.Instance.UpdateSoLuongTon(maHH, soLuongMoi);
                             }
                         }
-                        string InHD = hoaDon.MaHD;
+                        
                         // Bước 4: Hiển thị thông báo thành công
                         MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -578,6 +575,12 @@ namespace GUI
                 txtTongTien.Clear();
                 btnThem.Enabled = true;
                 cbbMaHang.Enabled = true;
+                danhSachSanPham.Clear();
+                bindingSourceSanPham.Clear();
+
+                bindingSourceSanPham.DataSource = null; // Xóa liên kết hiện tại
+                bindingSourceSanPham.DataSource = danhSachSanPham; // Gắn lại danh sách trống
+                dgvHangHoa.DataSource = bindingSourceSanPham;
             }
         }
 
