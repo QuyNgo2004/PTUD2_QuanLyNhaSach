@@ -31,7 +31,8 @@ namespace DAL
                 {
                     maHD = ctHoaDon.MaHD,
                     maHH = ctHoaDon.MaHH,
-                    SL = ctHoaDon.SoLuong
+                    SL = ctHoaDon.SoLuong,
+                    DonGia = ctHoaDon.DonGia,
                 };
 
                 // Thêm vào bảng CTHoaDon
@@ -54,10 +55,9 @@ namespace DAL
                                  select new
                                  {
                                      MaHH = cthd.maHH,
-                                     TenHH = hh.tenHH,                                     
-                                     TongTien = hd.tongTien,
+                                     TenHH = hh.tenHH,                                                                          
                                      SoLuong = cthd.SL,
-
+                                     cthd.DonGia,
                                  };
             return hangHoa;
                                  

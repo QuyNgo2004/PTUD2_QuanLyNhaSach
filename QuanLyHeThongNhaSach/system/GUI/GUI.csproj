@@ -109,6 +109,12 @@
     <Compile Include="frmChiNhanh.Designer.cs">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="InHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InHoaDon.Designer.cs">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="frmChiNhanh.resx">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InHoaDon.resx">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +296,7 @@
     <None Include="KhuyenMai_DataSet.xss">
       <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="Report\InHoaDon.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ET.ET_BangLuong.datasource" />
     <None Include="Properties\DataSources\ET.ET_ChiTietLuong.datasource" />

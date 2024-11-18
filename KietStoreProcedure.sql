@@ -68,3 +68,17 @@ begin
 end;
 go
 
+create procedure InHoaDon
+	@MaHD varchar(10)
+as
+begin
+	select hd.maHD,hd.maNS,hd.tongTien,hd.ngayIn,kh.sdtKH,cthd.SL,cthd.DonGia,ThanhTien = cthd.DonGia * cthd.SL,hh.tenHH
+	from HoaDon hd
+	join KhachHang kh on kh.maKH = hd.maKH
+	join CTHoaDon cthd on cthd.maHD = hd.maHD
+	join HangHoa hh on hh.maHH = cthd.maHH
+	where hd.maHD = @MaHD
+end;
+go
+
+
