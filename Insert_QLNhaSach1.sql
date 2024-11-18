@@ -58,7 +58,8 @@ insert into NhaPhanPhoi(maNPP, tenNPP, diachiNPP, sdtNPP, emailNPP) values
 ('NPP23',N'Công ty Cổ phần Đồ chơi thông minh Kids Plazza',N'Tầng 4 Tòa nhà CT2 - Bắc Hà C14, đường Tố Hữu, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội.','1800660800','kidsplazza@gmail.com'),
 ('NPP24',N'Công ty TNHH Đồ chơi trẻ em Thế Giới',N'Số 30 Đường số 89, Ấp Cây Da, Xã Tân Phú Trung, Huyện Củ Chi, Thành phố Hồ Chí Minh, Việt Nam','0283796612','dochoitreem@gmail.com');
 go
-insert into KhachHang(maKH, hoTenKH, ngaysinhKH, gioitinhKH, diachiKH, sdtKH, emailKH) values 
+insert into KhachHang(maKH, hoTenKH, ngaysinhKH, gioitinhKH, diachiKH, sdtKH, emailKH) values
+('KH000', N'Khách vãn lai', '01/01/2000', N'Nam', N'Không có', '0000000000', 'example@gmail.com'),
 ('KH001', N'Hoàng Văn Duy', '18/07/2005', N'Nam', N'18 Thành Mỹ Lợi, Thủ Đức, TP HCM', '0123467868', 'hoangduy@gmail.com'), 
 ('KH002', N'Nguyễn Hoàng Nam', '12/03/2002', N'Nam', N'123 Nguyễn Văn Bứa, Bình Chánh, TP HCM', '0123456789', 'namnguyen@gmail.com'), 
 ('KH003', N'Phạm Minh Khôi', '25/11/1998', N'Nam', N'456 Phú Mỹ Hưng, Quận 7, TP HCM', '0123567890', 'minhkhoi@gmail.com'), 
