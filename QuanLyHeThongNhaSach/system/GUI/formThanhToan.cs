@@ -55,7 +55,7 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Không tìm thấy khách hàng có SDT này", "Thông báo");
-                    txtSDT.Focus();
+                    txtSDT.Clear();
                     txtMaKH.Clear();
                     txtTenKH.Clear();
                     txtDiaChi.Clear();
