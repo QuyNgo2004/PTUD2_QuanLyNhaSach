@@ -43,11 +43,14 @@ namespace DAL
         {
             IQueryable list = from luong in DbNhaSach.ChiTietLuongs
                               join ns in DbNhaSach.NhanSus on luong.maNS equals ns.maNS
+                              join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
                               where luong.maBangLuong == ma
                               select new ET_ChiTietLuong
                               {
                                   MaCTLuong = luong.maCTLuong,
                                   MaBangLuong = luong.maBangLuong,
+                                  LuongCB = int.Parse(luong.luongCB),
+                                  ChucVu = cv.tenChucVu,
                                   MaNS = luong.maNS,
                                   TenNS = ns.tenNS,
                                   NgayTC = (int)luong.ngayTC,
@@ -58,7 +61,28 @@ namespace DAL
                               };
             return list;
         }
+        public List<ET_ChiTietLuong> XemBangLuong_Report(string ma)
+        {
+            IEnumerable<ET_ChiTietLuong> list = from luong in DbNhaSach.ChiTietLuongs
+                              join ns in DbNhaSach.NhanSus on luong.maNS equals ns.maNS
+                              join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                              where luong.maBangLuong == ma
+                              select new ET_ChiTietLuong
+                              {
+                                  MaCTLuong = luong.maCTLuong,
+                                  MaBangLuong = luong.maBangLuong,
+                                  ChucVu = cv.tenChucVu,
+                                  LuongCB = int.Parse(luong.luongCB),
+                                  MaNS = luong.maNS,
+                                  TenNS = ns.tenNS,
+                                  NgayTC = (int)luong.ngayTC,
+                                  NgayLam = luong.soNgayLam,
+                                  NgayNghi = (int)luong.ngayNghi,
+                                  TienLuong = luong.tienLuong,
 
+                              };
+            return list.ToList();
+        }
         public bool ThemCTBangLuong(ET_ChiTietLuong ct_Luong)
         {
             try
@@ -67,6 +91,7 @@ namespace DAL
                 {
                     maBangLuong = ct_Luong.MaBangLuong,
                     maNS = ct_Luong.MaNS,
+                    luongCB = ct_Luong.LuongCB.ToString(),
                     ngayTC = (int)ct_Luong.NgayTC,
                     soNgayLam = ct_Luong.NgayLam,
                     ngayNghi = ct_Luong.NgayNghi,

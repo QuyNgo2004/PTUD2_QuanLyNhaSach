@@ -321,17 +321,23 @@ namespace GUI
                     if (bangLuongAdd)
                     {
                         // Bước 3: Nếu hóa đơn được thêm thành công, thêm các chi tiết hóa đơn
-                        for (int i = 0; i < dgvLuong.Rows.Count-1; i++)
+                        for (int i = 0; i < dgvLuong.Rows.Count - 1; i++)
                         {
                             ET_ChiTietLuong LuongMoi = new ET_ChiTietLuong
                             {
-                                MaNS = txtMaNS.Text,
-                                MaBangLuong = txtMaLuong.Text,
-                                NgayTC = int.Parse(dgvLuong.Rows[i].Cells[6].Value?.ToString() ?? "0"), // Dùng giá trị mặc định nếu null
-                                NgayLam = int.Parse(dgvLuong.Rows[i].Cells[4].Value?.ToString() ?? "0"), // Dùng chuỗi rỗng nếu null
-                                NgayNghi = int.Parse(dgvLuong.Rows[i].Cells[5].Value?.ToString() ?? "0"), // Dùng chuỗi rỗng nếu null
-                                TienLuong = int.Parse(dgvLuong.Rows[i].Cells[7].Value?.ToString() ?? "0") // Dùng giá trị mặc định nếu null
 
+                                MaBangLuong = txtMaLuong.Text,
+                                //NgayLam = int.Parse(dgvLuong.Rows[i].Cells[4].Value?.ToString() ?? "0"), // Dùng chuỗi rỗng nếu null
+                                //NgayNghi = int.Parse(dgvLuong.Rows[i].Cells[5].Value?.ToString() ?? "0"), // Dùng chuỗi rỗng nếu null
+                                //TienLuong = int.Parse(dgvLuong.Rows[i].Cells[7].Value?.ToString() ?? "0") // Dùng giá trị mặc định nếu null
+
+                                MaNS = dgvLuong.Rows[i].Cells[0].Value.ToString(),
+                                TenNS = dgvLuong.Rows[i].Cells[1].Value.ToString(),
+                                LuongCB = int.Parse(dgvLuong.Rows[i].Cells[3].Value.ToString()),
+                                NgayTC = int.Parse(dgvLuong.Rows[i].Cells[6].Value.ToString() ?? "0"),
+                                NgayLam = int.Parse(dgvLuong.Rows[i].Cells[4].Value.ToString() ?? "0"),
+                                NgayNghi = int.Parse(dgvLuong.Rows[i].Cells[5].Value.ToString() ?? "0"),
+                                TienLuong = int.Parse(dgvLuong.Rows[i].Cells[7].Value.ToString() ?? "0") 
                             };
                         
                             if (BUS_ChiTietLuong.Instance.ThemBangLuong(LuongMoi) == true) { }
@@ -367,7 +373,7 @@ namespace GUI
             try
             {
                 Menu formMenu = (Menu)this.ParentForm;
-                formMenu.openChildForm(new LichSuTinhLuong());
+                formMenu.openChildForm(new LichSuTinhLuong(ET_ns));
                 this.Close();
             }
             catch (Exception ex) {

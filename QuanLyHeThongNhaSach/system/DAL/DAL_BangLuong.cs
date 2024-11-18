@@ -37,6 +37,22 @@ namespace DAL
                               };
             return list;
         }
+        public ET_BangLuong TimBangLuong(string ma)
+        {
+            IEnumerable<ET_BangLuong> list = from luong in DbNhaSach.BangTinhLuongs
+                              join ns in DbNhaSach.NhanSus on luong.maNS equals ns.maNS
+                              where luong.maBangLuong == ma
+                              select new ET_BangLuong
+                              {
+                                  MaBangLuong = luong.maBangLuong,
+                                  MaQL = luong.maNS,
+                                  TenQL = ns.tenNS,
+                                  NgayBD = luong.ngayBD,
+                                  NgayKT = luong.ngayKT,
+
+                              };
+            return list.FirstOrDefault();
+        }
 
         public bool ThemBangLuong(ET_BangLuong ct_BangLuong)
         {

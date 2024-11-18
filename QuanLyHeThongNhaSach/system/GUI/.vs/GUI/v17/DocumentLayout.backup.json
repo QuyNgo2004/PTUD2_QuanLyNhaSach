@@ -3,64 +3,57 @@
   "WorkspaceRootPath": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\report\\rptkhuyenmai.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:report\\rptkhuyenmai.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\report\\rptbangluong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:report\\rptbangluong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\rptkhuyenmaiview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:rptkhuyenmaiview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\chitietbangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:chitietbangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\lichsutinhluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:lichsutinhluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\dal_bangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D7EBCAA-A4C4-4FAE-9C90-01FDF3CF3EA9}|..\\BUS\\BUS.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\bus\\bus_bangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D7EBCAA-A4C4-4FAE-9C90-01FDF3CF3EA9}|..\\BUS\\BUS.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\bus\\bus_chitietluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\lichsutinhluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:lichsutinhluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\rptbangluongview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:rptbangluongview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\rptkhuyenmaiview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:rptkhuyenmaiview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\rptbangluongview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:rptbangluongview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCB447C8-7922-4725-AB76-0955FE73D962}|..\\ET\\ET.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\et\\et_khuyenmaireport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\dal_chitietluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\dal_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\dal_chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\qlnhasach.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D7EBCAA-A4C4-4FAE-9C90-01FDF3CF3EA9}|..\\BUS\\BUS.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\bus\\bus_chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\chitietbangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:chitietbangluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:chitietkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D7EBCAA-A4C4-4FAE-9C90-01FDF3CF3EA9}|..\\BUS\\BUS.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\bus\\bus_hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD2974C-6D94-4696-B71E-80B78D8D276E}|..\\DAL\\DAL.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\dal\\dal_hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCB447C8-7922-4725-AB76-0955FE73D962}|..\\ET\\ET.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\et\\et_hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C48125B-47EC-4EA9-AEE6-BFA7A9B0497C}|GUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCB447C8-7922-4725-AB76-0955FE73D962}|..\\ET\\ET.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\et\\et_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCB447C8-7922-4725-AB76-0955FE73D962}|..\\ET\\ET.csproj|d:\\hoc_tap\\ptud2\\quanlyhethongnhasach\\ptud2_quanlynhasach\\quanlyhethongnhasach\\system\\et\\et_chitietluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +63,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,219 +91,191 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HangHoa.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\HangHoa.cs",
-              "RelativeDocumentMoniker": "HangHoa.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\HangHoa.cs",
-              "RelativeToolTip": "HangHoa.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAawI4AAAA0AQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:01:16.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ET_HangHoa.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_HangHoa.cs",
-              "RelativeDocumentMoniker": "..\\ET\\ET_HangHoa.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_HangHoa.cs",
-              "RelativeToolTip": "..\\ET\\ET_HangHoa.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:00:16.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BUS_HangHoa.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_HangHoa.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_HangHoa.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_HangHoa.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_HangHoa.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:54:24.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "DAL_HangHoa.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_HangHoa.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DAL_HangHoa.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_HangHoa.cs",
-              "RelativeToolTip": "..\\DAL\\DAL_HangHoa.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAlwMkAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:54:07.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "rptKhuyenMai.rdlc [Design]",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Report\\rptKhuyenMai.rdlc",
-              "RelativeDocumentMoniker": "Report\\rptKhuyenMai.rdlc",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Report\\rptKhuyenMai.rdlc [Design]*",
-              "RelativeToolTip": "Report\\rptKhuyenMai.rdlc [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2024-11-17T19:50:01.771Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChiTietKhuyenMai.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietKhuyenMai.cs",
-              "RelativeDocumentMoniker": "ChiTietKhuyenMai.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietKhuyenMai.cs",
-              "RelativeToolTip": "ChiTietKhuyenMai.cs",
-              "ViewState": "AgIAANkAAAAAAAAAAAAiwOIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:44:01.523Z",
+              "Title": "QLNhaSach.dbml",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\QLNhaSach.dbml",
+              "RelativeDocumentMoniker": "..\\DAL\\QLNhaSach.dbml",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\QLNhaSach.dbml",
+              "RelativeToolTip": "..\\DAL\\QLNhaSach.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2024-11-18T03:18:23.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ChiTietKhuyenMai.cs [Design]",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietKhuyenMai.cs",
-              "RelativeDocumentMoniker": "ChiTietKhuyenMai.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietKhuyenMai.cs [Design]",
-              "RelativeToolTip": "ChiTietKhuyenMai.cs [Design]",
+              "Title": "DAL_ChiTietLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_ChiTietLuong.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\DAL_ChiTietLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_ChiTietLuong.cs",
+              "RelativeToolTip": "..\\DAL\\DAL_ChiTietLuong.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswC0AAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:43:19.667Z",
+              "WhenOpened": "2024-11-18T03:15:36.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "rptBangLuong.rdlc [Design]",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Report\\rptBangLuong.rdlc",
+              "RelativeDocumentMoniker": "Report\\rptBangLuong.rdlc",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Report\\rptBangLuong.rdlc [Design]*",
+              "RelativeToolTip": "Report\\rptBangLuong.rdlc [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-11-18T03:12:22.876Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:41:54.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BUS_ChiTietKhuyenMai.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_ChiTietKhuyenMai.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_ChiTietKhuyenMai.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_ChiTietKhuyenMai.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_ChiTietKhuyenMai.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:10:21.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DAL_ChiTietKhuyenMai.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_ChiTietKhuyenMai.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DAL_ChiTietKhuyenMai.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_ChiTietKhuyenMai.cs",
-              "RelativeToolTip": "..\\DAL\\DAL_ChiTietKhuyenMai.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwDoAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:55:07.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "DAL_KhuyenMai.cs",
               "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_KhuyenMai.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DAL_KhuyenMai.cs",
               "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_KhuyenMai.cs",
               "RelativeToolTip": "..\\DAL\\DAL_KhuyenMai.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAIAwwKMAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAjwGQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:42:42.513Z",
+              "WhenOpened": "2024-11-18T03:02:20.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "rptKhuyenMaiView.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptKhuyenMaiView.cs",
-              "RelativeDocumentMoniker": "rptKhuyenMaiView.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptKhuyenMaiView.cs",
-              "RelativeToolTip": "rptKhuyenMaiView.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAEwCAAAABIAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "ET_ChiTietLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_ChiTietLuong.cs",
+              "RelativeDocumentMoniker": "..\\ET\\ET_ChiTietLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_ChiTietLuong.cs",
+              "RelativeToolTip": "..\\ET\\ET_ChiTietLuong.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:41:45.724Z",
+              "WhenOpened": "2024-11-18T02:56:51.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ET_KhuyenMai.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhuyenMai.cs",
-              "RelativeDocumentMoniker": "..\\ET\\ET_KhuyenMai.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhuyenMai.cs",
-              "RelativeToolTip": "..\\ET\\ET_KhuyenMai.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "ChiTietBangLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietBangLuong.cs",
+              "RelativeDocumentMoniker": "ChiTietBangLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietBangLuong.cs",
+              "RelativeToolTip": "ChiTietBangLuong.cs",
+              "ViewState": "AgIAAEEBAAAAAAAAAAD4v3cBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:30:54.678Z",
+              "WhenOpened": "2024-11-18T02:52:06.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ET_KhuyenMaiReport.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhuyenMaiReport.cs",
-              "RelativeDocumentMoniker": "..\\ET\\ET_KhuyenMaiReport.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\ET\\ET_KhuyenMaiReport.cs",
-              "RelativeToolTip": "..\\ET\\ET_KhuyenMaiReport.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwA4AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:30:51.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Menu.cs",
-              "RelativeDocumentMoniker": "Menu.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Menu.cs",
-              "RelativeToolTip": "Menu.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAlwIkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:16:47.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Menu.cs [Design]",
-              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Menu.cs",
-              "RelativeDocumentMoniker": "Menu.cs",
-              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\Menu.cs [Design]",
-              "RelativeToolTip": "Menu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:16:35.069Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "rptKhuyenMaiView.cs [Design]",
               "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptKhuyenMaiView.cs",
               "RelativeDocumentMoniker": "rptKhuyenMaiView.cs",
               "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptKhuyenMaiView.cs [Design]",
               "RelativeToolTip": "rptKhuyenMaiView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:15:43.601Z",
+              "WhenOpened": "2024-11-18T02:49:05.408Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "rptBangLuongView.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptBangLuongView.cs",
+              "RelativeDocumentMoniker": "rptBangLuongView.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptBangLuongView.cs",
+              "RelativeToolTip": "rptBangLuongView.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:48:29.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChiTietBangLuong.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietBangLuong.cs",
+              "RelativeDocumentMoniker": "ChiTietBangLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\ChiTietBangLuong.cs [Design]",
+              "RelativeToolTip": "ChiTietBangLuong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:42:56.219Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LichSuTinhLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\LichSuTinhLuong.cs",
+              "RelativeDocumentMoniker": "LichSuTinhLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\LichSuTinhLuong.cs",
+              "RelativeToolTip": "LichSuTinhLuong.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDwAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:41:21.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAL_BangLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_BangLuong.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\DAL_BangLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\DAL\\DAL_BangLuong.cs",
+              "RelativeToolTip": "..\\DAL\\DAL_BangLuong.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:35:27.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BUS_BangLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_BangLuong.cs",
+              "RelativeDocumentMoniker": "..\\BUS\\BUS_BangLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_BangLuong.cs",
+              "RelativeToolTip": "..\\BUS\\BUS_BangLuong.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwB4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:35:21.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BUS_ChiTietLuong.cs",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_ChiTietLuong.cs",
+              "RelativeDocumentMoniker": "..\\BUS\\BUS_ChiTietLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\BUS\\BUS_ChiTietLuong.cs",
+              "RelativeToolTip": "..\\BUS\\BUS_ChiTietLuong.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwB4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:34:04.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LichSuTinhLuong.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\LichSuTinhLuong.cs",
+              "RelativeDocumentMoniker": "LichSuTinhLuong.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\LichSuTinhLuong.cs [Design]",
+              "RelativeToolTip": "LichSuTinhLuong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:23:06.432Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "rptBangLuongView.cs [Design]",
+              "DocumentMoniker": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptBangLuongView.cs",
+              "RelativeDocumentMoniker": "rptBangLuongView.cs",
+              "ToolTip": "D:\\Hoc_Tap\\PTUD2\\QuanLyHeThongNhaSach\\PTUD2_QuanLyNhaSach\\QuanLyHeThongNhaSach\\system\\GUI\\rptBangLuongView.cs [Design]",
+              "RelativeToolTip": "rptBangLuongView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T02:20:58.539Z",
               "EditorCaption": " [Design]"
             }
           ]

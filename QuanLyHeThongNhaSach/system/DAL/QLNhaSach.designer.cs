@@ -4479,6 +4479,8 @@ namespace DAL
 		
 		private string _maBangLuong;
 		
+		private string _luongCB;
+		
 		private string _maNS;
 		
 		private System.Nullable<int> _ngayTC;
@@ -4501,6 +4503,8 @@ namespace DAL
     partial void OnmaCTLuongChanged();
     partial void OnmaBangLuongChanging(string value);
     partial void OnmaBangLuongChanged();
+    partial void OnluongCBChanging(string value);
+    partial void OnluongCBChanged();
     partial void OnmaNSChanging(string value);
     partial void OnmaNSChanged();
     partial void OnngayTCChanging(System.Nullable<int> value);
@@ -4560,6 +4564,26 @@ namespace DAL
 					this._maBangLuong = value;
 					this.SendPropertyChanged("maBangLuong");
 					this.OnmaBangLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_luongCB", DbType="VarChar(30)")]
+		public string luongCB
+		{
+			get
+			{
+				return this._luongCB;
+			}
+			set
+			{
+				if ((this._luongCB != value))
+				{
+					this.OnluongCBChanging(value);
+					this.SendPropertyChanging();
+					this._luongCB = value;
+					this.SendPropertyChanged("luongCB");
+					this.OnluongCBChanged();
 				}
 			}
 		}

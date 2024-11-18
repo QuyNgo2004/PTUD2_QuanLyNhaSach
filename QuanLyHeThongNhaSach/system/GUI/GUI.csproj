@@ -188,6 +188,12 @@
     <Compile Include="QuanLyCaTruc.Designer.cs">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptBangLuongView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptBangLuongView.Designer.cs">
+      <DependentUpon>rptBangLuongView.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptKhuyenMaiView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,8 +264,14 @@
     <EmbeddedResource Include="QuanLyCaTruc.resx">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptBangLuong.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptKhuyenMai.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBangLuongView.resx">
+      <DependentUpon>rptBangLuongView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptKhuyenMaiView.resx">
       <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
@@ -276,6 +288,8 @@
       <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ET.ET_BangLuong.datasource" />
+    <None Include="Properties\DataSources\ET.ET_ChiTietLuong.datasource" />
     <None Include="Properties\DataSources\ET.ET_KhuyenMaiReport.datasource" />
     <None Include="Properties\DataSources\ET.ET_NhanSu.datasource" />
     <None Include="Properties\Settings.settings">

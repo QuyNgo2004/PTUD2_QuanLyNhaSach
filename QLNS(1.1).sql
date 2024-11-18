@@ -163,6 +163,7 @@ go
 create table ChiTietLuong(
 maCTLuong int IDENTITY(1,1) primary key,
 maBangLuong varchar(30) foreign key references BangTinhLuong(maBangLuong),
+luongCB varchar(30),
 maNS varchar (7) foreign key references NhanSu(maNS),
 ngayTC int ,	
 ngayNghi int ,

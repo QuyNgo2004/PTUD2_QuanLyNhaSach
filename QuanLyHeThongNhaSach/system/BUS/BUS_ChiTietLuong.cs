@@ -30,6 +30,10 @@ namespace BUS
         {
             return DAL_ChiTietLuong.Instance.XemBangLuong(ma);
         }
+        public List<ET_ChiTietLuong> XemBangLuong_Report(string ma)
+        {
+            return DAL_ChiTietLuong.Instance.XemBangLuong_Report(ma);
+        }
         public bool ThemBangLuong(ET_ChiTietLuong bl)
         {
             return DAL_ChiTietLuong.Instance.ThemCTBangLuong(bl);

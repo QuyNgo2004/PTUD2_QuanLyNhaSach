@@ -2,48 +2,45 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix4">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.14791cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.21437cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.1898cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.70354cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.05563cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.68521cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>4.29917cm</Width>
+              <Width>3.69271cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.34083cm</Height>
+              <Height>0.6926cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Mã khuyến mãi</Value>
+                              <Value>Mã nhân sự</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -52,7 +49,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -68,14 +65,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tên khuyến mãi</Value>
+                              <Value>Tên nhân sự</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -84,7 +81,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -100,14 +97,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox20">
+                    <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tên hàng hóa</Value>
+                              <Value>Lương căn bảng</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -116,7 +113,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -132,18 +129,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox22">
+                    <Textbox Name="Textbox19">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tên </Value>
-                              <Style />
-                            </TextRun>
-                            <TextRun>
-                              <Value>hàng hóa khuyến mãi</Value>
+                              <Value>Ngày Làm</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -152,7 +145,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -168,14 +161,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox24">
+                    <Textbox Name="Textbox21">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value> Giảm Giá (%)</Value>
+                              <Value>Ngày tăng ca</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -184,7 +177,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -200,14 +193,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox26">
+                    <Textbox Name="Textbox23">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngày bắt đầu</Value>
+                              <Value>Ngày nghỉ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -216,7 +209,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -232,14 +225,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox28">
+                    <Textbox Name="Textbox25">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ngày kết thúc </Value>
+                              <Value>Tiền lương</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -248,39 +241,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox28</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox30">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Ghi Chú</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox30</rd:DefaultName>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -297,18 +258,18 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.34083cm</Height>
+              <Height>0.6926cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="MaKM">
+                    <Textbox Name="MaNS">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaKM.Value</Value>
+                              <Value>=Fields!MaNS.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -317,7 +278,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>MaKM</rd:DefaultName>
+                      <rd:DefaultName>MaNS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -333,14 +294,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TenKM">
+                    <Textbox Name="TenNS">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TenKM.Value</Value>
+                              <Value>=Fields!TenNS.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -349,7 +310,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TenKM</rd:DefaultName>
+                      <rd:DefaultName>TenNS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -365,14 +326,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TenHH">
+                    <Textbox Name="LuongCB">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TenHH.Value</Value>
+                              <Value>=Fields!LuongCB.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -381,7 +342,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TenHH</rd:DefaultName>
+                      <rd:DefaultName>LuongCB</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -397,14 +358,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TenHH_KM">
+                    <Textbox Name="NgayLam">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TenHH_KM.Value</Value>
+                              <Value>=Fields!NgayLam.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -413,7 +374,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TenHH_KM</rd:DefaultName>
+                      <rd:DefaultName>NgayLam</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -429,14 +390,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="MaGiamGia">
+                    <Textbox Name="NgayTC">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaGiamGia.Value</Value>
+                              <Value>=Fields!NgayTC.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -445,7 +406,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>MaGiamGia</rd:DefaultName>
+                      <rd:DefaultName>NgayTC</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -461,82 +422,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NgayBD">
+                    <Textbox Name="NgayNghi">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NgayBD.Value</Value>
-                              <Style>
-                                <Format>dd-MM-yyyy</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>NgayBD</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="NgayKT">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!NgayKT.Value</Value>
-                              <Style>
-                                <Format>dd-MM-yyyy</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>NgayKT</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="GhiChu">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!GhiChu.Value</Value>
+                              <Value>=Fields!NgayNghi.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -545,7 +438,39 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>GhiChu</rd:DefaultName>
+                      <rd:DefaultName>NgayNghi</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TienLuong">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TienLuong.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TienLuong</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -572,7 +497,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -585,11 +509,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>KhuyenMaiReport</DataSetName>
-        <Top>2.81813cm</Top>
-        <Left>1.35064cm</Left>
-        <Height>2.68166cm</Height>
-        <Width>25.79563cm</Width>
+        <DataSetName>LuongReport</DataSetName>
+        <Top>4.11141cm</Top>
+        <Left>1.70674cm</Left>
+        <Height>1.3852cm</Height>
+        <Width>25.84897cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -603,21 +527,24 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DANH SÁCH KHUYẾN MÃI</Value>
+                <Value>DANH SÁCH LƯƠNG 
+NHÂN SỰ</Value>
                 <Style>
                   <FontSize>30pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.64855cm</Top>
-        <Left>6.90689cm</Left>
-        <Height>1.29701cm</Height>
-        <Width>13.90354cm</Width>
+        <Top>0.51566cm</Top>
+        <Left>5.85406cm</Left>
+        <Height>2.59347cm</Height>
+        <Width>15.88147cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -630,13 +557,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.82997in</Height>
+    <Height>4.95833in</Height>
     <Style />
   </Body>
-  <Width>16.13976in</Width>
+  <Width>11.54167in</Width>
   <Page>
     <PageHeader>
-      <Height>3.76682cm</Height>
+      <Height>4.32562cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -727,8 +654,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>0.57891cm</Top>
-          <Left>1.35064cm</Left>
+          <Top>0.25957cm</Top>
+          <Left>1.76011cm</Left>
           <Height>2.73812cm</Height>
           <Width>6.95452cm</Width>
           <Style>
@@ -752,8 +679,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>1.10808cm</Top>
-          <Left>14.40752cm</Left>
+          <Top>0.27918cm</Top>
+          <Left>14.19236cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -782,8 +709,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>2.45746cm</Top>
-          <Left>14.40752cm</Left>
+          <Top>1.33752cm</Top>
+          <Left>14.17317cm</Left>
           <Height>0.6cm</Height>
           <Width>1.67979cm</Width>
           <ZIndex>2</ZIndex>
@@ -819,8 +746,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.10808cm</Top>
-          <Left>17.10627cm</Left>
+          <Top>0.27918cm</Top>
+          <Left>16.89111cm</Left>
           <Height>0.6cm</Height>
           <Width>4.2198cm</Width>
           <ZIndex>3</ZIndex>
@@ -849,8 +776,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.10808cm</Top>
-          <Left>21.76294cm</Left>
+          <Top>0.27918cm</Top>
+          <Left>21.54778cm</Left>
           <Height>0.6cm</Height>
           <Width>2.10312cm</Width>
           <ZIndex>4</ZIndex>
@@ -889,10 +816,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>2.44009cm</Top>
-          <Left>16.26369cm</Left>
+          <Top>1.32015cm</Top>
+          <Left>16.02934cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.34188cm</Width>
+          <Width>5.08157cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -926,11 +853,218 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>1.10808cm</Top>
-          <Left>23.97189cm</Left>
+          <Top>0.27918cm</Top>
+          <Left>23.75673cm</Left>
           <Height>0.6cm</Height>
           <Width>3.17437cm</Width>
           <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Ngày bắt đầu:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox28</rd:DefaultName>
+          <Top>2.39769cm</Top>
+          <Left>14.17317cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NgayBD.Value, "BangLuongReport")</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>dd-MM-yyyy</Format>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox8</rd:DefaultName>
+          <Top>2.39769cm</Top>
+          <Left>16.87192cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.2198cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox30">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Ngày kết thúc:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox30</rd:DefaultName>
+          <Top>2.39769cm</Top>
+          <Left>21.52859cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NgayKT.Value, "BangLuongReport")</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>dd-MM-yyyy</Format>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox8</rd:DefaultName>
+          <Top>2.39769cm</Top>
+          <Left>24.13442cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.42131cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Mã bảng lương:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>1.35325cm</Top>
+          <Left>21.52859cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.74694cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox18">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!MaBangLuong.Value, "BangLuongReport")</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>1.32015cm</Top>
+          <Left>24.38136cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.17437cm</Width>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -975,8 +1109,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.32604cm</Top>
-          <Left>24.64627cm</Left>
+          <Top>0.6525cm</Top>
+          <Left>25.05573cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -1012,55 +1146,10 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>1f7082d8-650a-4063-9005-60a6551f16cd</rd:DataSourceID>
+      <rd:DataSourceID>cb9876ab-804c-42c1-8933-f47662060314</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="KhuyenMaiReport">
-      <Query>
-        <DataSourceName>ET</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="GhiChu">
-          <DataField>GhiChu</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MaGiamGia">
-          <DataField>MaGiamGia</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaKM">
-          <DataField>MaKM</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NgayBD">
-          <DataField>NgayBD</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="NgayKT">
-          <DataField>NgayKT</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="TenHH">
-          <DataField>TenHH</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TenHH_KM">
-          <DataField>TenHH_KM</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TenKM">
-          <DataField>TenKM</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>ET</rd:DataSetName>
-        <rd:TableName>ET_KhuyenMaiReport</rd:TableName>
-        <rd:ObjectDataSourceType>ET.ET_KhuyenMaiReport, ET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="NhanSuReport">
       <Query>
         <DataSourceName>ET</DataSourceName>
@@ -1118,6 +1207,92 @@
         <rd:ObjectDataSourceType>ET.ET_NhanSu, ET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="LuongReport">
+      <Query>
+        <DataSourceName>ET</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ChucVu">
+          <DataField>ChucVu</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LuongCB">
+          <DataField>LuongCB</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaBangLuong">
+          <DataField>MaBangLuong</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaCTLuong">
+          <DataField>MaCTLuong</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaNS">
+          <DataField>MaNS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NgayLam">
+          <DataField>NgayLam</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NgayNghi">
+          <DataField>NgayNghi</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NgayTC">
+          <DataField>NgayTC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TenNS">
+          <DataField>TenNS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TienLuong">
+          <DataField>TienLuong</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ET</rd:DataSetName>
+        <rd:TableName>ET_ChiTietLuong</rd:TableName>
+        <rd:ObjectDataSourceType>ET.ET_ChiTietLuong, ET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="BangLuongReport">
+      <Query>
+        <DataSourceName>ET</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaBangLuong">
+          <DataField>MaBangLuong</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaQL">
+          <DataField>MaQL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NgayBD">
+          <DataField>NgayBD</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NgayKT">
+          <DataField>NgayKT</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TenQL">
+          <DataField>TenQL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ET</rd:DataSetName>
+        <rd:TableName>ET_BangLuong</rd:TableName>
+        <rd:ObjectDataSourceType>ET.ET_BangLuong, ET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="logo">
@@ -1164,5 +1339,5 @@ sAeacZ3OVHNepAeoH/xT6rKfTYT86TTnl+JLONEdgDCSWMkAq4KaUlcaRnr5XCEkHa/VeUY17sfpH0az
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>6739e79e-8436-43db-9b80-7f6b57da5264</rd:ReportID>
+  <rd:ReportID>a1b07d59-9d94-432d-a2be-0945f91b5e26</rd:ReportID>
 </Report>

@@ -202,6 +202,7 @@
     <Type Name="ChiTietLuong">
       <Column Name="maCTLuong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="maBangLuong" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="luongCB" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="maNS" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="ngayTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ngayNghi" Type="System.Int32" DbType="Int" CanBeNull="true" />

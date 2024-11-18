@@ -98,7 +98,7 @@ namespace DAL
                 dbNhaSach.KhuyenMais.InsertOnSubmit(km);
                 dbNhaSach.SubmitChanges();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 flag = false;
             }

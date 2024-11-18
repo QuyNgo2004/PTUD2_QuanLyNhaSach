@@ -1,4 +1,5 @@
 ﻿using BUS;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,10 @@ namespace GUI
     {
         BUS_BangLuong bangLuong = BUS_BangLuong.Instance;
         BUS_ChiTietLuong chiTietLuong = BUS_ChiTietLuong.Instance;
-        public LichSuTinhLuong()
+        ET_NhanSu ns = new ET_NhanSu();
+        public LichSuTinhLuong(ET_NhanSu ns)
         {
+            this.ns = ns;
             InitializeComponent();
         }
 
@@ -64,6 +67,19 @@ namespace GUI
                 }
             }
             catch (Exception ex) { }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ET_BangLuong bangLuong = BUS_BangLuong.Instance.TimBangLuong(txtMaLuong.Text);
+                rptBangLuongView rptBangLuong = new rptBangLuongView(bangLuong,ns);
+                rptBangLuong.ShowDialog();
+            }catch(Exception ex)
+            {
+
+            }
         }
     }
 }
