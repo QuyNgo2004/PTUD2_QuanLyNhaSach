@@ -55,7 +55,7 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Không tìm thấy khách hàng có SDT này", "Thông báo");
-                    txtSDT.Focus();
+                    txtSDT.Clear();
                     txtMaKH.Clear();
                     txtTenKH.Clear();
                     txtDiaChi.Clear();
@@ -481,6 +481,11 @@ namespace GUI
             DialogResult dar = MessageBox.Show("Bạn có muốn thanh toán?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dar == DialogResult.Yes)
             {
+                string maKH = txtMaKH.Text.Trim();
+                if (string.IsNullOrEmpty(maKH))
+                {
+                    maKH = "KH000"; // Sử dụng mã khách hàng mặc định cho khách vãng lai
+                }
                 ET_HoaDon hoaDon = null;
                 try
                 {
@@ -488,7 +493,7 @@ namespace GUI
                     hoaDon = new ET_HoaDon(
                         hd.AutoMa_HoaDon(),                   // Mã hóa đơn duy nhất
                         Program.maNS,
-                        txtMaKH.Text,                         // Lấy mã khách hàng từ textbox
+                        maKH,                                 // Lấy mã khách hàng từ textbox
                         TinhTongTien(),                       // Tổng tiền từ hàm TinhTongTien
                         DateTime.Now,                         // Ngày hiện tại
                         ""                                    // Ghi chú từ textbox
@@ -544,7 +549,12 @@ namespace GUI
                         }
                         dgvHangHoa.DataSource = null;
                         txtTongTien.Clear();
-                        
+                        danhSachSanPham.Clear();
+                        bindingSourceSanPham.Clear();
+                        bindingSourceSanPham.DataSource = null; // Xóa liên kết hiện tại
+                        bindingSourceSanPham.DataSource = danhSachSanPham; // Gắn lại danh sách trống
+                        dgvHangHoa.DataSource = bindingSourceSanPham;
+
                     }
 
                     else
