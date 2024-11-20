@@ -70,8 +70,6 @@ E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongN
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.Up2Date
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.dll
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.pdb
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -131,6 +129,8 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\BUS\obj\Debug\BUS.pdb

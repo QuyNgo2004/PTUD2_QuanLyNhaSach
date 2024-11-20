@@ -58,8 +58,6 @@ E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongN
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 E:\fit-tdc-dw\ptungdung\NhapHang_LSNhapHang\HangHoa_NhapHang_vr01\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -117,6 +115,8 @@ D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\s
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.dll
 D:\Hoc_Tap\PTUD2\QuanLyHeThongNhaSach\PTUD2_QuanLyNhaSach\QuanLyHeThongNhaSach\system\DAL\obj\Debug\DAL.pdb
