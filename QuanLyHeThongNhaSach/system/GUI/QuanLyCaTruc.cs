@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DevExpress.Data.Linq.Helpers;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,10 @@ namespace GUI
         BUS_NhanSu ns = BUS_NhanSu.Instance;
         BUS_ChiTietCaTruc ctct = BUS_ChiTietCaTruc.Instance;
         private string MaCTCT;
-        public QuanLyCaTruc()
+        private ET_NhanSu ns_dn = null;
+        public QuanLyCaTruc(ET_NhanSu ns_dn)
         {
+            this.ns_dn = ns_dn;
             InitializeComponent();
         }
         public void Load_QLCaTruc()
@@ -66,7 +69,7 @@ namespace GUI
         private void btnCT_Click(object sender, EventArgs e)
         {
             Menu formMenu = (Menu)this.ParentForm;
-            formMenu.openChildForm(new CaTruc());
+            formMenu.openChildForm(new CaTruc(ns_dn));
             this.Close();
         }
 
@@ -74,7 +77,7 @@ namespace GUI
         {
             
             Menu formMenu = (Menu)this.ParentForm;
-            formMenu.openChildForm(new NhanSu());
+            formMenu.openChildForm(new NhanSu(ns_dn));
             this.Close();
         }
 

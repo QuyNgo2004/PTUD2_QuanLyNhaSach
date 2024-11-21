@@ -18,9 +18,11 @@ namespace GUI
         private BUS_ChiNhanh cn = BUS_ChiNhanh.Instance;
         private BUS_CaTruc ct = BUS_CaTruc.Instance;
         private int maCaTruc;
-        public CaTruc()
+        private ET_NhanSu ns_dn = null;
+        public CaTruc(ET_NhanSu ns_dn)
         {
             InitializeComponent();
+            this.ns_dn = ns_dn; 
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace GUI
         {
             
             Menu formMenu = (Menu)this.ParentForm;
-            formMenu.openChildForm(new QuanLyCaTruc());
+            formMenu.openChildForm(new QuanLyCaTruc(ns_dn));
             this.Close();
         }
 

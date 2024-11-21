@@ -26,10 +26,10 @@ namespace GUI
             InitializeComponent();
             this.quanLy = ns;
         }
-        public NhanSu()
-        {
-            InitializeComponent();
-        }
+        //public NhanSu()
+        //{
+        //    InitializeComponent();
+        //}
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -335,7 +335,7 @@ namespace GUI
         private void btnCaTruc_Click(object sender, EventArgs e)
         {
             Menu formMenu = (Menu)this.ParentForm;
-            formMenu.openChildForm(new QuanLyCaTruc());
+            formMenu.openChildForm(new QuanLyCaTruc(quanLy));
             this.Close();
         }
 

@@ -83,7 +83,8 @@ namespace GUI
             else
             {
                 MessageBox.Show("Connection faie!");
-                Close();
+                Login_Server frm = new Login_Server();
+                frm.ShowDialog();
             }
         }
     }

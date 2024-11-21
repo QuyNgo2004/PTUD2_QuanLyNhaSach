@@ -95,14 +95,22 @@ namespace GUI
         private NhapHang nhaphang;
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
-            if (nhaphang == null || nhaphang.IsDisposed)
+            if(ns_ET.ChucVu == 1)
             {
-                openChildForm(new NhapHang());
+                if (nhaphang == null || nhaphang.IsDisposed)
+                {
+                    openChildForm(new NhapHang());
+                }
+                else
+                {
+                    nhaphang.BringToFront();
+                }
             }
             else
             {
-                nhaphang.BringToFront();
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         /// <summary>
@@ -114,14 +122,22 @@ namespace GUI
         private NhanSu nhansu;
         private void btnDanhSachNhanSu_Click(object sender, EventArgs e)
         {
-            if (nhansu == null || nhansu.IsDisposed)
+            if (ns_ET.ChucVu == 1)
             {
-                openChildForm(new NhanSu(ns_ET));
+                if (nhansu == null || nhansu.IsDisposed)
+                {
+                    openChildForm(new NhanSu(ns_ET));
+                }
+                else
+                {
+                    nhansu.BringToFront();
+                }
             }
             else
             {
-                nhansu.BringToFront();
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         /// <summary>
@@ -133,14 +149,22 @@ namespace GUI
         private ChiTietKhuyenMai khuyenmai;
         private void btnCTKhuyenMai_Click(object sender, EventArgs e)
         {
-            if (khuyenmai == null || khuyenmai.IsDisposed)
+            if (ns_ET.ChucVu == 1)
             {
-                openChildForm(new ChiTietKhuyenMai(ns_ET));
+                if (khuyenmai == null || khuyenmai.IsDisposed)
+                {
+                    openChildForm(new ChiTietKhuyenMai(ns_ET));
+                }
+                else
+                {
+                    khuyenmai.BringToFront();
+                }
             }
             else
             {
-                khuyenmai.BringToFront();
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         /// <summary>
@@ -152,14 +176,22 @@ namespace GUI
         private NhaPhanPhoi npp;
         private void btnDanhSachNhaPhanPhoi_Click(object sender, EventArgs e)
         {
-            if (npp == null || npp.IsDisposed)
+            if (ns_ET.ChucVu == 1)
             {
-                openChildForm(new NhaPhanPhoi());
+                if (npp == null || npp.IsDisposed)
+                {
+                    openChildForm(new NhaPhanPhoi());
+                }
+                else
+                {
+                    npp.BringToFront();
+                }
             }
             else
             {
-                npp.BringToFront();
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
         /// <summary>
         /// button Khách Hàng.
@@ -182,14 +214,22 @@ namespace GUI
         private frmChiNhanh chiNhanh;
         private void btnDanhSachChiNhanh_Click(object sender, EventArgs e)
         {
-            if (chiNhanh == null || chiNhanh.IsDisposed)
+            if (ns_ET.ChucVu == 1)
             {
-                openChildForm(new frmChiNhanh());
+                if (chiNhanh == null || chiNhanh.IsDisposed)
+                {
+                    openChildForm(new frmChiNhanh());
+                }
+                else
+                {
+                    kh.BringToFront();
+                }
             }
             else
             {
-                kh.BringToFront();
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+           
             //pnlMenuShow.Controls.Clear();
             //UCChiNhanh chiNhanh = new UCChiNhanh();
             //pnlMenuShow.Tag = chiNhanh;
@@ -216,7 +256,8 @@ namespace GUI
 
         private void Menu_Load(object sender, EventArgs e)
         {
-           
+            
         }
+        
     }
 }

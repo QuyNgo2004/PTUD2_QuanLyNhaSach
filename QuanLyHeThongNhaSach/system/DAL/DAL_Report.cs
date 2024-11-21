@@ -24,10 +24,10 @@ namespace DAL
 
         public DataTable GetDataInHoaDon(string maHD)
         {
-            using (QLNhaSachDataContext db = new QLNhaSachDataContext())
-            {
+            //using (QLNhaSachDataContext db = new QLNhaSachDataContext())
+            //{
                 // Gọi stored procedure qua DBML
-                var result = db.InHoaDon(maHD);
+                var result = dbNhaSach.InHoaDon(maHD);
 
                 // Tạo DataTable để chứa dữ liệu
                 DataTable dt = new DataTable();
@@ -58,7 +58,7 @@ namespace DAL
                 }
 
                 return dt;
-            }
+            //}
         }
 
         
