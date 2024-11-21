@@ -124,7 +124,7 @@ namespace GUI
         private void btnIn_Click(object sender, EventArgs e)
         {
             Menu formMenu = (Menu)this.ParentForm;
-            formMenu.openChildForm(new RpNhapHang());
+            //formMenu.openChildForm(new RpNhapHang());
         }
     }
 }
