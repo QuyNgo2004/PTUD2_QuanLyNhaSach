@@ -126,4 +126,5 @@ namespace BUS
             return dal_hh.TimNPP(maNPP, maHH);
         }
     }
+}
 
