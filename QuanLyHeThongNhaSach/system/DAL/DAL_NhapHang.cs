@@ -42,6 +42,22 @@ namespace DAL
             return nhaphang;
         }
 
+        public IQueryable XemDSNhapHangTheoNPP(string maNPP)
+        {
+            IQueryable nhaphang = from nh in dbNhaSach.NhapHangs
+                                  join npp in dbNhaSach.NhaPhanPhois on nh.maNPP equals npp.maNPP
+                                  where npp.maNPP == maNPP
+                                  select new
+                                  {
+                                      MaNhapHang = nh.maNH,
+                                      MaNPP = npp.maNPP,
+                                      TenNPP = npp.tenNPP,
+                                      DiaChi = npp.diachiNPP,
+                                      NgayNhap = nh.ngayNH,
+                                  };
+            return nhaphang;
+        }
+
         public bool ThemNhapHang(ET_NhapHang etNH)
         {
             try
@@ -103,6 +119,29 @@ namespace DAL
             return NewMaNH;
         }
 
+        public IQueryable TimNhapHangTheoMaNPP(string tenNPP)
+        {
+            try
+            {
+                var result = from nh in dbNhaSach.ExecuteQuery<dynamic>(
+                                 "EXEC TimNhapHangTheoMaNPP @TenNPP = {3}", tenNPP)
+                             select new
+                             {
+                                 MaNhapHang = nh.MaNhapHang,
+                                 NgayNhapHang = nh.NgayNhapHang,
+                                 MaNhaPhanPhoi = nh.MaNhaPhanPhoi,
+                                 TenNhaPhanPhoi = nh.TenNhaPhanPhoi,
+                                 DiaChi = nh.DiaChi,
+                                 SoDienThoai = nh.SoDienThoai,
+                                 Email = nh.Email
+                             };
 
+                return result.AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi tìm nhập hàng theo mã nhà phân phối: {ex.Message}");
+            }
+        }
     }
 }

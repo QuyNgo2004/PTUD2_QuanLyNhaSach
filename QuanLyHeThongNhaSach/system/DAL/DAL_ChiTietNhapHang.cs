@@ -58,6 +58,42 @@ namespace DAL
             return chitiet;
         }
 
+        public ET_ChiTietNhapHang TimChiTietNhapHangTheoMaHH(string maHH, string maCTNH)
+        {
+            IQueryable<ET_ChiTietNhapHang> chitiet = from ct in dbNhaSach.ChTietNhapHangs
+                                                     where ct.maHH == maHH && ct.maCTNCC.ToString() == maCTNH
+                                                     select new ET_ChiTietNhapHang
+                                                     {
+                                                         MaHH = ct.maHH,
+                                                         MaCTNCC = ct.maCTNCC
+                                                     };
+            return chitiet.FirstOrDefault();
+        }
+
+        public ET_HangHoa TimNPP(string maNPP, string maHH)
+        {
+            IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
+                                                 //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                                 //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                             where hh.maNPP == maNPP && hh.maHH == maHH
+                                             select new ET_HangHoa
+                                             {
+                                                 MaHH = hh.maHH,
+                                                 TenHH = hh.tenHH,
+                                                 LoaiHH = hh.maLHH,
+                                                 GiaHH = hh.giaHH,
+                                                 DonviTinh = hh.donViTinh,
+                                                 SlTon = hh.soLuongTon,
+                                                 NhaPP = hh.maNPP,
+                                                 TacGia = hh.tacGia,
+                                                 MoTa = hh.moTa,
+                                                 GhiChu = hh.ghiChu,
+                                                 TinhTrang = hh.tinhTrang
+                                             };
+            ET_HangHoa hhoa = hanghoa.FirstOrDefault();
+            return hhoa;
+        }
+
         public bool ThemChiTiet(ET_ChiTietNhapHang etCT)
         {
             try

@@ -450,7 +450,7 @@
             this.txtMaLuong.Enabled = false;
             this.txtMaLuong.Location = new System.Drawing.Point(163, 24);
             this.txtMaLuong.Name = "txtMaLuong";
-            this.txtMaLuong.Size = new System.Drawing.Size(171, 26);
+            this.txtMaLuong.Size = new System.Drawing.Size(301, 26);
             this.txtMaLuong.TabIndex = 3;
             // 
             // label5

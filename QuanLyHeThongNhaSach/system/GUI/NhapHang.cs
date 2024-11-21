@@ -54,16 +54,16 @@ namespace GUI
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
-            //HienThiDanhSachNhapHang();
+            HienThiDanhSachNhapHang(); //cái này để load mã tự động nè, đừng có xóa dùng toai =)))
 
             txtMaNH.Text = BUS_NhapHang.Instance.TaoMaHangTuDong();
             try
             {
 
-                cboTenNPP.DataSource = npp.loadnpp();
-                cboTenNPP.DisplayMember = "TenNPP";
-                cboTenNPP.ValueMember = "MaNPP";
-                cboTenNPP_SelectedIndexChanged(sender, e);
+                //cboTenNPP.DataSource = npp.loadnpp();
+                //cboTenNPP.DisplayMember = "TenNPP";
+                //cboTenNPP.ValueMember = "MaNPP";
+                //cboTenNPP_SelectedIndexChanged(sender, e);
                 bindingSourceSanPham.DataSource = danhSachSanPham;
                 dgvDSNhapHang.DataSource = bindingSourceSanPham;
                 dgvDSNhapHang.AutoGenerateColumns = true;
@@ -79,7 +79,8 @@ namespace GUI
 
         private void HienThiDanhSachNhapHang()
         {
-              nh.XemDSNH(dgvDSNhapHang);
+            //nh.XemDSNH(dgvDSNhapHang, txtMaNPP.Text);
+            nh.XemDSNH(dgvDSNhapHang);
         }
 
         /// <summary>
@@ -148,27 +149,26 @@ namespace GUI
 
         private void txtMaHH_Validated(object sender, EventArgs e)
         {
-
-            ET_HangHoa eT_HngHoa = hh.TimNPP(txtMaNPP.Text, txtMaHH.Text);
-           if (eT_HngHoa != null)
-           {
-               txtTenHangHoa.Text = eT_HngHoa.TenHH;
-                    cboTenNPP.Enabled = true;
-           }
-           else
-           {
-               MessageBox.Show("Không tìm thấy sản phẩm ở nhà phân phối đã chọn !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //ET_HangHoa etNPP = hh.TimHH(txtMaHH.Text);
+            ET_HangHoa eT_HngHoa = hh.TimHangHoaTheoMa(txtMaHH.Text);
+            if (eT_HngHoa != null)
+            {
+                txtTenHangHoa.Text = eT_HngHoa.TenHH;
+                txtMaNPP.Text = eT_HngHoa.NhaPP;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm đã chọn !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMaHH.Text = string.Empty;
-               // txtMaNPP.Text = etNPP.NhaPP;
-               // cboTenNPP.SelectedIndex = cboTenNPP.FindForm(txtMaNPP.Text);
-           }
+                txtMaNPP.Text = string.Empty;
+                //txtMaNPP.Text = etNPP.NhaPP;
+                // cboTenNPP.SelectedIndex = cboTenNPP.FindForm(txtMaNPP.Text);
+            }
         }
 
-        private void cboTenNPP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtMaNPP.Text = cboTenNPP.SelectedValue.ToString();
-        }
+        //private void cboTenNPP_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    txtMaNPP.Text = cboTenNPP.SelectedValue.ToString();
+        //}
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
@@ -231,9 +231,6 @@ namespace GUI
             }
 
         }
-    
-
-
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -257,9 +254,7 @@ namespace GUI
                         bindingSourceSanPham.ResetBindings(false);
 
                         // Xóa các ô nhập liệu để cho biết sản phẩm đã bị xóa
-                        cboTenNPP.DataSource = npp.loadnpp();
-                        cboTenNPP.DisplayMember = "TenNPP";
-                        cboTenNPP.ValueMember = "MaNPP";
+                        txtMaNPP.Clear();
                         txtMaHH.Clear();
                         txtTenHangHoa.Clear();
                         txtSLNhap.Clear();
@@ -341,7 +336,6 @@ namespace GUI
                 try
                 {
                     string maNPP = txtMaNPP.Text;
-                    string tenNPP = cboTenNPP.Text;
                     string maHH = txtMaHH.Text;
                     string tenHH = txtTenHangHoa.Text;
                     int soLuong = int.Parse(txtSLNhap.Text);
@@ -361,9 +355,9 @@ namespace GUI
                         bindingSourceSanPham.ResetBindings(false);
 
                         // Clear input fields
-                        cboTenNPP.DataSource = npp.loadnpp();
-                        cboTenNPP.DisplayMember = "TenNPP";
-                        cboTenNPP.ValueMember = "MaNPP";
+                        //cboTenNPP.DataSource = npp.loadnpp();
+                        //cboTenNPP.DisplayMember = "TenNPP";
+                        //cboTenNPP.ValueMember = "MaNPP";
                         txtMaHH.Clear();
                         txtTenHangHoa.Clear();
                         txtSLNhap.Clear();
@@ -395,9 +389,7 @@ namespace GUI
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            cboTenNPP.DataSource = npp.loadnpp();
-            cboTenNPP.DisplayMember = "TenNPP";
-            cboTenNPP.ValueMember = "MaNPP";
+            txtMaNPP.Clear();
             txtMaHH.Clear();
             txtTenHangHoa.Clear();
             txtSLNhap.Clear();

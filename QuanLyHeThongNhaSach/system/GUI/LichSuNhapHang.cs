@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.Data.Linq.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,16 @@ namespace GUI
         private void LichSuNhapHang_Load(object sender, EventArgs e)
         {
             HienThiDanhSachNhapHang();
+            BUS_NhapHang.Instance.layMaNhaPhanPhoi(cboMaNPP);
         }
 
         private void HienThiDanhSachNhapHang()
         {
-            nh.XemDSNH(dgvLSNH);
+            //if (cboMaNPP.SelectedValue != null)
+            //{
+            //    nh.XemDSNH(dgvLSNH, cboMaNPP.SelectedValue.ToString());
+            //}
+            nh.XemDSLSNH(cboMaNPP.Text);
         }
 
         private void HienThiDanhSachChiTiet(string maNH)
@@ -56,47 +62,48 @@ namespace GUI
 
         private void cboMaNPP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (nh.XemDSNH(cboMaNPP.SelectedValue.ToString()).Count() > 0)
-            //    {
+            try
+            {
+                // Kiểm tra giá trị SelectedValue
+                if (cboMaNPP.SelectedValue == null || string.IsNullOrEmpty(cboMaNPP.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Vui lòng chọn một nhà phân phối hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            //        cboCaTruc.DataSource = ct.Load_CaTruc(cboCN.SelectedValue.ToString());
-            //        cboCaTruc.DisplayMember = "Tên";
-            //        cboCaTruc.ValueMember = "Mã";
-            //        ctct.hienThiCTCaTruc(dgvDSCaTruc, int.Parse(cboCaTruc.SelectedValue.ToString()));
-            //    }
-            //    else
-            //    {
-            //        cboCaTruc.DataSource = null;
-            //        dgvDSCaTruc.DataSource = null;
-            //    }
-            //    txtMaNS.Text = null;
-            //    txtTenNS.Text = null;
-            //    ns.hienThiNhanSu(dgvNV, cboCN.SelectedValue.ToString());
-            //    //ctct.hienThiCTCaTruc(dgvDSCaTruc,int.Parse(cboCaTruc.SelectedValue.ToString()));
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+                // Lấy danh sách nhập hàng từ nhà phân phối
+                string maNPP = cboMaNPP.SelectedValue.ToString();
+                var danhSachNhapHang = nh.XemDSLSNH(maNPP);
+
+                // Kiểm tra dữ liệu trả về
+                if (danhSachNhapHang != null && danhSachNhapHang.Count() > 0)
+                {
+                    // Hiển thị danh sách nhập hàng lên DataGridView
+                    dgvLSNH.DataSource = danhSachNhapHang;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị lỗi chi tiết
+                MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvLSNH.SelectedRows.Count > 0)
-            {
-                DialogResult d = MessageBox.Show("Hãy chắc chắn rằng bạn muốn xóa dữ liệu vừa nhập !", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (d == DialogResult.Yes)
-                {
-                   // BUS_NhapHang.Instance.XoaNhapHang(dgvLSNH);
-                    BUS_NhapHang.Instance.XemDSNH(dgvLSNH);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if (dgvLSNH.SelectedRows.Count > 0)
+            //{
+            //    DialogResult d = MessageBox.Show("Hãy chắc chắn rằng bạn muốn xóa dữ liệu vừa nhập !", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (d == DialogResult.Yes)
+            //    {
+            //       // BUS_NhapHang.Instance.XoaNhapHang(dgvLSNH);
+            //        BUS_NhapHang.Instance.XemDSNH(dgvLSNH, cboMaNPP.SelectedValue.ToString());
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng chọn dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void dgvLSNH_Click(object sender, EventArgs e)
@@ -114,18 +121,10 @@ namespace GUI
 
         }
 
-        private void txtMaHH_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnIn_Click(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Không nhập khoảng trắng, ký tự đặc biệt hay chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtMaHH.Text.Length > 12 && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-                MessageBox.Show("Không thể nhập mã chức vụ quá 13 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Menu formMenu = (Menu)this.ParentForm;
+            formMenu.openChildForm(new RpNhapHang());
         }
     }
 }

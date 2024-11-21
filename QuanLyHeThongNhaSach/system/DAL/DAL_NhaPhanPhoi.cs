@@ -24,7 +24,16 @@ namespace DAL
             }
         }
         //QLNhaSachDataContext db = new QLNhaSachDataContext();
-
+        public IQueryable layMaNhaPhanPhoi()
+        {
+            IQueryable dsNhaPhanPhoi = from ncc in DbNhaSach.NhaPhanPhois
+                                       select new
+                                       {
+                                           ncc.maNPP,
+                                           ncc.tenNPP,
+                                       };
+            return dsNhaPhanPhoi;
+        }
         public IQueryable layDSNhaPhanPhoi()
         {
             IQueryable dsNhaPhanPhoi = from ncc in DbNhaSach.NhaPhanPhois
@@ -158,6 +167,21 @@ namespace DAL
                                              };
             ET_NhaPhanPhoi cn = npp.FirstOrDefault();
             return cn;
+        }
+
+        public List<dynamic> LayDanhSachNPP()
+        {
+            try
+            {
+                var ds = dbNhaSach.ExecuteQuery<dynamic>("SELECT MaNPP, TenNPP FROM NhaPhanPhoi").ToList();
+                if (ds.Count == 0)
+                    throw new Exception("Không tìm thấy nhà phân phối nào!");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách nhà phân phối: {ex.Message}");
+            }
         }
     }
 }

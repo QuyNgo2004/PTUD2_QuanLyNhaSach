@@ -46,6 +46,7 @@
             this.lblNhapHang = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.btnIn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuHoaDon)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -270,6 +271,21 @@
             this.dgvDSHangHoa.RowTemplate.Height = 28;
             this.dgvDSHangHoa.Size = new System.Drawing.Size(516, 289);
             this.dgvDSHangHoa.TabIndex = 0;
+            // 
+            // btnIn
+            // 
+            this.btnIn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnIn.FlatAppearance.BorderSize = 0;
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Location = new System.Drawing.Point(330, 32);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(137, 23);
+            this.btnIn.TabIndex = 10;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = false;
             // 
             // DanhSachHangDon
             // 

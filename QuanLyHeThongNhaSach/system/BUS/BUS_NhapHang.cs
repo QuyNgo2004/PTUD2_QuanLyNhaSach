@@ -33,6 +33,11 @@ namespace BUS
             dgvDSHH.DataSource = dalNhapHang.XemDSNhapHang();
         }
 
+        public IQueryable XemDSLSNH(string maNPP)
+        {
+            return DAL_NhapHang.Instance.XemDSNhapHangTheoNPP(maNPP);
+        }
+
         public bool ThemNhapHang(ET_NhapHang etNH)
         {
             try
@@ -61,10 +66,40 @@ namespace BUS
             //}
         }
 
+        public void TimNhapHangTheoMaNPP(string maNPP, DataGridView dgv)
+        {
+            try
+            {
+                dgv.DataSource = DAL_NhapHang.Instance.TimNhapHangTheoMaNPP(maNPP);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public string TaoMaHangTuDong()
         {
             return dalNhapHang.TaoMaHangHoaTuDong();
         }
 
+        public void layMaNhaPhanPhoi(ComboBox cbo )
+        {
+            cbo.DataSource = DAL_NhaPhanPhoi.Instance.layMaNhaPhanPhoi();
+            cbo.ValueMember = "maNPP";
+            cbo.DisplayMember = "tenNPP";
+        }
+
+        public void LayDanhSachNhaPhanPhoi(ComboBox cbo)
+        {
+            try
+            {
+                cbo.DataSource = DAL_NhaPhanPhoi.Instance.LayDanhSachNPP(); // Lấy danh sách nhà phân phối
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách nhà phân phối: {ex.Message}");
+            }
+        }
     }
 }

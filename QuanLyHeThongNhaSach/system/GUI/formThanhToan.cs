@@ -426,13 +426,13 @@ namespace GUI
                                     ET_SanPhamThanhToan sanPhamKM = new ET_SanPhamThanhToan(hhKM.MaHH, hhKM.TenHH, 0, soLuong, null, 0);
                                     danhSachSanPham.Add(sanPhamKM);
                                 }
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy sản phẩm cần sửa trong danh sách!", "Thông báo");
-                        }
 
+                    if (sanPhamTonTai != null)
+                    {
+                        // Nếu sản phẩm đã tồn tại, cập nhật số lượng và thành tiền
+                        sanPhamTonTai.SoLuong = soLuong;
+                        sanPhamTonTai.ThanhTien = thanhTien; // Cập nhật lại thành tiền cho sản phẩm
+                        sanPhamTonTai.KhuyenMai = khuyenMai; // Cập nhật khuyến mãi
                         // Cập nhật lại DataGridView
                         bindingSourceSanPham.ResetBindings(false);
                         ShowTongTien();

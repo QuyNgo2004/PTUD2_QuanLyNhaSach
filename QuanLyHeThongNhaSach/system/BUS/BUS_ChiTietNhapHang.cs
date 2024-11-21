@@ -27,7 +27,7 @@ namespace BUS
         }
 
 
-        public void XemDSCTNH(DataGridView dgvDSCTNH)
+        public void XemDSCTNH(DataGridView dgvDSCTNH, int v)
         {
             // Gán DataSource cho DataGridView
             dgvDSCTNH.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHang();

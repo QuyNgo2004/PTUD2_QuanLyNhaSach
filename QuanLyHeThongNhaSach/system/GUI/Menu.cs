@@ -49,8 +49,8 @@ namespace GUI
             catch (Exception ex)
             {
                 // Ghi lại hoặc hiển thị lỗi
-                Console.WriteLine("Error opening child form: " + ex.Message);
-                MessageBox.Show("Error occurred: " + ex.Message);
+                Console.WriteLine("Không thể hiển thị màn hình đang chọn: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
