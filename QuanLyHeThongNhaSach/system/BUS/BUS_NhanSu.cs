@@ -37,7 +37,10 @@ namespace BUS
         {
             dgv.DataSource = DAL_NhanSu.Instance.layDSNhanSu();
         }
-       
+        public ET_NhanSu TimNhanSu(string maNS)
+        {
+            return DAL_NhanSu.Instance.TimNhanSu(maNS);
+        }
         //public bool KT_DangNhap(string tenDN,string matKhau)
         //{
         //    List<NhanSu> list = hienThiNhanSu_List();

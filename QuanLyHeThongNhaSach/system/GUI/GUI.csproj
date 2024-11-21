@@ -222,6 +222,12 @@
     <Compile Include="rptKhuyenMaiView.Designer.cs">
       <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptNhapHang.Designer.cs">
+      <DependentUpon>rptNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CaTruc.resx">
       <DependentUpon>CaTruc.cs</DependentUpon>
@@ -235,7 +241,9 @@
     <EmbeddedResource Include="DanhSachHangDon.resx">
       <DependentUpon>DanhSachHangDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\DSChiTietNhapHang.rdlc" />
+    <EmbeddedResource Include="Report\DSChiTietNhapHang.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="formThanhToan.resx">
       <DependentUpon>formThanhToan.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +313,9 @@
     <EmbeddedResource Include="rptKhuyenMaiView.resx">
       <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptNhapHang.resx">
+      <DependentUpon>rptNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="KhuyenMai_DataSet.xsc">
       <DependentUpon>KhuyenMai_DataSet.xsd</DependentUpon>
     </None>
@@ -320,6 +331,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ET.ET_BangLuong.datasource" />
     <None Include="Properties\DataSources\ET.ET_ChiTietLuong.datasource" />
+    <None Include="Properties\DataSources\ET.ET_ChiTietNhapHang.datasource" />
     <None Include="Properties\DataSources\ET.ET_KhuyenMaiReport.datasource" />
     <None Include="Properties\DataSources\ET.ET_NhanSu.datasource" />
     <None Include="Properties\Settings.settings">

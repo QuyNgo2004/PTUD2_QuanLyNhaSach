@@ -259,8 +259,31 @@ namespace DAL
             }
         }
 
-        
-      
+        //Tim nhan su
+
+        public ET_NhanSu TimNhanSu(string maNS)
+        {
+            IEnumerable<ET_NhanSu> listNS = from ns in dbNhaSach.NhanSus
+                         join cn in DbNhaSach.ChiNhanhs on ns.maCN equals cn.maCN
+                         join cv in DbNhaSach.ChucVus on ns.chucVu equals cv.maChucVu
+                         where ns.maNS == maNS 
+                         select new ET_NhanSu
+                         {
+                             MaNS = ns.maNS,
+                             TenNS = ns.tenNS,
+                             GioiTinh = ns.gioiTinh,
+                             CCCD = ns.cccdNS,
+                             SDT = ns.sdtNV,
+                             Email = ns.emailNV,
+                             DiaChi = ns.diaChiNha,
+                             MaCN = ns.maCN,
+                             ChucVu = int.Parse(ns.chucVu.ToString()),
+                             MatKhau = ns.matkhau,
+                             LuongCanBan = int.Parse(ns.luongcanban.ToString()),
+                         };
+            return listNS.FirstOrDefault();
+
+        }
         // Cập nhật mật khẩu
 
     }

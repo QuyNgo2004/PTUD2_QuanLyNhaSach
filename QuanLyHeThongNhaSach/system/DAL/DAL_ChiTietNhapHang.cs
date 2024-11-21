@@ -57,6 +57,25 @@ namespace DAL
                                  };
             return chitiet;
         }
+        public List<ET_ChiTietNhapHang> XemDSChiTietNhapHangTheoMa_Report(string maNH)
+        {
+            IEnumerable<ET_ChiTietNhapHang> chitiet = from nh in dbNhaSach.NhapHangs
+                                 join chithh in dbNhaSach.ChTietNhapHangs
+                                 on nh.maNH equals chithh.maNH
+                                 join hh in dbNhaSach.HangHoas on chithh.maHH equals hh.maHH
+                                 where nh.maNH == maNH
+                                 select new ET_ChiTietNhapHang
+                                 {
+                                     maCTNCC = chithh.maCTNCC,
+                                     maNH = chithh.maNH,
+                                     maHH = hh.maHH,
+                                     tenHangHoa = hh.tenHH,
+                                     soLuong = int.Parse(chithh.soLuong.ToString()),
+                                     GhiChu = chithh.ghiChu,
+                                 };
+             List<ET_ChiTietNhapHang> CTNhapHang = new List<ET_ChiTietNhapHang>();
+            return CTNhapHang = chitiet.ToList();
+        }
 
         public ET_ChiTietNhapHang TimChiTietNhapHangTheoMaHH(string maHH, string maCTNH)
         {

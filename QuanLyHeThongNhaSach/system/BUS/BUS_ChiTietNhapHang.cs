@@ -89,6 +89,10 @@ namespace BUS
         {
             dgvDSHangHoa.DataSource = DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa(mahh);
         }
+        public List<ET_ChiTietNhapHang> ChiTietNhapHang(string maNH)
+        {
+            return DAL_ChiTietNhapHang.Instance.XemDSChiTietNhapHangTheoMa_Report(maNH);
+        }
 
     }
 }

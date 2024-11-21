@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DevExpress.Data.Linq.Helpers;
+using ET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,8 +124,19 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            Menu formMenu = (Menu)this.ParentForm;
+            //Menu formMenu = (Menu)this.ParentForm;
             //formMenu.openChildForm(new RpNhapHang());
+            try
+            {
+                ET_NhanSu ns = new ET_NhanSu();
+                ns = BUS_NhanSu.Instance.TimNhanSu(Program.maNS);
+                rptNhapHang r = new rptNhapHang(ns, dgvLSNH.CurrentRow.Cells[0].Value.ToString());
+                r.ShowDialog();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

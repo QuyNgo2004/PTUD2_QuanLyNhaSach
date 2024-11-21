@@ -187,7 +187,7 @@
             this.groupBox2.Size = new System.Drawing.Size(358, 335);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông Tin Hàng Hóa";
+            this.groupBox2.Text = "Thông Tin Ngày Làm Của Nhân Sự";
             // 
             // cboLuongTC
             // 
