@@ -427,31 +427,35 @@ namespace GUI
                                     danhSachSanPham.Add(sanPhamKM);
                                 }
 
-                    if (sanPhamTonTai != null)
-                    {
-                        // Nếu sản phẩm đã tồn tại, cập nhật số lượng và thành tiền
-                        sanPhamTonTai.SoLuong = soLuong;
-                        sanPhamTonTai.ThanhTien = thanhTien; // Cập nhật lại thành tiền cho sản phẩm
-                        sanPhamTonTai.KhuyenMai = khuyenMai; // Cập nhật khuyến mãi
-                        // Cập nhật lại DataGridView
-                        bindingSourceSanPham.ResetBindings(false);
-                        ShowTongTien();
 
-                        // Xóa thông tin nhập sau khi sửa
-                        cbbMaHang.SelectedIndex = 0;
-                        txtTenHang.Clear();
-                        txtDonGia.Clear();
-                        txtSoLuong.Clear();
-                        cbbKhuyenMai.SelectedIndex = -1;
-                        txtThanhTien.Clear();
-                        cbbMaHang.Enabled = true;
-                        btnThem.Enabled = true;
+                                if (sanPhamTonTai != null)
+                                {
+                                    // Nếu sản phẩm đã tồn tại, cập nhật số lượng và thành tiền
+                                    sanPhamTonTai.SoLuong = soLuong;
+                                    sanPhamTonTai.ThanhTien = thanhTien; // Cập nhật lại thành tiền cho sản phẩm
+                                    sanPhamTonTai.KhuyenMai = khuyenMai; // Cập nhật khuyến mãi
+                                                                         // Cập nhật lại DataGridView
+                                    bindingSourceSanPham.ResetBindings(false);
+                                    ShowTongTien();
 
-                        MessageBox.Show("Sửa thông tin sản phẩm thành công!", "Thông báo");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng chọn sản phẩm để sửa hoặc nhập số lượng hợp lệ!", "Thông báo");
+                                    // Xóa thông tin nhập sau khi sửa
+                                    cbbMaHang.SelectedIndex = 0;
+                                    txtTenHang.Clear();
+                                    txtDonGia.Clear();
+                                    txtSoLuong.Clear();
+                                    cbbKhuyenMai.SelectedIndex = -1;
+                                    txtThanhTien.Clear();
+                                    cbbMaHang.Enabled = true;
+                                    btnThem.Enabled = true;
+
+                                    MessageBox.Show("Sửa thông tin sản phẩm thành công!", "Thông báo");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Vui lòng chọn sản phẩm để sửa hoặc nhập số lượng hợp lệ!", "Thông báo");
+                                }
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
