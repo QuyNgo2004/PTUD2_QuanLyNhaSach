@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -120,6 +121,30 @@ namespace BUS
                 flag = true;
             }
             return flag;
+        }
+        // Kiểm tra ngày
+        public bool KT_Ngay(DateTime ngayBD, DateTime ngayKT, DateTime ngayHT) {
+            if (ngayBD >= ngayKT)
+            {
+                return false;
+            }
+            else if (ngayBD < ngayHT)
+            {
+                return false;
+            }
+            else if (ngayKT < ngayHT)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool KT_Ngay(DateTime ngayBD, DateTime ngayKT)
+        {
+            if (ngayBD >= ngayKT)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

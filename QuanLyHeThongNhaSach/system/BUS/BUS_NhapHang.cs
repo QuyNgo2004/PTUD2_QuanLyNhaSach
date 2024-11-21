@@ -33,39 +33,73 @@ namespace BUS
             dgvDSHH.DataSource = dalNhapHang.XemDSNhapHang();
         }
 
-        public void ThemNhapHang(ET_NhapHang etNH)
+        public IQueryable XemDSLSNH(string maNPP)
         {
-            //Kiểm tra mã trùng không không trùng thì trả về true và thực hiện thêm
-            if (dalNhapHang.ThemNhapHang(etNH) == true)
+            return DAL_NhapHang.Instance.XemDSNhapHangTheoNPP(maNPP);
+        }
+
+        public bool ThemNhapHang(ET_NhapHang etNH)
+        {
+            try
             {
-                //Khi thêm thành công sẽ hiển thị thông báo này
-                MessageBox.Show("Hoàn tất thêm dữ liệu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return DAL_NhapHang.Instance.ThemNhapHang(etNH);
             }
-            else
+            catch (Exception ex)
             {
-                //Khi thêm không thành công sẽ hiển thị thông báo này
-                MessageBox.Show("Dữ liệu đã có trong hệ thống !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw ex;
             }
         }
 
-        public void XoaNhapHang(DataGridView dgvDSNH)
+        public void XoaNhapHang(string maNH, string maHH, DataGridView dgvDSNH)
         {
-            // Xóa là lấy dữ liệu ô đầu tiên của dòng đang được chọn trong DataGridView để xóa dữ liệu
-            if (dalNhapHang.XoaNhapHang(dgvDSNH.CurrentRow.Cells[0].Value.ToString()) == true)
+            //// Gọi phương thức XoaNhapHang trong DAL
+            //bool success = dalNhapHang.XoaNhapHang(maNH, maHH);
+
+            //if (success)
+            //{
+            //    MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không thể xóa dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+
+        public void TimNhapHangTheoMaNPP(string maNPP, DataGridView dgv)
+        {
+            try
             {
-                // Hiện lên thông báo khi xóa thành công
-                MessageBox.Show("Hoàn tất xóa dữ liệu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgv.DataSource = DAL_NhapHang.Instance.TimNhapHangTheoMaNPP(maNPP);
             }
-            else
+            catch (Exception ex)
             {
-                // Hiện lên thông báo khi xóa không thành công
-                MessageBox.Show("Dữ liệu đang được đối chiếu !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public string TaoMaHangTuDong()
         {
             return dalNhapHang.TaoMaHangHoaTuDong();
+        }
+
+        public void layMaNhaPhanPhoi(ComboBox cbo )
+        {
+            cbo.DataSource = DAL_NhaPhanPhoi.Instance.layMaNhaPhanPhoi();
+            cbo.ValueMember = "maNPP";
+            cbo.DisplayMember = "tenNPP";
+        }
+
+        public void LayDanhSachNhaPhanPhoi(ComboBox cbo)
+        {
+            try
+            {
+                cbo.DataSource = DAL_NhaPhanPhoi.Instance.LayDanhSachNPP(); // Lấy danh sách nhà phân phối
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách nhà phân phối: {ex.Message}");
+            }
         }
     }
 }

@@ -28,21 +28,6 @@ namespace DAL
         public IQueryable XemDSChiTietNhapHang()
         {
             IQueryable chitiet = from ctnh in dbNhaSach.ChTietNhapHangs
-                                  join hh in dbNhaSach.HangHoas on ctnh.maHH equals hh.maHH
-                                  select new
-                                  {
-                                      MaChiTietNhapHang = ctnh.maCTNCC,
-                                      MaNhapHang = ctnh.maNH,
-                                      MaHangHoa = ctnh.maHH,
-                                      SoLuong = ctnh.soLuong,
-                                      GhiChu = ctnh.ghiChu,
-                                  };
-            return chitiet;
-        }
-
-        public IQueryable XemDSChiTietNhapHangTheoMa(string maNH)
-        {
-            IQueryable chitiet = from ctnh in dbNhaSach.ChTietNhapHangs
                                  join hh in dbNhaSach.HangHoas on ctnh.maHH equals hh.maHH
                                  select new
                                  {
@@ -53,6 +38,60 @@ namespace DAL
                                      GhiChu = ctnh.ghiChu,
                                  };
             return chitiet;
+        }
+
+        public IQueryable XemDSChiTietNhapHangTheoMa(string maNH)
+        {
+            IQueryable chitiet = from nh in dbNhaSach.NhapHangs
+                                 join chithh in dbNhaSach.ChTietNhapHangs
+                                 on nh.maNH equals chithh.maNH
+                                 join hh in dbNhaSach.HangHoas on chithh.maHH equals hh.maHH
+                                 where nh.maNH == maNH
+                                 select new
+                                 {
+                                     MaChiTietNhapHang = chithh.maCTNCC,
+                                     MaNhapHang = chithh.maNH,
+                                     MaHangHoa = hh.maHH,
+                                     SoLuong = chithh.soLuong,
+                                     GhiChu = chithh.ghiChu,
+                                 };
+            return chitiet;
+        }
+
+        public ET_ChiTietNhapHang TimChiTietNhapHangTheoMaHH(string maHH, string maCTNH)
+        {
+            IQueryable<ET_ChiTietNhapHang> chitiet = from ct in dbNhaSach.ChTietNhapHangs
+                                                     where ct.maHH == maHH && ct.maCTNCC.ToString() == maCTNH
+                                                     select new ET_ChiTietNhapHang
+                                                     {
+                                                         MaHH = ct.maHH,
+                                                         MaCTNCC = ct.maCTNCC
+                                                     };
+            return chitiet.FirstOrDefault();
+        }
+
+        public ET_HangHoa TimNPP(string maNPP, string maHH)
+        {
+            IQueryable<ET_HangHoa> hanghoa = from hh in dbNhaSach.HangHoas
+                                                 //join hanghoa1 in dbNhaSach.LoaiHangHoas on hh.maLHH equals hanghoa1.maLHH
+                                                 //join hanghoa2 in dbNhaSach.NhaPhanPhois on hh.maNPP equals hanghoa2.maNPP
+                                             where hh.maNPP == maNPP && hh.maHH == maHH
+                                             select new ET_HangHoa
+                                             {
+                                                 MaHH = hh.maHH,
+                                                 TenHH = hh.tenHH,
+                                                 LoaiHH = hh.maLHH,
+                                                 GiaHH = hh.giaHH,
+                                                 DonviTinh = hh.donViTinh,
+                                                 SlTon = hh.soLuongTon,
+                                                 NhaPP = hh.maNPP,
+                                                 TacGia = hh.tacGia,
+                                                 MoTa = hh.moTa,
+                                                 GhiChu = hh.ghiChu,
+                                                 TinhTrang = hh.tinhTrang
+                                             };
+            ET_HangHoa hhoa = hanghoa.FirstOrDefault();
+            return hhoa;
         }
 
         public bool ThemChiTiet(ET_ChiTietNhapHang etCT)
@@ -83,9 +122,9 @@ namespace DAL
         {
             try
             {
-                //Truy vấn lấy tất cả các bản ghi trong HangHoa có maLHH bằng với maHangHoa.
                 var xoa = from ct in dbNhaSach.ChTietNhapHangs
                           where ct.maHH == maCT
+
                           select ct;
                 // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
                 foreach (var x in xoa)
@@ -107,5 +146,6 @@ namespace DAL
                 return false;
             }
         }
+
     }
 }

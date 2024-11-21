@@ -1,4 +1,5 @@
 ﻿using BUS;
+using ET;
 using GUI;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +16,14 @@ namespace GUI
 {
     public partial class Menu : Form
     {
-        
-        public Menu()
+        private string maNS = string.Empty;
+        private ET_NhanSu ns_ET = null;
+        public Menu(ET_NhanSu ns)
         {
             InitializeComponent();
+            lbltTenNS.Text = ns.TenNS;
+            maNS = ns.MaNS;
+            this.ns_ET = ns;
         }
 
         /// <summary>
@@ -43,8 +49,8 @@ namespace GUI
             catch (Exception ex)
             {
                 // Ghi lại hoặc hiển thị lỗi
-                Console.WriteLine("Error opening child form: " + ex.Message);
-                MessageBox.Show("Error occurred: " + ex.Message);
+                Console.WriteLine("Không thể hiển thị màn hình đang chọn: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
@@ -110,7 +116,7 @@ namespace GUI
         {
             if (nhansu == null || nhansu.IsDisposed)
             {
-                openChildForm(new NhanSu());
+                openChildForm(new NhanSu(ns_ET));
             }
             else
             {
@@ -124,12 +130,12 @@ namespace GUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private KhuyenMai khuyenmai;
+        private ChiTietKhuyenMai khuyenmai;
         private void btnCTKhuyenMai_Click(object sender, EventArgs e)
         {
             if (khuyenmai == null || khuyenmai.IsDisposed)
             {
-                openChildForm(new KhuyenMai());
+                openChildForm(new ChiTietKhuyenMai());
             }
             else
             {
@@ -195,7 +201,7 @@ namespace GUI
         {
             if (thanhToan == null || thanhToan.IsDisposed)
             {
-                openChildForm(new formThanhToan());
+                openChildForm(new formThanhToan(maNS));
             }
             else
             {

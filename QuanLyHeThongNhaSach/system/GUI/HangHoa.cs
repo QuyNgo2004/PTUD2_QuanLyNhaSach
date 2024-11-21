@@ -44,13 +44,14 @@ namespace GUI
                 cboLoaiHH.ValueMember = "maLHH";
                 cboNhaPP.ValueMember = "maNPP";
                 cboNhaPP.DisplayMember = "tenNPP";
+                cboTinhTrang.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi load form: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void dgvDSHangHoa_Click(object sender, EventArgs e)
         {
             int a = dgvDSHangHoa.CurrentCell.RowIndex;
@@ -139,7 +140,7 @@ namespace GUI
             {
                 if (KtraBoTrong() == true)
                 {
-                    BUS_HangHoa.Instance.ThemHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(), int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
+                    BUS_HangHoa.Instance.ThemHangHoa(new ET_HangHoa(txtMaHH.Text, cboLoaiHH.SelectedValue.ToString(), txtTenHH.Text, int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
                     BUS_HangHoa.Instance.XemDSHH(dgvDSHangHoa);
                 }
                 else
@@ -177,7 +178,7 @@ namespace GUI
                     {
                         if (KTraMa(txtMaHH.Text) == true)
                         {
-                            BUS_HangHoa.Instance.SuaHangHoa(new ET_HangHoa(txtMaHH.Text, txtTenHH.Text, cboLoaiHH.SelectedValue.ToString(), int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
+                            BUS_HangHoa.Instance.SuaHangHoa(new ET_HangHoa(txtMaHH.Text, cboLoaiHH.SelectedValue.ToString(), txtTenHH.Text, int.Parse(txtGiaHH.Text), txtDonViTinh.Text, int.Parse(txtSoLuongTon.Text), cboNhaPP.SelectedValue.ToString(), txtTacGia.Text, txtGhiChu.Text, txtMoTa.Text, cboTinhTrang.Text));
                             BUS_HangHoa.Instance.XemDSHH(dgvDSHangHoa);
                         }
                         else
@@ -201,7 +202,7 @@ namespace GUI
 
         private void txtTenHH_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
                 MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -261,10 +262,10 @@ namespace GUI
             // Lấy giá trị từ TextBox và chuyển đổi sang số
             if (decimal.TryParse(txtGiaHH.Text, out decimal gia))
             {
-                // Kiểm tra giá trị trong khoảng 1000 đến 1.000.000
-                if (gia < 1000 || gia > 10000000)
+                // Kiểm tra giá trị trong khoảng 1000 đến 3.000.000
+                if (gia < 1000 || gia > 30000000)
                 {
-                    MessageBox.Show("Giá hàng hóa phải lớn hơn 1.000 VND và nhỏ hơn 1000000 VND.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Giá hàng hóa phải lớn hơn 1.000 VND và nhỏ hơn 3.000.000 VND.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtGiaHH.Focus(); // Đặt lại tiêu điểm vào TextBox
                 }
             }
@@ -283,11 +284,10 @@ namespace GUI
                 {
                     // Đặt ComboBox mặc định là "Hết hàng"
                     cboTinhTrang.SelectedItem = "Hết hàng";
-                    MessageBox.Show("Vì số lượng hàng bạn nhập là 0, trạng thái hàng hóa đã được tự động mặc định thành 'Hết hàng'.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (soLuong < 1 || soLuong > 50)
+                else if (soLuong < 1 || soLuong > 500)
                 {
-                    MessageBox.Show("Số lượng hàng hóa phải lớn hơn 1 và nhỏ hơn 59.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số lượng hàng hóa phải lớn hơn 1 và nhỏ hơn 500.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtSoLuongTon.Focus();
                 }
                 else
@@ -301,6 +301,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập một giá trị hợp lệ.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSoLuongTon.Focus();
             }
+
         }
 
         private void txtMoTa_KeyPress(object sender, KeyPressEventArgs e)
@@ -357,31 +358,31 @@ namespace GUI
 
         private void txtTacGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Kiểm tra ký tự nhập vào
-            if (char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
-                MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể nhập kí tự đặc biệt hay chữ số !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtTacGia.Text.Length >= 44 && e.KeyChar != '\b')
+            else if (e.KeyChar != '\b' && txtTacGia.Text.Trim().Length == 0 && !char.IsLetter(e.KeyChar))
             {
+                // Nếu chưa có ký tự chữ nào
                 e.Handled = true;
-                MessageBox.Show("Không thể nhập tác giả quá 45 ký tự!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên khách hàng phải chứa ít nhất một ký tự chữ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtTacGia.Text.Trim().Length == 0 && e.KeyChar == ' ')
+            else if (txtTacGia.Text.Length > 49 && e.KeyChar != '\b')
             {
-                // Ngăn không cho nhập khoảng trắng đầu tiên
                 e.Handled = true;
-                MessageBox.Show("Tác giả không được chỉ là khoảng trắng!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể nhập tên khách hàng quá 50 ký tự !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+   
 
         private void txtTacGia_Validated(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenHH.Text))
+            if (string.IsNullOrWhiteSpace(txtTacGia.Text))
             {
                 MessageBox.Show("Tác giả không được để trống!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenHH.Focus();
+                txtTacGia.Focus();
             }
         }
 
@@ -390,7 +391,11 @@ namespace GUI
             if (cboTinhTrang.SelectedItem != null && cboTinhTrang.SelectedItem.ToString() == "Hết hàng")
             {
                 txtSoLuongTon.Text = "0";
-                MessageBox.Show("Vì trạng thái hàng hóa của bạn là hết hàng, số lượng tồn được tự động mặc định trở về 0.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                txtSoLuongTon.Text = "1";
+
             }
         }
     }

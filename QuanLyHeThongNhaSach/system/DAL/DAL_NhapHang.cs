@@ -12,6 +12,7 @@ namespace DAL
     public class DAL_NhapHang : DAL_Data
     {
         //Khai báo biến tĩnh.
+        //Khai báo biến tĩnh.
         private static DAL_NhapHang instance;
 
         public static DAL_NhapHang Instance
@@ -31,81 +32,61 @@ namespace DAL
             IQueryable nhaphang = from nh in dbNhaSach.NhapHangs
                                   join npp in dbNhaSach.NhaPhanPhois on nh.maNPP equals npp.maNPP
                                   select new
-                                 {
-                                     MaNhapHang = nh.maNH,
-                                     MaNPP = npp.maNPP,
-                                     TenNPP = npp.tenNPP,
-                                     DiaChi = npp.diachiNPP,
-                                     NgayNhap = nh.ngayNH,
-                                 };
+                                  {
+                                      MaNhapHang = nh.maNH,
+                                      MaNPP = npp.maNPP,
+                                      TenNPP = npp.tenNPP,
+                                      DiaChi = npp.diachiNPP,
+                                      NgayNhap = nh.ngayNH,
+                                  };
+            return nhaphang;
+        }
+
+        public IQueryable XemDSNhapHangTheoNPP(string maNPP)
+        {
+            IQueryable nhaphang = from nh in dbNhaSach.NhapHangs
+                                  join npp in dbNhaSach.NhaPhanPhois on nh.maNPP equals npp.maNPP
+                                  where npp.maNPP == maNPP
+                                  select new
+                                  {
+                                      MaNhapHang = nh.maNH,
+                                      MaNPP = npp.maNPP,
+                                      TenNPP = npp.tenNPP,
+                                      DiaChi = npp.diachiNPP,
+                                      NgayNhap = nh.ngayNH,
+                                  };
             return nhaphang;
         }
 
         public bool ThemNhapHang(ET_NhapHang etNH)
         {
-            //Kiểm tra xem có trùng mã hay không, nếu trùng trả về false.
-            if (dbNhaSach.NhapHangs.Any(nh => nh.maNH == etNH.MaNH))
-            {
-                //Nếu tồn tại, trả về false để báo hiệu việc thêm không thành công do trùng lặp.
-                return false;
-            }
-            else
-            {
-                try
-                {
-                    //Tạo một đối tượng mới.
-                    NhapHang nh = new NhapHang
-                    {
-                        maNH = etNH.MaNH,
-                        ngayNH = etNH.NgayNH,
-                        maNPP = etNH.MaNPP,
-                    };
-                    //Thêm loại hàng vào cơ sở dữ liệu
-                    dbNhaSach.NhapHangs.InsertOnSubmit(nh);
-                }
-                finally
-                {
-                    // Lưu các thay đổi vào cơ sở dữ liệu
-                    dbNhaSach.SubmitChanges();
-                }
-                // Trả về true để báo hiệu việc thêm mới thành công
-                return true;
-            }
-        }
-
-        public bool XoaNhapHang(string maNH)
-        {
             try
             {
-                //Truy vấn lấy tất cả các bản ghi trong HangHoa có maLHH bằng với maHangHoa.
-                var xoa = from nh in dbNhaSach.NhapHangs
-                          where nh.maNH == maNH
-                          select nh;
-                // Duyệt qua từng bản ghi và xóa chúng khỏi cơ sở dữ liệu.
-                foreach (var x in xoa)
+                NhapHang nh = new NhapHang
                 {
-                    dbNhaSach.NhapHangs.DeleteOnSubmit(x);
-                    dbNhaSach.SubmitChanges();
-                }
-                // Nếu xóa thành công, trả về true.
-                return true;
+                    maNH = etNH.MaNH,
+                    maNPP = etNH.MaNPP,
+                    ngayNH = etNH.NgayNH,
+
+                };
+
+                // Thêm vào bảng HoaDon
+                DbNhaSach.NhapHangs.InsertOnSubmit(nh);
+                DbNhaSach.SubmitChanges(); // Lưu thay đổi vào cơ sở dữ liệu
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Exception ex)
             {
-                // Xử lý các trường hợp ngoại lệ cụ thể, chẳng hạn liên quan đến ràng buộc khóa ngoại
-                if (ex.Number == 547)
-                {
-                    // Trả về false nếu có lỗi do ràng buộc khóa ngoại
-                    return false;
-                }
-                return false;
+                throw ex; // Ném lại ngoại lệ để xử lý bên ngoài nếu cần
             }
+            return true; // Trả về true nếu thành công
         }
+
+
 
         public string TaoMaHangHoaTuDong()
         {
             //Lấy ngày hiện tại với định dạng yymmdd.
-            string dinhdangngay = DateTime.Now.ToString("yyMMdd");
+            string dinhdangngay = DateTime.Now.ToString("ddMMyy");
             //Đếm số lượng loại hàng.
             int countMaNH = dbNhaSach.NhapHangs.Count() + 1;
 
@@ -136,6 +117,31 @@ namespace DAL
                 countMaNH++;
             } while (dbNhaSach.NhapHangs.Any(nh => nh.maNH == NewMaNH));
             return NewMaNH;
+        }
+
+        public IQueryable TimNhapHangTheoMaNPP(string tenNPP)
+        {
+            try
+            {
+                var result = from nh in dbNhaSach.ExecuteQuery<dynamic>(
+                                 "EXEC TimNhapHangTheoMaNPP @TenNPP = {3}", tenNPP)
+                             select new
+                             {
+                                 MaNhapHang = nh.MaNhapHang,
+                                 NgayNhapHang = nh.NgayNhapHang,
+                                 MaNhaPhanPhoi = nh.MaNhaPhanPhoi,
+                                 TenNhaPhanPhoi = nh.TenNhaPhanPhoi,
+                                 DiaChi = nh.DiaChi,
+                                 SoDienThoai = nh.SoDienThoai,
+                                 Email = nh.Email
+                             };
+
+                return result.AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi tìm nhập hàng theo mã nhà phân phối: {ex.Message}");
+            }
         }
     }
 }

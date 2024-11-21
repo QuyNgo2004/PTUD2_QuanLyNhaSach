@@ -8,38 +8,40 @@ namespace ET
 {
     public class ET_HangHoa
     {
-        private string maHH, tenHH, loaiHH, donviTinh, nhaPP, moTa, ghiChu, tinhTrang, tacGia;
+        private string maHH, tenHH, loaiHH, donviTinh, nhaPP, tacGia, moTa, ghiChu, tinhTrang;
         private int giaHH, slTon;
+
+
 
         public ET_HangHoa()
         {
         }
 
-        public ET_HangHoa(string maHH, string tenHH, string loaiHH, int giaHH, string donviTinh, int slTon, string nhaPP, string tacGia, string moTa, string ghiChu, string tinhTrang)
+        public ET_HangHoa(string maHH, string loaiHH, string tenHH, int giaHH, string donviTinh, int slTon, string nhaPP, string tacGia, string moTa, string ghiChu, string tinhTrang)
         {
-            this.maHH = maHH;
-            this.tenHH = tenHH;
-            this.loaiHH = loaiHH;
-            this.donviTinh = donviTinh;
-            this.nhaPP = nhaPP;
-            this.tacGia = tacGia;
-            this.moTa = moTa;
-            this.ghiChu = ghiChu;
-            this.tinhTrang = tinhTrang;
-            this.giaHH = giaHH;
-            this.slTon = slTon;
+            this.MaHH = maHH;
+            this.LoaiHH = loaiHH;
+            this.TenHH = tenHH;
+            this.GiaHH = giaHH;
+            this.DonviTinh = donviTinh;
+            this.SlTon = slTon;
+            this.NhaPP = nhaPP;
+            this.TacGia = tacGia;
+            this.MoTa = moTa;
+            this.GhiChu = ghiChu;
+            this.TinhTrang = tinhTrang;
         }
 
         public string MaHH { get => maHH; set => maHH = value; }
-        public string TenHH { get => tenHH; set => tenHH = value; }
         public string LoaiHH { get => loaiHH; set => loaiHH = value; }
+        public string TenHH { get => tenHH; set => tenHH = value; }
+        public int GiaHH { get => giaHH; set => giaHH = value; }
         public string DonviTinh { get => donviTinh; set => donviTinh = value; }
+        public int SlTon { get => slTon; set => slTon = value; }
         public string NhaPP { get => nhaPP; set => nhaPP = value; }
+        public string TacGia { get => tacGia; set => tacGia = value; }
         public string MoTa { get => moTa; set => moTa = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public string TinhTrang { get => tinhTrang; set => tinhTrang = value; }
-        public int GiaHH { get => giaHH; set => giaHH = value; }
-        public int SlTon { get => slTon; set => slTon = value; }
-        public string TacGia { get => tacGia; set => tacGia = value; }
     }
 }
