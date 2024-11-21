@@ -193,18 +193,6 @@
     <Compile Include="QuanLyCaTruc.Designer.cs">
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </Compile>
-    <Compile Include="RpNhapHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RpNhapHang.Designer.cs">
-      <DependentUpon>RpNhapHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="rptKhuyenMaiView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="rptKhuyenMaiView.Designer.cs">
-      <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CaTruc.resx">
       <DependentUpon>CaTruc.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,12 +258,6 @@
       <DependentUpon>QuanLyCaTruc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptKhuyenMai.rdlc" />
-    <EmbeddedResource Include="RpNhapHang.resx">
-      <DependentUpon>RpNhapHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rptKhuyenMaiView.resx">
-      <DependentUpon>rptKhuyenMaiView.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

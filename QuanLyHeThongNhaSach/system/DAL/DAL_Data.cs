@@ -28,9 +28,9 @@ namespace DAL
             bool flag = true;
             try
             {
-                string conection = @"Data Source=" + "DESKTOP-4HPV2E5\\LISM" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
+                //string conection = @"Data Source=" + "DESKTOP-4HPV2E5\\LISM" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
 
-                //string conection = @"Data Source=" + "MSI\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
+                string conection = @"Data Source=" + "MSI\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
                 //string conection = @"Data Source=" + "B202A-PC35\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
 
                 //string conection = @"Data Source=" + "MSI\\SQLEXPRESS" + ";Initial Catalog=QLNhaSach;Integrated Security=True;TrustServerCertificate=True";
