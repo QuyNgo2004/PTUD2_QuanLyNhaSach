@@ -45,10 +45,10 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mstSDT = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
-            this.mstSDT = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNPP)).BeginInit();
             this.pnlKhuyenMai.SuspendLayout();
@@ -273,6 +273,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhà Phân Phối";
             // 
+            // mstSDT
+            // 
+            this.mstSDT.Location = new System.Drawing.Point(22, 250);
+            this.mstSDT.Mask = "0000000000";
+            this.mstSDT.Name = "mstSDT";
+            this.mstSDT.Size = new System.Drawing.Size(201, 24);
+            this.mstSDT.TabIndex = 12;
+            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
@@ -299,18 +307,11 @@
             this.lblSDT.TabIndex = 8;
             this.lblSDT.Text = "Số điện thoại :";
             // 
-            // mstSDT
-            // 
-            this.mstSDT.Location = new System.Drawing.Point(22, 250);
-            this.mstSDT.Mask = "0000000000";
-            this.mstSDT.Name = "mstSDT";
-            this.mstSDT.Size = new System.Drawing.Size(201, 24);
-            this.mstSDT.TabIndex = 12;
-            // 
             // NhaPhanPhoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(867, 595);
             this.Controls.Add(this.groupBox3);

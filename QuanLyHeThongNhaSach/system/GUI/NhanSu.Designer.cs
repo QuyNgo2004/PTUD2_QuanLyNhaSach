@@ -35,6 +35,8 @@
             this.radNam = new System.Windows.Forms.RadioButton();
             this.lblChucVu = new System.Windows.Forms.Label();
             this.lblChiNhanh = new System.Windows.Forms.Label();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtDiaChiNha = new System.Windows.Forms.TextBox();
             this.lblDiaChiNha = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.btnLuong = new System.Windows.Forms.Button();
             this.btnCaTruc = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtLuong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhanSu)).BeginInit();
@@ -164,6 +164,25 @@
             this.lblChiNhanh.Size = new System.Drawing.Size(74, 18);
             this.lblChiNhanh.TabIndex = 14;
             this.lblChiNhanh.Text = "Chi nhánh";
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.BackColor = System.Drawing.Color.White;
+            this.txtLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLuong.Location = new System.Drawing.Point(131, 280);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(177, 24);
+            this.txtLuong.TabIndex = 13;
+            this.txtLuong.Validated += new System.EventHandler(this.txtLuong_Validated);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 280);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 18);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Lương căn bản:";
             // 
             // txtDiaChiNha
             // 
@@ -468,29 +487,11 @@
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 18);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Lương căn bản:";
-            // 
-            // txtLuong
-            // 
-            this.txtLuong.BackColor = System.Drawing.Color.White;
-            this.txtLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLuong.Location = new System.Drawing.Point(131, 280);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(177, 24);
-            this.txtLuong.TabIndex = 13;
-            this.txtLuong.Validated += new System.EventHandler(this.txtLuong_Validated);
-            // 
             // NhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1033, 705);
             this.Controls.Add(this.pnlNhanSu);
