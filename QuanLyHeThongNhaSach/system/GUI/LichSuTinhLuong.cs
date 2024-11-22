@@ -25,16 +25,23 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
+           if(txtMaLuong.Text == string.Empty)
             {
-                chiTietLuong.XoaBangLuong(txtMaLuong.Text);
-                bangLuong.XoaBangLuong(txtMaLuong.Text);
-                dgvDSNhanLuong.DataSource = null;
-                LichSuTinhLuong_Load(sender, e);
+                MessageBox.Show("Vui lòng chọn bảng lương để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi khi xóa dữ liệu" + ex.Message,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                try
+                {
+                    chiTietLuong.XoaBangLuong(txtMaLuong.Text);
+                    bangLuong.XoaBangLuong(txtMaLuong.Text);
+                    dgvDSNhanLuong.DataSource = null;
+                    LichSuTinhLuong_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa dữ liệu" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -71,14 +78,22 @@ namespace GUI
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            try
+            if(txtMaLuong.Text == string.Empty)
             {
-                ET_BangLuong bangLuong = BUS_BangLuong.Instance.TimBangLuong(txtMaLuong.Text);
-                rptBangLuongView rptBangLuong = new rptBangLuongView(bangLuong,ns);
-                rptBangLuong.ShowDialog();
-            }catch(Exception ex)
+                MessageBox.Show("Vui lòng chọn bảng lương cần in!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
+                try
+                {
+                    ET_BangLuong bangLuong = BUS_BangLuong.Instance.TimBangLuong(txtMaLuong.Text);
+                    rptBangLuongView rptBangLuong = new rptBangLuongView(bangLuong, ns);
+                    rptBangLuong.ShowDialog();
+                }
+                catch (Exception ex)
+                {
 
+                }
             }
         }
     }

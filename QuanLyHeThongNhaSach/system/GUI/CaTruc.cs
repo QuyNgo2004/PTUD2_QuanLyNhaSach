@@ -81,18 +81,36 @@ namespace GUI
                 {
                     ET_CaTruc catruc = DL_CaTruc();
                     if (catruc.GioBD <= catruc.GioKT) {
-                        ct.themCaTruc(catruc);
-                        Load_CT();
+                        if (error.KT_SoKiTuCoTheLuu(txtTenCT.Text, 30) == false)
+                        {
+                            MessageBox.Show("Tên ca trực vượt quá số kí tự \n(Kí tự giới hạn 45)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (error.KT_ChuoiKiTuBK(txtTenCT.Text) == false)
+                        {
+                            MessageBox.Show("Vui lòng nhập tên ca trực đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (error.KT_SoKiTuCoTheLuu(txtGhiChu.Text, 150) == false)
+                        {
+                            MessageBox.Show("Ghi chú trực vượt quá số kí tự \n(Kí tự giới hạn 150)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            ct.themCaTruc(catruc);
+                            MessageBox.Show("Thêm ca trực thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Load_CT();
+                        }
+                        
                     }
                     else
                     {
-                        MessageBox.Show("Giờ bắt đầu nhỏ hơn giờ kết thúc", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        MessageBox.Show("Giờ bắt đầu nhỏ hơn giờ kết thúc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                     
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể thêm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    MessageBox.Show("Không thể thêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
@@ -164,7 +182,7 @@ namespace GUI
             }
             else if (error.KT_ChuoiKiTuBK(txtTenCT.Text) == false)
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ nhà nhân sự đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên ca trực đúng format!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

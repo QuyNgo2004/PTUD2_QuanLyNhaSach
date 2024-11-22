@@ -149,6 +149,11 @@ namespace GUI
                     {
                         txtTenSP.Text = et.TenHH;
                     }
+                    else
+                    {
+                        txtMaSP.Text = string.Empty;
+                        txtTenSP.Text = string.Empty;
+                    }
                 }
             }
             catch (Exception ex) { }
@@ -209,7 +214,7 @@ namespace GUI
                 }
                 txtMaGiamGia_Validated(sender, e);
                 rbtGiamGia_Click(sender, e);
-
+                
                 ET_KhuyenMai km = new ET_KhuyenMai
                 {
                     MaKM = txtMaKM.Text,
@@ -220,6 +225,11 @@ namespace GUI
                     NgayKT = dtpNgayKT.Value,
                     GhiChu = txtGhiChu.Text,
                 };
+                if(rbtSP.Checked == true && km.MaHH == null)
+                {
+                    MessageBox.Show("Vui lòng nhập mã sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
                 khuyenMai = km;
             }
             catch(Exception ex)
@@ -236,21 +246,31 @@ namespace GUI
                 if (MessageBox.Show("Bạn có muốn thêm khuyến mãi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ET_KhuyenMai km = KhuyenMai_Value(sender, e);
-                    if (BUS_KhuyenMai.Instance.KM_Them(km) == true)
-                    {
-                        MessageBox.Show("Thêm khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        Load_XemKM();
+                    if (km != null) {
+                        if (BUS_KhuyenMai.Instance.KM_Them(km) == true)
+                        {
+                            MessageBox.Show("Thêm khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Load_XemKM();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm khuyến mãi không thành công!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Thêm khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      
                     }
+
                 }
                    
             }
             catch(Exception ex) {
-                MessageBox.Show("Thêm khuyến mãi không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm khuyến mãi không thành công!" + ex, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaSP.Text = string.Empty;
+                txtTenSP.Text = string.Empty;
             }
         }
 

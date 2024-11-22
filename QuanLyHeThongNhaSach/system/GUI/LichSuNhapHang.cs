@@ -126,17 +126,27 @@ namespace GUI
         {
             //Menu formMenu = (Menu)this.ParentForm;
             //formMenu.openChildForm(new RpNhapHang());
-            try
+            if (dgvLSNH.CurrentRow != null)
             {
-                ET_NhanSu ns = new ET_NhanSu();
-                ns = BUS_NhanSu.Instance.TimNhanSu(Program.maNS);
-                rptNhapHang r = new rptNhapHang(ns, dgvLSNH.CurrentRow.Cells[0].Value.ToString());
-                r.ShowDialog();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    ET_NhanSu ns = new ET_NhanSu();
+                    ns = BUS_NhanSu.Instance.TimNhanSu(Program.maNS);
+                    rptNhapHang r = new rptNhapHang(ns, dgvLSNH.CurrentRow.Cells[0].Value.ToString());
+                    r.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-            
+            else
+            {
+                MessageBox.Show("Vui lòng chọn chọn lịch sử nhập hàng cần in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

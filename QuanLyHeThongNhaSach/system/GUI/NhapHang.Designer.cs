@@ -355,6 +355,7 @@
             this.dgvDSNhapHang.RowTemplate.Height = 28;
             this.dgvDSNhapHang.Size = new System.Drawing.Size(629, 511);
             this.dgvDSNhapHang.TabIndex = 0;
+            this.dgvDSNhapHang.Click += new System.EventHandler(this.dgvDSNhapHang_Click);
             // 
             // groupBox3
             // 

@@ -142,7 +142,7 @@ namespace GUI
             }
             else if(error.KT_SoKiTu(txtSDT.Text,10) == false || error.KT_ChuoiSoDT(txtSDT.Text) == false)
             {
-                MessageBox.Show("Vui lòng nhập số điện thoại nhân sự có 11 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập số điện thoại nhân sự có 10 số bắt đàu là số 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(error.KT_Email(txtEmail.Text) == false || error.KT_SoKiTuCoTheLuu(txtEmail.Text, 40) == false)
             {

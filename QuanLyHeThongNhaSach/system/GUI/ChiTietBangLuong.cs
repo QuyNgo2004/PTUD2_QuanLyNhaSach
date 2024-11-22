@@ -349,7 +349,7 @@ namespace GUI
                         dgvLuong.DataSource = null;
                         danhSachLuong = null;
                         // Bước 4: Hiển thị thông báo thành công
-                        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lưu bảng lương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ChiTietBangLuong_Load(sender, e);
                         btnLamMoi_Click(sender, e);
                         
@@ -357,7 +357,7 @@ namespace GUI
 
                     else
                     {
-                        MessageBox.Show("Lỗi khi thêm hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi khi lưu bảng lương!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
