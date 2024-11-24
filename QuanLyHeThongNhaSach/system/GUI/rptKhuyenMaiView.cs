@@ -30,7 +30,7 @@ namespace GUI.Report
             List<ET_KhuyenMaiReport> list = BUS_ChiTietKhuyenMai.Instance.CTKM_Load_Now_Report(now);
             List<ET_NhanSu> list_ns = new List<ET_NhanSu>();
             list_ns.Add(ns_r);
-            rptBCKhuyenMai.LocalReport.ReportPath = "Report/rptKhuyenMai.rdlc";
+            rptBCKhuyenMai.LocalReport.ReportPath = "rptKhuyenMai.rdlc";
             var source = new ReportDataSource("KhuyenMaiReport", list);
             var source_ns = new ReportDataSource("NhanSuReport", list_ns);
             rptBCKhuyenMai.LocalReport.DataSources.Clear();

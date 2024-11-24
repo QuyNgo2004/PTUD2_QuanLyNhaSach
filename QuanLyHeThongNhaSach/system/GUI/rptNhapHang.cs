@@ -36,7 +36,7 @@ namespace GUI
             List<ET_NhanSu> list_ns = new List<ET_NhanSu> { ns };
             //List<ET_NhapHang> list_bl = new List<ET_NhapHang> { nh };
 
-            rptBCNhapHang.LocalReport.ReportPath = "Report/DSChiTietNhapHang.rdlc";
+            rptBCNhapHang.LocalReport.ReportPath = "DSChiTietNhapHang.rdlc";
             var source_ctl = new ReportDataSource("NhapHangDataSet", list_ct);
             var source_ns = new ReportDataSource("NhanSuDataSet", list_ns);
            // var source_l = new ReportDataSource("BangLuongReport", list_bl);

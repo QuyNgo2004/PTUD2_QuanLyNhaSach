@@ -32,7 +32,7 @@ namespace GUI
             List<ET_NhanSu> list_ns = new List<ET_NhanSu> { ns};
             List<ET_BangLuong> list_bl = new List<ET_BangLuong> { bl };
 
-            rptBCBangLuong.LocalReport.ReportPath = "Report/rptBangLuong.rdlc";
+            rptBCBangLuong.LocalReport.ReportPath = "rptBangLuong.rdlc";
             var source_ctl = new ReportDataSource("LuongReport", list_ct);
             var source_ns = new ReportDataSource("NhanSuReport", list_ns);
             var source_l = new ReportDataSource("BangLuongReport", list_bl);
