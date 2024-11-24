@@ -217,7 +217,6 @@ namespace GUI
 
                         // Step 4: Clear the data grid after import is complete
                         dgvDSNhapHang.DataSource = null;
-                        MessageBox.Show("Hoàn tất nhập phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -316,7 +315,7 @@ namespace GUI
         {
             if (decimal.TryParse(txtSLNhap.Text, out decimal soLuong))
             {
-                if (soLuong < 1 || soLuong > 50)
+                if (soLuong < 1 || soLuong > 59)
                 {
                     MessageBox.Show("Số lượng hàng hóa nhập phải lớn hơn 1 và nhỏ hơn 59.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtSLNhap.Focus();

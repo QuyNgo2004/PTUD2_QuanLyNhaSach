@@ -76,6 +76,7 @@ namespace GUI
             dgvHangHoa.AutoGenerateColumns = true;
             hh.XemDSHH(cbbMaHang);
             cbbMaHang_Validated(sender, e);
+            txtSoLuong.Text = "1";
             //cbbKhuyenMai.DataSource = km.LoadKM_All();
             //cbbKhuyenMai.DisplayMember = "TenKM";
             //cbbKhuyenMai.ValueMember = "GiảmGiá";
@@ -84,13 +85,12 @@ namespace GUI
 
         private void txtSoLuong_Validated(object sender, EventArgs e)
         {
-            // Kiểm tra xem người dùng đã nhập số hay không
             try
             {
                 if (batLoi.KT_ChuoiSo(txtSoLuong.Text) == false)
                 {
                     MessageBox.Show("Vui lòng nhập ký tự số", "Thông báo");
-                    txtSoLuong.Clear();  // Nếu nhập không phải số thì làm sạch ô
+                    txtSoLuong.Text = "1";
                     return;
                 }
                 else
@@ -98,13 +98,18 @@ namespace GUI
                     // Lấy giá trị đơn giá và số lượng từ TextBox
                     int donGia = int.Parse(txtDonGia.Text);
                     int soLuong = int.Parse(txtSoLuong.Text);
-
+                    if (soLuong > 500)
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng nhỏ hơn hoặc bằng 500", "Thông báo");
+                        txtSoLuong.Text = "1";
+                        return;
+                    }
                     ET_KhuyenMai eT_KhuyenMai = new ET_KhuyenMai();
                     // Lấy giá trị giảm giá từ ComboBox (Giả sử giá trị giảm giá là %)
                     if (cbbKhuyenMai.SelectedValue == null)
                     {
                         eT_KhuyenMai.MaGiamGia = 0;
-                    } 
+                    }
                     else
                     {
                         eT_KhuyenMai = km.KM_TimMa(cbbKhuyenMai.SelectedValue.ToString());
@@ -244,7 +249,7 @@ namespace GUI
                         cbbMaHang.SelectedIndex = 0;
                         txtTenHang.Clear();
                         txtDonGia.Clear();
-                        txtSoLuong.Clear();
+                        txtSoLuong.Text = "1";
                         cbbKhuyenMai.SelectedIndex = -1;
                         txtThanhTien.Clear();
                     }
@@ -592,7 +597,7 @@ namespace GUI
                 cbbMaHang.SelectedIndex = 0;
                 txtTenHang.Clear();
                 txtDonGia.Clear();
-                txtSoLuong.Clear();
+                txtSoLuong.Text = "1";
                 cbbKhuyenMai.SelectedIndex = -1;
                 txtThanhTien.Clear();
                 dgvHangHoa.DataSource = null;
